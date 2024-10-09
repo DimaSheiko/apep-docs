@@ -1,0 +1,49 @@
+site_name: Apep Docs
+site_author: DimaSheiko
+site_description: Documentation for the Apep project
+theme:
+  logo: assets/logo.png
+  favicon: assets/logo.png
+
+  features:
+    - navigation.footer
+  name: material
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Extensions
+markdown_extensions:
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  social:
+    - icon: simple/discord
+      link: https://discord.gg/EwJzA5S3
+
+copyright: Copyright &copy; 2024 UwU
