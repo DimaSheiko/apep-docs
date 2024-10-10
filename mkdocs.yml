@@ -1,12 +1,20 @@
 site_name: Apep Docs
+site_url: https://apep.localhost
 site_author: DimaSheiko
 site_description: Documentation for the Apep project
+repo_url: https://github.com/DimaSheiko/apep-docs
 theme:
   logo: assets/logo.png
   favicon: assets/logo.png
 
   features:
     - navigation.footer
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.path
+    - content.code.copy
+    - content.code.annotate
   name: material
   palette:
     # Palette toggle for dark mode
@@ -14,7 +22,7 @@ theme:
       primary: black
       accent: indigo
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Switch to light mode
 
     # Palette toggle for light mode
@@ -22,7 +30,7 @@ theme:
       primary: indigo
       accent: indigo
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-sunny
         name: Switch to system preference
   font:
     text: Roboto
@@ -38,6 +46,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - admonition
+  - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
 
@@ -47,3 +57,35 @@ extra:
       link: https://discord.gg/EwJzA5S3
 
 copyright: Copyright &copy; 2024 UwU
+
+nav:
+  - Getting Started:
+    - Understanding apep: index.md
+    - Installation: installation.md
+  - Framework:
+    - Actions:
+      - Understanding actions: framework/actions/index.md
+    - Conditions:
+      - Understanding conditions: framework/conditions/index.md
+      - Area: framework/conditions/area.md
+      - Artifacts: framework/conditions/artifacts.md
+      - Azerites: framework/conditions/azerites.md
+      - Buffs: framework/conditions/buffs.md
+      - Class: framework/conditions/class.md
+      - Conduits: framework/conditions/conduits.md
+      - DBM: framework/conditions/dbm.md
+      - Debuff: framework/conditions/debuff.md
+      - Essences: framework/conditions/essences.md
+      - General: framework/conditions/general.md
+      - Heal: framework/conditions/heal.md
+      - Items: framework/conditions/items.md
+      - Keybinds: framework/conditions/keybinds.md
+      - Player: framework/conditions/player.md
+      - Spell: framework/conditions/spell.md
+      - States: framework/conditions/states.md
+      - Talents: framework/conditions/talents.md
+      - Unit: framework/conditions/unit.md
+    - Units:
+      - Understanding units: framework/units/index.md
+    - Object Manager:
+      - Understanding object manager: framework/object-manager/index.md
