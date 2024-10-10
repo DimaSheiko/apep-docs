@@ -3,20 +3,30 @@ site_url: https://apep.localhost
 site_author: DimaSheiko
 site_description: Documentation for the Apep project
 repo_url: https://github.com/DimaSheiko/apep-docs
+edit_uri: edit/main/docs/
 theme:
-  logo: assets/logo.png
-  favicon: assets/logo.png
+  name: material
+  # custom_dir: material/overrides
 
   features:
     - navigation.footer
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    # - navigation.expand
+    - navigation.indexes
     - navigation.path
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
-  name: material
+    - content.action.edit
+    - content.action.view
+
   palette:
     # Palette toggle for dark mode
     - scheme: slate
@@ -36,6 +46,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
+  logo: assets/logo.png
+  favicon: assets/logo.png
 
 # Extensions
 markdown_extensions:
@@ -55,6 +67,9 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
+hooks:
+  - material/overrides/hooks/shortcodes.py
+
 extra:
   social:
     - icon: simple/discord
@@ -64,13 +79,16 @@ copyright: Copyright &copy; 2024 UwU
 
 nav:
   - Getting Started:
-    - Understanding apep: index.md
+    - index.md
     - Installation: installation.md
+    - Conventions: conventions.md
+    - Changelog:
+      - changelog/index.md
   - Framework:
     - Actions:
-      - Understanding actions: framework/actions/index.md
+      - framework/actions/index.md
     - Conditions:
-      - Understanding conditions: framework/conditions/index.md
+      - framework/conditions/index.md
       - Area: framework/conditions/area.md
       - Artifacts: framework/conditions/artifacts.md
       - Azerites: framework/conditions/azerites.md
@@ -90,6 +108,6 @@ nav:
       - Talents: framework/conditions/talents.md
       - Unit: framework/conditions/unit.md
     - Units:
-      - Understanding units: framework/units/index.md
+      - framework/units/index.md
     - Object Manager:
-      - Understanding object manager: framework/object-manager/index.md
+      - framework/object-manager/index.md

@@ -1,167 +1,227 @@
 # ARTIFACTS
----
 
+---
 
 > ## artifact.enabled
 
-- This condition checks if a specific artifact trait is enabled for a given spell.
+-   This condition checks if a specific artifact trait is enabled for a given spell.
 
 #### Parameters
-- `spell`: The spell for which to check if the artifact trait is enabled.
+
+-   `spell`: The spell for which to check if the artifact trait is enabled.
 
 #### Returns `BOOL`
-- `true` if the artifact trait is enabled for the spell, `false` otherwise.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "artifact(Dragon Scales).enabled"},
+-   `true` if the artifact trait is enabled for the spell, `false` otherwise.
 
--- in Lua code
-_A.DSL:Get("artifact.enabled")(_, "Dragon Scales")
+#### _Example:_
 
--- Lua Mode
-PLAYER:ArtifactEnabled("Dragon Scales")
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "artifact(Dragon Scales).enabled"},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("artifact.enabled")(_, "Dragon Scales")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ArtifactEnabled("Dragon Scales")
+    ```
+
+---
 
 > ## artifact.acquired_power
 
-- This condition returns the amount of acquired artifact power for a specific artifact by its ID.
+-   This condition returns the amount of acquired artifact power for a specific artifact by its ID.
 
 #### Parameters
-- `artifactID`: The ID of the artifact for which to retrieve the acquired artifact power.
+
+-   `artifactID`: The ID of the artifact for which to retrieve the acquired artifact power.
 
 #### Returns `NUMBER`
-- The amount of acquired artifact power for the specified artifact.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "artifact(128289).acquired_power"},
+-   The amount of acquired artifact power for the specified artifact.
 
--- in Lua code
-_A.DSL:Get("artifact.acquired_power")(_, "128289")
+#### _Example:_
 
--- Lua Mode
-PLAYER:ArtifactAcquired_power(128289)
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "artifact(128289).acquired_power"},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("artifact.acquired_power")(_, "128289")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ArtifactAcquired_power(128289)
+    ```
+
+---
 
 > ## artifact.active_id
 
-- This condition returns the ID of the currently active artifact.
+-   This condition returns the ID of the currently active artifact.
 
 #### Returns `NUMBER`
-- The ID of the currently active artifact.
 
-#### *Example:*
-```lua
--- DSL Mode
-N/A
+-   The ID of the currently active artifact.
 
--- in Lua code
-_A.DSL:Get("artifact.active_id")()
+#### _Example:_
 
--- Lua Mode
-PLAYER:ArtifactActive_id()
-```
+=== "DSL"
 
-***
+    ```lua
+    N/A
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("artifact.active_id")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ArtifactActive_id()
+    ```
+
+---
 
 > ## artifact.knowledge
 
-- This condition returns the amount of artifact knowledge the player has.
+-   This condition returns the amount of artifact knowledge the player has.
 
 #### Returns `NUMBER`
-- The amount of artifact knowledge.
 
-#### *Example:*
-```lua
--- DSL Mode
-N/A
+-   The amount of artifact knowledge.
 
--- in Lua code
-_A.DSL:Get("artifact.knowledge")()
+#### _Example:_
 
--- Lua Mode
-PLAYER:ArtifactKnowledge()
-```
+=== "DSL"
 
-***
+    ```lua
+    N/A
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("artifact.knowledge")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ArtifactKnowledge()
+    ```
+
+---
 
 > ## artifact.power
 
-- This condition returns the artifact power of a specific artifact.
+-   This condition returns the artifact power of a specific artifact.
 
 #### Parameters
-- `artifactID`: The ID of the artifact.
+
+-   `artifactID`: The ID of the artifact.
 
 #### Returns `NUMBER`
-- The artifact power of the specified artifact.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "artifact(93).power"},
+-   The artifact power of the specified artifact.
 
--- in Lua code
-_A.DSL:Get("artifact.power")(_, "93")
+#### _Example:_
 
--- Lua Mode
-PLAYER:ArtifactPower(93)
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "artifact(93).power"},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("artifact.power")(_, "93")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ArtifactPower(93)
+    ```
+
+---
 
 > ## artifact.relics
 
-- This condition returns the relics of a specific artifact.
+-   This condition returns the relics of a specific artifact.
 
 #### Parameters
-- `artifactID`: The ID of the artifact.
+
+-   `artifactID`: The ID of the artifact.
 
 #### Returns `TABLE`
-- The relics associated with the specified artifact.
 
-#### *Example:*
-```lua
--- DSL Mode
-N/A
+-   The relics associated with the specified artifact.
 
--- in Lua code
-local artifactTable = _A.DSL:Get("artifact.relics")(_, "128289")
+#### _Example:_
 
--- Lua Mode
-local artifactTable = PLAYER:ArtifactRelics(128289)
-```
+=== "DSL"
 
+    ```lua
+    N/A
+    ```
 
-***
+=== "Lua Code"
 
+    ```lua
+    local artifactTable = _A.DSL:Get("artifact.relics")(_, "128289")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    local artifactTable = PLAYER:ArtifactRelics(128289)
+    ```
+
+---
 
 > ## artifact.num_obtained
 
-- This condition returns the number of obtained artifacts.
+-   This condition returns the number of obtained artifacts.
 
 #### Returns `NUMBER`
-- The number of artifacts obtained by the player.
 
-#### *Example:*
-```lua
--- DSL Mode
-N/A
+-   The number of artifacts obtained by the player.
 
--- in Lua code
-_A.DSL:Get("artifact.num_obtained")()
+#### _Example:_
 
--- Lua Mode
-PLAYER:ArtifactNum_obtained()
-```
+=== "DSL"
+
+    ```lua
+    {ACTION, "artifact.num_obtained", PLAYER},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("artifact.num_obtained")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ArtifactNum_obtained()
+    ```
