@@ -17,16 +17,23 @@
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(20).enemies >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.enemies")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area(20).enemies >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaEnemies(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.enemies")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaEnemies(20) >= 3
+    ```
 
 ---
 
@@ -45,16 +52,23 @@ UNIT:AreaEnemies(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area_range(20).enemies >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.area_range")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area_range(20).enemies >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Area_rangeEnemies(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.area_range")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Area_rangeEnemies(20) >= 3
+    ```
 
 ---
 
@@ -75,16 +89,23 @@ UNIT:Area_rangeEnemies(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(20).combatenemies >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.combatenemies")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area(20).combatenemies >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaCombatenemies(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.combatenemies")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaCombatenemies(20) >= 3
+    ```
 
 ---
 
@@ -105,16 +126,23 @@ UNIT:AreaCombatenemies(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area_range(20).combatenemies >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area_range.combatenemies")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area_range(20).combatenemies >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Area_rangeCombatenemies(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area_range.combatenemies")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Area_rangeCombatenemies(20) >= 3
+    ```
 
 ---
 
@@ -133,16 +161,23 @@ UNIT:Area_rangeCombatenemies(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(20).enemies.infront >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.enemies.infront")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area(20).enemies.infront >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaEnemiesInfront(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.enemies.infront")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaEnemiesInfront(20) >= 3
+    ```
 
 ---
 
@@ -161,16 +196,23 @@ UNIT:AreaEnemiesInfront(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area_range(20).enemies.infront >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area_range.enemies.infront")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area_range(20).enemies.infront >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Area_rangeEnemiesInfront(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area_range.enemies.infront")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Area_rangeEnemiesInfront(20) >= 3
+    ```
 
 ---
 
@@ -191,16 +233,23 @@ UNIT:Area_rangeEnemiesInfront(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(20).combatenemies.infront >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.combatenemies.infront")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area(20).combatenemies.infront >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaCombatenemiesInfront(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.combatenemies.infront")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaCombatenemiesInfront(20) >= 3
+    ```
 
 ---
 
@@ -221,16 +270,23 @@ UNIT:AreaCombatenemiesInfront(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area_range(20).combatenemies.infront >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area_range.combatenemies.infront")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area_range(20).combatenemies.infront >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Area_rangeCombatenemiesInfront(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area_range.combatenemies.infront")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Area_rangeCombatenemiesInfront(20) >= 3
+    ```
 
 ---
 
@@ -249,16 +305,23 @@ UNIT:Area_rangeCombatenemiesInfront(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(20).friendly >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.friendly")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area(20).friendly >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaFriendly(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.friendly")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaFriendly(20) >= 3
+    ```
 
 ---
 
@@ -277,16 +340,23 @@ UNIT:AreaFriendly(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(20).roster >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.roster")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area(20).roster >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaRoster(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.roster")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaRoster(20) >= 3
+    ```
 
 ---
 
@@ -305,16 +375,23 @@ UNIT:AreaRoster(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(20).friendly.infront >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.friendly.infront")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area(20).friendly.infront >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaFriendlyInfront(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.friendly.infront")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaFriendlyInfront(20) >= 3
+    ```
 
 ---
 
@@ -333,16 +410,23 @@ UNIT:AreaFriendlyInfront(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(20).roster.infront >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.roster.infront")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area(20).roster.infront >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaRosterInfront(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.roster.infront")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaRosterInfront(20) >= 3
+    ```
 
 ---
 
@@ -361,16 +445,23 @@ UNIT:AreaRosterInfront(20) >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(20).roster.incdmg >= 400000", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.roster.incdmg")("UNIT", "20") >= 400000
+    ```lua
+    {ACTION, "UNIT.area(20).roster.incdmg >= 400000", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaRosterIncdmg(20) >= 400000
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.roster.incdmg")("UNIT", "20") >= 400000
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaRosterIncdmg(20) >= 400000
+    ```
 
 ---
 
@@ -389,13 +480,20 @@ UNIT:AreaRosterIncdmg(20) >= 400000
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(20).dead.roster >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.dead.roster")("UNIT", "20") >= 3
+    ```lua
+    {ACTION, "UNIT.area(20).dead.roster >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaDeadRoster(20) >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.dead.roster")("UNIT", "20") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaDeadRoster(20) >= 3
+    ```
