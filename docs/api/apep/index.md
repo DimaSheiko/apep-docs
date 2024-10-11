@@ -201,6 +201,95 @@ local first, second, third = _A.StrExplode("apple,banana,orange", ",") -- (1)!
 
 ---
 
+> ## BagSpace
+
+-   This function calculates the total number of free slots available across all bags.
+
+#### Returns `number`
+
+-   The total number of free slots available across all bags.
+
+#### _Example:_
+
+```lua
+-- Get the total number of free slots across all bags
+local freeSlots = _A.BagSpace()
+print("Total free slots:", freeSlots)
+```
+
+---
+
+> ## SlotAlias
+
+| SlotAlias                           | InventorySlotName | SlotNumber |
+| ----------------------------------- | ----------------- | ---------- |
+| `head` or `helm`                    | HeadSlot          | 1          |
+| `neck`                              | NeckSlot          | 2          |
+| `shoulder`                          | ShoulderSlot      | 3          |
+| `shirt`                             | ShirtSlot         | 4          |
+| `chest`                             | ChestSlot         | 5          |
+| `belt` or `waist`                   | WaistSlot         | 6          |
+| `legs` or `pants`                   | LegsSlot          | 7          |
+| `feet` or `boots`                   | FeetSlot          | 8          |
+| `wrist` or `bracers`                | WristSlot         | 9          |
+| `gloves` or `hands`                 | HandsSlot         | 10         |
+| `finger1`                           | Finger0Slot       | 11         |
+| `finger2`                           | Finger1Slot       | 12         |
+| `trinket1`                          | Trinket0Slot      | 13         |
+| `trinket2`                          | Trinket1Slot      | 14         |
+| `back` or `cloak`                   | BackSlot          | 15         |
+| `mainhand` or `weapon` or `weapon1` | MainHandSlot      | 16         |
+| `offhand` or `weapon2`              | SecondaryHandSlot | 17         |
+| `ranged`                            | RangedSlot        | 18         |
+| `tabard`                            | TabardSlot        | 19         |
+
+---
+
+> ## ItemEquip
+
+-   This function equips an item in the specified slot.
+
+#### Parameters
+
+-   `NameOrID`(string/number): The item name/ID.
+-   `NameOrSlot`(string/number): The slot name/number.
+
+#### Returns `nil`
+
+#### _Example:_
+
+```lua
+-- Equip an item named "Sickle Axe" to the main hand slot
+_A.ItemEquip("Sickle Axe", "MainHand")
+-- Equip an item with ID 1602 to the SlotNumber 16 (Main Hand)
+_A.ItemEquip(1602, 16)
+```
+
+---
+
+> ## ItemUnequip
+
+-   This function unequips an item from a specified slot and places it in the backpack.
+
+#### Parameters
+
+-   `NameOrSlot`(string/number): The slot name/number.
+
+#### Returns `number`
+
+-   `Id`(number): The ID of the unequipped item, or -1 if no item was found in the slot.
+
+#### _Example:_
+
+```lua
+-- Unequip the Main Hand weapon
+_A.ItemUnequip("MainHand")
+-- Unequip the slot 16, where 16 is the SlotNumber for Main Hand
+_A.ItemUnequip(16)
+```
+
+---
+
 > ## GetObjectCount
 
 -   This function returns the total number of objects currently present in the object manager.
@@ -1067,6 +1156,35 @@ else
 end
 print("Collision point:", cx, cy, cz)
 ```
+
+---
+
+> ## MapId
+
+-   This function retrieves the current map ID and additional information about the player's location on the map.
+
+#### Returns `ContinentInstanceId`, `NorthSouth_tile`, `WestEast_tile`, `NorthSouth_subtile`, `WestEast_subtile`, `subZoneStr`
+
+-   `ContinentInstanceId`(number): The ID of the continent instance.
+-   `NorthSouth_tile`(number): The North-South tile coordinate.
+-   `WestEast_tile`(number): The West-East tile coordinate.
+-   `NorthSouth_subtile`(number): The North-South subtile coordinate.
+-   `WestEast_subtile`(number): The West-East subtile coordinate.
+-   `subZoneStr`(string): The subzone string (not localized).
+
+#### _Example:_
+
+```lua
+local ContinentInstanceId, NorthSouth_tile, WestEast_tile, NorthSouth_subtile, WestEast_subtile, subZoneStr = _A.MapId()
+print("Continent Instance ID:", ContinentInstanceId)
+print("North-South Tile:", NorthSouth_tile)
+print("West-East Tile:", WestEast_tile)
+print("North-South Subtile:", NorthSouth_subtile)
+print("West-East Subtile:", WestEast_subtile)
+print("Subzone String:", subZoneStr)
+```
+
+!> **Note:** `subZoneStr` isn't localized.
 
 ---
 
