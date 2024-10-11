@@ -1,3 +1,7 @@
+---
+icon: material/toggle-switch
+---
+
 # CONDITIONS
 
 In DSL mode, Apep already comes with many conditions to facilitate the creation of rotations (Less lines of code and more readable), `CONDITIONS` are the set of rules or criteria that must be met for an action to take place. They provide a way to control when and how an `ACTION` is executed. Let's dive into the syntax and explore examples to better understand the functionality offered by the `CONDITIONS` component.

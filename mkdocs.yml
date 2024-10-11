@@ -26,6 +26,7 @@ theme:
     - content.tabs.link
     - content.action.edit
     - content.action.view
+    - content.tooltips
 
   palette:
     # Palette toggle for dark mode
@@ -51,6 +52,10 @@ theme:
 
 # Extensions
 markdown_extensions:
+  - toc:
+      title: On this page
+      permalink: true
+      toc_depth: 3
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -81,6 +86,7 @@ nav:
   - Getting Started:
     - index.md
     - Installation: installation.md
+    - My First Rotation: my-first-rotation.md
     - Conventions: conventions.md
     - Changelog:
       - changelog/index.md
@@ -109,5 +115,8 @@ nav:
       - Unit: framework/conditions/unit.md
     - Units:
       - framework/units/index.md
+      - FakeUnits:
+        - framework/units/fakeunits/index.md
+        - Create own fakeunit: framework/units/fakeunits/own-fakeunit.md
     - Object Manager:
       - framework/object-manager/index.md

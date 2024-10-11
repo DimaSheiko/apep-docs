@@ -1,9 +1,6 @@
 ---
 title: Object Manager
-nextjs:
-  metadata:
-    title: Apep | Object Manager
-    description: Object Manager
+icon: material/book-open-page-variant-outline
 ---
 
 The Object Manager is a table that contains all the players, units, and objects currently in the game world that are visible to the player.
@@ -35,61 +32,61 @@ The Object Manager contains the following tables:
 
 ### All
 
-- Contains all the units currently in the game world that are visible to the player.
+-   Contains all the units currently in the game world that are visible to the player.
 
 ---
 
 ### Enemy
 
-- Contains all the enemy units currently in the game world that are visible to the player.
+-   Contains all the enemy units currently in the game world that are visible to the player.
 
 ---
 
 ### EnemyCombat
 
-- Contains all the enemy units currently in combat that are visible to the player.
+-   Contains all the enemy units currently in combat that are visible to the player.
 
 ---
 
 ### Friendly
 
-- Contains all the friendly units currently in the game world that are visible to the player.
+-   Contains all the friendly units currently in the game world that are visible to the player.
 
 ---
 
 ### Roster
 
-- Contains all the members of the player's group.
+-   Contains all the members of the player's group.
 
 ---
 
 ### Dead
 
-- Contains all the dead units currently in the game world that are visible to the player.
+-   Contains all the dead units currently in the game world that are visible to the player.
 
 ---
 
 ### Critters
 
-- Contains all the critters currently in the game world that are visible to the player.
+-   Contains all the critters currently in the game world that are visible to the player.
 
 ---
 
 ### Object
 
-- Contains all the game objects currently in the game world that are visible to the player.
+-   Contains all the game objects currently in the game world that are visible to the player.
 
 ---
 
 ### GameObject
 
-- Contains all the game objects currently in the game world that are visible to the player.
+-   Contains all the game objects currently in the game world that are visible to the player.
 
 ---
 
 ### DynamicObject
 
-- Contains all the dynamic objects currently in the game world that are visible to the player.
+-   Contains all the dynamic objects currently in the game world that are visible to the player.
 
 ---
 
@@ -117,7 +114,7 @@ The Object Manager contains the following methods:
 
 ### **Get**
 
-- Returns a table of units that match the provided condition. For example if you do
+-   Returns a table of units that match the provided condition. For example if you do
 
 ```lua
 local playerObject = _A.OM:Get("Roster")[UnitGUID("player")]

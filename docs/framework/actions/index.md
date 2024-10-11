@@ -1,3 +1,7 @@
+---
+icon: material/function
+---
+
 # ACTIONS
 
 In the world of scripting, an `ACTION` represents the core command or operation you want to perform. It can be a spell, a function call, a macro, or any other executable unit. Let's dive into the syntax and explore examples to better grasp the flexibility and functionality offered by the `ACTION` component.
