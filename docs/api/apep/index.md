@@ -1725,6 +1725,28 @@ _A.CancelPendingSpell()
 
 ---
 
+> ## subgroup
+
+-   This function retrieves the subgroup of a player within a raid.
+
+#### Parameters
+
+-   `unit`(string): The unit for which to determine the subgroup.
+
+#### Returns `number`
+
+-   The subgroup of the specified player in the raid, or -1 if not found.
+
+#### _Example:_
+
+```lua
+local subgroup = _A.subgroup("player")
+```
+
+---
+
+---
+
 > ## CalculatePath
 
 -   This API computes a path from the player coordinates to another point in the game world.
