@@ -1725,6 +1725,43 @@ _A.CancelPendingSpell()
 
 ---
 
+> ## CalculatePath
+
+-   This API computes a path from the player coordinates to another point in the game world.
+
+#### Parameters
+
+-   `x`(number): The x-coordinate of the destination point.
+-   `y`(number): The y-coordinate of the destination point.
+-   `z`(number): The z-coordinate of the destination point.
+-   `straightPath`(boolean, optional): Determines whether to calculate a straight path (`true`) or not (`false`). Default is `false`.
+
+#### Returns `table`
+
+-   A table containing the calculated path points, or an empty table if no path was found.
+
+#### _Example:_
+
+```lua
+local path = _A.CalculatePath(1129.7, -4223.4, 22.1, false)
+
+for i, point in ipairs(path) do
+    local x, y, z = unpack(point)
+    print(string.format("Point %d: (%f, %f, %f)", i, x, y, z))
+end
+```
+
+!!! info
+
+    In order for this API to work, it is necessary to have the `mmap` files on disk.
+
+    They need to be downloaded from this [link](https://discord.com/channels/551772363465818112/1092897181511463063/1220586784145281064) and extracted into a folder. Then, it is necessary to edit the `Apep.ini` file and add the key mmaps:
+    `mmaps=C:\mmaps\545`
+
+    In this example, we are indicating Apep that the mmap files are in the folder `C:\mmaps\545`, referring to the [Mists of Pandaria](https://wowpedia.fandom.com/wiki/World_of_Warcraft:_Mists_of_Pandaria) expansion.
+
+---
+
 > ## GetMissiles
 
 -   This function retrieves information about active missiles in the game world.
