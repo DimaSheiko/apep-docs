@@ -12,16 +12,23 @@
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "power.regen >= 5"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("power.regen")() >= 5
+    ```lua
+    {ACTION, "power.regen >= 5"},
+    ```
 
--- Lua Mode
-PLAYER:PowerRegen() >= 5
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("power.regen")() >= 5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:PowerRegen() >= 5
+    ```
 
 ---
 
@@ -35,16 +42,23 @@ PLAYER:PowerRegen() >= 5
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "energy >= 60"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("energy")() >= 60
+    ```lua
+    {ACTION, "energy >= 60"},
+    ```
 
--- Lua Mode
-PLAYER:Energy() >= 60
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("energy")() >= 60
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Energy() >= 60
+    ```
 
 ---
 
@@ -60,16 +74,23 @@ PLAYER:Energy() >= 60
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "energy.max >= 100"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("energy.max")() >= 100
+    ```lua
+    {ACTION, "energy.max >= 100"},
+    ```
 
--- Lua Mode
-PLAYER:EnergyMax() >= 60
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("energy.max")() >= 100
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:EnergyMax() >= 60
+    ```
 
 ---
 
@@ -85,16 +106,23 @@ PLAYER:EnergyMax() >= 60
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "energy.diff >= 20"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("energy.diff")() >= 20
+    ```lua
+    {ACTION, "energy.diff >= 20"},
+    ```
 
--- Lua Mode
-PLAYER:EnergyDiff() >= 20
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("energy.diff")() >= 20
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:EnergyDiff() >= 20
+    ```
 
 ---
 
@@ -108,16 +136,23 @@ PLAYER:EnergyDiff() >= 20
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "player.mana.raw >= 400"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("mana.raw")("player") >= 400
+    ```lua
+    {ACTION, "player.mana.raw >= 400"},
+    ```
 
--- Lua Mode
-PLAYER:ManaRaw() >= 400
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("mana.raw")("player") >= 400
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ManaRaw() >= 400
+    ```
 
 ---
 
@@ -131,16 +166,23 @@ PLAYER:ManaRaw() >= 400
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "mana >= 80"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("mana")() >= 80
+    ```lua
+    {ACTION, "mana >= 80"},
+    ```
 
--- Lua Mode
-PLAYER:Mana() >= 80
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("mana")() >= 80
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Mana() >= 80
+    ```
 
 ---
 
@@ -154,16 +196,23 @@ PLAYER:Mana() >= 80
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "insanity >= 80"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("insanity")() >= 80
+    ```lua
+    {ACTION, "insanity >= 80"},
+    ```
 
--- Lua Mode
-PLAYER:Insanity() >= 80
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("insanity")() >= 80
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Insanity() >= 80
+    ```
 
 ---
 
@@ -181,16 +230,23 @@ PLAYER:Insanity() >= 80
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.ispet", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("ispet")("UNIT")
+    ```lua
+    {ACTION, "UNIT.ispet", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Ispet()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("ispet")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Ispet()
+    ```
 
 ---
 
@@ -208,23 +264,29 @@ UNIT:Ispet()
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.stagger >= 500", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("stagger")("UNIT") >= 500
+    ```lua
+    {ACTION, "UNIT.stagger >= 500", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Stagger() >= 500
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("stagger")("UNIT") >= 500
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Stagger() >= 500
+    ```
 
 ---
 
 > ## focus
 
--   This condition calculates the focus resource of the player or pet, based on the provided target.
-    If the target is "pet," the function returns the focus of the player's pet; otherwise, it returns the focus of the player.
+-   This condition calculates the focus resource of the player or pet, based on the provided target. If the target is "pet," the function returns the focus of the player's pet; otherwise, it returns the focus of the player.
 
 #### Parameters
 
@@ -236,16 +298,23 @@ UNIT:Stagger() >= 500
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.focus >= 40", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("focus")("UNIT") >= 40
+    ```lua
+    {ACTION, "UNIT.focus >= 40", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Focus() >= 40
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("focus")("UNIT") >= 40
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Focus() >= 40
+    ```
 
 ---
 
@@ -253,7 +322,7 @@ UNIT:Focus() >= 40
 >
 > _`focus.max || focusMax`_
 
--   This condition retrieve the maximum focus resource of the player.
+-   This condition retrieves the maximum focus resource of the player.
 
 #### Returns `NUMBER`
 
@@ -261,16 +330,23 @@ UNIT:Focus() >= 40
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "focus.max > 100"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("focus.max")() > 100
+    ```lua
+    {ACTION, "focus.max > 100"},
+    ```
 
--- Lua Mode
-PLAYER:FocusMax() > 100
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("focus.max")() > 100
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:FocusMax() > 100
+    ```
 
 ---
 
@@ -286,16 +362,23 @@ PLAYER:FocusMax() > 100
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "runic.power > 20"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("runic.power")() > 20
+    ```lua
+    {ACTION, "runic.power > 20"},
+    ```
 
--- Lua Mode
-PLAYER:RunicPower() > 100
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("runic.power")() > 20
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:RunicPower() > 100
+    ```
 
 ---
 
@@ -309,16 +392,23 @@ PLAYER:RunicPower() > 100
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "runes > 4"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("runes")() > 20
+    ```lua
+    {ACTION, "runes > 4"},
+    ```
 
--- Lua Mode
-PLAYER:Runes() > 100
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("runes")() > 20
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Runes() > 100
+    ```
 
 ---
 
@@ -332,16 +422,23 @@ PLAYER:Runes() > 100
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "maelstrom > 20"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("maelstrom")() > 20
+    ```lua
+    {ACTION, "maelstrom > 20"},
+    ```
 
--- Lua Mode
-PLAYER:Maelstrom() > 20
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("maelstrom")() > 20
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Maelstrom() > 20
+    ```
 
 ---
 
@@ -359,16 +456,23 @@ PLAYER:Maelstrom() > 20
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "totem(Flametongue Totem IV)"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("totem")(_ , "Flametongue Totem IV")
+    ```lua
+    {ACTION, "totem(Flametongue Totem IV)"},
+    ```
 
--- Lua Mode
-PLAYER:Totem("Flametongue Totem IV")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("totem")(_, "Flametongue Totem IV")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Totem("Flametongue Totem IV")
+    ```
 
 ---
 
@@ -386,16 +490,23 @@ PLAYER:Totem("Flametongue Totem IV")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "totem(Mana Spring Totem IV).duration < 0.5"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("totem.duration")(_ , "Mana Spring Totem IV") < 0.5
+    ```lua
+    {ACTION, "totem(Mana Spring Totem IV).duration < 0.5"},
+    ```
 
--- Lua Mode
-PLAYER:TotemDuration("Mana Spring Totem IV") < 0.5
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("totem.duration")(_, "Mana Spring Totem IV") < 0.5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:TotemDuration("Mana Spring Totem IV") < 0.5
+    ```
 
 ---
 
@@ -413,16 +524,23 @@ PLAYER:TotemDuration("Mana Spring Totem IV") < 0.5
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "totem(Mana Spring Totem IV).time == 60"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("totem.time")(_ , "Mana Spring Totem IV") == 60
+    ```lua
+    {ACTION, "totem(Mana Spring Totem IV).time == 60"},
+    ```
 
--- Lua Mode
-PLAYER:TotemTime("Mana Spring Totem IV") == 60
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("totem.time")(_, "Mana Spring Totem IV") == 60
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:TotemTime("Mana Spring Totem IV") == 60
+    ```
 
 ---
 
@@ -436,16 +554,23 @@ PLAYER:TotemTime("Mana Spring Totem IV") == 60
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "soulshards >= 3"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("soulshards")() >= 3
+    ```lua
+    {ACTION, "soulshards >= 3"},
+    ```
 
--- Lua Mode
-PLAYER:Soulshards() >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("soulshards")() >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Soulshards() >= 3
+    ```
 
 ---
 
@@ -459,16 +584,23 @@ PLAYER:Soulshards() >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "chi >= 3"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("chi")() >= 3
+    ```lua
+    {ACTION, "chi >= 3"},
+    ```
 
--- Lua Mode
-PLAYER:Chi() >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("chi")() >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Chi() >= 3
+    ```
 
 ---
 
@@ -484,16 +616,23 @@ PLAYER:Chi() >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "chi.max = 5"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("chi.max")() = 5
+    ```lua
+    {ACTION, "chi.max = 5"},
+    ```
 
--- Lua Mode
-PLAYER:ChiMax() = 5
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("chi.max")() = 5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ChiMax() = 5
+    ```
 
 ---
 
@@ -509,16 +648,23 @@ PLAYER:ChiMax() = 5
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "chi.diff > 2"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("chi.diff")() > 2
+    ```lua
+    {ACTION, "chi.diff > 2"},
+    ```
 
--- Lua Mode
-PLAYER:ChiDiff() > 2
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("chi.diff")() > 2
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ChiDiff() > 2
+    ```
 
 ---
 
@@ -532,16 +678,23 @@ PLAYER:ChiDiff() > 2
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "form == 3"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("form")() == 3
+    ```lua
+    {ACTION, "form == 3"},
+    ```
 
--- Lua Mode
-PLAYER:Form() == 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("form")() == 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Form() == 3
+    ```
 
 ---
 
@@ -549,7 +702,7 @@ PLAYER:Form() == 3
 >
 > _`lunar.power || lunarpower || astralpower`_
 
--   This condition retrieve the current amount of lunar power (astral power) that the player has.
+-   This condition retrieves the current amount of lunar power (astral power) that the player has.
 
 #### Returns `NUMBER`
 
@@ -557,16 +710,23 @@ PLAYER:Form() == 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "lunar.power >= 60"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("lunar.power")() >= 60
+    ```lua
+    {ACTION, "lunar.power >= 60"},
+    ```
 
--- Lua Mode
-PLAYER:LunarPower() >= 60
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("lunar.power")() >= 60
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:LunarPower() >= 60
+    ```
 
 ---
 
@@ -580,16 +740,23 @@ PLAYER:LunarPower() >= 60
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "mushrooms > 0"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("mushrooms")() > 0
+    ```lua
+    {ACTION, "mushrooms > 0"},
+    ```
 
--- Lua Mode
-PLAYER:Mushrooms() > 0
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("mushrooms")() > 0
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Mushrooms() > 0
+    ```
 
 ---
 
@@ -605,16 +772,23 @@ PLAYER:Mushrooms() > 0
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "holy.power >= 60"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("holy.power")() >= 60
+    ```lua
+    {ACTION, "holy.power >= 60"},
+    ```
 
--- Lua Mode
-PLAYER:HolyPower() >= 60
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("holy.power")() >= 60
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:HolyPower() >= 60
+    ```
 
 ---
 
@@ -628,16 +802,23 @@ PLAYER:HolyPower() >= 60
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "rage >= 50"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("rage")() >= 50
+    ```lua
+    {ACTION, "rage >= 50"},
+    ```
 
--- Lua Mode
-PLAYER:Rage() >= 50
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("rage")() >= 50
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Rage() >= 50
+    ```
 
 ---
 
@@ -653,16 +834,23 @@ PLAYER:Rage() >= 50
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "rage.diff >= 15"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("rage.diff")() >= 15
+    ```lua
+    {ACTION, "rage.diff >= 15"},
+    ```
 
--- Lua Mode
-PLAYER:RageDiff() >= 15
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("rage.diff")() >= 15
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:RageDiff() >= 15
+    ```
 
 ---
 
@@ -676,16 +864,23 @@ PLAYER:RageDiff() >= 15
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "stance == 2"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("stance")() == 2
+    ```lua
+    {ACTION, "stance == 2"},
+    ```
 
--- Lua Mode
-PLAYER:Stance() == 2
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("stance")() == 2
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Stance() == 2
+    ```
 
 ---
 
@@ -701,16 +896,23 @@ PLAYER:Stance() == 2
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "fury.diff >= 15"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("fury.diff")() >= 15
+    ```lua
+    {ACTION, "fury.diff >= 15"},
+    ```
 
--- Lua Mode
-PLAYER:FuryDiff() >= 15
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("fury.diff")() >= 15
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:FuryDiff() >= 15
+    ```
 
 ---
 
@@ -724,16 +926,23 @@ PLAYER:FuryDiff() >= 15
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "pain >= 30"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("pain")() >= 30
+    ```lua
+    {ACTION, "pain >= 30"},
+    ```
 
--- Lua Mode
-PLAYER:Pain() >= 30
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("pain")() >= 30
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Pain() >= 30
+    ```
 
 ---
 
@@ -749,16 +958,23 @@ PLAYER:Pain() >= 30
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "arcane.charges >= 15"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("arcane.charges")() >= 15
+    ```lua
+    {ACTION, "arcane.charges >= 15"},
+    ```
 
--- Lua Mode
-PLAYER:ArcaneCharges() >= 15
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("arcane.charges")() >= 15
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ArcaneCharges() >= 15
+    ```
 
 ---
 
@@ -774,16 +990,23 @@ PLAYER:ArcaneCharges() >= 15
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "combo >= 4"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("combo")() >= 4
+    ```lua
+    {ACTION, "combo >= 4"},
+    ```
 
--- Lua Mode
-PLAYER:Combo() >= 4
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("combo")() >= 4
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Combo() >= 4
+    ```
 
 ---
 
@@ -799,16 +1022,23 @@ PLAYER:Combo() >= 4
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "combo.max > 5"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("combo.max")() > 5
+    ```lua
+    {ACTION, "combo.max > 5"},
+    ```
 
--- Lua Mode
-PLAYER:ComboMax() > 5
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("combo.max")() > 5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ComboMax() > 5
+    ```
 
 ---
 
@@ -824,16 +1054,23 @@ PLAYER:ComboMax() > 5
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "combo.diff > 2"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("combo.diff")() > 2
+    ```lua
+    {ACTION, "combo.diff > 2"},
+    ```
 
--- Lua Mode
-PLAYER:ComboDiff() > 2
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("combo.diff")() > 2
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ComboDiff() > 2
+    ```
 
 ---
 
@@ -849,16 +1086,23 @@ PLAYER:ComboDiff() > 2
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "time.to.max < 1"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("time.to.max")() < 1
+    ```lua
+    {ACTION, "time.to.max < 1"},
+    ```
 
--- Lua Mode
-PLAYER:TimeToMax() < 1
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("time.to.max")() < 1
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:TimeToMax() < 1
+    ```
 
 ---
 
@@ -872,16 +1116,23 @@ PLAYER:TimeToMax() < 1
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "warlock.minions > 2"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("warlock.minions")() > 2
+    ```lua
+    {ACTION, "warlock.minions > 2"},
+    ```
 
--- Lua Mode
-PLAYER:WarlockMinions() > 2
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("warlock.minions")() > 2
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:WarlockMinions() > 2
+    ```
 
 ---
 
@@ -899,16 +1150,23 @@ PLAYER:WarlockMinions() > 2
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "warlock.minions(Voidwalker).type > 0"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("warlock.minions.type")(_, "Voidwalker") > 0
+    ```lua
+    {ACTION, "warlock.minions(Voidwalker).type > 0"},
+    ```
 
--- Lua Mode
-PLAYER:WarlockMinionsType("Voidwalker") > 0
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("warlock.minions.type")(_, "Voidwalker") > 0
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:WarlockMinionsType("Voidwalker") > 0
+    ```
 
 ---
 
@@ -922,16 +1180,23 @@ PLAYER:WarlockMinionsType("Voidwalker") > 0
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "warlock.empower > 3"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("warlock.empower")() > 3
+    ```lua
+    {ACTION, "warlock.empower > 3"},
+    ```
 
--- Lua Mode
-PLAYER:WarlockEmpower() > 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("warlock.empower")() > 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:WarlockEmpower() > 3
+    ```
 
 ---
 
@@ -945,13 +1210,24 @@ PLAYER:WarlockEmpower() > 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "warlock.empower.missing > 2"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("warlock.empower.missing")() > 2
+    ```lua
+    {ACTION, "warlock.empower.missing > 2"},
+    ```
 
--- Lua Mode
-PLAYER:WarlockEmpowerMissing() > 2
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("warlock.empower.missing")() > 2
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:WarlockEmpowerMissing() > 2
+    ```
+
+```
+
 ```
