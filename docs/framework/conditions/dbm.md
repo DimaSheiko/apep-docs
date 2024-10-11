@@ -16,13 +16,20 @@
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "dbm(Pull in) < 3"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("dbm")(_, "Pull in") < 3
+    ```lua
+    {ACTION, "dbm(Pull in) < 3"},
+    ```
 
--- Lua Mode
-PLAYER:Dbm("Pull in") < 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("dbm")(_, "Pull in") < 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Dbm("Pull in") < 3
+    ```

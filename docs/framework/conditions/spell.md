@@ -14,16 +14,23 @@
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "spell(Nature's Cure).cooldown < 1"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.cooldown")(_, "Nature's Cure") < 1
+    ```lua
+    {ACTION, "spell(Nature's Cure).cooldown < 1"},
+    ```
 
--- Lua Mode
-PLAYER:SpellCooldown("Nature's Cure") < 1
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.cooldown")(_, "Nature's Cure") < 1
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellCooldown("Nature's Cure") < 1
+    ```
 
 ---
 
@@ -39,16 +46,23 @@ PLAYER:SpellCooldown("Nature's Cure") < 1
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "spell(Nature's Cure).recharge < 1"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.recharge")(_, "Nature's Cure") < 1
+    ```lua
+    {ACTION, "spell(Nature's Cure).recharge < 1"},
+    ```
 
--- Lua Mode
-PLAYER:SpellRecharge("Nature's Cure") < 1
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.recharge")(_, "Nature's Cure") < 1
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellRecharge("Nature's Cure") < 1
+    ```
 
 ---
 
@@ -66,16 +80,23 @@ PLAYER:SpellRecharge("Nature's Cure") < 1
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "spell(Heroic Leap).charges > 1"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.charges")(_, "Heroic Leap") > 1
+    ```lua
+    {ACTION, "spell(Heroic Leap).charges > 1"},
+    ```
 
--- Lua Mode
-PLAYER:SpellCharges("Heroic Leap") > 1
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.charges")(_, "Heroic Leap") > 1
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellCharges("Heroic Leap") > 1
+    ```
 
 ---
 
@@ -91,16 +112,23 @@ PLAYER:SpellCharges("Heroic Leap") > 1
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "spell(Starfire).count == 2"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.count")(_, "Starfire") == 1
+    ```lua
+    {ACTION, "spell(Starfire).count == 2"},
+    ```
 
--- Lua Mode
-PLAYER:SpellCount("Starfire") == 1
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.count")(_, "Starfire") == 1
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellCount("Starfire") == 1
+    ```
 
 ---
 
@@ -116,16 +144,23 @@ PLAYER:SpellCount("Starfire") == 1
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "spell(Swiftmend).usable"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.usable")(_, "Swiftmend")
+    ```lua
+    {ACTION, "spell(Swiftmend).usable"},
+    ```
 
--- Lua Mode
-PLAYER:SpellUsable("Swiftmend")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.usable")(_, "Swiftmend")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellUsable("Swiftmend")
+    ```
 
 ---
 
@@ -141,16 +176,23 @@ PLAYER:SpellUsable("Swiftmend")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "spell(Flourish).exists"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.exists")(_, "Flourish")
+    ```lua
+    {ACTION, "spell(Flourish).exists"},
+    ```
 
--- Lua Mode
-PLAYER:SpellExists("Flourish")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.exists")(_, "Flourish")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellExists("Flourish")
+    ```
 
 ---
 
@@ -158,7 +200,7 @@ PLAYER:SpellExists("Flourish")
 
 #### Parameters
 
--   `SPELL`: The name or ID of the spell to check for readiness.It considers the spell's cooldown, global cooldown, and network latency.
+-   `SPELL`: The name or ID of the spell to check for readiness. It considers the spell's cooldown, global cooldown, and network latency.
 
 #### Returns `BOOL`
 
@@ -166,16 +208,23 @@ PLAYER:SpellExists("Flourish")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "spell(Renewal).ready"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.ready")(_, "Renewal")
+    ```lua
+    {ACTION, "spell(Renewal).ready"},
+    ```
 
--- Lua Mode
-PLAYER:SpellReady("Renewal")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.ready")(_, "Renewal")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellReady("Renewal")
+    ```
 
 ---
 
@@ -192,16 +241,23 @@ PLAYER:SpellReady("Renewal")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.spell(Aimed Shot).range", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.range")("UNIT", "Aimed Shot")
+    ```lua
+    {ACTION, "UNIT.spell(Aimed Shot).range", UNIT},
+    ```
 
--- Lua Mode
-UNIT:SpellRange("Aimed Shot")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.range")("UNIT", "Aimed Shot")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:SpellRange("Aimed Shot")
+    ```
 
 ---
 
@@ -217,16 +273,23 @@ UNIT:SpellRange("Aimed Shot")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "spell(Ignore Pain).cost >= 50"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.cost")(_, "Ignore Pain") >= 50
+    ```lua
+    {ACTION, "spell(Ignore Pain).cost >= 50"},
+    ```
 
--- Lua Mode
-PLAYER:SpellCost("Ignore Pain") >= 50
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.cost")(_, "Ignore Pain") >= 50
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellCost("Ignore Pain") >= 50
+    ```
 
 ---
 
@@ -242,16 +305,23 @@ PLAYER:SpellCost("Ignore Pain") >= 50
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "spell(Aimed Shot).casttime < 0.9"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.casttime")(_, "Aimed Shot") < 0.9
+    ```lua
+    {ACTION, "spell(Aimed Shot).casttime < 0.9"},
+    ```
 
--- Lua Mode
-PLAYER:SpellCasttime("Aimed Shot") < 0.9
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.casttime")(_, "Aimed Shot") < 0.9
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellCasttime("Aimed Shot") < 0.9
+    ```
 
 ---
 
@@ -265,20 +335,27 @@ PLAYER:SpellCasttime("Aimed Shot") < 0.9
 
 #### Returns `BOOL`
 
--   `true` if the spell is currently active as a proc, `false` otherwise.
+-   `true` if the spell is currently active as a proc, otherwise `false`.
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "spell(Ferocious Bite).proc"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.proc")(_, "Ferocious Bite")
+    ```lua
+    {ACTION, "spell(Ferocious Bite).proc"},
+    ```
 
--- Lua Mode
-PLAYER:SpellProc("Ferocious Bite")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.proc")(_, "Ferocious Bite")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellProc("Ferocious Bite")
+    ```
 
 ---
 
@@ -292,22 +369,29 @@ PLAYER:SpellProc("Ferocious Bite")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "enchanted.mainhand"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("enchanted.mainhand")()
+    ```lua
+    {ACTION, "enchanted.mainhand"},
+    ```
 
--- Lua Mode
-PLAYER:EnchantedMainhand()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("enchanted.mainhand")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:EnchantedMainhand()
+    ```
 
 ---
 
 > ## enchanted.offhand
 
--   This condition checks if the player's off-handweapon has an enchantment.
+-   This condition checks if the player's off-hand weapon has an enchantment.
 
 #### Returns `BOOL`
 
@@ -315,16 +399,23 @@ PLAYER:EnchantedMainhand()
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "enchanted.offhand"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("enchanted.offhand")()
+    ```lua
+    {ACTION, "enchanted.offhand"},
+    ```
 
--- Lua Mode
-PLAYER:EnchantedOffhand()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("enchanted.offhand")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:EnchantedOffhand()
+    ```
 
 ---
 
@@ -336,22 +427,29 @@ PLAYER:EnchantedOffhand()
 
 -   `SPELL`: The name or ID of the spell to check for on the main hand weapon enchant.
 
-#### Returns BOOL
+#### Returns `BOOL`
 
 -   `true` if main hand weapon is enchanted with the spell, false otherwise.
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "hasMainHandEnchant(Flametongue Weapon)"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("hasMainHandEnchant")(_, "Flametongue Weapon")
+    ```lua
+    {ACTION, "hasMainHandEnchant(Flametongue Weapon)"},
+    ```
 
--- Lua Mode
-PLAYER:hasMainHandEnchant("Flametongue Weapon")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("hasMainHandEnchant")(_, "Flametongue Weapon")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:hasMainHandEnchant("Flametongue Weapon")
+    ```
 
 ---
 
@@ -363,22 +461,29 @@ PLAYER:hasMainHandEnchant("Flametongue Weapon")
 
 -   `SPELL`: The name or ID of the spell to check for on the off hand weapon enchant.
 
-#### Returns BOOL
+#### Returns `BOOL`
 
 -   `true` if off hand weapon is enchanted with the spell, false otherwise.
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "hasOffHandEnchant(Windfury Weapon)"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("hasOffHandEnchant")(_, "Windfury Weapon")
+    ```lua
+    {ACTION, "hasOffHandEnchant(Windfury Weapon)"},
+    ```
 
--- Lua Mode
-PLAYER:hasOffHandEnchant("Windfury Weapon")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("hasOffHandEnchant")(_, "Windfury Weapon")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:hasOffHandEnchant("Windfury Weapon")
+    ```
 
 ---
 
@@ -394,15 +499,20 @@ PLAYER:hasOffHandEnchant("Windfury Weapon")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "glyph(Glyph of Stars)"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("glyph")(_, "Glyph of Stars")
+    ```lua
+    {ACTION, "glyph(Glyph of Stars)"},
+    ```
 
--- Lua Mode
-PLAYER:Glyph("Glyph of Stars")
-```
+=== "Lua Code"
 
----
+    ```lua
+    _A.DSL:Get("glyph")(_, "Glyph of Stars")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Glyph("Glyph of Stars")
+    ```

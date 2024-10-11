@@ -16,16 +16,23 @@
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "conduit(Harm Denial).rank >= 2"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("conduit.rank")(_, "Harm Denial") >= 2
+    ```lua
+    {ACTION, "conduit(Harm Denial).rank >= 2"},
+    ```
 
--- Lua Mode
-PLAYER:ConduitRank("Harm Denial") >= 2
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("conduit.rank")(_, "Harm Denial") >= 2
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ConduitRank("Harm Denial") >= 2
+    ```
 
 ---
 
@@ -37,19 +44,26 @@ PLAYER:ConduitRank("Harm Denial") >= 2
 
 -   `spell`: The name or ID of the conduit spell.
 
-#### Returns `NUMBER`
+#### Returns `BOOL`
 
 -   `true` if the conduit is active, `false` otherwise.
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "conduit(Harm Denial).active"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("conduit.active")(_, "Harm Denial")
+    ```lua
+    {ACTION, "conduit(Harm Denial).active"},
+    ```
 
--- Lua Mode
-PLAYER:ConduitQctive("Harm Denial")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("conduit.active")(_, "Harm Denial")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ConduitActive("Harm Denial")
+    ```

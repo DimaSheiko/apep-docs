@@ -12,13 +12,20 @@
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "talent(Avatar)"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("talent")(_, "Avatar")
+    ```lua
+    {ACTION, "talent(Avatar)"},
+    ```
 
--- Lua Mode
-PLAYER:Talent("Avatar")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("talent")(_, "Avatar")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Talent("Avatar")
+    ```

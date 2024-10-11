@@ -32,16 +32,23 @@
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.state(fear || sleep)", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("state")("UNIT", "fear || sleep")
+    ```lua
+    {ACTION, "UNIT.state(fear || sleep)", UNIT},
+    ```
 
--- Lua Mode
-UNIT:State("fear || sleep")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("state")("UNIT", "fear || sleep")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:State("fear || sleep")
+    ```
 
 ---
 
@@ -76,16 +83,23 @@ UNIT:State("fear || sleep")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.immune(fear || charm)", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("immune")("UNIT", "fear || charm")
+    ```lua
+    {ACTION, "UNIT.immune(fear || charm)", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Immune("fear || charm")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("immune")("UNIT", "fear || charm")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Immune("fear || charm")
+    ```
 
 ---
 
@@ -104,13 +118,20 @@ UNIT:Immune("fear || charm")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.state(Fear).purge", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("state.purge")("UNIT", "Fear")
+    ```lua
+    {ACTION, "UNIT.state(Fear).purge", UNIT},
+    ```
 
--- Lua Mode
-UNIT:StatePurge("Fear")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("state.purge")("UNIT", "Fear")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:StatePurge("Fear")
+    ```

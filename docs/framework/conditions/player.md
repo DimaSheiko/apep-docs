@@ -10,18 +10,25 @@
 
 -   The number of members in the player's group.
 
-#### _Example:_
+#### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "num.members"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("num.members")()
+    ```lua
+    {ACTION, "num.members"},
+    ```
 
--- Lua Mode
-PLAYER:NumMembers()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("num.members")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:NumMembers()
+    ```
 
 ---
 
@@ -31,18 +38,25 @@ PLAYER:NumMembers()
 
 -   `true` if the player is not in a group, `false` otherwise.
 
-#### _Example:_
+#### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "issolo"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("issolo")()
+    ```lua
+    {ACTION, "issolo"},
+    ```
 
--- Lua Mode
-PLAYER:Issolo()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("issolo")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Issolo()
+    ```
 
 ---
 
@@ -52,18 +66,25 @@ PLAYER:Issolo()
 
 -   `true` if the player is in a party group, `false` otherwise.
 
-#### _Example:_
+#### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "isparty"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("isparty")()
+    ```lua
+    {ACTION, "isparty"},
+    ```
 
--- Lua Mode
-PLAYER:Isparty()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("isparty")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Isparty()
+    ```
 
 ---
 
@@ -73,18 +94,25 @@ PLAYER:Isparty()
 
 -   `true` if the player is in a raid group, `false` otherwise.
 
-#### _Example:_
+#### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "israid"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("israid")()
+    ```lua
+    {ACTION, "israid"},
+    ```
 
--- Lua Mode
-PLAYER:Israid()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("israid")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Israid()
+    ```
 
 ---
 
@@ -94,18 +122,25 @@ PLAYER:Israid()
 
 -   1 if solo, 2 if party, 3 if raid.
 
-#### _Example:_
+#### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "group.type==1"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("group.type")() == 1
+    ```lua
+    {ACTION, "group.type==1"},
+    ```
 
--- Lua Mode
-PLAYER:GroupType() == 1
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("group.type")() == 1
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:GroupType() == 1
+    ```
 
 ---
 
@@ -113,7 +148,7 @@ PLAYER:GroupType() == 1
 >
 > _`auto.attack || auto.shoot`_
 
--   This conditions checks if the player's character is performing an auto-attack or auto-shoot (for hunters).
+-   This condition checks if the player's character is performing an auto-attack or auto-shoot (for hunters).
 
 #### Returns `BOOL`
 
@@ -121,16 +156,23 @@ PLAYER:GroupType() == 1
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "auto.attack"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("auto.attack")()
+    ```lua
+    {ACTION, "auto.attack"},
+    ```
 
--- Lua Mode
-PLAYER:AutoAttack()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("auto.attack")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:AutoAttack()
+    ```
 
 ---
 
@@ -144,16 +186,23 @@ PLAYER:AutoAttack()
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "swimming"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("swimming")()
+    ```lua
+    {ACTION, "swimming"},
+    ```
 
--- Lua Mode
-PLAYER:Swimming()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("swimming")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Swimming()
+    ```
 
 ---
 
@@ -167,22 +216,29 @@ PLAYER:Swimming()
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "falling"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("falling")()
+    ```lua
+    {ACTION, "falling"},
+    ```
 
--- Lua Mode
-PLAYER:Falling()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("falling")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Falling()
+    ```
 
 ---
 
 > ## falling.duration
 
--   These conditions provide the duration for which the player character has been falling.
+-   This condition provides the duration for which the player character has been falling.
 
 #### Returns `NUMBER`
 
@@ -190,16 +246,23 @@ PLAYER:Falling()
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "falling.duration > 1.5"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("falling.duration")() > 1.5
+    ```lua
+    {ACTION, "falling.duration > 1.5"},
+    ```
 
--- Lua Mode
-PLAYER:FallingDuration() > 1.5
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("falling.duration")() > 1.5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:FallingDuration() > 1.5
+    ```
 
 ---
 
@@ -213,16 +276,23 @@ PLAYER:FallingDuration() > 1.5
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "indoors"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("indoors")()
+    ```lua
+    {ACTION, "indoors"},
+    ```
 
--- Lua Mode
-PLAYER:Indoors()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("indoors")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Indoors()
+    ```
 
 ---
 
@@ -236,16 +306,23 @@ PLAYER:Indoors()
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "mounted"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("mounted")()
+    ```lua
+    {ACTION, "mounted"},
+    ```
 
--- Lua Mode
-PLAYER:Mounted()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("mounted")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Mounted()
+    ```
 
 ---
 
@@ -259,16 +336,23 @@ PLAYER:Mounted()
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "outcombat.time > 10"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("outcombat.time")() > 10
+    ```lua
+    {ACTION, "outcombat.time > 10"},
+    ```
 
--- Lua Mode
-PLAYER:OutcombatTime() > 10
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("outcombat.time")() > 10
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:OutcombatTime() > 10
+    ```
 
 ---
 
@@ -278,24 +362,27 @@ PLAYER:OutcombatTime() > 10
 
 #### Returns `BOOL`
 
--   `true` if the player is in any of control states, otherwise `false`.
-
-    `"stunned", "sapped", "disoriented",	"polymorphed", "incapacitated",`
-    `"feared",	"horrified", "fleeing",	"intimidated", "asleep", "charmed",`
-    `"banished",	"silenced",	"paralyzed"`
+-   `true` if the player is in any control states, otherwise `false`.
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "lost.control"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("lost.control")()
+    ```lua
+    {ACTION, "lost.control"},
+    ```
 
--- Lua Mode
-PLAYER:LostControl()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("lost.control")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:LostControl()
+    ```
 
 ---
 
@@ -311,22 +398,25 @@ PLAYER:LostControl()
 
 -   `true` if the player is in any of the specified loss of control states, otherwise `false`.
 
-    `"stunned", "sapped", "disoriented",	"polymorphed", "incapacitated",`
-    `"feared",	"horrified", "fleeing",	"intimidated", "asleep", "charmed",`
-    `"banished",	"silenced",	"paralyzed"`
-
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "out.of.control(feared || incapacitate)"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("out.of.control")(_, "feared || incapacitate")
+    ```lua
+    {ACTION, "out.of.control(feared || incapacitate)"},
+    ```
 
--- Lua Mode
-PLAYER:OutOfControl("feared || incapacitate")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("out.of.control")(_, "feared || incapacitate")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:OutOfControl("feared || incapacitate")
+    ```
 
 ---
 
@@ -344,16 +434,23 @@ PLAYER:OutOfControl("feared || incapacitate")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "lastcast(Vendeta)"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("lastcast")(_, "Vendeta")
+    ```lua
+    {ACTION, "lastcast(Vendeta)"},
+    ```
 
--- Lua Mode
-PLAYER:Lastcast("Vendeta")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("lastcast")(_, "Vendeta")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Lastcast("Vendeta")
+    ```
 
 ---
 
@@ -371,16 +468,23 @@ PLAYER:Lastcast("Vendeta")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.lasttarget"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("lasttarget")(_, "UNIT")
+    ```lua
+    {ACTION, "UNIT.lasttarget"},
+    ```
 
--- Lua Mode
-UNIT:lasttarget()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("lasttarget")(_, "UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:lasttarget()
+    ```
 
 ---
 
@@ -398,16 +502,23 @@ UNIT:lasttarget()
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "lastcast(Battle Cry).succeed"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("lastcast.succeed")(_, "Battle Cry")
+    ```lua
+    {ACTION, "lastcast(Battle Cry).succeed"},
+    ```
 
--- Lua Mode
-PLAYER:LastcastSucceed("Battle Cry")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("lastcast.succeed")(_, "Battle Cry")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:LastcastSucceed("Battle Cry")
+    ```
 
 ---
 
@@ -428,16 +539,23 @@ PLAYER:LastcastSucceed("Battle Cry")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "prev(Regrowth, 2).gcd"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("prev.gcd")(_, "Regrowth, 2")
+    ```lua
+    {ACTION, "prev(Regrowth, 2).gcd"},
+    ```
 
--- Lua Mode
-PLAYER:PrevGcd("Regrowth", 2)
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("prev.gcd")(_, "Regrowth, 2")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:PrevGcd("Regrowth", 2)
+    ```
 
 ---
 
@@ -457,16 +575,23 @@ PLAYER:PrevGcd("Regrowth", 2)
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "lastcast(Aimed Shot).seen"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("lastcast.seen")(_, "Aimed Shot")
+    ```lua
+    {ACTION, "lastcast(Aimed Shot).seen"},
+    ```
 
--- Lua Mode
-PLAYER:LastcastSeen("Aimed Shot")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("lastcast.seen")(_, "Aimed Shot")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:LastcastSeen("Aimed Shot")
+    ```
 
 ---
 
@@ -485,16 +610,23 @@ PLAYER:LastcastSeen("Aimed Shot")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.unitLastCast(Counterspell).succeed"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("unitLastCast.succeed")("UNIT", "Counterspell")
+    ```lua
+    {ACTION, "UNIT.unitLastCast(Counterspell).succeed"},
+    ```
 
--- Lua Mode
-UNIT:UnitLastCastSucceed("Counterspell")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("unitLastCast.succeed")("UNIT", "Counterspell")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:UnitLastCastSucceed("Counterspell")
+    ```
 
 ---
 
@@ -513,16 +645,23 @@ UNIT:UnitLastCastSucceed("Counterspell")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "lastcast(Rejuvenation).count"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("lastcast.count")(_, "Rejuvenation")
+    ```lua
+    {ACTION, "lastcast(Rejuvenation).count"},
+    ```
 
--- Lua Mode
-PLAYER:LastcastCount("Rejuvenation")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("lastcast.count")(_, "Rejuvenation")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:LastcastCount("Rejuvenation")
+    ```
 
 ---
 
@@ -538,16 +677,23 @@ PLAYER:LastcastCount("Rejuvenation")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "sform=5"}, -- Bear Form
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("sform")() == 5
+    ```lua
+    {ACTION, "sform=5"}, -- Bear Form
+    ```
 
--- Lua Mode
-PLAYER:Sform()==5
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("sform")() == 5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Sform()==5
+    ```
 
 ---
 
@@ -567,16 +713,23 @@ PLAYER:Sform()==5
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "has(Swift Flight Form).form"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("has.form")(_, "Swift Flight Form")
+    ```lua
+    {ACTION, "has(Swift Flight Form).form"},
+    ```
 
--- Lua Mode
-PLAYER:HasForm("Swift Flight Form")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("has.form")(_, "Swift Flight Form")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:HasForm("Swift Flight Form")
+    ```
 
 ---
 
@@ -590,16 +743,23 @@ PLAYER:HasForm("Swift Flight Form")
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "spell.IsTargeting"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("spell.IsTargeting")()
+    ```lua
+    {ACTION, "spell.IsTargeting"},
+    ```
 
--- Lua Mode
-PLAYER:SpellIsTargeting()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.IsTargeting")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellIsTargeting()
+    ```
 
 ---
 
@@ -613,16 +773,23 @@ PLAYER:SpellIsTargeting()
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "isStealthed"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("isStealthed")()
+    ```lua
+    {ACTION, "isStealthed"},
+    ```
 
--- Lua Mode
-PLAYER:IsStealthed()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("isStealthed")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:IsStealthed()
+    ```
 
 ---
 
@@ -636,13 +803,20 @@ PLAYER:IsStealthed()
 
 #### _Examples:_
 
-```lua
--- DSL Mode
-{ACTION, "isHavingLunch"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("isHavingLunch")()
+    ```lua
+    {ACTION, "isHavingLunch"},
+    ```
 
--- Lua Mode
-PLAYER:IsHavingLunch()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("isHavingLunch")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:IsHavingLunch()
+    ```

@@ -24,16 +24,23 @@
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "mouse(3)"}, -- MiddleButton
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("mouse")(_, "Button4") -- 4
+    ```lua
+    {ACTION, "mouse(3)"}, -- MiddleButton
+    ```
 
--- Lua Mode
-PLAYER:Mouse(2) -- RightButton
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("mouse")(_, "Button4") -- 4
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Mouse(2) -- RightButton
+    ```
 
 ---
 
@@ -63,13 +70,20 @@ PLAYER:Mouse(2) -- RightButton
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "keybind(alt)"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("keybind")(_, "alt")
+    ```lua
+    {ACTION, "keybind(alt)"},
+    ```
 
--- Lua Mode
-PLAYER:Keybind("alt")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("keybind")(_, "alt")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Keybind("alt")
+    ```

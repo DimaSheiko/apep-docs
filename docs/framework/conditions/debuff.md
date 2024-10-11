@@ -19,16 +19,23 @@
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.debuff(Corruption)", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("debuff")("UNIT", "Corruption")
+    ```lua
+    {ACTION, "UNIT.debuff(Corruption)", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Debuff("Corruption")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff")("UNIT", "Corruption")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Debuff("Corruption")
+    ```
 
 ---
 
@@ -49,16 +56,23 @@ UNIT:Debuff("Corruption")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.debuff(Chains of Ice).any", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("debuff.any")("UNIT", "Chains of Ice")
+    ```lua
+    {ACTION, "UNIT.debuff(Chains of Ice).any", UNIT},
+    ```
 
--- Lua Mode
-UNIT:DebuffAny("Chains of Ice")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff.any")("UNIT", "Chains of Ice")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DebuffAny("Chains of Ice")
+    ```
 
 ---
 
@@ -79,16 +93,23 @@ UNIT:DebuffAny("Chains of Ice")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.debuff(Razorice).stack >= 3", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("debuff.stack")("UNIT", "Razorice") >= 3
+    ```lua
+    {ACTION, "UNIT.debuff(Razorice).stack >= 3", UNIT},
+    ```
 
--- Lua Mode
-UNIT:DebuffStack("Razorice") >= 3
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff.stack")("UNIT", "Razorice") >= 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DebuffStack("Razorice") >= 3
+    ```
 
 ---
 
@@ -109,16 +130,23 @@ UNIT:DebuffStack("Razorice") >= 3
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.debuff(Necrotic Rot).stack.any >= 25", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("debuff.stack.any")("UNIT", "Necrotic Rot") >= 25
+    ```lua
+    {ACTION, "UNIT.debuff(Necrotic Rot).stack.any >= 25", UNIT},
+    ```
 
--- Lua Mode
-UNIT:DebuffStackAny("Necrotic Rot") >= 25
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff.stack.any")("UNIT", "Necrotic Rot") >= 25
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DebuffStackAny("Necrotic Rot") >= 25
+    ```
 
 ---
 
@@ -139,16 +167,23 @@ UNIT:DebuffStackAny("Necrotic Rot") >= 25
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.debuff(Corruption).duration", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("debuff.duration")("UNIT", "Corruption")
+    ```lua
+    {ACTION, "UNIT.debuff(Corruption).duration", UNIT},
+    ```
 
--- Lua Mode
-UNIT:DebuffDuration("Corruption")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff.duration")("UNIT", "Corruption")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DebuffDuration("Corruption")
+    ```
 
 ---
 
@@ -167,16 +202,23 @@ UNIT:DebuffDuration("Corruption")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.debuff(Corruption).totalduration", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("debuff.totalduration")("UNIT", "Corruption")
+    ```lua
+    {ACTION, "UNIT.debuff(Corruption).totalduration", UNIT},
+    ```
 
--- Lua Mode
-UNIT:DebuffTotalduration("Corruption")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff.totalduration")("UNIT", "Corruption")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DebuffTotalduration("Corruption")
+    ```
 
 ---
 
@@ -196,16 +238,23 @@ UNIT:DebuffTotalduration("Corruption")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.debuff(Corruption).refreshable", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("debuff.refreshable")("UNIT", "Corruption")
+    ```lua
+    {ACTION, "UNIT.debuff(Corruption).refreshable", UNIT},
+    ```
 
--- Lua Mode
-UNIT:DebuffRefreshable("Corruption")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff.refreshable")("UNIT", "Corruption")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DebuffRefreshable("Corruption")
+    ```
 
 ---
 
@@ -226,16 +275,23 @@ UNIT:DebuffRefreshable("Corruption")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.debuff(Quake).duration.any", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("debuff.duration.any")("UNIT", "Quake")
+    ```lua
+    {ACTION, "UNIT.debuff(Quake).duration.any", UNIT},
+    ```
 
--- Lua Mode
-UNIT:DebuffDurationAny("Quake")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff.duration.any")("UNIT", "Quake")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DebuffDurationAny("Quake")
+    ```
 
 ---
 
@@ -254,16 +310,23 @@ UNIT:DebuffDurationAny("Quake")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.debuff(Razorice).many", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("debuff.many")("UNIT", "Razorice")
+    ```lua
+    {ACTION, "UNIT.debuff(Razorice).many", UNIT},
+    ```
 
--- Lua Mode
-UNIT:DebuffMany("Razorice")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff.many")("UNIT", "Razorice")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DebuffMany("Razorice")
+    ```
 
 ---
 
@@ -282,16 +345,23 @@ UNIT:DebuffMany("Razorice")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.debuff(debuff_name).many.any", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("debuff.many.any")("UNIT", "debuff_name")
+    ```lua
+    {ACTION, "UNIT.debuff(debuff_name).many.any", UNIT},
+    ```
 
--- Lua Mode
-UNIT:DebuffManyAny("debuff_name")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff.many.any")("UNIT", "debuff_name")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DebuffManyAny("debuff_name")
+    ```
 
 ---
 
@@ -312,13 +382,20 @@ UNIT:DebuffManyAny("debuff_name")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.debuff(Curse).type", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("debuff.type")("UNIT", "Curse")
+    ```lua
+    {ACTION, "UNIT.debuff(Curse).type", UNIT},
+    ```
 
--- Lua Mode
-UNIT:DebuffType("Curse")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff.type")("UNIT", "Curse")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DebuffType("Curse")
+    ```

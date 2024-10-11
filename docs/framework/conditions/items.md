@@ -18,16 +18,23 @@
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "equipped(Draught of Souls)"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("equipped")(_, "Draught of Souls")
+    ```lua
+    {ACTION, "equipped(Draught of Souls)"},
+    ```
 
--- Lua Mode
-PLAYER:Equipped("Draught of Souls")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("equipped")(_, "Draught of Souls")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Equipped("Draught of Souls")
+    ```
 
 ---
 
@@ -45,16 +52,23 @@ PLAYER:Equipped("Draught of Souls")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "item(Draught of Souls).cooldown >= 20"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("item.cooldown")(_, "Draught of Souls") >= 20
+    ```lua
+    {ACTION, "item(Draught of Souls).cooldown >= 20"},
+    ```
 
--- Lua Mode
-PLAYER:ItemCooldown("Draught of Souls") >= 20
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("item.cooldown")(_, "Draught of Souls") >= 20
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ItemCooldown("Draught of Souls") >= 20
+    ```
 
 ---
 
@@ -72,16 +86,23 @@ PLAYER:ItemCooldown("Draught of Souls") >= 20
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "item(Draught of Souls).usable >= 20"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("item.usable")(_, "Draught of Souls") >= 20
+    ```lua
+    {ACTION, "item(Draught of Souls).usable >= 20"},
+    ```
 
--- Lua Mode
-PLAYER:ItemUsable("Draught of Souls") >= 20
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("item.usable")(_, "Draught of Souls") >= 20
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ItemUsable("Draught of Souls") >= 20
+    ```
 
 ---
 
@@ -99,16 +120,23 @@ PLAYER:ItemUsable("Draught of Souls") >= 20
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "item(Healthstone).count > 0"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("item.count")(_, "Healthstone") > 0
+    ```lua
+    {ACTION, "item(Healthstone).count > 0"},
+    ```
 
--- Lua Mode
-PLAYER:ItemCount("Healthstone") > 0
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("item.count")(_, "Healthstone") > 0
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ItemCount("Healthstone") > 0
+    ```
 
 ---
 
@@ -126,16 +154,23 @@ PLAYER:ItemCount("Healthstone") > 0
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "item(Sunblood Amethyst).range"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("item.range")(_, "Sunblood Amethyst")
+    ```lua
+    {ACTION, "item(Sunblood Amethyst).range"},
+    ```
 
--- Lua Mode
-PLAYER:ItemRange("Sunblood Amethyst")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("item.range")(_, "Sunblood Amethyst")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ItemRange("Sunblood Amethyst")
+    ```
 
 ---
 
@@ -149,16 +184,23 @@ PLAYER:ItemRange("Sunblood Amethyst")
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "ilevel >= 240"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("ilevel")() >= 240
+    ```lua
+    {ACTION, "ilevel >= 240"},
+    ```
 
--- Lua Mode
-PLAYER:Ilevel() >= 240
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("ilevel")() >= 240
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Ilevel() >= 240
+    ```
 
 ---
 
@@ -172,16 +214,23 @@ PLAYER:Ilevel() >= 240
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "twohand"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("twohand")()
+    ```lua
+    {ACTION, "twohand"},
+    ```
 
--- Lua Mode
-PLAYER:Twohand()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("twohand")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Twohand()
+    ```
 
 ---
 
@@ -195,16 +244,23 @@ PLAYER:Twohand()
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "onehand"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("onehand")()
+    ```lua
+    {ACTION, "onehand"},
+    ```
 
--- Lua Mode
-PLAYER:Onehand()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("onehand")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Onehand()
+    ```
 
 ---
 
@@ -222,13 +278,20 @@ PLAYER:Onehand()
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "tier(T20) >= 2"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("tier")(_, "T20") >= 2
+    ```lua
+    {ACTION, "tier(T20) >= 2"},
+    ```
 
--- Lua Mode
-PLAYER:Tier("T20") >= 2
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("tier")(_, "T20") >= 2
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Tier("T20") >= 2
+    ```

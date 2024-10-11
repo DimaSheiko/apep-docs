@@ -16,16 +16,23 @@
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.health >= 80", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("health")("UNIT") >= 80
+    ```lua
+    {ACTION, "UNIT.health >= 80", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Health() >= 80
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("health")("UNIT") >= 80
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Health() >= 80
+    ```
 
 ---
 
@@ -43,16 +50,23 @@ UNIT:Health() >= 80
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.health.actual >= 35000", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("health.actual")("UNIT") >= 35000
+    ```lua
+    {ACTION, "UNIT.health.actual >= 35000", UNIT},
+    ```
 
--- Lua Mode
-UNIT:HealthActual() >= 35000
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("health.actual")("UNIT") >= 35000
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:HealthActual() >= 35000
+    ```
 
 ---
 
@@ -70,16 +84,23 @@ UNIT:HealthActual() >= 35000
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.health.max >= 150000", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("health.max")("UNIT") >= 150000
+    ```lua
+    {ACTION, "UNIT.health.max >= 150000", UNIT},
+    ```
 
--- Lua Mode
-UNIT:HealthMax() >= 150000
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("health.max")("UNIT") >= 150000
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:HealthMax() >= 150000
+    ```
 
 ---
 
@@ -87,7 +108,7 @@ UNIT:HealthMax() >= 150000
 >
 > _`health.predicted || healthp`_
 
--   This condition return the predicted health percentage of the specified unit.
+-   This condition returns the predicted health percentage of the specified unit.
 
 #### Parameters
 
@@ -99,22 +120,29 @@ UNIT:HealthMax() >= 150000
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.health.predicted >= 80", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("health.predicted")("UNIT") >= 80
+    ```lua
+    {ACTION, "UNIT.health.predicted >= 80", UNIT},
+    ```
 
--- Lua Mode
-UNIT:HealthPredicted() >= 80
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("health.predicted")("UNIT") >= 80
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:HealthPredicted() >= 80
+    ```
 
 ---
 
 > ## health.predicted.actual
 
--   This condition returns the predicted actual health value of the specified unit
+-   This condition returns the predicted actual health value of the specified unit.
 
 #### Parameters
 
@@ -126,16 +154,23 @@ UNIT:HealthPredicted() >= 80
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.health.predicted.actual >= 35000", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("health.predicted.actual")("UNIT") >= 35000
+    ```lua
+    {ACTION, "UNIT.health.predicted.actual >= 35000", UNIT},
+    ```
 
--- Lua Mode
-UNIT:HealthPredictedActual() >= 35000
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("health.predicted.actual")("UNIT") >= 35000
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:HealthPredictedActual() >= 35000
+    ```
 
 ---
 
@@ -156,16 +191,23 @@ UNIT:HealthPredictedActual() >= 35000
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(40, 80).heal >= 4", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.heal")("UNIT", "40, 80") >= 4
+    ```lua
+    {ACTION, "UNIT.area(40, 80).heal >= 4", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaHeal(40, 80) >= 4
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.heal")("UNIT", "40, 80") >= 4
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaHeal(40, 80) >= 4
+    ```
 
 ---
 
@@ -186,13 +228,20 @@ UNIT:AreaHeal(40, 80) >= 4
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.area(40, 80).heal.infront >= 4", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("area.heal.infront")("UNIT", "40, 80") >= 4
+    ```lua
+    {ACTION, "UNIT.area(40, 80).heal.infront >= 4", UNIT},
+    ```
 
--- Lua Mode
-UNIT:AreaHealInfront(40, 80) >= 4
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.heal.infront")("UNIT", "40, 80") >= 4
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaHealInfront(40, 80) >= 4
+    ```

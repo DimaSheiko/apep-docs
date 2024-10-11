@@ -14,18 +14,25 @@
 
     `"MasterToggle", "Interrupts", "Cooldowns", "AoE"` and `"custom_toggles"`.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "toggle(AoE)"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("toggle")(_, "AoE")
+    ```lua
+    {ACTION, "toggle(AoE)"},
+    ```
 
--- Lua Mode
-PLAYER:Toggle("AoE")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("toggle")(_, "AoE")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Toggle("AoE")
+    ```
 
 ---
 
@@ -39,25 +46,25 @@ PLAYER:Toggle("AoE")
 
 -   The value associated with the provided key in the GUI configuration.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
-local GUI = {
-    ...
-    {type = "checkbox",	text = "Ashamane's Frenzy", key = "ashamane_key", default = true},
-    ...
-```
+=== "DSL"
 
-```lua
--- DSL Mode
-{ACTION, "ui(ashamane_key)"},
+    ```lua
+    {ACTION, "ui(ashamane_key)" },
+    ```
 
--- in Lua code
-_A.DSL:Get("ui")(_, "ashamane_key")
+=== "Lua Code"
 
--- Lua Mode
-PLAYER:Ui("ashamane_key")
-```
+    ```lua
+    _A.DSL:Get("ui")(_, "ashamane_key")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Ui("ashamane_key")
+    ```
 
 ---
 
@@ -69,18 +76,25 @@ PLAYER:Ui("ashamane_key")
 
 -   The GCD duration in seconds.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "gcd <= 1"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("gcd")() <= 1
+    ```lua
+    {ACTION, "gcd <= 1"},
+    ```
 
--- Lua Mode
-PLAYER:Gcd() <= 1
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("gcd")() <= 1
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Gcd() <= 1
+    ```
 
 ---
 
@@ -96,18 +110,25 @@ PLAYER:Gcd() <= 1
 
 -   `true` if the specified unit is currently casting or channeling a spell, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.iscastingany", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("iscastingany")("UNIT")
+    ```lua
+    {ACTION, "UNIT.iscastingany", UNIT},
+    ```
 
--- Lua Mode
-UNIT:IscastingAnySpell()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("iscastingany")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IscastingAnySpell()
+    ```
 
 ---
 
@@ -122,21 +143,28 @@ UNIT:IscastingAnySpell()
 
 -   `true` if the specified unit is casting or channeling the specified spell, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.iscasting(Regrowth)", UNIT},
-{ACTION, "UNIT.iscasting(740)", UNIT}, -- Tranquility
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("iscasting")("UNIT", "Regrowth")
-_A.DSL:Get("iscasting")("UNIT", "740") -- Tranquility
+    ```lua
+    {ACTION, "UNIT.iscasting(Regrowth)", UNIT},
+    {ACTION, "UNIT.iscasting(740)", UNIT}, -- Tranquility
+    ```
 
--- Lua Mode
-UNIT:Iscasting("Regrowth")
-UNIT:Iscasting(740) -- Tranquility
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("iscasting")("UNIT", "Regrowth")
+    _A.DSL:Get("iscasting")("UNIT", "740") -- Tranquility
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Iscasting("Regrowth")
+    UNIT:Iscasting(740) -- Tranquility
+    ```
 
 ---
 
@@ -152,18 +180,25 @@ UNIT:Iscasting(740) -- Tranquility
 
 -   `true` if the specified unit is casting or channeling a spell on the player, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.isastingonme", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("isastingonme")("UNIT")
+    ```lua
+    {ACTION, "UNIT.isastingonme", UNIT},
+    ```
 
--- Lua Mode
-UNIT:IscastingOnMe()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("isastingonme")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IscastingOnMe()
+    ```
 
 ---
 
@@ -177,18 +212,25 @@ UNIT:IscastingOnMe()
 
 -   The percentage of completion for the casting ability.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.casting.percent >= 60", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("casting.percent")("UNIT") >= 60
+    ```lua
+    {ACTION, "UNIT.casting.percent >= 60", UNIT},
+    ```
 
--- Lua Mode
-UNIT:CastingPercent() >= 60
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("casting.percent")("UNIT") >= 60
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:CastingPercent() >= 60
+    ```
 
 ---
 
@@ -202,18 +244,25 @@ UNIT:CastingPercent() >= 60
 
 -   The percentage of completion for the channeling ability.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.channeling.percent >= 60", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("channeling.percent")("UNIT") >= 60
+    ```lua
+    {ACTION, "UNIT.channeling.percent >= 60", UNIT},
+    ```
 
--- Lua Mode
-UNIT:ChannelingPercent() >= 60
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("channeling.percent")("UNIT") >= 60
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:ChannelingPercent() >= 60
+    ```
 
 ---
 
@@ -229,18 +278,25 @@ UNIT:ChannelingPercent() >= 60
 -   2nd - The total cast time in `seconds`.
 -   3rd - `true`if the ability is being channeled, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.casting.delta < 0.5", UNIT},
+=== "DSL"
 
--- in Lua code
-local remaining, total, ischanneled = _A.DSL:Get("casting.delta")("UNIT")
+    ```lua
+    {ACTION, "UNIT.casting.delta < 0.5", UNIT},
+    ```
 
--- Lua Mode
-local remaining, total, ischanneled = UNIT:CastingDelta()
-```
+=== "Lua Code"
+
+    ```lua
+    local remaining, total, ischanneled = _A.DSL:Get("casting.delta")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    local remaining, total, ischanneled = UNIT:CastingDelta()
+    ```
 
 ---
 
@@ -254,18 +310,25 @@ local remaining, total, ischanneled = UNIT:CastingDelta()
 
 -   The length (duration) of the current cast in `seconds`.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.casting.length > 1.5", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("casting.length")("UNIT") > 1.5
+    ```lua
+    {ACTION, "UNIT.casting.length > 1.5", UNIT},
+    ```
 
--- Lua Mode
-UNIT:CastingLength() > 1.5
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("casting.length")("UNIT") > 1.5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:CastingLength() > 1.5
+    ```
 
 ---
 
@@ -279,18 +342,25 @@ UNIT:CastingLength() > 1.5
 
 -   The remaining time in `seconds` for the current cast, returns `999` if not currently casting.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.casting.remaining < 0.5", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("casting.remaining")("UNIT") < 0.5
+    ```lua
+    {ACTION, "UNIT.casting.remaining < 0.5", UNIT},
+    ```
 
--- Lua Mode
-UNIT:CastingRemaining() < 0.5
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("casting.remaining")("UNIT") < 0.5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:CastingRemaining() < 0.5
+    ```
 
 ---
 
@@ -307,18 +377,25 @@ This condition checks(using the `Wow api`) if a unit is currently casting a spec
 
 -   `true` if the unit is casting the specified spell, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.casting(Regrowth)", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("casting")("UNIT", "Regrowth")
+    ```lua
+    {ACTION, "UNIT.casting(Regrowth)", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Casting("Regrowth")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("casting")("UNIT", "Regrowth")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Casting("Regrowth")
+    ```
 
 ---
 
@@ -335,18 +412,25 @@ This condition checks(using the `Wow api`) if a unit is currently channeling a s
 
 -   `true` if the unit is channeling the specified spell, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.channeling(Regrowth)", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("channeling")("UNIT", "Regrowth")
+    ```lua
+    {ACTION, "UNIT.channeling(Regrowth)", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Channeling("Regrowth")
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("channeling")("UNIT", "Regrowth")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Channeling("Regrowth")
+    ```
 
 ---
 
@@ -361,18 +445,27 @@ UNIT:Channeling("Regrowth")
 
 -   `true` if it's a good time to interrupt the cast, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.interruptat(60)", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("interruptat")("UNIT", "60")
+    ```lua
+    {ACTION, "UNIT.interruptat(60)", UNIT},
+    ```
 
--- Lua Mode
-UNIT:Interruptat(60)
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("interruptat")("UNIT", "60")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Interruptat(60)
+    ```
+
+---
 
 > ## custom.interrupts
 
@@ -386,18 +479,25 @@ UNIT:Interruptat(60)
 
 -   `true` if a custom interrupt action is defined for the currently casting spell, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.custom.interrupts", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("custom.interrupts")("UNIT")
+    ```lua
+    {ACTION, "UNIT.custom.interrupts", UNIT},
+    ```
 
--- Lua Mode
-UNIT:CustomInterrupts()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("custom.interrupts")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:CustomInterrupts()
+    ```
 
 ---
 
@@ -413,18 +513,25 @@ UNIT:CustomInterrupts()
 
 -   `true` if a custom stun action is defined for the currently casting spell, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.custom.stuns", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("custom.stuns")("UNIT")
+    ```lua
+    {ACTION, "UNIT.custom.stuns", UNIT},
+    ```
 
--- Lua Mode
-UNIT:CustomStuns()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("custom.stuns")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:CustomStuns()
+    ```
 
 ---
 
@@ -440,24 +547,31 @@ UNIT:CustomStuns()
 
 -   `true` if a custom cc action is defined for the currently casting spell, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.custom.cc", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("custom.cc")("UNIT")
+    ```lua
+    {ACTION, "UNIT.custom.cc", UNIT},
+    ```
 
--- Lua Mode
-UNIT:CustomCc()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("custom.cc")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:CustomCc()
+    ```
 
 ---
 
 > ## custom.dispels
->
-> -- This condition checks if a custom dispellable buffs/debuff is present on the unit. (`in the plugin`)
+
+-   This condition checks if a custom dispellable buffs/debuff is present on the unit. (`in the plugin`)
 
 #### Parameters
 
@@ -467,24 +581,31 @@ UNIT:CustomCc()
 
 -   `true` if a custom dispellable buff/debuff is present on the unit, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.custom.dispels", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("custom.dispels")("UNIT")
+    ```lua
+    {ACTION, "UNIT.custom.dispels", UNIT},
+    ```
 
--- Lua Mode
-UNIT:CustomDispels()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("custom.dispels")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:CustomDispels()
+    ```
 
 ---
 
 > ## custom.purges
->
-> -- This condition checks if a custom purgable buffs/debuff is present on the unit. (`in the plugin`)
+
+-   This condition checks if a custom purgable buffs/debuff is present on the unit. (`in the plugin`)
 
 #### Parameters
 
@@ -494,15 +615,22 @@ UNIT:CustomDispels()
 
 -   `true` if a custom purgable buff/debuff is present on the unit, `false` otherwise.
 
-#### _Examples:_
+#### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "UNIT.custom.purges", UNIT},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("custom.purges")("UNIT")
+    ```lua
+    {ACTION, "UNIT.custom.purges", UNIT},
+    ```
 
--- Lua Mode
-UNIT:CustomPurges()
-```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("custom.purges")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:CustomPurges()
+    ```

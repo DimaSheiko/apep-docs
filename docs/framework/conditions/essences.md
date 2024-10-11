@@ -18,13 +18,24 @@
 
 #### _Example:_
 
-```lua
--- DSL Mode
-{ACTION, "essence(Essence of the Focusing Iris, passive).rank >= 2"},
+=== "DSL"
 
--- in Lua code
-_A.DSL:Get("essence.rank")(_, "The Well of Existence, main") >= 2
+    ```lua
+    {ACTION, "essence(Essence of the Focusing Iris, passive).rank >= 2"},
+    ```
 
--- Lua Mode
-PLAYER:EssenceRank("Blood of the Enemy, main") >= 2
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("essence.rank")(_, "The Well of Existence, main") >= 2
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:EssenceRank("Blood of the Enemy, main") >= 2
+    ```
+
+```
+
 ```
