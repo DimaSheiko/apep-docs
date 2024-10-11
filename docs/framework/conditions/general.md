@@ -48,6 +48,13 @@
 
 #### _Example:_
 
+```lua
+local GUI = {
+    ...
+    {type = "checkbox",	text = "Ashamane's Frenzy", key = "ashamane_key", default = true},
+    ...
+```
+
 === "DSL"
 
     ```lua
@@ -149,22 +156,28 @@
 
     ```lua
     {ACTION, "UNIT.iscasting(Regrowth)", UNIT},
-    {ACTION, "UNIT.iscasting(740)", UNIT}, -- Tranquility
+    {ACTION, "UNIT.iscasting(740)", UNIT}, -- (1)!
     ```
+
+    1. Tranquility
 
 === "Lua Code"
 
     ```lua
     _A.DSL:Get("iscasting")("UNIT", "Regrowth")
-    _A.DSL:Get("iscasting")("UNIT", "740") -- Tranquility
+    _A.DSL:Get("iscasting")("UNIT", "740") -- (1)!
     ```
+
+    1. Tranquility
 
 === "Lua Mode"
 
     ```lua
     UNIT:Iscasting("Regrowth")
-    UNIT:Iscasting(740) -- Tranquility
+    UNIT:Iscasting(740) -- (1)!
     ```
+
+    1. Tranquility
 
 ---
 

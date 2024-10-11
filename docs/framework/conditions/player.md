@@ -358,7 +358,9 @@
 
 > ## lost.control
 
--   This condition checks if the player is currently under the effect of any of the control states.
+-   This condition checks if the player is currently under the effect of any of the control states:
+    `stunned`, `sapped`, `disoriented`, `polymorphed`, `incapacitated`, `feared`, `horrified`,
+    `fleeing`, `intimidated`, `asleep`, `charmed`, `banished`, `silenced`, `paralyzed`.
 
 #### Returns `BOOL`
 
@@ -388,7 +390,9 @@
 
 > ## out.of.control
 
--   This condition checks if the player is currently in any of the specified loss of control states.
+-   This condition checks if the player is currently in any of the specified loss of control states:
+    `stunned`, `sapped`, `disoriented`, `polymorphed`, `incapacitated`, `feared`, `horrified`,
+    `fleeing`, `intimidated`, `asleep`, `charmed`, `banished`, `silenced`, `paralyzed`.
 
 #### Parameters
 
