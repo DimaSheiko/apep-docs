@@ -103,6 +103,7 @@ nav:
       - Conduits: framework/conditions/conduits.md
       - DBM: framework/conditions/dbm.md
       - Debuff: framework/conditions/debuff.md
+      - Diminished Returns: framework/conditions/diminished-returns.md
       - Essences: framework/conditions/essences.md
       - General: framework/conditions/general.md
       - Heal: framework/conditions/heal.md
