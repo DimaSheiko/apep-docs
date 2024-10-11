@@ -120,3 +120,6 @@ nav:
         - Create own fakeunit: framework/units/fakeunits/own-fakeunit.md
     - Object Manager:
       - framework/object-manager/index.md
+  - API:
+    - Apep: api/apep/index.md
+    - Lildraw: api/lildraw/index.md

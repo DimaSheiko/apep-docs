@@ -1,0 +1,1544 @@
+# APEP API Reference
+
+---
+
+> ## lTrim
+
+-   This function removes leading whitespace characters (spaces, tabs, etc.) from a string.
+
+#### Parameters
+
+-   `str`(string): The input string to be trimmed.
+
+#### Returns `string`
+
+-   The input string with leading whitespace removed.
+
+#### _Example:_
+
+```lua
+local trimmedString = _A.lTrim("    Hello, world!") -- (1)!
+```
+
+1. Removes leading whitespace characters.
+
+---
+
+> ## rTrim
+
+-   This function removes trailing whitespace characters (spaces, tabs, etc.) from a string.
+
+#### Parameters
+
+-   `str`(string): The input string to be trimmed.
+
+#### Returns `string`
+
+-   The input string with trailing whitespace removed.
+
+#### _Example:_
+
+```lua
+local trimmedString = _A.rTrim("Hello, world!    ") -- (1)!
+```
+
+1. Removes trailing whitespace characters.
+
+---
+
+> ## Trim
+
+-   This function removes both leading and trailing whitespace characters (spaces, tabs, etc.) from a string.
+
+#### Parameters
+
+-   `str`(string): The input string to be trimmed.
+
+#### Returns `string`
+
+-   The input string with leading and trailing whitespace removed.
+
+#### _Example:_
+
+```lua
+local trimmedString = _A.Trim("    Hello, world!    ") -- (1)!
+```
+
+1. Removes leading and trailing whitespace characters.
+
+---
+
+> ## print
+
+-   This function prints the specified arguments to the console with colorful output.
+
+#### Parameters
+
+-   `...`(any): The arguments to print.
+
+#### _Example:_
+
+```lua
+local mergedTable = _A.print("Hello", "world", "!") -- (1)!
+```
+
+1. Prints the provided arguments with colorful output.
+
+---
+
+> ## RandomNumber
+
+-   This function generates a random number within the specified range.
+
+#### Parameters
+
+-   `min`(number): The minimum value of the random number range.
+-   `max`(number): The maximum value of the random number range.
+
+#### Returns `number`
+
+-   A random number within the specified range.
+
+#### _Example:_
+
+```lua
+local randomValue = _A.RandomNumber(1, 100) -- (1)!
+```
+
+1. Generates a random number between 1 and 100.
+
+---
+
+> ## RandomString
+
+-   This function generates a random string of the specified length, containing both lowercase letters and digits.
+
+#### Parameters
+
+-   `length`(number): The length of the random string to generate.
+
+#### Returns `string`
+
+-   A random string of the specified length, containing a mix of lowercase letters and digits.
+
+#### _Example:_
+
+```lua
+local randomStr = _A.RandomString(10) -- (1)!
+```
+
+1. Generates a random string of length 10.
+
+---
+
+> ## ApepMod
+
+-   This function calculates the remainder of the division of two numbers using the Mod algorithm. The algorithm ensures that the result is always positive and between 0 and b. It calculates the remainder by subtracting the floor division of a by b multiplied by b from a.
+
+#### Parameters
+
+-   `a`(number): The dividend for which the remainder is calculated.
+-   `b`(number): The divisor.
+
+#### Returns
+
+-   `remainder`(number): The remainder of the division.
+
+#### _Example:_
+
+```lua
+local result = _A.ApepMod(25, 7)
+```
+
+---
+
+> ## TableMerge
+
+-   This function merges the contents of two tables.
+    If a key in both tables corresponds to a table value, the function recursively merges those nested tables.
+
+#### Parameters
+
+-   `t1`(table): The first table to merge.
+-   `t2`(table): The second table to merge.
+
+#### Returns `table`
+
+-   A table containing the merged contents of the two input tables.
+
+#### _Example:_
+
+```lua
+local table1 = { a = 1, b = { x = 2, y = 3 } }
+local table2 = { b = { y = 4, z = 5 }, c = 6 }
+local mergedTable = _A.TableMerge(table1, table2) -- (1)!
+```
+
+1. Merges the contents of the two tables.
+
+---
+
+> ## StrExplode
+
+-   This function takes a string and a delimiter character, and returns a table of substrings
+    obtained by splitting the input string at occurrences of the delimiter.
+
+#### Parameters
+
+-   `str`(string): The input string to be exploded.
+
+#### Returns `...`
+
+-   Multiple return values representing the substrings obtained after splitting.
+
+#### _Example:_
+
+```lua
+local first, second, third = _A.StrExplode("apple,banana,orange", ",") -- (1)!
+```
+
+1. Splits the input string into substrings.
+
+---
+
+> ## GetObjectCount
+
+-   This function returns the total number of objects currently present in the object manager.
+
+#### Returns
+
+-   `count`(number): The number of objects in the object manager.
+
+!> **DEPRECATED**
+
+#### _Example:_
+
+```lua
+local objectCount = _A.GetObjectCount() -- (1)!
+```
+
+1. Retrieves the total number of objects in the object manager.
+
+---
+
+> ## GetObjectWithIndex
+
+-   This function takes an index as input and returns the pointer of the object with that index in the object manager.
+
+#### Parameters
+
+-   `index`(number): The index of the object to retrieve the pointer for.
+
+#### Returns
+
+-   `pointer`(string): The pointer of the object with the specified index.
+
+!> **DEPRECATED**
+
+#### _Example:_
+
+```lua
+local objectCount = _A.GetObjectCount() -- (1)!
+
+for i=1, objectCount do -- (2)!
+  print(_A.GetObjectWithIndex(i))
+end
+```
+
+1. Retrieves the total number of objects in the object manager.
+2. Iterate through each object index and print its pointer.
+
+---
+
+> ## ObjectPointer
+
+#### Parameters
+
+-   `object`(string): The object.
+
+#### Returns `string` or `nil`
+
+-   The pointer as a `hexadecimal string` prefixed by 0x, or `nil` if the object does not exist.
+
+!>**Note:** If the object doesn't exist, for example, ObjectPointer("party1target"), it returns nil. This API is mainly useful to get the object address of unitIDs like "target", "mouseover", etc. ObjectPointer("0xDEADBEEF") simply returns "0xDEADBEEF" and does NOT check if the address exists in the object manager. Avoid using this for arbitrary addresses.
+
+#### _Example:_
+
+```lua
+_A.ObjectPointer("raid1")
+```
+
+---
+
+> ## ObjectExists
+
+-   Get whether an object exists in the object manager with O(n) performance.
+
+#### Parameters
+
+-   `object`(string): The object.
+
+#### Returns `bool`
+
+-   `true` if object exists in the object manager, `false` otherwise.
+
+#### _Example:_
+
+```lua
+_A.ObjectExists("part1target")
+```
+
+---
+
+> ## ObjectIsVisible
+
+-   Get whether an object is visible in the object manager with O(1) performance.
+
+#### Parameters
+
+-   `object`(string): The object.
+
+#### Returns `bool`
+
+-   `true` if object is visible, `false` otherwise.
+
+#### _Example:_
+
+```lua
+_A.ObjectIsVisible("0x10AE05BD")
+```
+
+---
+
+> ## ObjectPosition
+
+-   Get an object's position.
+
+#### Parameters
+
+-   `object`(string): The object.
+
+#### Returns `number`, `number`, `number`
+
+-   The x, y, and z coordinates
+
+!>**Note:** If the object doesn't exist, it returns (nil, nil, nil)
+
+#### _Example:_
+
+```lua
+_A.ObjectPosition("mouseover")
+```
+
+---
+
+> ## ObjectFacing
+
+-   Get an object's facing.
+
+#### Parameters
+
+-   `object`(string): The object.
+
+#### Returns `number`
+
+-   The facing (angle in xy) in radians
+
+!>**Note:** If the object doesn't exist, it returns nil.
+
+#### _Example:_
+
+```lua
+_A.ObjectFacing("player")
+```
+
+---
+
+> ## ObjectCreator
+
+-   This function retrieves the GUID of the creator who created the specified fishing bobber object.
+
+#### Parameters
+
+-   `object`(string): The pointer of the object for which to retrieve the creator's pointer.
+
+#### Return `string`
+
+-   The pointer of the unit who created the object, or nil if the object or its creator's pointer is not available.
+
+#### _Example:_
+
+```lua
+local objectPointer = "0x01234567"
+local unitPointer = _A.ObjectCreator(objectPointer) -- (1)!
+```
+
+1. Retrieves the pointer of the creator of the specified object.
+
+---
+
+> ## BobberCreator
+
+-   This function retrieves the GUID of the creator of the fishing bobber object.
+
+#### Parameters
+
+-   `object`(string): The pointer of the fishing bobber object for which to retrieve the creator's GUID.
+
+#### Returns `string`
+
+-   The GUID of the creator who created the fishing bobber object, or nil if the object is not a valid.
+
+#### _Example:_
+
+```lua
+local bobberPointer = "0x01234567"
+local creatorGUID = _A.BobberCreator(bobberPointer) -- (1)!
+```
+
+1. Retrieves the GUID of the creator of the fishing bobber.
+
+---
+
+> ## BobberIsAnimating
+
+-   This function checks whether the specified fishing bobber object is currently animating,
+    indicating that it has caught a fish.
+
+#### Parameters
+
+-   `object`(string): The fishing bobber object to check for animation.
+
+#### Returns `bool`
+
+-   `true` if the fishing bobber object is animating, indicating it has caught a fish, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local bobberPointer = "0x01234567"
+local isAnimating = _A.BobberIsAnimating(bobberPointer) -- (1)!
+```
+
+1. Checks if the specified fishing bobber object is animating.
+
+---
+
+> ## UnitTarget
+
+-   This function takes a unit object and returns the target of that unit as its pointer and GUID.
+
+#### Parameters
+
+-   `object`(string): The unit object for which to retrieve the target.
+
+#### Returns `pointer`, `guid`
+
+-   `pointer`(string): The pointer of the unit's target.
+-   `guid`(string): The GUID of the unit's target.
+
+#### _Example:_
+
+```lua
+local pointer, GUID = _A.UnitTarget("mouseover") -- (1)!
+```
+
+1. Retrieves the target of the 'mouseover'.
+
+---
+
+> ## UnitCastID
+
+-   This function takes a unit object as a parameter and returns information about the unit's current cast, including its cast ID, pointer, and GUID.
+
+#### Parameters
+
+-   `object`(string): The unit object for which to retrieve the cast information.
+
+#### Returns `castId`, `pointer`, `guid`
+
+-   `castId`(number): The cast ID of the unit's current cast.
+-   `pointer`(string): The pointer of the unit's cast.
+-   `guid`(string): The GUID of the unit's cast.
+
+#### _Example:_
+
+```lua
+local castId, tarPointer, tarGUID = _A.UnitCastID("target") -- (1)!
+if castId==12345 then
+    -- (2)!
+end
+```
+
+1. Retrieves the cast information of the 'target' unit.
+2. Do something
+
+---
+
+> ## UnitIsFacing
+
+-   This function checks whether the first unit is facing the second unit within the specified angle range.
+
+#### Parameters
+
+-   `object1`(string): The pointer or unitId of the first unit.
+-   `object2`(string): The pointer or unitId of the second unit.
+-   `angle`(number): [`optional`] The angle range (in degrees) within which the first unit is considered to be facing the second unit. Default is 180 degrees.
+
+#### Returns
+
+-   `isFacing`(bool): `true` if the first unit is facing the second unit within the specified angle range, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local angleThreshold = 90
+local isFacingTarget = _A.UnitIsFacing("player", "target", angleThreshold) -- (1)!
+```
+
+1. Checks if the player is facing the target within a 90-degree angle.
+
+---
+
+> ## PositionIsFacingPosition
+
+-   This function checks whether a position (defined by coordinates and facing angle) is facing another position within the specified angle range.
+
+#### Parameters
+
+-   `oX`(number): The X-coordinate of the position from which the facing angle originates.
+-   `oY`(number): The Y-coordinate of the position from which the facing angle originates.
+-   `dX`(number): The X-coordinate of the position to which the facing angle is directed.
+-   `dY`(number): The Y-coordinate of the position to which the facing angle is directed.
+-   `oFacing`(number): The facing angle (in radians) of the origin position.
+-   `angle`(number): [`optional`] The angle range (in degrees) within which the origin position is considered to be facing the target position. Default is 180 degrees.
+
+#### Returns
+
+-   `isFacing`(bool): `true` if the origin position is facing the target position within the specified angle range, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local playerX, playerY = _A.ObjectPosition("player")
+local playerFacing = _A.ObjectFacing("player")
+local targetX, targetY = _A.ObjectPosition("target")
+local angleThreshold = 90
+local isFacingTarget = _A.PositionIsFacingPosition(playerX, playerY, targetX, targetY, playerFacing, angleThreshold)
+```
+
+---
+
+> ## ObjectID
+>
+> _`ObjectID || ObjectEntry`_
+
+-   This function retrieves the entry ID of an object identified by its pointer.
+
+#### Parameters
+
+-   `object`(string): The pointer or object identifier (e.g., "player", "target", or a pointer value).
+
+#### Returns
+
+-   `entryID`(number): The entry ID of the object, or `nil` if the object pointer is invalid or not found.
+
+#### _Example:_
+
+```lua
+local targetEntryID = _A.ObjectID("target")
+```
+
+---
+
+> ## ObjectID_GUID
+
+-   This function retrieves the entry ID and GUID of an object identified by its pointer or object identifier.
+
+#### Parameters
+
+-   `object`(string): The pointer or object identifier (e.g., "player", "target", or a pointer value).
+
+#### Returns `entryID`, `guid`
+
+-   `entryID`(number): The entry ID of the object, or `nil` if the object pointer is invalid or not found.
+-   `guid`(string): The GUID of the object, or `nil` if the object pointer is invalid or not found.
+
+#### _Example:_
+
+```lua
+local targetEntryID, targetGUID = _A.ObjectID_GUID("target")
+```
+
+---
+
+> ## ObjectRawType
+
+-   This function retrieves the raw type of an object identified by its pointer or object identifier. The raw type provides information about the object's category, such as player, unit, item, game object, etc.
+
+#### Parameters
+
+-   `object`(string): The pointer or object identifier (e.g., "player", "target", or a pointer value).
+
+#### Returns
+
+-   `objectType`(number): The raw type of the object, or `nil` if the object pointer is invalid or not found.
+
+#### _Example:_
+
+```lua
+local targetType = _A.ObjectRawType("target")
+```
+
+---
+
+> ## ObjectIsUnit
+
+-   This function checks whether the specified object is of the type "Unit", or any related subtypes such as "Player" or "ActivePlayer".
+
+#### Parameters
+
+-   `object`(string): The pointer or object identifier of the object to check.
+
+#### Returns
+
+-   `isUnit`(bool): `true` if the object is a unit or related subtype, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local isUnit = _A.ObjectIsUnit("target")
+```
+
+---
+
+> ## ObjectIsPlayer
+
+-   This function checks whether the specified object is of the type "Player" or "ActivePlayer".
+
+#### Parameters
+
+-   `object`(string): The pointer or object identifier of the object to check.
+
+#### Returns
+
+-   `isPlayer`(bool): `true` if the object is a player or active player, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local isPlayer = _A.ObjectIsPlayer("target")
+```
+
+---
+
+> ## ObjectIsGameObject
+
+-   This function checks whether the specified object is of the type "GameObject".
+
+#### Parameters
+
+-   `object`(string): The pointer or object identifier of the object to check.
+
+#### Returns
+
+-   `isGameObject`(bool): `true` if the object is a game object, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local isGameObject = _A.ObjectIsGameObject("0x12345678")
+```
+
+---
+
+> ## ObjectIsAreaTrigger
+
+-   This function checks whether the specified object is of the type "AreaTrigger".
+
+#### Parameters
+
+-   `object`(string): The pointer or object identifier of the object to check.
+
+#### Returns
+
+-   `isAreaTrigger`(bool): `true` if the object is an area trigger, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local isAreaTrigger = _A.ObjectIsAreaTrigger("0x12345678")
+```
+
+---
+
+> ## UnitCombatReach
+
+-   This function retrieves the combat reach (melee attack range) of the specified unit.
+
+#### Parameters
+
+-   `object`(string): The pointer or unit identifier of the unit to get the combat reach for.
+
+#### Returns
+
+-   `combatReach`(number): The combat reach of the unit, in yards.
+
+#### _Example:_
+
+```lua
+local targetCombatReach = _A.UnitCombatReach("target")
+```
+
+---
+
+> ## UnitHeight
+
+-   This function retrieves the height of the specified unit.
+
+#### Parameters
+
+-   `object`(string): The pointer or unit identifier of the unit to get the height for.
+
+#### Returns
+
+-   `height`(number): The height of the unit, in yards.
+
+#### _Example:_
+
+```lua
+local playerHeight = _A.UnitHeight("player")
+```
+
+---
+
+> ## UnitBoundingRadius
+
+-   This function retrieves the bounding radius of the specified unit.
+
+#### Parameters
+
+-   `object`(string): The pointer or unit identifier of the unit to get the bounding radius for.
+
+#### Returns
+
+-   `height`(number): The bounding radius of the unit, in yards.
+
+#### _Example:_
+
+```lua
+local playerBoundingRadius = _A.UnitBoundingRadius("player")
+```
+
+---
+
+> ## GetObjectWithGUID
+
+-   This function retrieves the object's pointer using its globally unique identifier (GUID).
+
+#### Parameters
+
+-   `guid`(string): The GUID of the object.
+
+#### Returns
+
+-   `pointer`(number|nil): The pointer of the object, or `nil` if the object was not found.
+
+#### _Example:_
+
+```lua
+local guid = _G.UnitGUID("target")
+local targetPointer = _A.GetObjectWithGUID(guid)
+```
+
+---
+
+> ## GetDistanceBetweenPositions
+
+-   This function calculates the Euclidean distance between two 3D positions in the game world.
+
+#### Parameters
+
+-   `X1`(number): The X coordinate of the first position.
+-   `Y1`(number): The Y coordinate of the first position.
+-   `Z1`(number): The Z coordinate of the first position.
+-   `X2`(number): The X coordinate of the second position.
+-   `Y2`(number): The Y coordinate of the second position.
+-   `Z2`(number): The Z coordinate of the second position.
+
+#### Returns
+
+-   `distance`(number): The distance between the two positions.
+
+#### _Example:_
+
+```lua
+local distance = _A.GetDistanceBetweenPositions(100, 200, 0, 150, 250, 10)
+print("Distance:", distance)
+```
+
+---
+
+> ## GetDistanceBetweenObjects
+
+-   This function calculates the distance between two objects.
+
+#### Parameters
+
+-   `object1`(string): The unitId or pointer of the first game object.
+-   `object2`(string): The unitId or pointer of the second game object.
+
+#### Returns
+
+-   `distance`(number): The distance between the two objects, or nil if positions couldn't be retrieved.
+
+#### _Example:_
+
+```lua
+local distance = _A.GetDistanceBetweenObjects("player", "0x87654321")
+print("Distance:", distance)
+```
+
+---
+
+> ## GetRangeBetweenObjects
+
+-   This function calculates the range between two objects while taking into account their combat reach.
+
+#### Parameters
+
+-   `object1`(string): The unitId or pointer of the first game object.
+-   `object2`(string): The unitId or pointer of the second game object.
+
+#### Returns
+
+-   `range`(number): The effective range between the two objects, considering combat reaches.
+
+#### _Example:_
+
+```lua
+local range = _A.GetRangeBetweenObjects("player", "0x87654321")
+print("Range:", range)
+```
+
+---
+
+> ## GetPositionFromPosition
+
+-   This function calculates a new position in three-dimensional space based on a starting position (X, Y, Z), a specified distance, and two angles (Angle1 and Angle2). It uses trigonometric functions to calculate the new coordinates and returns the calculated X, Y, and Z values.
+
+#### Parameters
+
+-   `X`(number): The X coordinate of the starting position.
+-   `Y`(number): The Y coordinate of the starting position.
+-   `Z`(number): The Z coordinate of the starting position.
+-   `Distance`(number): The distance from the starting position to the new position.
+-   `Angle1`(number): The angle (in radians) in the XY plane (horizontal plane) from the positive X-axis.
+-   `Angle2`(number): The angle (in radians) between the XY plane and the line connecting the starting position and the new position.
+
+#### Returns `newX`, `newY`, `newZ`
+
+-   `newX`(number): The calculated X coordinate of the new position.
+-   `newY`(number): The calculated Y coordinate of the new position.
+-   `newZ`(number): The calculated Z coordinate of the new position.
+
+#### _Example:_
+
+```lua
+local newX, newY, newZ = _A.GetPositionFromPosition(100, 100, 0, 10, math.rad(45), math.rad(30))
+print("Distance:", distance)
+```
+
+---
+
+> ## GetAnglesBetweenPositions
+
+-   This function calculates the yaw and pitch angles between two 3D positions.
+
+#### Parameters
+
+-   `X1`(number): The X coordinate of the first position.
+-   `Y1`(number): The Y coordinate of the first position.
+-   `Z1`(number): The Z coordinate of the first position.
+-   `X2`(number): The X coordinate of the second position.
+-   `Y2`(number): The Y coordinate of the second position.
+-   `Z2`(number): The Z coordinate of the second position.
+
+#### Returns `pitch`, `yaw`
+
+-   `yaw`(number): The yaw angle in radians between the two positions.
+-   `pitch`(number): The pitch angle in radians between the two positions.
+
+#### _Example:_
+
+```lua
+local yaw, pitch = _A.GetAnglesBetweenPositions(0, 0, 0, 10, 10, 10)
+print("Yaw angle:", yaw) -- (1)!
+print("Pitch angle:", pitch) -- (2)!
+```
+
+1. left-right rotation around the Z axis.
+2. up-down rotation around the X axis.
+
+---
+
+> ## GetAnglesBetweenObjects
+
+-   This function calculates the yaw and pitch angles between two objects.
+
+#### Parameters
+
+-   `object1`(string): The unitId or pointer of the first game object.
+-   `object2`(string): The unitId or pointer of the second game object.
+
+#### Returns
+
+-   `yaw`(number): The yaw angle in radians between the two objects.
+-   `pitch`(number): The pitch angle in radians between the two objects.
+
+#### _Example:_
+
+```lua
+local yaw, pitch = _A_.GetAnglesBetweenObjects("player", "target")
+print("Yaw angle:", yaw) -- (1)!
+print("Pitch angle:", pitch) -- (2)!
+```
+
+1. left-right rotation around the Z axis.
+2. up-down rotation around the X axis.
+
+---
+
+> ## GetPositionBetweenPositions
+
+-   This function calculates a new position between two given positions based on a specified distance.
+
+#### Parameters
+
+-   `X1`(number): The X coordinate of the first position.
+-   `Y1`(number): The Y coordinate of the first position.
+-   `Z1`(number): The Z coordinate of the first position.
+-   `X2`(number): The X coordinate of the second position.
+-   `Y2`(number): The Y coordinate of the second position.
+-   `Z2`(number): The Z coordinate of the second position.
+-   `distance`(number): The distance from the first position where the new position should be calculated.
+
+#### Returns `newX`, `newY`, `newZ`
+
+-   `newX`(number): The X coordinate of the new position.
+-   `newY`(number): The Y coordinate of the new position.
+-   `newZ`(number): The Z coordinate of the new position.
+
+#### _Example:_
+
+```lua
+local newX, newY, newZ = _A.GetPositionBetweenPositions(100, 200, 0, 150, 250, 0, 10)
+print("New position:", newX, newY, newZ)
+```
+
+---
+
+> ## GetPositionBetweenObjects
+
+-   This function calculates a new position between the positions of two given objects based on a specified distance from the first object.
+
+#### Parameters
+
+-   `object1`(string): The unitId or pointer identifier of the first object.
+-   `object1`(string): The unitId or pointer identifier of the second object.
+-   `distance`(number): The distance from the first object where the new position should be calculated.
+
+#### Returns `newX`, `newY`, `newZ`
+
+-   `newX`(number): The X coordinate of the new position.
+-   `newY`(number): The Y coordinate of the new position.
+-   `newZ`(number): The Z coordinate of the new position.
+
+#### _Example:_
+
+```lua
+local newX, newY, newZ = _A.GetPositionBetweenObjects("player", "0x789ABC", 10)
+print("New position:", newX, newY, newZ)
+```
+
+---
+
+> ## ObjectIsFacing
+
+-   This function checks if the first object is facing the second object.
+
+#### Parameters
+
+-   `object1`(string): The unitId or pointer identifier of the first object.
+-   `object1`(string): The unitId or pointer identifier of the second object.
+
+#### Returns
+
+-   `isFacing`(bool): `true` if the first object is facing the second object, otherwise `false`.
+
+#### _Example:_
+
+```lua
+if _A.ObjectIsFacing("player", "0x789ABC") then
+    print("The player is facing the second object.")
+else
+    print("The player is not facing the second object.")
+end
+```
+
+---
+
+> ## ObjectIsBehind
+
+-   This function checks if the first object is behind the second object.
+
+#### Parameters
+
+-   `object1`(string): The unitId or pointer identifier of the first object.
+-   `object1`(string): The unitId or pointer identifier of the second object.
+
+#### Returns
+
+-   `isBehind`(bool): `true` if the first object is behind the second object, otherwise `false`.
+
+#### _Example:_
+
+```lua
+if _A.ObjectIsBehind("player", "0x789ABC") then
+    print("The player is behind the second object.")
+else
+    print("The player is not behind the second object.")
+end
+```
+
+---
+
+> ## TraceLine
+
+-   This function traces a line between two points in the game world to determine if there is line of sight between those points. It uses the provided flags to control the behavior of the trace.
+
+#### Parameters
+
+-   `sX`(number): The X-coordinate of the starting point.
+-   `sY`(number): The Y-coordinate of the starting point.
+-   `sZ`(number): The Z-coordinate of the starting point.
+-   `eX`(number): The X-coordinate of the ending point.
+-   `eY`(number): The Y-coordinate of the ending point.
+-   `eZ`(number): The Z-coordinate of the ending point.
+-   `flags`(number): [`optional`] Flags to control the trace behavior. Default is 0x0.
+
+#### Returns `los`, `cX`, `cY`, `cZ`
+
+-   `los`(bool): `true` if there is line of sight between the points, `false` otherwise.
+-   `cX`(number): The X-coordinate of the point of collision.
+-   `cY`(number): The Y-coordinate of the point of collision.
+-   `cZ`(number): The Z-coordinate of the point of collision.
+
+!>**Note:** Flags allow you to control the specific types of objects and conditions that are considered when performing a line of sight check between two points in the game world. You can customize the behavior of the trace based on the nature of the obstacles you want to account for in the line of sight calculation.
+
+|     Flag | Collision             | Note                                                                                                                          |
+| -------: | :-------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
+|      0x0 | none                  | No special behavior or considerations.                                                                                        |
+|      0x1 | doodad                | Take doodad collision into account during collision checks. Doodads are objects like props and decorations in the game world. |
+|      0x2 | doodad render         | Doodad rendering during collision checks.                                                                                     |
+|     0x10 | wmo                   | World Map Object (WMO) collision during collision checks. WMOs are complex structures like buildings.                         |
+|     0x20 | wmo render            | WMO rendering during collision checks.                                                                                        |
+|     0x40 | Wmo no cam            | Exclude WMO collision with the camera.                                                                                        |
+|    0x100 | terrain               | Include terrain collision in checks.                                                                                          |
+|   0x2000 | wmo doodad            | Ignore collision and interaction between WMOs and doodads.                                                                    |
+|  0x10000 | liquid water walkable | Consider water as walkable during collision checks.                                                                           |
+|  0x20000 | liquid all            | Include all liquid surfaces (water, lava, etc.) in collision checks.                                                          |
+|  0x80000 | cull                  | Perform culling behavior to determine what should be rendered or not.                                                         |
+| 0x100000 | entity                | Movable objects (objects that can be interacted with or moved) should be considered when performing the line of sight check.  |
+| 0x200000 | entity render         | Consider entity rendering during collision checks.                                                                            |
+
+#### _Example:_
+
+```lua
+local px, py, pz = _A.ObjectPosition("player")
+local tx, ty, tz = _A.ObjectPosition("target")
+local flags = bit.bor(0x100000, 0x10000, 0x100, 0x10, 0x1)
+
+local los, cx, cy, cz = _A.TraceLine(px, py, pz, tx, ty, tz, flags)
+if los then
+  print("There is line of sight between the points.")
+else
+  print("There is an obstruction between the points.")
+end
+print("Collision point:", cx, cy, cz)
+```
+
+---
+
+> ## WorldToScreen
+
+-   This function takes 3D world coordinates and converts them to screen coordinates. It returns the X and Y screen coordinates along with a flag indicating whether the coordinates are on the screen or not.
+
+#### Parameters
+
+-   `x`(number): The X-coordinate in the 3D world.
+-   `y`(number): The Y-coordinate in the 3D world.
+-   `z`(number): The Z-coordinate in the 3D world.
+
+#### Returns
+
+-   `sX`(number): The X-screen coordinate.
+-   `sY`(number): The Y-screen coordinate.
+-   `onScreen`(bool): `true` if the coordinates are on the screen, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local tx, ty, tz = _A.ObjectPosition("target")
+local screenX, screenY, isOnScreen = _A.WorldToScreen(tx, ty, tz)
+if isOnScreen then
+    print("The target World coordinates are visible on the screen.")
+else
+    print("The target World coordinates are not visible on the screen.")
+end
+```
+
+---
+
+> ## ClickPosition
+
+-   This function simulates a mouse click at the specified 3D world position.
+
+#### Parameters
+
+-   `x`(number): The X-coordinate in the 3D world.
+-   `y`(number): The Y-coordinate in the 3D world.
+-   `z`(number): The Z-coordinate in the 3D world.
+
+#### _Example:_
+
+```lua
+_A.ClickPosition(_A.ObjectPosition("target")) -- (1)!
+```
+
+1. Click at the `target` position.
+
+---
+
+> ## ClickToMove
+
+-   This function initiates a click-to-move action, causing the player or controlled entity to move to the specified 3D world position.
+
+#### Parameters
+
+-   `x`(number): The X-coordinate in the 3D world.
+-   `y`(number): The Y-coordinate in the 3D world.
+-   `z`(number): The Z-coordinate in the 3D world.
+
+#### _Example:_
+
+```lua
+-- Move to the "target" position.
+_A.ClickToMove(_A.ObjectPosition("target"))
+```
+
+---
+
+> ## IsForeground
+
+-   This function determines whether the game window is currently in the foreground (active) state, meaning it has focus and user interaction is being accepted.
+
+#### Returns
+
+-   `isForeground`(bool): `true` if the game window is in the foreground, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local gameInForeground = _A.IsForeground()
+if gameInForeground then
+    print("The game window is in the foreground.")
+else
+    print("The game window is not in the foreground.")
+end
+```
+
+---
+
+> ## IsMinimized
+
+-   This function determines whether the game window is currently minimized (Only exists on the Wotlk, Cata, Mop Apep version).
+
+#### Returns
+
+-   `IsMinimized`(bool): `true` if the game window is minimized, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local gameMinimized = _A.IsMinimized()
+if gameMinimized then
+    print("The game window is minimized.")
+else
+    print("The game window is not minimized.")
+end
+```
+
+---
+
+> ## GetKeyState
+
+-   This function retrieves the state of a specific key, including whether it is currently pressed and whether it is toggled (such as caps lock).
+
+#### Parameters
+
+-   `Key`(number): The virtual key code of the keyboard key to check.
+
+#### Returns
+
+-   `isDown`(bool): `true` if the key is currently pressed, `false` otherwise.
+-   `isToggled`(bool): `true` if the key is toggled (such as caps lock), `false` otherwise.
+
+!>**Note:** Virtual key codes are used to identify keyboard keys in Windows applications. You can obtain these key codes from the official Microsoft documentation.
+https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85).aspx
+
+#### _Example:_
+
+```lua
+local pressed, toggled = _A.GetKeyState(65) -- (1)!
+if pressed then
+    print("The 'A' key is currently pressed.")
+end
+if toggled then
+    print("The 'A' key is toggled (e.g., caps lock is on).")
+end
+```
+
+1. The key code for the `A` key
+
+---
+
+> ## IsKeyDown
+
+-   This function checks if a specific key is currently being held down (pressed) on the keyboard.
+
+#### Parameters
+
+-   `Key`(string): The name of the key to check, e.g., "A", "F1", "NUMPAD0", "SPACE".
+
+#### Returns
+
+-   `isKeyDown`(bool): `true` if the key is currently being held down, `false` otherwise.
+
+#### _Example:_
+
+```lua
+if f.IsKeyDown("F") then
+    print("The 'F' key is currently being held down.")
+end
+```
+
+---
+
+> ## SendKey
+
+-   This function simulates sending a key press event to the application using the provided DirectInput Key Code.
+
+#### Parameters
+
+-   `Key`(number): The DirectInput Key Code corresponding to the key to be simulated.
+
+!>**Note:** For a list of key codes
+http://www.flint.jp/misc/?q=dik&lang=en
+
+#### _Example:_
+
+```lua
+_A.SendKey(0x41) -- (1)!
+```
+
+1. Simulates pressing the 'A' key
+
+---
+
+> ## SetFacing
+
+-   This function sets the facing angle of the player to the specified angle in radians.
+
+#### Parameters
+
+-   `angle`(number): The desired facing angle in radians.
+
+#### _Example:_
+
+```lua
+_A.SetFacing(0) -- (1)!
+_A.SetFacing(math.pi) -- (2)!
+```
+
+1. Sets the player's facing angle to 0 degrees(facing north).
+2. Sets the player's facing angle to 180 degrees(facing south).
+
+---
+
+> ## FaceDirection
+
+-   This function set the player's facing direction to a specific angle or towards a specified object.
+
+#### Parameters
+
+-   `angleOrObject`(number or string): The angle in radians or the object to face.
+-   `update`(bool): [`optional`] Whether to immediately notify the server
+
+#### _Example:_
+
+```lua
+_A.FaceDirection(0, true) -- (1)!
+_A.FaceDirection("target", true) -- (2)!
+```
+
+1. Sets the player's facing angle to 0 degrees(facing north). And notify the server.
+2. Face towards the object and notify the server.
+
+---
+
+> ## FaceTarget
+
+-   This function face the player towards the currently targeted object
+
+#### _Example:_
+
+```lua
+_A.FaceTarget() -- (1)!
+```
+
+1. Face the player towards the currently targeted object
+
+---
+
+> ## InvertFacing
+
+-   This function invert the player's facing direction
+
+#### _Example:_
+
+```lua
+_A.InvertFacing() -- (1)!
+```
+
+1. Invert the player's facing direction
+
+---
+
+> ## GetWoWDirectory
+
+-   This function retrieves the directory path where the World of Warcraft game is installed on your system.
+
+#### Returns
+
+-   `dir`(string): The directory path of the World of Warcraft installation.
+
+#### _Example:_
+
+```lua
+local wowDirectory = _A.GetWoWDirectory()
+print(wowDirectory)
+```
+
+---
+
+> ## GetDirectoryFiles
+
+-   This function retrieves the names of the files in the specified directory path.
+
+#### Parameters
+
+-   `path`(string): The path to the directory.
+-   `subfolders` (boolean) - If (true) include subfolders
+
+#### Returns
+
+-   `files`(table): A table containing the file names in the directory.
+
+#### _Example:_
+
+```lua
+local wowDirectory = _A.GetWoWDirectory()
+local files = _A.GetDirectoryFiles(wowDirectory, true)
+for _, fileName in ipairs(files) do
+    print(fileName)
+end
+```
+
+---
+
+> ## GetDirectoryFolders
+
+-   This function retrieves the names of the folders in the specified directory path.
+
+#### Parameters
+
+-   `path`(string): The path to the directory.
+-   `subfolders` (boolean) - If (true) include subfolders
+
+#### Returns
+
+-   `files`(table): A table containing the folder names in the directory.
+
+#### _Example:_
+
+```lua
+local wowDirectory = _A.GetWoWDirectory()
+local folders = _A.GetDirectoryFolders(wowDirectory, false)
+for _, folderName in ipairs(folders) do
+    print(folderName)
+end
+```
+
+---
+
+> ## GetApepDirectory
+
+-   This function retrieves the directory path where the Apep executable is on your system.
+
+#### Returns
+
+-   `directory`(string): The directory path of the Apep executable.
+
+#### _Example:_
+
+```lua
+local apepDirectory = _A.GetApepDirectory()
+print(apepDirectory)
+```
+
+---
+
+> ## ReadFile
+
+-   This function reads and retrieves the contents of a text file specified by the given file path.
+
+#### Parameters
+
+-   `path`(string): The path to the text file.
+
+#### Returns
+
+-   `content`(string): The contents of the text file.
+
+#### _Example:_
+
+```lua
+local wowDirectory = _A.GetWoWDirectory()
+local contents = _A.ReadFile(wowDirectory.."\\example.txt")
+print(contents)
+```
+
+---
+
+> ## WriteFile
+
+-   This function appends the specified text to a file or overwrites the file's content, based on the given options.
+
+#### Parameters
+
+-   `path`(string): The path to the text file.
+-   `text`(string): The text to be written or appended.
+-   `append`(bool): If `true`, the text will be appended; if `false`, the file content will be overwritten.
+
+#### Returns
+
+-   `success`(bool): `true` if the operation was successful, or an exception if an `error` occurred.
+
+#### _Example:_
+
+```lua
+local wowDirectory = _A.GetWoWDirectory()
+local success = _A.WriteFile(wowDirectory.."\\hello.txt", "Hello, World!", true)
+if success then
+    print("Text appended successfully.")
+else
+    print("Error occurred while writing to the file")
+end
+```
+
+---
+
+> ## LoadScript
+
+-   This function loads and executes a Lua script located at the specified file path.
+
+#### Parameters
+
+-   `path`(string): The path to the Lua script file.
+
+#### _Example:_
+
+```lua
+local wowDirectory = _A.GetWoWDirectory()
+_A.LoadScript(wowDirectory.."\\scripts\\start.lua")
+```
+
+---
+
+> ## BaseAddress
+
+-   This function returns the base address of the World of Warcraft client, which can be used with other functions like ReadMemory to read specific offsets within the game's memory.
+
+#### Returns
+
+-   `baseAddr`(string): The base address of the World of Warcraft client in hexadecimal format.
+
+#### _Example:_
+
+```lua
+local baseAddr = _A.BaseAddress()
+print(baseAddr)
+```
+
+---
+
+> ## ReadMemory
+
+-   This function reads memory at the specified address and returns the requested type of data.
+
+#### Parameters
+
+-   `type`(string): The type of data to read (e.g., "bool", "byte", "string", "float", etc...).
+-   `address`(string or number): The address in hexadecimal format (string) or numeric address.
+-   `offset`(string or number): The offset of the address.
+
+#### Returns
+
+-   The requested type of data (e.g., boolean, number, string, etc.).
+
+    | Type          | Return |
+    | ------------- | ------ |
+    | bool          | bool   |
+    | byte          | number |
+    | string        | string |
+    | float         | number |
+    | double        | number |
+    | Int16/short   | string |
+    | UInt16/ushort | string |
+    | Int32/int     | string |
+    | UInt32/uint   | string |
+    | Int64/long    | string |
+    | UInt64/ulong  | string |
+    | Int128        | string |
+    | GUID          | string |
+
+#### _Example:_
+
+```lua
+local result = _A.ReadMemory("int", "0x12345678", 0x10)
+```
+
+---
+
+> ## CancelPendingSpell
+
+-   This function cancels the pending queued spell cast, if there is any.
+
+!>**Note:** When you cast a spell in WoW, and you are in the middle of a combat action, the spell is queued up to be cast when that one is done, up to a maximum number of 1 spell. This feature was implemented to help players compensate for high latency. If you cancel your current spell, the queued spell is cancelled as well. This command lets you cancel the queued spell without cancelling your current spell.
+
+#### _Example:_
+
+```lua
+_A.CancelPendingSpell()
+```
