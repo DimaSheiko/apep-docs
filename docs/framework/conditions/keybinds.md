@@ -27,20 +27,26 @@
 === "DSL"
 
     ```lua
-    {ACTION, "mouse(3)"}, -- MiddleButton
+    {ACTION, "mouse(3)"}, -- (1)!
     ```
+
+    1. MiddleButton
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("mouse")(_, "Button4") -- 4
+    _A.DSL:Get("mouse")(_, "Button4") -- (1)!
     ```
+
+    1. 4
 
 === "Lua Mode"
 
     ```lua
-    PLAYER:Mouse(2) -- RightButton
+    PLAYER:Mouse(2) -- (1)!
     ```
+
+    1. RightButton
 
 ---
 

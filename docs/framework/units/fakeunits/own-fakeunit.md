@@ -27,23 +27,25 @@ local function GetEnemy(num, near, inCombat)
     return tempTable[num] and tempTable[num].guid
 end
 
--- Nearest enemy
-_A.FakeUnits:Add('nearEnemy', function(num)
+
+_A.FakeUnits:Add('nearEnemy', function(num) -- (1)!
     return GetEnemy(num, true, false)
 end)
 
--- Nearest enemy in combat with the Roster
-_A.FakeUnits:Add('nearEnemyCb', function(num)
+_A.FakeUnits:Add('nearEnemyCb', function(num) -- (2)!
     return GetEnemy(num, true, true)
 end)
 
--- Farthest enemy
-_A.FakeUnits:Add('farEnemy', function(num)
+_A.FakeUnits:Add('farEnemy', function(num) -- (3)!
     return GetEnemy(num, false, false)
 end)
 
--- Farthest enemy in combat with the Roster
-_A.FakeUnits:Add('farEnemyCb', function(num)
+_A.FakeUnits:Add('farEnemyCb', function(num) -- (4)!
     return GetEnemy(num, false, true)
 end)
 ```
+
+1. Nearest enemy
+2. Nearest enemy in combat with the Roster
+3. Farthest enemy
+4. Farthest enemy in combat with the Roster

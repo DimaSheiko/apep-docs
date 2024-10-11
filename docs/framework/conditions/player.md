@@ -684,20 +684,26 @@
 === "DSL"
 
     ```lua
-    {ACTION, "sform=5"}, -- Bear Form
+    {ACTION, "sform=5"}, -- (1)!
     ```
+
+    1. Bear Form
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("sform")() == 5
+    _A.DSL:Get("sform")() == 5 -- (1)!
     ```
+
+    1. Bear Form
 
 === "Lua Mode"
 
     ```lua
-    PLAYER:Sform()==5
+    PLAYER:Sform()==5 -- (1)!
     ```
+
+    1. Bear Form
 
 ---
 
