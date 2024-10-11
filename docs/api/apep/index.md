@@ -1722,3 +1722,72 @@ local result = _A.ReadMemory("int", "0x12345678", 0x10)
 ```lua
 _A.CancelPendingSpell()
 ```
+
+---
+
+> ## GetMissiles
+
+-   This function retrieves information about active missiles in the game world.
+
+#### Returns `table`
+
+-   A table containing information about active missiles, or an empty table if there are no missiles.
+
+The table has the following structure:
+
+```lua
+{
+    [1] = {
+          spellid,       -- (1)!
+          spellvisualid, -- (2)!
+          x,             -- (3)!
+          y,             -- (4)!
+          z,             -- (5)!
+          caster,        -- (6)!
+          fx,            -- (7)!
+          fy,            -- (8)!
+          fz,            -- (9)!
+          target,        -- (10)!
+          ix,            -- (11)!
+          iy,            -- (12)!
+          iz,            -- (13)!
+     },
+     [n] = {
+          -- (14)!
+     },
+}
+```
+
+1. ID of the spell associated with the missile
+2. ID of the spell's visual missile effect (NOTE: Non-existent in versions prior Legion.)
+3. X-coordinate of the missile's current position
+4. Y-coordinate of the missile's current position
+5. Z-coordinate of the missile's current position
+6. GUID of the caster of the missile
+7. X-coordinate of the fired position
+8. Y-coordinate of the fired position
+9. Z-coordinate of the fired position
+10. GUID of the missile's target
+11. X-coordinate of the impact position
+12. Y-coordinate of the impact position
+13. Z-coordinate of the impact position
+14. Information about the next missile, if available
+
+#### _Example:_
+
+```lua
+local missiles = _A.GetMissiles()
+for _, missile in ipairs(missiles) do
+     local spellid, x, y, z, caster, fx, fy, fz, target, ix, iy, iz = unpack(missile) -- (1)
+     print(spellid, x, y, z, caster, fx, fy, fz, target, ix, iy, iz)
+end
+```
+
+!!! warning
+
+    This example is for prior Legion
+
+    If you are using Legion or later, you can use:
+    ```lua
+    local spellid, spellvisualid, x, y, z, caster, fx, fy, fz, target, ix, iy, iz = unpack(missile)
+    ```
