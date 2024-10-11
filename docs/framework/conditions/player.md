@@ -1,14 +1,17 @@
 # PLAYER
+
 ---
 
-
 > ## group.members
-  *`group.members || num.members`*
+>
+> _`group.members || num.members`_
 
 #### Returns `NUMBER`
-- The number of members in the player's group.
 
-#### *Example:*
+-   The number of members in the player's group.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "num.members"},
@@ -20,15 +23,16 @@ _A.DSL:Get("num.members")()
 PLAYER:NumMembers()
 ```
 
-***
-
+---
 
 > ## issolo
 
 #### Returns `BOOL`
-- `true` if the player is not in a group, `false` otherwise.
 
-#### *Example:*
+-   `true` if the player is not in a group, `false` otherwise.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "issolo"},
@@ -40,15 +44,16 @@ _A.DSL:Get("issolo")()
 PLAYER:Issolo()
 ```
 
-***
-
+---
 
 > ## isparty
 
 #### Returns `BOOL`
-- `true` if the player is in a party group, `false` otherwise.
 
-#### *Example:*
+-   `true` if the player is in a party group, `false` otherwise.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "isparty"},
@@ -60,15 +65,16 @@ _A.DSL:Get("isparty")()
 PLAYER:Isparty()
 ```
 
-***
-
+---
 
 > ## israid
 
 #### Returns `BOOL`
-- `true` if the player is in a raid group, `false` otherwise.
 
-#### *Example:*
+-   `true` if the player is in a raid group, `false` otherwise.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "israid"},
@@ -80,15 +86,16 @@ _A.DSL:Get("israid")()
 PLAYER:Israid()
 ```
 
-***
-
+---
 
 > ## group.type
 
 #### Returns `NUMBER`
-- 1 if solo, 2 if party, 3 if raid.
 
-#### *Example:*
+-   1 if solo, 2 if party, 3 if raid.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "group.type==1"},
@@ -100,17 +107,20 @@ _A.DSL:Get("group.type")() == 1
 PLAYER:GroupType() == 1
 ```
 
-***
-
+---
 
 > ## auto.attack
-  *`auto.attack || auto.shoot`*
+>
+> _`auto.attack || auto.shoot`_
 
-- This conditions checks if the player's character is performing an auto-attack or auto-shoot (for hunters).
+-   This conditions checks if the player's character is performing an auto-attack or auto-shoot (for hunters).
+
 #### Returns `BOOL`
-- `true` if the character is auto-attacking or auto-shooting, `false` otherwise.
 
-#### *Examples:*
+-   `true` if the character is auto-attacking or auto-shooting, `false` otherwise.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "auto.attack"},
@@ -122,16 +132,18 @@ _A.DSL:Get("auto.attack")()
 PLAYER:AutoAttack()
 ```
 
-***
-
+---
 
 > ## swimming
 
-- This condition checks if the player character is currently swimming.
-#### Returns `BOOL`
-- `true` if the player character is swimming, `false` otherwise.
+-   This condition checks if the player character is currently swimming.
 
-#### *Examples:*
+#### Returns `BOOL`
+
+-   `true` if the player character is swimming, `false` otherwise.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "swimming"},
@@ -143,17 +155,18 @@ _A.DSL:Get("swimming")()
 PLAYER:Swimming()
 ```
 
-***
-
+---
 
 > ## falling
 
-- This condition checks if the player character is currently falling.
+-   This condition checks if the player character is currently falling.
 
 #### Returns `BOOL`
-  - `true` if the player character is falling, `false` otherwise.
 
-#### *Examples:*
+-   `true` if the player character is falling, `false` otherwise.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "falling"},
@@ -165,17 +178,18 @@ _A.DSL:Get("falling")()
 PLAYER:Falling()
 ```
 
-***
-
+---
 
 > ## falling.duration
 
-- These conditions provide the duration for which the player character has been falling.
+-   These conditions provide the duration for which the player character has been falling.
 
 #### Returns `NUMBER`
-  - The duration (in `seconds`) for which the player character has been falling.
 
-#### *Examples:*
+-   The duration (in `seconds`) for which the player character has been falling.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "falling.duration > 1.5"},
@@ -187,17 +201,18 @@ _A.DSL:Get("falling.duration")() > 1.5
 PLAYER:FallingDuration() > 1.5
 ```
 
-***
-
+---
 
 > ## indoors
 
-- This condition checks if the player character is currently indoors.
+-   This condition checks if the player character is currently indoors.
 
 #### Returns `BOOL`
-  - `true` if the player character is indoors, `false` otherwise.
 
-#### *Examples:*
+-   `true` if the player character is indoors, `false` otherwise.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "indoors"},
@@ -209,17 +224,18 @@ _A.DSL:Get("indoors")()
 PLAYER:Indoors()
 ```
 
-***
-
+---
 
 > ## mounted
 
-- This condition checks if the player character is currently mounted.
+-   This condition checks if the player character is currently mounted.
 
 #### Returns `BOOL`
-  - `true` if the player character is mounted, `false` otherwise.
 
-#### *Examples:*
+-   `true` if the player character is mounted, `false` otherwise.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "mounted"},
@@ -231,17 +247,18 @@ _A.DSL:Get("mounted")()
 PLAYER:Mounted()
 ```
 
-***
-
+---
 
 > ## outcombat.time
 
-- This condition provides the time duration for which the player character has been out of combat.
+-   This condition provides the time duration for which the player character has been out of combat.
 
 #### Returns `NUMBER`
-  - The time duration in `seconds` for which the player character has been out of combat.
 
-#### *Examples:*
+-   The time duration in `seconds` for which the player character has been out of combat.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "outcombat.time > 10"},
@@ -253,21 +270,22 @@ _A.DSL:Get("outcombat.time")() > 10
 PLAYER:OutcombatTime() > 10
 ```
 
-***
-
+---
 
 > ## lost.control
 
-- This condition checks if the player is currently under the effect of any of the control states.
+-   This condition checks if the player is currently under the effect of any of the control states.
 
 #### Returns `BOOL`
-  - `true` if the player is in any of control states, otherwise `false`.
 
-	`"stunned", "sapped", "disoriented",	"polymorphed", "incapacitated",`
-  `"feared",	"horrified", "fleeing",	"intimidated", "asleep", "charmed",`
-  `"banished",	"silenced",	"paralyzed"`
+-   `true` if the player is in any of control states, otherwise `false`.
 
-#### *Examples:*
+    `"stunned", "sapped", "disoriented",	"polymorphed", "incapacitated",`
+    `"feared",	"horrified", "fleeing",	"intimidated", "asleep", "charmed",`
+    `"banished",	"silenced",	"paralyzed"`
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "lost.control"},
@@ -279,24 +297,26 @@ _A.DSL:Get("lost.control")()
 PLAYER:LostControl()
 ```
 
-***
-
+---
 
 > ## out.of.control
 
-- This condition checks if the player is currently in any of the specified loss of control states.
+-   This condition checks if the player is currently in any of the specified loss of control states.
 
 #### Parameters
-  - `STATE(s)`: A string containing one or more loss of control states separated by  '||'.
+
+-   `STATE(s)`: A string containing one or more loss of control states separated by '||'.
 
 #### Returns `BOOL`
-  - `true` if the player is in any of the specified loss of control states, otherwise `false`.
 
-	`"stunned", "sapped", "disoriented",	"polymorphed", "incapacitated",`
-  `"feared",	"horrified", "fleeing",	"intimidated", "asleep", "charmed",`
-  `"banished",	"silenced",	"paralyzed"`
+-   `true` if the player is in any of the specified loss of control states, otherwise `false`.
 
-#### *Examples:*
+    `"stunned", "sapped", "disoriented",	"polymorphed", "incapacitated",`
+    `"feared",	"horrified", "fleeing",	"intimidated", "asleep", "charmed",`
+    `"banished",	"silenced",	"paralyzed"`
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "out.of.control(feared || incapacitate)"},
@@ -308,20 +328,22 @@ _A.DSL:Get("out.of.control")(_, "feared || incapacitate")
 PLAYER:OutOfControl("feared || incapacitate")
 ```
 
-***
-
+---
 
 > ## lastcast
 
-- This condition checks if the last cast performed by the player matches the specified spell.
+-   This condition checks if the last cast performed by the player matches the specified spell.
 
 #### Parameters
-  - `SPELL`: The name or ID of the spell to compare with the last cast.
+
+-   `SPELL`: The name or ID of the spell to compare with the last cast.
 
 #### Returns `BOOL`
-  - `true` if the last cast matches the specified spell, otherwise `false`.
 
-#### *Examples:*
+-   `true` if the last cast matches the specified spell, otherwise `false`.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "lastcast(Vendeta)"},
@@ -333,20 +355,22 @@ _A.DSL:Get("lastcast")(_, "Vendeta")
 PLAYER:Lastcast("Vendeta")
 ```
 
-***
-
+---
 
 > ## lasttarget
 
-- This condition checks if the provided unit matches the last target that was used by the player.
+-   This condition checks if the provided unit matches the last target that was used by the player.
 
 #### Parameters
-  - `UNIT`: The unit identifier to compare with the last target.
+
+-   `UNIT`: The unit identifier to compare with the last target.
 
 #### Returns `BOOL`
-  - `true` if the provided unit matches the last target used by the player, otherwise `false`.
 
-#### *Examples:*
+-   `true` if the provided unit matches the last target used by the player, otherwise `false`.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "UNIT.lasttarget"},
@@ -358,20 +382,22 @@ _A.DSL:Get("lasttarget")(_, "UNIT")
 UNIT:lasttarget()
 ```
 
-***
-
+---
 
 > ## lastcast.succeed
 
-- This condition checks if the last casted spell by the player succeeded and matches the specified spell.
+-   This condition checks if the last casted spell by the player succeeded and matches the specified spell.
 
 #### Parameters
-  - `SPELL`: The name or ID of the spell to compare with the last cast.
+
+-   `SPELL`: The name or ID of the spell to compare with the last cast.
 
 #### Returns `BOOL`
-  - `true` if the last casted spell succeeded and matches the specified spell, otherwise `false`.
 
-#### *Examples:*
+-   `true` if the last casted spell succeeded and matches the specified spell, otherwise `false`.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "lastcast(Battle Cry).succeed"},
@@ -383,22 +409,25 @@ _A.DSL:Get("lastcast.succeed")(_, "Battle Cry")
 PLAYER:LastcastSucceed("Battle Cry")
 ```
 
-***
-
+---
 
 > ## prev.gcd
-  *`prev.gcd || lastcast.gcd`*
+>
+> _`prev.gcd || lastcast.gcd`_
 
-- These conditions check if the provided spell at a given index matches the last spell cast by the player.
-The index parameter allows checking previous casts within a stored spell history.
+-   These conditions check if the provided spell at a given index matches the last spell cast by the player.
+    The index parameter allows checking previous casts within a stored spell history.
 
 #### Parameters
-  - `SPELL_INDEX`: A combination of spell identifier or name and an index (optional) to specify a previous cast.
+
+-   `SPELL_INDEX`: A combination of spell identifier or name and an index (optional) to specify a previous cast.
 
 #### Returns `BOOL`
-  - `true` if the provided spell at the specified index matches the last spell cast by the player, otherwise `false`.
 
-#### *Examples:*
+-   `true` if the provided spell at the specified index matches the last spell cast by the player, otherwise `false`.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "prev(Regrowth, 2).gcd"},
@@ -410,21 +439,24 @@ _A.DSL:Get("prev.gcd")(_, "Regrowth, 2")
 PLAYER:PrevGcd("Regrowth", 2)
 ```
 
-***
-
+---
 
 > ## lastcast.seen
-  *`lastcast.seen || lastcast.viewed`*
+>
+> _`lastcast.seen || lastcast.viewed`_
 
-- These conditions check how long ago the player last cast a specific spell.
+-   These conditions check how long ago the player last cast a specific spell.
 
 #### Parameters
-  - `SPELL`: The name or ID of the spell to check for in the player's cast history.
+
+-   `SPELL`: The name or ID of the spell to check for in the player's cast history.
 
 #### Returns `NUMBER`
-  - The time in `seconds` since the player last cast the specified spell, or `9999` if not found.
 
-#### *Examples:*
+-   The time in `seconds` since the player last cast the specified spell, or `9999` if not found.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "lastcast(Aimed Shot).seen"},
@@ -436,21 +468,23 @@ _A.DSL:Get("lastcast.seen")(_, "Aimed Shot")
 PLAYER:LastcastSeen("Aimed Shot")
 ```
 
-***
-
+---
 
 > ## unitLastCast.succeed
 
-- This condition checks if the provided unit's last cast matches the specified spell.
+-   This condition checks if the provided unit's last cast matches the specified spell.
 
 #### Parameters
-  - `UNIT`: The unit to check the last cast for.
-  - `SPELL`: The spell identifier or name to compare with the unit's last cast.
+
+-   `UNIT`: The unit to check the last cast for.
+-   `SPELL`: The spell identifier or name to compare with the unit's last cast.
 
 #### Returns `BOOL`
-  - `true` if the unit's last cast matches the specified spell, otherwise `false`.
 
-#### *Examples:*
+-   `true` if the unit's last cast matches the specified spell, otherwise `false`.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "UNIT.unitLastCast(Counterspell).succeed"},
@@ -462,21 +496,23 @@ _A.DSL:Get("unitLastCast.succeed")("UNIT", "Counterspell")
 UNIT:UnitLastCastSucceed("Counterspell")
 ```
 
-***
-
+---
 
 > ## lastcast.count
 
-- This condition checks if the provided spell was the last spell cast by the player,
-and returns the number of times that spell was cast consecutively.
+-   This condition checks if the provided spell was the last spell cast by the player,
+    and returns the number of times that spell was cast consecutively.
 
 #### Parameters
-  - `SPELL`: The spell identifier or name to check.
+
+-   `SPELL`: The spell identifier or name to check.
 
 #### Returns `NUMBER`
-  - The number of consecutive casts of the provided spell, or `0` if not applicable.
 
-#### *Examples:*
+-   The number of consecutive casts of the provided spell, or `0` if not applicable.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "lastcast(Rejuvenation).count"},
@@ -488,18 +524,20 @@ _A.DSL:Get("lastcast.count")(_, "Rejuvenation")
 PLAYER:LastcastCount("Rejuvenation")
 ```
 
-***
-
+---
 
 > ## sform
-  *`sform || ShapeshiftForm`*
+>
+> _`sform || ShapeshiftForm`_
 
-- This condition retrieves the current shapeshift form ID for the player.
+-   This condition retrieves the current shapeshift form ID for the player.
 
 #### Returns `NUMBER`
-  - The `ID` of the current shapeshift form, or `nil` if not applicable.
 
-#### *Examples:*
+-   The `ID` of the current shapeshift form, or `nil` if not applicable.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "sform=5"}, -- Bear Form
@@ -511,21 +549,24 @@ _A.DSL:Get("sform")() == 5
 PLAYER:Sform()==5
 ```
 
-***
-
+---
 
 > ## has.form
-  *`has.form || has.ShapeshiftForm`*
+>
+> _`has.form || has.ShapeshiftForm`_
 
-- This condition checks if the player has a specific shapeshift form active.
+-   This condition checks if the player has a specific shapeshift form active.
 
 #### Parameters
-  - `STRING`: The name of the shapeshift form to check.
+
+-   `STRING`: The name of the shapeshift form to check.
 
 #### Returns `BOOL`
-  - `true` if the player has the specified shapeshift form, otherwise `false`.
 
-#### *Examples:*
+-   `true` if the player has the specified shapeshift form, otherwise `false`.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "has(Swift Flight Form).form"},
@@ -537,17 +578,18 @@ _A.DSL:Get("has.form")(_, "Swift Flight Form")
 PLAYER:HasForm("Swift Flight Form")
 ```
 
-***
-
+---
 
 > ## spell.IsTargeting
 
-- This condition checks if the player is currently in the targeting mode for a spell.
+-   This condition checks if the player is currently in the targeting mode for a spell.
 
 #### Returns `BOOL`
-  - `true` if the player is targeting for a spell, otherwise `false`.
 
-#### *Examples:*
+-   `true` if the player is targeting for a spell, otherwise `false`.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "spell.IsTargeting"},
@@ -559,17 +601,18 @@ _A.DSL:Get("spell.IsTargeting")()
 PLAYER:SpellIsTargeting()
 ```
 
-***
-
+---
 
 > ## isStealthed
 
-- This condition checks if the player is currently in a stealthed state.
+-   This condition checks if the player is currently in a stealthed state.
 
 #### Returns `BOOL`
-  - `true` if the player is in stealth, otherwise `false`.
 
-#### *Examples:*
+-   `true` if the player is in stealth, otherwise `false`.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "isStealthed"},
@@ -581,17 +624,18 @@ _A.DSL:Get("isStealthed")()
 PLAYER:IsStealthed()
 ```
 
-***
-
+---
 
 > ## isHavingLunch
 
-- This condition checks if the player has a lunch-related buff active.
+-   This condition checks if the player has a lunch-related buff active.
 
 #### Returns `BOOL`
-  - `true` if the player has a lunch-related buff, otherwise `false`.
 
-#### *Examples:*
+-   `true` if the player has a lunch-related buff, otherwise `false`.
+
+#### _Examples:_
+
 ```lua
 -- DSL Mode
 {ACTION, "isHavingLunch"},

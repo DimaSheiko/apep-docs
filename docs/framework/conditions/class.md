@@ -1,15 +1,17 @@
 # CLASS
----
 
+---
 
 > ## power.regen
 
-- This condition calculates and returns the power regeneration rate of the player.
+-   This condition calculates and returns the power regeneration rate of the player.
 
 #### Returns `NUMBER`
-- The power regeneration rate of the player.
 
-#### *Example:*
+-   The power regeneration rate of the player.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "power.regen >= 5"},
@@ -21,17 +23,18 @@ _A.DSL:Get("power.regen")() >= 5
 PLAYER:PowerRegen() >= 5
 ```
 
-***
-
+---
 
 > ## energy
 
-- This condition returns the current energy amount of the player.
+-   This condition returns the current energy amount of the player.
 
 #### Returns `NUMBER`
-- The current energy amount of the player.
 
-#### *Example:*
+-   The current energy amount of the player.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "energy >= 60"},
@@ -43,18 +46,20 @@ _A.DSL:Get("energy")() >= 60
 PLAYER:Energy() >= 60
 ```
 
-***
-
+---
 
 > ## energy.max
-  *`energy.max || energyMax`*
+>
+> _`energy.max || energyMax`_
 
-- This condition returns the maximum energy amount of the player.
+-   This condition returns the maximum energy amount of the player.
 
 #### Returns `NUMBER`
-- The maximum energy amount of the player.
 
-#### *Example:*
+-   The maximum energy amount of the player.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "energy.max >= 100"},
@@ -66,18 +71,20 @@ _A.DSL:Get("energy.max")() >= 100
 PLAYER:EnergyMax() >= 60
 ```
 
-***
-
+---
 
 > ## energy.diff
-  *`energy.diff || energy.deficit || energydiff`*
+>
+> _`energy.diff || energy.deficit || energydiff`_
 
-- This condition returns the difference between the maximum energy and the current energy of the player.
+-   This condition returns the difference between the maximum energy and the current energy of the player.
 
 #### Returns `NUMBER`
-- The energy deficit(difference) of the player.
 
-#### *Example:*
+-   The energy deficit(difference) of the player.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "energy.diff >= 20"},
@@ -89,17 +96,18 @@ _A.DSL:Get("energy.diff")() >= 20
 PLAYER:EnergyDiff() >= 20
 ```
 
-***
-
+---
 
 > ## mana.raw
 
-- This condition returns the current player mana.
+-   This condition returns the current player mana.
 
 #### Returns `NUMBER`
-- The player mana raw.
 
-#### *Example:*
+-   The player mana raw.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "player.mana.raw >= 400"},
@@ -111,17 +119,18 @@ _A.DSL:Get("mana.raw")("player") >= 400
 PLAYER:ManaRaw() >= 400
 ```
 
-***
-
+---
 
 > ## mana
 
-- This condition returns the player mana percentage.
+-   This condition returns the player mana percentage.
 
 #### Returns `NUMBER`
-- The player percentage of mana.
 
-#### *Example:*
+-   The player percentage of mana.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "mana >= 80"},
@@ -133,17 +142,18 @@ _A.DSL:Get("mana")() >= 80
 PLAYER:Mana() >= 80
 ```
 
-***
-
+---
 
 > ## insanity
 
-- This condition retrieves the current amount of insanity power of the player.
+-   This condition retrieves the current amount of insanity power of the player.
 
 #### Returns `NUMBER`
-- The current amount of insanity power of the player.
 
-#### *Example:*
+-   The current amount of insanity power of the player.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "insanity >= 80"},
@@ -155,20 +165,22 @@ _A.DSL:Get("insanity")() >= 80
 PLAYER:Insanity() >= 80
 ```
 
-***
-
+---
 
 > ## ispet
 
-- This condition checks if the specified unit is a pet.
+-   This condition checks if the specified unit is a pet.
 
 #### Parameters
-- `UNIT`: The unit to check
+
+-   `UNIT`: The unit to check
 
 #### Returns `BOOL`
-- `true` if the unit is a pet, `false` otherwise.
 
-#### *Example:*
+-   `true` if the unit is a pet, `false` otherwise.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "UNIT.ispet", UNIT},
@@ -180,20 +192,22 @@ _A.DSL:Get("ispet")("UNIT")
 UNIT:Ispet()
 ```
 
-***
-
+---
 
 > ## stagger
 
-- This condition returns the amount of staggered damage on the specified unit.
+-   This condition returns the amount of staggered damage on the specified unit.
 
 #### Parameters
-- `UNIT`: The unit to check (e.g., "player", "target").
+
+-   `UNIT`: The unit to check (e.g., "player", "target").
 
 #### Returns `NUMBER`
-- The amount of staggered damage on the unit.
 
-#### *Example:*
+-   The amount of staggered damage on the unit.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "UNIT.stagger >= 500", UNIT},
@@ -205,21 +219,23 @@ _A.DSL:Get("stagger")("UNIT") >= 500
 UNIT:Stagger() >= 500
 ```
 
-***
-
+---
 
 > ## focus
 
-- This condition calculates the focus resource of the player or pet, based on the provided target.
-If the target is "pet," the function returns the focus of the player's pet; otherwise, it returns the focus of the player.
+-   This condition calculates the focus resource of the player or pet, based on the provided target.
+    If the target is "pet," the function returns the focus of the player's pet; otherwise, it returns the focus of the player.
 
 #### Parameters
-- `UNIT`: The target unit ("pet" or "player") to determine whose focus resource to check.
+
+-   `UNIT`: The target unit ("pet" or "player") to determine whose focus resource to check.
 
 #### Returns `NUMBER`
-- The focus resource of the specified target unit, or the player's focus if no target is provided.
 
-#### *Example:*
+-   The focus resource of the specified target unit, or the player's focus if no target is provided.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "UNIT.focus >= 40", UNIT},
@@ -231,18 +247,20 @@ _A.DSL:Get("focus")("UNIT") >= 40
 UNIT:Focus() >= 40
 ```
 
-***
-
+---
 
 > ## focus.max
-  *`focus.max || focusMax`*
+>
+> _`focus.max || focusMax`_
 
-- This condition retrieve the maximum focus resource of the player.
+-   This condition retrieve the maximum focus resource of the player.
 
 #### Returns `NUMBER`
-- The maximum focus resource of the player.
 
-#### *Example:*
+-   The maximum focus resource of the player.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "focus.max > 100"},
@@ -254,18 +272,20 @@ _A.DSL:Get("focus.max")() > 100
 PLAYER:FocusMax() > 100
 ```
 
-***
-
+---
 
 > ## runic.power
-  *`runic.power || runicpower`*
+>
+> _`runic.power || runicpower`_
 
-- This condition calculates the runic power resource of the player.
+-   This condition calculates the runic power resource of the player.
 
 #### Returns `NUMBER`
-- The runic power resource of the player.
 
-#### *Example:*
+-   The runic power resource of the player.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "runic.power > 20"},
@@ -277,17 +297,18 @@ _A.DSL:Get("runic.power")() > 20
 PLAYER:RunicPower() > 100
 ```
 
-***
-
+---
 
 > ## runes
 
-- This condition calculates the number of available rune resources for the player.
+-   This condition calculates the number of available rune resources for the player.
 
 #### Returns `NUMBER`
-- The number of available rune resources for the player.
 
-#### *Example:*
+-   The number of available rune resources for the player.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "runes > 4"},
@@ -299,17 +320,18 @@ _A.DSL:Get("runes")() > 20
 PLAYER:Runes() > 100
 ```
 
-***
-
+---
 
 > ## maelstrom
 
-- This condition returns the amount of Maelstrom power on the player.
+-   This condition returns the amount of Maelstrom power on the player.
 
 #### Returns `NUMBER`
-- The amount of Maelstrom power on the player.
 
-#### *Example:*
+-   The amount of Maelstrom power on the player.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "maelstrom > 20"},
@@ -321,20 +343,22 @@ _A.DSL:Get("maelstrom")() > 20
 PLAYER:Maelstrom() > 20
 ```
 
-***
-
+---
 
 > ## totem
 
-- This condition checks if a specific totem is currently active for the player.
+-   This condition checks if a specific totem is currently active for the player.
 
 #### Parameters
-- `totem`(string): The spell ID or name of the totem to check for.
+
+-   `totem`(string): The spell ID or name of the totem to check for.
 
 #### Returns `BOOL`
-- `true` if the specified totem is currently active, `false` otherwise.
 
-#### *Example:*
+-   `true` if the specified totem is currently active, `false` otherwise.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "totem(Flametongue Totem IV)"},
@@ -346,20 +370,22 @@ _A.DSL:Get("totem")(_ , "Flametongue Totem IV")
 PLAYER:Totem("Flametongue Totem IV")
 ```
 
-***
-
+---
 
 > ## totem.duration
 
-- This condition calculates the remaining duration (in seconds) of a specific totem.
+-   This condition calculates the remaining duration (in seconds) of a specific totem.
 
 #### Parameters
-- `totem`(string): The spell ID or name of the totem to check the duration for.
+
+-   `totem`(string): The spell ID or name of the totem to check the duration for.
 
 #### Returns `NUMBER`
-- The remaining duration of the specified totem in seconds, or 0 if the totem is not found.
 
-#### *Example:*
+-   The remaining duration of the specified totem in seconds, or 0 if the totem is not found.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "totem(Mana Spring Totem IV).duration < 0.5"},
@@ -371,20 +397,22 @@ _A.DSL:Get("totem.duration")(_ , "Mana Spring Totem IV") < 0.5
 PLAYER:TotemDuration("Mana Spring Totem IV") < 0.5
 ```
 
-***
-
+---
 
 > ## totem.time
 
-- This condition returns the maximum duration (in seconds) of a specific totem.
+-   This condition returns the maximum duration (in seconds) of a specific totem.
 
 #### Parameters
-- `totem`(string): The spell ID or name of the totem to retrieve the maximum duration for.
+
+-   `totem`(string): The spell ID or name of the totem to retrieve the maximum duration for.
 
 #### Returns `NUMBER`
-- The maximum duration of the specified totem in seconds, or 0 if the totem is not found.
 
-#### *Example:*
+-   The maximum duration of the specified totem in seconds, or 0 if the totem is not found.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "totem(Mana Spring Totem IV).time == 60"},
@@ -396,17 +424,18 @@ _A.DSL:Get("totem.time")(_ , "Mana Spring Totem IV") == 60
 PLAYER:TotemTime("Mana Spring Totem IV") == 60
 ```
 
-***
-
+---
 
 > ## soulshards
 
-- This condition returns the current number of Soul Shards a player has.
+-   This condition returns the current number of Soul Shards a player has.
 
 #### Returns `NUMBER`
-- The current number of Soul Shards.
 
-#### *Example:*
+-   The current number of Soul Shards.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "soulshards >= 3"},
@@ -418,17 +447,18 @@ _A.DSL:Get("soulshards")() >= 3
 PLAYER:Soulshards() >= 3
 ```
 
-***
-
+---
 
 > ## chi
 
-- This condition returns the current Chi a player has.
+-   This condition returns the current Chi a player has.
 
 #### Returns `NUMBER`
-- The current number of chi.
 
-#### *Example:*
+-   The current number of chi.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "chi >= 3"},
@@ -440,18 +470,20 @@ _A.DSL:Get("chi")() >= 3
 PLAYER:Chi() >= 3
 ```
 
-***
-
+---
 
 > ## chi.max
-  *`chi.max || chiMax`*
+>
+> _`chi.max || chiMax`_
 
-- This condition returns the maximum number of Chi a player can have.
+-   This condition returns the maximum number of Chi a player can have.
 
 #### Returns `NUMBER`
-- The maximum number of Chi a player can have.
 
-#### *Example:*
+-   The maximum number of Chi a player can have.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "chi.max = 5"},
@@ -463,18 +495,20 @@ _A.DSL:Get("chi.max")() = 5
 PLAYER:ChiMax() = 5
 ```
 
-***
-
+---
 
 > ## chi.diff
-  *`chi.diff || chi.deficit || chidiff`*
+>
+> _`chi.diff || chi.deficit || chidiff`_
 
-- This condition calculates the deficit of Chi.
+-   This condition calculates the deficit of Chi.
 
 #### Returns `NUMBER`
-- The deficit of Chi (maximum Chi - current Chi).
 
-#### *Example:*
+-   The deficit of Chi (maximum Chi - current Chi).
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "chi.diff > 2"},
@@ -486,17 +520,18 @@ _A.DSL:Get("chi.diff")() > 2
 PLAYER:ChiDiff() > 2
 ```
 
-***
-
+---
 
 > ## form
 
-- This condition retrieves the current shapeshift form index that the player is in.
+-   This condition retrieves the current shapeshift form index that the player is in.
 
 #### Returns `NUMBER`
-- The shapeshift form index or 0 if the player is not in any form.
 
-#### *Example:*
+-   The shapeshift form index or 0 if the player is not in any form.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "form == 3"},
@@ -508,18 +543,20 @@ _A.DSL:Get("form")() == 3
 PLAYER:Form() == 3
 ```
 
-***
-
+---
 
 > ## lunar.power
-  *`lunar.power || lunarpower || astralpower`*
+>
+> _`lunar.power || lunarpower || astralpower`_
 
-- This condition retrieve the current amount of lunar power (astral power) that the player has.
+-   This condition retrieve the current amount of lunar power (astral power) that the player has.
 
 #### Returns `NUMBER`
-- The amount of lunar power (astral power) that the player has.
 
-#### *Example:*
+-   The amount of lunar power (astral power) that the player has.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "lunar.power >= 60"},
@@ -531,17 +568,18 @@ _A.DSL:Get("lunar.power")() >= 60
 PLAYER:LunarPower() >= 60
 ```
 
-***
-
+---
 
 > ## mushrooms
 
-- This condition counts the number of Wild Mushroom totems currently active.
+-   This condition counts the number of Wild Mushroom totems currently active.
 
 #### Returns `NUMBER`
-- The number of Wild Mushroom totems currently active.
 
-#### *Example:*
+-   The number of Wild Mushroom totems currently active.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "mushrooms > 0"},
@@ -553,18 +591,20 @@ _A.DSL:Get("mushrooms")() > 0
 PLAYER:Mushrooms() > 0
 ```
 
-***
-
+---
 
 > ## holy.power
-  *`holy.power || holypower`*
+>
+> _`holy.power || holypower`_
 
-- This condition retrieves the current amount of Holy Power that the player has.
+-   This condition retrieves the current amount of Holy Power that the player has.
 
 #### Returns `NUMBER`
-- The amount of Holy Power that the player currently has.
 
-#### *Example:*
+-   The amount of Holy Power that the player currently has.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "holy.power >= 60"},
@@ -576,17 +616,18 @@ _A.DSL:Get("holy.power")() >= 60
 PLAYER:HolyPower() >= 60
 ```
 
-***
-
+---
 
 > ## rage
 
-- This condition retrieves the current amount of Rage that the player has.
+-   This condition retrieves the current amount of Rage that the player has.
 
 #### Returns `NUMBER`
-- The amount of Rage that the player currently has.
 
-#### *Example:*
+-   The amount of Rage that the player currently has.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "rage >= 50"},
@@ -598,18 +639,20 @@ _A.DSL:Get("rage")() >= 50
 PLAYER:Rage() >= 50
 ```
 
-***
-
+---
 
 > ## rage.diff
-  *`rage.diff || rage.deficit || ragediff`*
+>
+> _`rage.diff || rage.deficit || ragediff`_
 
-- This condition calculates the deficit of Rage the player has.
+-   This condition calculates the deficit of Rage the player has.
 
 #### Returns `NUMBER`
-- The deficit of Rage that the player currently has.
 
-#### *Example:*
+-   The deficit of Rage that the player currently has.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "rage.diff >= 15"},
@@ -621,17 +664,18 @@ _A.DSL:Get("rage.diff")() >= 15
 PLAYER:RageDiff() >= 15
 ```
 
-***
-
+---
 
 > ## stance
 
-- This condition retrieves the index of the stance that the player is in.
+-   This condition retrieves the index of the stance that the player is in.
 
 #### Returns `NUMBER`
-- The index of the current stance.
 
-#### *Example:*
+-   The index of the current stance.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "stance == 2"},
@@ -643,18 +687,20 @@ _A.DSL:Get("stance")() == 2
 PLAYER:Stance() == 2
 ```
 
-***
-
+---
 
 > ## fury.diff
-  *`fury.diff || fury.deficit || furydiff`*
+>
+> _`fury.diff || fury.deficit || furydiff`_
 
-- This condition retrieves the deficit of fury (resource) that the player has.
+-   This condition retrieves the deficit of fury (resource) that the player has.
 
 #### Returns `NUMBER`
-- The deficit of fury.
 
-#### *Example:*
+-   The deficit of fury.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "fury.diff >= 15"},
@@ -666,17 +712,18 @@ _A.DSL:Get("fury.diff")() >= 15
 PLAYER:FuryDiff() >= 15
 ```
 
-***
-
+---
 
 > ## pain
 
-- This condition retrieves the current amount of pain (resource) that the player has.
+-   This condition retrieves the current amount of pain (resource) that the player has.
 
 #### Returns `NUMBER`
-- The current amount of pain.
 
-#### *Example:*
+-   The current amount of pain.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "pain >= 30"},
@@ -688,18 +735,20 @@ _A.DSL:Get("pain")() >= 30
 PLAYER:Pain() >= 30
 ```
 
-***
-
+---
 
 > ## arcane.charges
-  *`arcane.charges || arcanecharges`*
+>
+> _`arcane.charges || arcanecharges`_
 
-- This condition retrieves the current number of Arcane Charges that the player has.
+-   This condition retrieves the current number of Arcane Charges that the player has.
 
 #### Returns `NUMBER`
-- The current number of Arcane Charges.
 
-#### *Example:*
+-   The current number of Arcane Charges.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "arcane.charges >= 15"},
@@ -711,18 +760,20 @@ _A.DSL:Get("arcane.charges")() >= 15
 PLAYER:ArcaneCharges() >= 15
 ```
 
-***
-
+---
 
 > ## combo
-  *`combo || combo.points || combopoints`*
+>
+> _`combo || combo.points || combopoints`_
 
-- This condition retrieves the current number of Combo Points that the player has.
+-   This condition retrieves the current number of Combo Points that the player has.
 
 #### Returns `NUMBER`
-- The current number of Combo Points.
 
-#### *Example:*
+-   The current number of Combo Points.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "combo >= 4"},
@@ -734,18 +785,20 @@ _A.DSL:Get("combo")() >= 4
 PLAYER:Combo() >= 4
 ```
 
-***
-
+---
 
 > ## combo.max
-  *`combo.max || combomax`*
+>
+> _`combo.max || combomax`_
 
-- This condition returns the maximum number of Combo Points a player can have.
+-   This condition returns the maximum number of Combo Points a player can have.
 
 #### Returns `NUMBER`
-- The maximum number of Combo Points.
 
-#### *Example:*
+-   The maximum number of Combo Points.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "combo.max > 5"},
@@ -757,18 +810,20 @@ _A.DSL:Get("combo.max")() > 5
 PLAYER:ComboMax() > 5
 ```
 
-***
-
+---
 
 > ## combo.diff
-  *`combo.diff || combo.deficit || combodiff || combopoints.diff || combopoints.deficit || combopointsdiff`*
+>
+> _`combo.diff || combo.deficit || combodiff || combopoints.diff || combopoints.deficit || combopointsdiff`_
 
-- This condition calculates the deficit of Combo Points the player has until reaching the maximum amount.
+-   This condition calculates the deficit of Combo Points the player has until reaching the maximum amount.
 
 #### Returns `NUMBER`
-- The deficit of Combo Points.
 
-#### *Example:*
+-   The deficit of Combo Points.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "combo.diff > 2"},
@@ -780,18 +835,20 @@ _A.DSL:Get("combo.diff")() > 2
 PLAYER:ComboDiff() > 2
 ```
 
-***
-
+---
 
 > ## time.to.max
-  *`time.to.max || timetomax`*
+>
+> _`time.to.max || timetomax`_
 
-- This condition calculates the estimated time in seconds for a player's resource to reach its maximum value.
+-   This condition calculates the estimated time in seconds for a player's resource to reach its maximum value.
 
 #### Returns `NUMBER`
-- The estimated time in seconds to reach maximum resource.
 
-#### *Example:*
+-   The estimated time in seconds to reach maximum resource.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "time.to.max < 1"},
@@ -803,17 +860,18 @@ _A.DSL:Get("time.to.max")() < 1
 PLAYER:TimeToMax() < 1
 ```
 
-***
-
+---
 
 > ## warlock.minions
 
-- This condition returns the number of Warlock's minions.
+-   This condition returns the number of Warlock's minions.
 
 #### Returns `NUMBER`
-- The number of Warlock's minions.
 
-#### *Example:*
+-   The number of Warlock's minions.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "warlock.minions > 2"},
@@ -825,20 +883,22 @@ _A.DSL:Get("warlock.minions")() > 2
 PLAYER:WarlockMinions() > 2
 ```
 
-***
-
+---
 
 > ## warlock.minions.type
 
-- This condition returns the number of Warlock's minions of a specific type.
+-   This condition returns the number of Warlock's minions of a specific type.
 
 #### Parameters
-- `type`: The type of minion (e.g., "Imp", "Voidwalker", etc.)
+
+-   `type`: The type of minion (e.g., "Imp", "Voidwalker", etc.)
 
 #### Returns `NUMBER`
-- The number of Warlock's minions of the specified type.
 
-#### *Example:*
+-   The number of Warlock's minions of the specified type.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "warlock.minions(Voidwalker).type > 0"},
@@ -850,17 +910,18 @@ _A.DSL:Get("warlock.minions.type")(_, "Voidwalker") > 0
 PLAYER:WarlockMinionsType("Voidwalker") > 0
 ```
 
-***
-
+---
 
 > ## warlock.empower
 
-- This condition returns the number of empowered Warlock's minions.
+-   This condition returns the number of empowered Warlock's minions.
 
 #### Returns `NUMBER`
-- The number of empowered Warlock's minions.
 
-#### *Example:*
+-   The number of empowered Warlock's minions.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "warlock.empower > 3"},
@@ -872,17 +933,18 @@ _A.DSL:Get("warlock.empower")() > 3
 PLAYER:WarlockEmpower() > 3
 ```
 
-***
-
+---
 
 > ## warlock.empower.missing
 
-- This condition returns the number of Warlock's minions that are not currently empowered.
+-   This condition returns the number of Warlock's minions that are not currently empowered.
 
 #### Returns `NUMBER`
-- The number of unempowered Warlock's minions.
 
-#### *Example:*
+-   The number of unempowered Warlock's minions.
+
+#### _Example:_
+
 ```lua
 -- DSL Mode
 {ACTION, "warlock.empower.missing > 2"},

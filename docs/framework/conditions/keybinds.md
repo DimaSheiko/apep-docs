@@ -1,27 +1,29 @@
 # KEYBINDS
----
 
+---
 
 > ## mouse
 
-- This condition checks if a specified mouse button is currently held down.
+-   This condition checks if a specified mouse button is currently held down.
 
 #### Parameters
-- `button`: The mouse button name or index (e.g., "LeftButton", "Button4", 2).
+
+-   `button`: The mouse button name or index (e.g., "LeftButton", "Button4", 2).
 
 #### Returns `BOOL`
-- `true` if the specified mouse button is held down, `false` otherwise.
 
-    | index |name          |
+-   `true` if the specified mouse button is held down, `false` otherwise.
+
+    | index | name         |
     | :---: | ------------ |
-    |1      | LeftButton   |
-    |2      | RightButton  |
-    |3      | MiddleButton |
-    |4      | Button4      |
-    |5      | Button5      |
+    |   1   | LeftButton   |
+    |   2   | RightButton  |
+    |   3   | MiddleButton |
+    |   4   | Button4      |
+    |   5   | Button5      |
 
+#### _Example:_
 
-#### *Example:*
 ```lua
 -- DSL Mode
 {ACTION, "mouse(3)"}, -- MiddleButton
@@ -33,18 +35,19 @@ _A.DSL:Get("mouse")(_, "Button4") -- 4
 PLAYER:Mouse(2) -- RightButton
 ```
 
-***
-
+---
 
 > ## keybind
 
-- This condition checks if a specified keybind is pressed.
+-   This condition checks if a specified keybind is pressed.
 
 #### Parameters
-- `key`: The keybind to check (e.g., "SHIFT-1", "ALT-Q", "F3", "R").
+
+-   `key`: The keybind to check (e.g., "SHIFT-1", "ALT-Q", "F3", "R").
 
 #### Returns `BOOL`
-- `true` if the specified keybind is pressed, `false` otherwise.
+
+-   `true` if the specified keybind is pressed, `false` otherwise.
 
     | modifiers |
     | --------- |
@@ -58,8 +61,8 @@ PLAYER:Mouse(2) -- RightButton
     | LALT      |
     | RALT      |
 
+#### _Example:_
 
-#### *Example:*
 ```lua
 -- DSL Mode
 {ACTION, "keybind(alt)"},
