@@ -1218,6 +1218,68 @@ end
 
 ---
 
+> ## ScreenToWorld
+
+-   This function converts screen coordinates to 3D world coordinates. It returns (X, Y, Z) along with a flag indicating whether the coordinates collided with any object in the game world based on the hit flags.
+
+#### Parameters
+
+-   `x`(number): The screen X-coordinate.
+-   `y`(number): The screen Y-coordinate.
+-   `hitFlags`(number): [`optional`] Flags specifying the type of collision detection. Defaults to `0x100000 | 0x10000 | 0x100 | 0x10 | 0x1`.
+
+#### Returns
+
+-   `collision`(boolean): Indicates whether the screen coordinates collided with any object in the game world based on the hit flags.
+-   `x`(number): The X-coordinate in the 3D world.
+-   `y`(number): The Y-coordinate in the 3D world.
+-   `z`(number): The Z-coordinate in the 3D world.
+
+!> **Note:** Hit Flags allow you to control the specific types of objects and conditions.
+
+|     Flag | Collision             | Note                                                                                                                          |
+| -------: | :-------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
+|      0x0 | none                  | No special behavior or considerations.                                                                                        |
+|      0x1 | doodad                | Take doodad collision into account during collision checks. Doodads are objects like props and decorations in the game world. |
+|      0x2 | doodad render         | Doodad rendering during collision checks.                                                                                     |
+|     0x10 | wmo                   | World Map Object (WMO) collision during collision checks. WMOs are complex structures like buildings.                         |
+|     0x20 | wmo render            | WMO rendering during collision checks.                                                                                        |
+|     0x40 | Wmo no cam            | Exclude WMO collision with the camera.                                                                                        |
+|    0x100 | terrain               | Include terrain collision in checks.                                                                                          |
+|   0x2000 | wmo doodad            | Ignore collision and interaction between WMOs and doodads.                                                                    |
+|  0x10000 | liquid water walkable | Consider water as walkable during collision checks.                                                                           |
+|  0x20000 | liquid all            | Include all liquid surfaces (water, lava, etc.) in collision checks.                                                          |
+|  0x80000 | cull                  | Perform culling behavior to determine what should be rendered or not.                                                         |
+| 0x100000 | entity                | Movable objects (objects that can be interacted with or moved) should be considered when performing the collision check.      |
+| 0x200000 | entity render         | Consider entity rendering during collision checks.                                                                            |
+
+#### _Example:_
+
+```lua
+do
+    local collision, x, y, z
+    _A.C_Timer.NewTicker(0.1, function()
+        if _A.IsMouseButtonDown(2) then
+            local mX, mY = _A.GetCursorPosition()
+            collision, x, y, z = _A.ScreenToWorld(mX, mY)
+        end
+    end)
+
+    local function draw()
+        if x and y and z then
+            _A.LibDraw:Circle(x, y, z)
+        end
+    end
+
+    _A.Core:WhenInGame(function()
+        _A.LibDraw:Sync(draw)
+        _A.LibDraw:Enable(0.01)
+    end)
+end
+```
+
+---
+
 > ## ClickPosition
 
 -   This function simulates a mouse click at the specified 3D world position.
