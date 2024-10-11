@@ -12,16 +12,15 @@ One of the notable capabilities while using fakeunits is the ability to cast spe
     {"%target", "!is(target)", "nearEnemyCb"}
     ```
 
-=== "Lua Code"
-
-    ```lua
-    _A.DSL:Get("%target", "!is(target)", "nearEnemyCb")
-    ```
-
 === "Lua Mode"
 
     ```lua
-    PLAYER:CastSpell("%target", "!is(target)", "nearEnemyCb")
+    local target = Object("target")
+    local nearEnemyCb = Object("nearEnemyCb")
+
+    if nearEnemyCb and not target then
+        nearEnemyCb:target()
+    end
     ```
 
 Here, the unit `nearEnemyCb` is used to target the near enemy in combat. This signifies that the fakeunit identifies a target object, and the specified action (target the unit, applying a buff, cast a spell etc.) can be executed on it. This flexibility with fakeunits means you can perform various custom actions programmatically on any target represented by these pointers.
@@ -37,6 +36,30 @@ Here, the unit `nearEnemyCb` is used to target the near enemy in combat. This si
 > ## combatEnemies | cbEnemies
 
 -   Represents the enemies that are in combat.
+
+---
+
+> ## farEnemy
+
+-   Represents the farthest enemy.
+
+---
+
+> ## farEnemyCb
+
+-   Represents the farthest enemy in combat with the Roster.
+
+---
+
+> ## mostEnemies
+
+-   Represents the largest group of enemies.
+
+---
+
+> ## mostEnemiesCb
+
+-   Represents the largest group of enemies in combat with the Roster.
 
 ---
 
