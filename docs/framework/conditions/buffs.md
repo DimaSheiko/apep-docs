@@ -1,316 +1,461 @@
 # BUFFS
----
 
+---
 
 > ## hashero
 
-- This condition checks if the player has any of the heroism-related buffs.
+-   This condition checks if the player has any of the heroism-related buffs.
+
 #### Returns `BOOL`
-- `true` if the player has any of the heroism-related buffs, `false` otherwise.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "hashero"},
+-   `true` if the player has any of the heroism-related buffs, `false` otherwise.
 
--- in Lua code
-_A.DSL:Get("hashero")()
+#### _Example:_
 
--- Lua Mode
-PLAYER:Hashero()
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "hashero"},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("hashero")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Hashero()
+    ```
+
+---
 
 > ## hero.duration
-  *`hero.duration || heroDuration`*
+>
+> _`hero.duration || heroDuration`_
 
 #### Returns `NUMBER`
-- The remaining duration in `seconds` of the heroism-related buff with the longest duration, or 0 if no such buff is active.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "heroDuration"},
+-   The remaining duration in `seconds` of the heroism-related buff with the longest duration, or 0 if no such buff is active.
 
--- in Lua code
-_A.DSL:Get("heroDuration")()
+#### _Example:_
 
--- Lua Mode
-PLAYER:HeroDuration()
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "heroDuration"},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("heroDuration")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:HeroDuration()
+    ```
+
+---
 
 > ## buff
-  *`buff || buff.up`*
+>
+> _`buff || buff.up`_
 
-- It only checks for `player` applied buffs.
+-   It only checks for `player` applied buffs.
+
 #### Parameters
-- `UNIT`: The unit to check for the buff.
-- `NAME`: The name or ID of the buff to check.
+
+-   `UNIT`: The unit to check for the buff.
+-   `NAME`: The name or ID of the buff to check.
+
 #### Returns `BOOL`
-- `true` if the specified buff name or ID is active on the unit, `false` otherwise.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "UNIT.buff(Rejuvenation)", UNIT},
+-   `true` if the specified buff name or ID is active on the unit, `false` otherwise.
 
--- in Lua code
-_A.DSL:Get("buff")("UNIT", "Rejuvenation")
+#### _Example:_
 
--- Lua Mode
-UNIT:Buff("Rejuvenation")
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "UNIT.buff(Rejuvenation)", UNIT},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("buff")("UNIT", "Rejuvenation")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Buff("Rejuvenation")
+    ```
+
+---
 
 > ## buff.any
-  *`buff.any || buff.any.up`*
+>
+> _`buff.any || buff.any.up`_
 
-- It checks for both `player and non-player` applied buffs.
+-   It checks for both `player and non-player` applied buffs.
+
 #### Parameters
-- `UNIT`: The unit to check for the buff.
-- `NAME`: The name or ID of the buff to check.
+
+-   `UNIT`: The unit to check for the buff.
+-   `NAME`: The name or ID of the buff to check.
+
 #### Returns `BOOL`
-- `true` if the specified buff name or ID is active on the unit, `false` otherwise.
 
+-   `true` if the specified buff name or ID is active on the unit, `false` otherwise.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "UNIT.buff(Regrowth).any", UNIT},
+#### _Example:_
 
--- in Lua code
-_A.DSL:Get("buff.any")("UNIT", "Regrowth")
+=== "DSL"
 
--- Lua Mode
-UNIT:BuffAny("Regrowth")
-```
+    ```lua
+    {ACTION, "UNIT.buff(Regrowth).any", UNIT},
+    ```
 
-***
+=== "Lua Code"
 
+    ```lua
+    _A.DSL:Get("buff.any")("UNIT", "Regrowth")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:BuffAny("Regrowth")
+    ```
+
+---
 
 > ## buff.stack
-  *`buff.stack || buff.count`*
+>
+> _`buff.stack || buff.count`_
 
-- It checks for player-applied buff stacks.
+-   It checks for player-applied buff stacks.
+
 #### Parameters
-- `UNIT`: The unit to check for the buff stacks.
-- `NAME`: The name or ID of the buff to check.
+
+-   `UNIT`: The unit to check for the buff stacks.
+-   `NAME`: The name or ID of the buff to check.
+
 #### Returns `NUMBER`
-- The number of stacks of the specified buff on the unit, or 0 if not present.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "UNIT.buff(Ironfur).stack", UNIT},
+-   The number of stacks of the specified buff on the unit, or 0 if not present.
 
--- in Lua code
-_A.DSL:Get("buff.stack")("UNIT", "Ironfur")
+#### _Example:_
 
--- Lua Mode
-UNIT:BuffStack("Ironfur")
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "UNIT.buff(Ironfur).stack", UNIT},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("buff.stack")("UNIT", "Ironfur")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:BuffStack("Ironfur")
+    ```
+
+---
 
 > ## buff.stack.any
-  *`buff.stack.any || buff.count.any`*
+>
+> _`buff.stack.any || buff.count.any`_
 
-- It checks for all buff sources, not just player-applied buffs.
+-   It checks for all buff sources, not just player-applied buffs.
+
 #### Parameters
-- `UNIT`: The unit to check for the buff stacks.
-- `NAME`: The name or ID of the buff to check.
+
+-   `UNIT`: The unit to check for the buff stacks.
+-   `NAME`: The name or ID of the buff to check.
+
 #### Returns `NUMBER`
-- The number of stacks of the specified buff on the unit, or 0 if not present.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "UNIT.buff(Rejuvenation).stack.any", UNIT},
+-   The number of stacks of the specified buff on the unit, or 0 if not present.
 
--- in Lua code
-_A.DSL:Get("buff.stack.any")("UNIT", "Rejuvenation")
+#### _Example:_
 
--- Lua Mode
-UNIT:BuffStackAny("Rejuvenation")
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "UNIT.buff(Rejuvenation).stack.any", UNIT},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("buff.stack.any")("UNIT", "Rejuvenation")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:BuffStackAny("Rejuvenation")
+    ```
+
+---
 
 > ## buff.duration
-  *`buff.duration || buff.remains`*
+>
+> _`buff.duration || buff.remains`_
 
-- It checks for player-applied buffs only.
+-   It checks for player-applied buffs only.
+
 #### Parameters
-- `UNIT`: The unit to check for the remaining duration of the buff.
-- `NAME`: The name or ID of the buff to check.
+
+-   `UNIT`: The unit to check for the remaining duration of the buff.
+-   `NAME`: The name or ID of the buff to check.
+
 #### Returns `NUMBER`
-- The remaining duration of the specified buff on the unit in `seconds`, or 0 if not present.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "UNIT.buff(Rejuvenation).duration", UNIT},
+-   The remaining duration of the specified buff on the unit in `seconds`, or 0 if not present.
 
--- in Lua code
-_A.DSL:Get("buff.duration")("UNIT", "Rejuvenation")
+#### _Example:_
 
--- Lua Mode
-UNIT:BuffDuration("Rejuvenation")
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "UNIT.buff(Rejuvenation).duration", UNIT},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("buff.duration")("UNIT", "Rejuvenation")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:BuffDuration("Rejuvenation")
+    ```
+
+---
 
 > ## buff.totalduration
 
-- It checks for player-applied buffs only.
+-   It checks for player-applied buffs only.
+
 #### Parameters
-- `UNIT`: The unit to check for the total duration of the buff.
-- `NAME`: The name or ID of the buff to check.
+
+-   `UNIT`: The unit to check for the total duration of the buff.
+-   `NAME`: The name or ID of the buff to check.
+
 #### Returns `NUMBER`
-- The total duration of the specified buff on the unit in `seconds`, or 0 if not present.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "UNIT.buff(Rejuvenation).totalduration", UNIT},
+-   The total duration of the specified buff on the unit in `seconds`, or 0 if not present.
 
--- in Lua code
-_A.DSL:Get("buff.totalduration")("UNIT", "Rejuvenation")
+#### _Example:_
 
--- Lua Mode
-UNIT:BuffTotalduration("Rejuvenation")
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "UNIT.buff(Rejuvenation).totalduration", UNIT},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("buff.totalduration")("UNIT", "Rejuvenation")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:BuffTotalduration("Rejuvenation")
+    ```
+
+---
 
 > ## buff.refreshable
 
-- This condition checks whether the specified buff aura on the target unit is refreshable.
-- A buff is considered refreshable if its remaining duration is less than or equal to `30%` of its total duration.
+-   This condition checks whether the specified buff aura on the target unit is refreshable.
+-   A buff is considered refreshable if its remaining duration is less than or equal to `30%` of its total duration.
+
 #### Parameters
-- `UNIT`: The unit to check for the refreshability of the buff.
-- `NAME`: The name or ID of the buff to check.
+
+-   `UNIT`: The unit to check for the refreshability of the buff.
+-   `NAME`: The name or ID of the buff to check.
+
 #### Returns `BOOL`
-- `true` if the buff is refreshable, or `false` if not or if the buff is not present.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "UNIT.buff(Rejuvenation).refreshable", UNIT},
+-   `true` if the buff is refreshable, or `false` if not or if the buff is not present.
 
--- in Lua code
-_A.DSL:Get("buff.refreshable")("UNIT", "Rejuvenation")
+#### _Example:_
 
--- Lua Mode
-UNIT:BuffRefreshable("Rejuvenation")
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "UNIT.buff(Rejuvenation).refreshable", UNIT},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("buff.refreshable")("UNIT", "Rejuvenation")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:BuffRefreshable("Rejuvenation")
+    ```
+
+---
 
 > ## buff.duration.any
-  *`buff.duration.any || buff.remains.any`*
+>
+> _`buff.duration.any || buff.remains.any`_
 
-- It checks for all buff sources, not just player-applied buffs.
+-   It checks for all buff sources, not just player-applied buffs.
+
 #### Parameters
-- `UNIT`: The unit to check for the remaining duration of the buff.
-- `NAME`: The name or ID of the buff to check.
+
+-   `UNIT`: The unit to check for the remaining duration of the buff.
+-   `NAME`: The name or ID of the buff to check.
+
 #### Returns `NUMBER`
-- The remaining duration of the specified buff on the unit in `seconds`, or 0 if not present.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "UNIT.buff(Rejuvenation).duration.any", UNIT},
+-   The remaining duration of the specified buff on the unit in `seconds`, or 0 if not present.
 
--- in Lua code
-_A.DSL:Get("buff.duration.any")("UNIT", "Rejuvenation")
+#### _Example:_
 
--- Lua Mode
-UNIT:BuffDurationAny("Rejuvenation")
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "UNIT.buff(Rejuvenation).duration.any", UNIT},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("buff.duration.any")("UNIT", "Rejuvenation")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:BuffDurationAny("Rejuvenation")
+    ```
+
+---
 
 > ## buff.many
 
-- This condition counts the number of instances of the specified buff applied by the player on the unit.
+-   This condition counts the number of instances of the specified buff applied by the player on the unit.
+
 #### Parameters
-- `UNIT`: The unit to count the instances of the buff.
-- `NAME`: The name or ID of the buff to count instances of.
+
+-   `UNIT`: The unit to count the instances of the buff.
+-   `NAME`: The name or ID of the buff to count instances of.
+
 #### Returns `NUMBER`
-- The number of instances of the buff applied by the player on the unit.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "UNIT.buff(buff_name).many", UNIT},
+-   The number of instances of the buff applied by the player on the unit.
 
--- in Lua code
-_A.DSL:Get("buff.many")("UNIT", "buff_name")
+#### _Example:_
 
--- Lua Mode
-UNIT:BuffMany("buff_name")
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "UNIT.buff(buff_name).many", UNIT},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("buff.many")("UNIT", "buff_name")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:BuffMany("buff_name")
+    ```
+
+---
 
 > ## buff.many.any
 
-- This condition counts the number of instances of the specified buff on the unit, regardless of the source.
+-   This condition counts the number of instances of the specified buff on the unit, regardless of the source.
+
 #### Parameters
-- `UNIT`: The unit to count the instances of the buff.
-- `NAME`: The name or ID of the buff to count instances of.
+
+-   `UNIT`: The unit to count the instances of the buff.
+-   `NAME`: The name or ID of the buff to count instances of.
+
 #### Returns `NUMBER`
-- The number of instances of the buff applied by the player on the target unit.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "UNIT.buff(Bolstering).many.any", UNIT},
+-   The number of instances of the buff applied by the player on the target unit.
 
--- in Lua code
-_A.DSL:Get("buff.many.any")("UNIT", "Bolstering")
+#### _Example:_
 
--- Lua Mode
-UNIT:BuffManyAny("Bolstering")
-```
+=== "DSL"
 
-***
+    ```lua
+    {ACTION, "UNIT.buff(Bolstering).many.any", UNIT},
+    ```
 
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("buff.many.any")("UNIT", "Bolstering")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:BuffManyAny("Bolstering")
+    ```
+
+---
 
 > ## buff.type
 
-- This condition checks if the target unit has a buff with the specified type.
+-   This condition checks if the target unit has a buff with the specified type.
+
 #### Parameters
-- `UNIT`: The unit to check for the buff with the specified type.
-- `buff_type`: The type of buff to check for.
 
-  `"Magic", "Disease", "Poison", "Curse", "Enrage"`
+-   `UNIT`: The unit to check for the buff with the specified type.
+-   `buff_type`: The type of buff to check for.
+
+    `"Magic", "Disease", "Poison", "Curse", "Enrage"`
+
 #### Returns `BOOL`
-- `true` if the unit has a buff with the specified type, `false` otherwise.
 
-#### *Example:*
-```lua
--- DSL Mode
-{ACTION, "UNIT.buff(Magic).type", UNIT},
+-   `true` if the unit has a buff with the specified type, `false` otherwise.
 
--- in Lua code
-_A.DSL:Get("buff.type")("UNIT", "Magic")
+#### _Example:_
 
--- Lua Mode
-UNIT:BuffType("Magic")
-```
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.buff(Magic).type", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("buff.type")("UNIT", "Magic")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:BuffType("Magic")
+    ```
