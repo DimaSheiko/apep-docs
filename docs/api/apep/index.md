@@ -2097,3 +2097,31 @@ end
 ```lua
 _A.Core:GetItemIcon(idOrName, width, height)
 ```
+
+---
+
+## SetSpeed
+
+-   This function sets the speed of the player to the specified value.
+
+#### Parameters
+
+-   `speed`(number): The desired speed value.
+
+#### _Example:_
+
+```lua
+_A.SetSpeed(20)
+```
+
+---
+
+## ResetSpeed
+
+-   This function resets the speed of the player to the default value.
+
+#### _Example:_
+
+```lua
+_A.ResetSpeed()
+```
