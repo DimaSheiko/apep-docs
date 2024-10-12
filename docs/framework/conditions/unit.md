@@ -2332,8 +2332,6 @@
 
 ---
 
----
-
 > ## sitting
 
 #### Parameters
@@ -2361,7 +2359,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:sitting()
+    UNIT:IsSitting()
     ```
 
 ---
@@ -2393,7 +2391,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:influenced()
+    UNIT:IsInfluenced()
     ```
 
 ---
@@ -2425,7 +2423,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:controlledByMe()
+    UNIT:IsPlayerControlled()
     ```
 
 ---
@@ -2457,7 +2455,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:isTotem()
+    UNIT:IsTotem()
     ```
 
 ---
@@ -2489,7 +2487,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:attackable()
+    UNIT:IsNotAttackable()
     ```
 
 ---
@@ -2521,7 +2519,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:looting()
+    UNIT:IsLooting()
     ```
 
 ---
@@ -2530,11 +2528,11 @@
 
 #### Parameters
 
--   `UNIT`: The unit to check if its pet is in combat.
+-   `UNIT`: The unit to check if the pet is in combat.
 
 #### Returns `BOOL`
 
--   `true` if the unit's pet is in combat, `false` otherwise.
+-   `true` if the pet is in combat, `false` otherwise.
 
 #### _Example:_
 
@@ -2553,7 +2551,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:petInCombat()
+    UNIT:IsPetInCombat()
     ```
 
 ---
@@ -2585,7 +2583,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:pvpFlagged()
+    UNIT:IsPvPFlagged()
     ```
 
 ---
@@ -2617,39 +2615,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:choked()
-    ```
-
----
-
-> ## silenced
-
-#### Parameters
-
--   `UNIT`: The unit to check if it is silenced.
-
-#### Returns `BOOL`
-
--   `true` if the unit is silenced, `false` otherwise.
-
-#### _Example:_
-
-=== "DSL"
-
-    ```lua
-    {ACTION, "UNIT.silenced", UNIT},
-    ```
-
-=== "Lua Code"
-
-    ```lua
-    _A.DSL:Get("silenced")("UNIT")
-    ```
-
-=== "Lua Mode"
-
-    ```lua
-    UNIT:silenced()
+    UNIT:IsChoked()
     ```
 
 ---
@@ -2681,7 +2647,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:pacified()
+    UNIT:IsPacified()
     ```
 
 ---
@@ -2713,7 +2679,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:stunned()
+    UNIT:IsStunned()
     ```
 
 ---
@@ -2722,11 +2688,11 @@
 
 #### Parameters
 
--   `UNIT`: The unit to check if it is on a taxi.
+-   `UNIT`: The unit to check if it is on a taxi flight.
 
 #### Returns `BOOL`
 
--   `true` if the unit is on a taxi, `false` otherwise.
+-   `true` if the unit is on a taxi flight, `false` otherwise.
 
 #### _Example:_
 
@@ -2745,7 +2711,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:isTaxi()
+    UNIT:IsTaxiFlight()
     ```
 
 ---
@@ -2777,7 +2743,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:disarmed()
+    UNIT:IsDisarmed()
     ```
 
 ---
@@ -2809,7 +2775,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:confused()
+    UNIT:IsConfused()
     ```
 
 ---
@@ -2841,7 +2807,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:fleeing()
+    UNIT:IsFleeing()
     ```
 
 ---
@@ -2873,7 +2839,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:possessed()
+    UNIT:IsPossessed()
     ```
 
 ---
@@ -2905,7 +2871,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:selectable()
+    UNIT:IsNotSelectable()
     ```
 
 ---
@@ -2937,7 +2903,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:skinnable()
+    UNIT:IsSkinnable()
     ```
 
 ---
@@ -2969,7 +2935,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:mounted()
+    UNIT:IsInMount()
     ```
 
 ---
@@ -3001,7 +2967,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:dazed()
+    UNIT:IsDazed()
     ```
 
 ---
@@ -3033,7 +2999,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:sheathed()
+    UNIT:IsSheathed()
     ```
 
 ---
@@ -3065,7 +3031,7 @@
 === "Lua Mode"
 
     ```lua
-    UNIT:feignDeath()
+    UNIT:IsFeignDeath()
     ```
 
 ---
