@@ -563,6 +563,166 @@
 
 ---
 
+> ## currentSpeed
+
+#### Parameters
+
+-   `UNIT`: The unit whose current speed to retrieve.
+
+#### Returns `NUMBER`
+
+-   The current speed of the unit in yards per second.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.currentSpeed > 5", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("currentSpeed")("UNIT") > 5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:CurrentSpeed() > 5
+    ```
+
+---
+
+> ## walkSpeed
+
+#### Parameters
+
+-   `UNIT`: The unit whose walking speed to retrieve.
+
+#### Returns `NUMBER`
+
+-   The walking speed of the unit in yards per second.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.walkSpeed > 2", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("walkSpeed")("UNIT") > 2
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:WalkSpeed() > 2
+    ```
+
+---
+
+> ## runSpeed
+
+#### Parameters
+
+-   `UNIT`: The unit whose running speed to retrieve.
+
+#### Returns `NUMBER`
+
+-   The running speed of the unit in yards per second.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.runSpeed > 7", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("runSpeed")("UNIT") > 7
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:RunSpeed() > 7
+    ```
+
+---
+
+> ## backSpeed
+
+#### Parameters
+
+-   `UNIT`: The unit whose backward speed to retrieve.
+
+#### Returns `NUMBER`
+
+-   The backward speed of the unit in yards per second.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.backSpeed > 3", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("backSpeed")("UNIT") > 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:BackSpeed() > 3
+    ```
+
+---
+
+> ## swimSpeed
+
+#### Parameters
+
+-   `UNIT`: The unit whose swimming speed to retrieve.
+
+#### Returns `NUMBER`
+
+-   The swimming speed of the unit in yards per second.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.swimSpeed > 4", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("swimSpeed")("UNIT") > 4
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:SwimSpeed() > 4
+    ```
+
+---
+
 > ## target
 
 #### Parameters
