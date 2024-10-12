@@ -830,3 +830,34 @@
     ```lua
     PLAYER:IsHavingLunch()
     ```
+
+---
+
+> ## createdBy
+
+-   This condition checks if a specific unit created a particular object or effect.
+
+#### Parameters
+
+-   `UNIT1`: The unit identifier for the creator.
+-   `UNIT2`: The unit identifier for the object or effect.
+
+#### Returns `BOOL`
+
+-   `true` if `UNIT1` created `UNIT2`, otherwise `false`.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {"Mocking Banner", "spell(Mocking Banner).ready && !createdBy(UNIT)", "cursor.ground"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("createdBy")("player", "Mocking Banner")
+    ```
+
+---
