@@ -30,3 +30,16 @@ Before using Apep, you need to configure it correctly:
     - You don't need to edit this file, but you can view it with a text editor if desired.
 
 By following these steps, you should have Apep installed and ready to use.
+
+!!! info
+
+    If you have difficulties injecting into MoP or issues with writing permissions in the Game `Interface` folder
+
+    Inside `Apep.ini` you can add the following lines:
+    ```
+    MoP_AltInjection=true
+    SymLinkByPass=false
+    ```
+
+    - **MoP_AltInjection** alernative method of injection, only for MoP
+    - **SymLinkByPass**  for those who have problems with Symbolic Link's writing permissions.
