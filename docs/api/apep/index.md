@@ -2075,3 +2075,25 @@ end
     ```lua
     local spellid, spellvisualid, x, y, z, caster, fx, fy, fz, target, ix, iy, iz = unpack(missile)
     ```
+
+---
+
+## GetItemIcon
+
+-   This function retrieves the icon of the specified item.
+
+#### Parameters
+
+-   `idOrName` (string or number): The ID or name of the item to retrieve the icon for.
+-   `width` (number): The desired width of the icon.
+-   `height` (number): The desired height of the icon.
+
+#### Returns `string`
+
+-   The icon of the item.
+
+#### _Example:_
+
+```lua
+_A.Core:GetItemIcon(idOrName, width, height)
+```
