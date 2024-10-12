@@ -1767,6 +1767,211 @@ local specID = _A.UnitSpec("player")
 
 ---
 
+> ## UnitIsMovingForward
+
+-   This function checks whether the specified unit is currently moving forward.
+
+#### Parameters
+
+-   `unit`(string): The unit to check.
+
+#### Returns `bool`
+
+-   `true` if the unit is moving forward, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local isMovingForward = _A.UnitIsMovingForward("player")
+if isMovingForward then
+    print("The player is moving forward.")
+else
+    print("The player is not moving forward.")
+end
+```
+
+---
+
+> ## UnitIsMovingBackward
+
+-   This function checks whether the specified unit is currently moving backward.
+
+#### Parameters
+
+-   `unit`(string): The unit to check.
+
+#### Returns `bool`
+
+-   `true` if the unit is moving backward, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local isMovingBackward = _A.UnitIsMovingBackward("player")
+if isMovingBackward then
+    print("The player is moving backward.")
+else
+    print("The player is not moving backward.")
+end
+```
+
+---
+
+> ## UnitIsStrafeLeft
+
+-   This function checks whether the specified unit is currently strafing left.
+
+#### Parameters
+
+-   `unit`(string): The unit to check.
+
+#### Returns `bool`
+
+-   `true` if the unit is strafing left, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local isStrafingLeft = _A.UnitIsStrafeLeft("player")
+if isStrafingLeft then
+    print("The player is strafing left.")
+else
+    print("The player is not strafing left.")
+end
+```
+
+---
+
+> ## UnitIsStrafeRight
+
+-   This function checks whether the specified unit is currently strafing right.
+
+#### Parameters
+
+-   `unit`(string): The unit to check.
+
+#### Returns `bool`
+
+-   `true` if the unit is strafing right, `false` otherwise.
+
+#### _Example:_
+
+```lua
+local isStrafingRight = _A.UnitIsStrafeRight("player")
+if isStrafingRight then
+    print("The player is strafing right.")
+else
+    print("The player is not strafing right.")
+end
+```
+
+---
+
+> ## GetCurrentSpeed
+
+-   This function retrieves the current speed of the specified unit.
+
+#### Parameters
+
+-   `unit`(string): The unit to check.
+
+#### Returns `number`
+
+-   The current speed of the unit.
+
+#### _Example:_
+
+```lua
+local currentSpeed = _A.GetCurrentSpeed("player")
+print("Current speed:", currentSpeed)
+```
+
+---
+
+> ## GetWalkSpeed
+
+-   This function retrieves the walking speed of the specified unit.
+
+#### Parameters
+
+-   `unit`(string): The unit to check.
+
+#### Returns `number`
+
+-   The walking speed of the unit.
+
+#### _Example:_
+
+```lua
+local walkSpeed = _A.GetWalkSpeed("player")
+print("Walking speed:", walkSpeed)
+```
+
+---
+
+> ## GetRunSpeed
+
+-   This function retrieves the running speed of the specified unit.
+
+#### Parameters
+
+-   `unit`(string): The unit to check.
+
+#### Returns `number`
+
+-   The running speed of the unit.
+
+#### _Example:_
+
+```lua
+local runSpeed = _A.GetRunSpeed("player")
+print("Running speed:", runSpeed)
+```
+
+---
+
+> ## GetBackwardSpeed
+
+-   This function retrieves the backward speed of the specified unit.
+
+#### Parameters
+
+-   `unit`(string): The unit to check.
+
+#### Returns `number`
+
+-   The backward speed of the unit.
+
+#### _Example:_
+
+```lua
+local backwardSpeed = _A.GetBackwardSpeed("player")
+print("Backward speed:", backwardSpeed)
+```
+
+---
+
+> ## GetSwimimgSpeed
+
+-   This function retrieves the swimming speed of the specified unit.
+
+#### Parameters
+
+-   `unit`(string): The unit to check.
+
+#### Returns `number`
+
+-   The swimming speed of the unit.
+
+#### _Example:_
+
+```lua
+local swimmingSpeed = _A.GetSwimimgSpeed("player")
+print("Swimming speed:", swimmingSpeed)
+```
+
+---
+
 > ## CalculatePath
 
 -   This API computes a path from the player coordinates to another point in the game world.
