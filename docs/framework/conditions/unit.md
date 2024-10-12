@@ -402,6 +402,167 @@
 
 ---
 
+> ## IsMovingForward
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is moving forward.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is moving forward, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.IsMovingForward", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsMovingForward")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsMovingForward()
+    ```
+
+---
+
+> ## IsMovingBackward
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is moving backward.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is moving backward, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.IsMovingBackward", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsMovingBackward")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsMovingBackward()
+    ```
+
+---
+
+> ## IsStrafeLeft
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is strafing left.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is strafing left, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.IsStrafeLeft", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsStrafeLeft")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsStrafeLeft()
+    ```
+
+---
+
+> ## IsStrafeRight
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is strafing right.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is strafing right, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.IsStrafeRight", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsStrafeRight")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsStrafeRight()
+    ```
+
+---
+
+> ## predictPosition
+
+#### Parameters
+
+-   `UNIT`: The unit whose position is to be predicted.
+-   `seconds`: The time in seconds into the future for which to predict the unit's position.
+
+#### Returns `NUMBER, NUMBER, NUMBER | NIL`
+
+-   The predicted `x, y, z` coordinates of the unit, or `nil` if the prediction cannot be made.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.predictPosition(3)", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("predictPosition")("UNIT", "3")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:PredictPosition(3)
+    ```
+
+---
+
 > ## target
 
 #### Parameters
