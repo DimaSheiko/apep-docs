@@ -1846,6 +1846,165 @@
     UNIT:Hasloot()
     ```
 
-```
+---
 
-```
+> ## spec
+
+#### Parameters
+
+-   `UNIT`: The unit for which to retrieve the specialization ID.
+
+#### Returns `NUMBER`
+
+-   The specialization ID of the specified unit.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.spec=73", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spec")("UNIT") == 73
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Spec() == 73
+    ```
+
+---
+
+> ## hasSpec
+
+#### Parameters
+
+-   `UNIT`: The unit for which to check the specialization.
+-   `expectedSpecId`: The expected specialization ID.
+
+#### Returns `BOOL`
+
+-   `true` if the unit has the expected specialization ID, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.hasSpec(73)", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("hasSpec")("UNIT", "73")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:HasSpec(73)
+    ```
+
+---
+
+> ## delay
+
+#### Parameters
+
+-   `UNIT`: The unit to check for the delay.
+-   `name_secs`: A string containing the name and delay time (in seconds) separated by a comma.
+
+#### Returns `BOOL`
+
+-   `true` if the delay has passed, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.delay(delayName, 0.5)", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("delay")("UNIT", "delayName, 0.5")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:delay("delayName", 0.5)
+    ```
+
+---
+
+> ## timeout
+
+#### Parameters
+
+-   `UNIT`: The unit to check for the timeout.
+-   `name_secs`: A string containing the name and timeout duration (in seconds) separated by a comma.
+
+#### Returns `BOOL`
+
+-   `true` if the timeout has not been reached, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.timeout(timeoutName, 0.5)", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("timeout")("UNIT", "timeoutName, 0.5")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:timeout("timeoutName, 0.5")
+    ```
+
+---
+
+> ## frame.visible
+
+#### Parameters
+
+-   `name`: The name of the frame to check for visibility.
+
+#### Returns `BOOL`
+
+-   `true` if the frame is currently shown, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.frame(TaxiFrame).visible", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("frame.visible")("UNIT", "TaxiFrame")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:frameVisible("TaxiFrame")
+    ```
