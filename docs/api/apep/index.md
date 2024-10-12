@@ -1743,7 +1743,27 @@ _A.CancelPendingSpell()
 local subgroup = _A.subgroup("player")
 ```
 
----
+> ## UnitSpec
+
+-   Returns the specialization ID of the specified unit.
+
+#### Parameters
+
+-   `unit`(string): The unit to query the specialization ID for.
+
+#### Returns `number`
+
+-   The specialization ID of the unit.
+
+### _Example:_
+
+```lua
+local specID = _A.UnitSpec("player")
+```
+
+!!! warning
+
+    This method is available only in MoP (Mists of Pandaria).
 
 ---
 
