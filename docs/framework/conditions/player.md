@@ -861,3 +861,33 @@
     ```
 
 ---
+
+> ## bagSpace
+
+<!-- _A.DSL:Register('bagSpace', function() -- returns number -->
+
+-   This condition checks the available space in the player's bags.
+
+#### Returns `NUMBER`
+
+-   The number of available slots in the player's bags.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "bagSpace > 5"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("bagSpace")() > 5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:BagSpace() > 5
+    ```
