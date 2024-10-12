@@ -2329,3 +2329,743 @@
     ```lua
     UNIT:frameVisible("TaxiFrame")
     ```
+
+---
+
+---
+
+> ## sitting
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is sitting.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is sitting, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.sitting", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("sitting")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:sitting()
+    ```
+
+---
+
+> ## influenced
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is influenced.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is influenced, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.influenced", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("influenced")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:influenced()
+    ```
+
+---
+
+> ## controlled.byme
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is controlled by the player.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is controlled by the player, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.controlled.byme", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("controlled.byme")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:controlledByMe()
+    ```
+
+---
+
+> ## istotem
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is a totem.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is a totem, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.istotem", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("istotem")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:isTotem()
+    ```
+
+---
+
+> ## attackable
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is attackable.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is attackable, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.attackable", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("attackable")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:attackable()
+    ```
+
+---
+
+> ## looting
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is looting.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is looting, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.looting", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("looting")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:looting()
+    ```
+
+---
+
+> ## pet.incombat
+
+#### Parameters
+
+-   `UNIT`: The unit to check if its pet is in combat.
+
+#### Returns `BOOL`
+
+-   `true` if the unit's pet is in combat, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.pet.incombat", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("pet.incombat")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:petInCombat()
+    ```
+
+---
+
+> ## pvp.flagged
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is flagged for PvP.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is flagged for PvP, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.pvp.flagged", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("pvp.flagged")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:pvpFlagged()
+    ```
+
+---
+
+> ## choked
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is choked.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is choked, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.choked", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("choked")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:choked()
+    ```
+
+---
+
+> ## silenced
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is silenced.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is silenced, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.silenced", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("silenced")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:silenced()
+    ```
+
+---
+
+> ## pacified
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is pacified.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is pacified, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.pacified", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("pacified")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:pacified()
+    ```
+
+---
+
+> ## stunned
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is stunned.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is stunned, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.stunned", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("stunned")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:stunned()
+    ```
+
+---
+
+> ## istaxi
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is on a taxi.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is on a taxi, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.istaxi", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("istaxi")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:isTaxi()
+    ```
+
+---
+
+> ## disarmed
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is disarmed.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is disarmed, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.disarmed", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("disarmed")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:disarmed()
+    ```
+
+---
+
+> ## confused
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is confused.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is confused, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.confused", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("confused")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:confused()
+    ```
+
+---
+
+> ## fleeing
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is fleeing.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is fleeing, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.fleeing", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("fleeing")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:fleeing()
+    ```
+
+---
+
+> ## possessed
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is possessed.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is possessed, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.possessed", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("possessed")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:possessed()
+    ```
+
+---
+
+> ## selectable
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is selectable.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is selectable, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.selectable", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("selectable")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:selectable()
+    ```
+
+---
+
+> ## skinnable
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is skinnable.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is skinnable, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.skinnable", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("skinnable")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:skinnable()
+    ```
+
+---
+
+> ## mounted
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is mounted.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is mounted, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.mounted", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("mounted")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:mounted()
+    ```
+
+---
+
+> ## dazed
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is dazed.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is dazed, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.dazed", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("dazed")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:dazed()
+    ```
+
+---
+
+> ## sheathed
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is sheathed.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is sheathed, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.sheathed", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("sheathed")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:sheathed()
+    ```
+
+---
+
+> ## feign.death
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is feigning death.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is feigning death, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.feign.death", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("feign.death")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:feignDeath()
+    ```
+
+---
