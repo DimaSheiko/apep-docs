@@ -119,6 +119,7 @@ nav:
       - FakeUnits:
         - framework/units/fakeunits/index.md
         - Create own fakeunit: framework/units/fakeunits/own-fakeunit.md
+        - Roster: framework/units/fakeunits/roster.md
     - Object Manager:
       - framework/object-manager/index.md
   - API:
