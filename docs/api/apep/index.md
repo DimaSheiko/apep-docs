@@ -2726,3 +2726,113 @@ local isSheathed = _A.IsSheathed("player")
 ```lua
 local isFeignDeath = _A.IsFeignDeath("player")
 ```
+
+---
+
+<!-- New api _A.http:request
+- Send an HTTP or HTTPS request.
+Method (string)   - GET or POST
+URL (string)      - The URL to send to
+Data (string)     - The Data to send. (POST, can be JSON string or QUERY string) (GET, only QUERY string)
+Callback (body, code, req, res, err) - The function to be called with the response if the request succeeds.
+Headers (string)  - Headers that should be added to the request. Split with \r\n.
+
+function _A.http:request ( Method, URL, Data, Callback, Headers )
+
+NOTE: This function doesn't return anything. It's asynchronous. Use the Callback for that.
+
+@usage
+local headers = [[
+Authentication: c2VjcmV0
+X-Secret-Auth-Token: foo
+User-Agent: LUA-Script
+]]
+
+_A.http:request("POST", "https://httpbin.org/post", "name=John Doe&occupation=gardener",
+   function(body, code, req, res, err)
+      _G.RunScript(body)   -- contents that were downloaded
+      print(code) -- string - HTTP Response Code
+      print(req)  -- string - Full HTTP Request
+      print(res)  -- string - Full HTTP Response
+      print(err)  -- string - Some internal Socket Error
+   end,
+   headers
+)
+
+Example of how to send a message to discord through Apep.
+local name = _G.UnitName("player")
+local message = "Name: "..name.."\nServer: ".._G.GetRealmName()
+local data = {
+    embeds = {
+        title = "[webhook example]",
+        description = message,
+        color =  0xFFFF00
+    }
+}
+local json = _A.json:encode(data):gsub(':{', ':[{'):gsub('}}', '}]}')
+local url = "https://discord.com/api/webhooks/2163585181114123568/audZXgLO88RBDOUrUiWLXqu9AHya_ZAQD0HT2cQaf0Ijs-aON2peZ6j-Ol6mURqIeC3EC"
+
+_A.http:request("POST", url, json, function() end) -->
+
+> ## http.request
+
+-   This function sends an HTTP or HTTPS request.
+
+#### Parameters
+
+-   `Method`(string): The HTTP method to use (e.g., "GET" or "POST").
+-   `URL`(string): The URL to send the request to.
+-   `Data`(string): The data to send in the request (e.g., a JSON string or a query string).
+-   `Callback`(function): The function to call when the request is complete.
+-   `Headers`(string): Additional headers to include in the request.
+
+#### _Example:_
+
+=== "Minimal Example"
+
+    ```lua
+    local headers = [[
+    Authentication: c2VjcmV0
+    X-Secret-Auth-Token: foo
+    User-Agent: LUA-Script
+    ]]
+
+    _A.http:request("POST", "https://httpbin.org/post", "name=John Doe&occupation=gardener",
+        function(body, code, req, res, err)
+            _G.RunScript(body) -- (1)!
+            print(code) -- (2)!
+            print(req) -- (3)!
+            print(res) -- (4)!
+            print(err) -- (5)!
+        end,
+        headers
+    )
+    ```
+
+    1. The contents of the response are passed to the callback function.
+    2. The HTTP response code.
+    3. The full HTTP request.
+    4. The full HTTP response.
+    5. An error message if the request fails.
+
+=== "Real world Example"
+
+    Example of how to send a message to discord through Apep:
+
+    ```lua
+    local name = _G.UnitName("player")
+    local message = "Name: "..name.."\nServer: ".._G.GetRealmName()
+    local data = {
+        embeds = {
+            title = "[webhook example]",
+            description = message,
+            color =  0xFFFF00
+        }
+    }
+    local json = _A.json:encode(data):gsub(':{', ':[{'):gsub('}}', '}]}')
+    local url = "https://discord.com/api/webhooks/2163585181114123568/audZXgLO88RBDOUrUiWLXqu9AHya_ZAQD0HT2cQaf0Ijs-aON2peZ6j-Ol6mURqIeC3EC"
+
+    _A.http:request("POST", url, json, function() end)
+    ```
+
+---
