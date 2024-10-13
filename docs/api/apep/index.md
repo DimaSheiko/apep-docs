@@ -2078,7 +2078,7 @@ end
 
 ---
 
-## GetItemIcon
+> ## GetItemIcon
 
 -   This function retrieves the icon of the specified item.
 
@@ -2100,7 +2100,7 @@ _A.Core:GetItemIcon(idOrName, width, height)
 
 ---
 
-## SetSpeed
+> ## SetSpeed
 
 -   This function sets the speed of the player to the specified value.
 
@@ -2124,4 +2124,25 @@ _A.SetSpeed(20)
 
 ```lua
 _A.ResetSpeed()
+```
+
+---
+
+> ## HasAura
+
+-   This function checks if the specified unit has an aura with the specified aura ID.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for the aura.
+-   `AuraId`(number): The aura ID to check if the unit has an aura with.
+
+#### Returns `bool`
+
+-   `true` if the unit has an aura with the specified aura ID, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local hasAura = _A.HasAura("player", 12345)
 ```
