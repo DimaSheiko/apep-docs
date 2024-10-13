@@ -516,3 +516,123 @@
     ```lua
     PLAYER:Glyph("Glyph of Stars")
     ```
+
+---
+
+> ## mainHand.Charges
+
+-   This condition checks the number of charges for the player's main hand weapon.
+
+#### Returns `NUMBER`
+
+-   The number of charges for the player's main hand weapon.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "mainHand.Charges > 0"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("mainHand.Charges")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:MainHandCharges() > 0
+    ```
+
+---
+
+> ## offHand.Charges
+
+-   This condition checks the number of charges for the player's off hand weapon.
+
+#### Returns `NUMBER`
+
+-   The number of charges for the player's off hand weapon.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "offHand.Charges > 0"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("offHand.Charges")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:OffHandCharges() > 0
+    ```
+
+---
+
+> ## mainHand.EnchantID
+
+-   This condition checks the enchant ID for the player's main hand weapon.
+
+#### Returns `NUMBER`
+
+-   The enchant ID for the player's main hand weapon.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "mainHand.EnchantID > 0"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("mainHand.EnchantID")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:MainHandEnchantID() > 0
+    ```
+
+---
+
+> ## offHand.EnchantID
+
+-   This condition checks the enchant ID for the player's off hand weapon.
+
+#### Returns `NUMBER`
+
+-   The enchant ID for the player's off hand weapon.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "offHand.EnchantID > 0"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("offHand.EnchantID")()
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:OffHandEnchantID() > 0
+    ```
