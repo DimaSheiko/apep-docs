@@ -2146,3 +2146,103 @@ _A.ResetSpeed()
 ```lua
 local hasAura = _A.HasAura("player", 12345)
 ```
+
+---
+
+> ## IsLootable
+
+-   This function checks if the specified unit is lootable.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for lootability.
+
+#### Returns `bool`
+
+-   `true` if the unit is lootable, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isLootable = _A.IsLootable("player")
+```
+
+---
+
+> ## IsTaggedByOther
+
+-   This function checks if the specified unit is tagged by other players.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for tagging.
+
+#### Returns `bool`
+
+-   `true` if the unit is tagged by other players, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isTaggedByOther = _A.IsTaggedByOther("player")
+```
+
+---
+
+> ## IsTaggedByMe
+
+-   This function checks if the specified unit is tagged by the player.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for tagging.
+
+#### Returns `bool`
+
+-   `true` if the unit is tagged by the player, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isTaggedByMe = _A.IsTaggedByMe("player")
+```
+
+---
+
+> ## IsDead
+
+-   This function checks if the specified unit is dead.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for death.
+
+#### Returns `bool`
+
+-   `true` if the unit is dead, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isDead = _A.IsDead("player")
+```
+
+---
+
+> ## IsTappedByAllThreatList
+
+-   This function checks if the specified unit is tapped by all threat list.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for tapping.
+
+#### Returns `bool`
+
+-   `true` if the unit is tapped by all threat list, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isTappedByAllThreatList = _A.IsTappedByAllThreatList("player")
+```
