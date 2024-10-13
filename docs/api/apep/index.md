@@ -2836,3 +2836,44 @@ _A.http:request("POST", url, json, function() end) -->
     ```
 
 ---
+
+> ## json.encode
+
+-   This function encodes an arbitrary Lua object / variable.
+
+#### Parameters
+
+-   `obj`(any): The Lua value (table/string/boolean/number/nil/json.null/json.empty) to be JSON-encoded.
+
+#### _Example:_
+
+```lua
+local table = {
+    ["test 1"] = {data=0, data1="xxx"},
+    ["test 2"] = {data=234, data1="sdfee"}
+}
+local json = _A.json:encode(table)
+print(json) -- (1)!
+```
+
+1. Returns `{"test 1":{"data":0,"data1":"xxx"},"test 2":{"data":234,"data1":"sdfee"}}`
+
+---
+
+> ## json.decode
+
+-   This function decodes a JSON string and returns the decoded value as a Lua data structure / value.
+
+#### Parameters
+
+-   `string`(string): The string to scan (or "loader function" for getting next substring).
+-   `position`(number, optional): The position inside param `string` to start scan, default = 1.
+
+#### _Example:_
+
+```lua
+local LuaObject = _A.json:decode('{"test 1":{"data":0,"data1":"xxx"},"test 2":{"data":234,"data1":"sdfee"}}')
+print(LuaObject) -- (1)!
+```
+
+1. table: 000005D740CC4AF1
