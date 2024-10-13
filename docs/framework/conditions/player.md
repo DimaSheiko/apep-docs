@@ -891,3 +891,78 @@
     ```lua
     PLAYER:BagSpace() > 5
     ```
+
+---
+
+<!-- _A.DSL:Register("aura", function(target, spell)
+_A.DSL:Register("aura.any", function(target, spell) -->
+
+> ## aura
+
+-   This condition checks if the specified unit has an aura with the specified spell.
+
+#### Parameters
+
+-   `UNIT`: The unit to check for the aura.
+-   `SPELL`: The spell to check if the unit has an aura with.
+
+#### Returns `BOOL`
+
+-   `true` if the unit has an aura with the specified spell, otherwise `false`.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.aura(Curse of the Elements)", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("aura")("UNIT", "Curse of the Elements")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Aura("Curse of the Elements")
+    ```
+
+---
+
+> ## aura.any
+
+-   This condition checks if the specified unit has any aura with the specified spell.
+
+#### Parameters
+
+-   `UNIT`: The unit to check for the aura.
+-   `SPELL`: The spell to check if the unit has any aura with.
+
+#### Returns `BOOL`
+
+-   `true` if the unit has any aura with the specified spell, otherwise `false`.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.aura.any(Curse of the Elements)", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("aura.any")("UNIT", "Curse of the Elements")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AuraAny("Curse of the Elements")
+    ```
+
+---
