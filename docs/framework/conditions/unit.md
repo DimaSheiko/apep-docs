@@ -2281,6 +2281,28 @@
 
 -   The specialization ID of the specified unit.
 
+=== "Table Image"
+
+    ![Class Spec Table](../../assets/images/framework/Class_Spec_Table.png)
+
+=== "Table"
+
+    | Class            | Spec 1                | Spec 2                | Spec 3                | Spec 4              | Spec 5           |
+    | ---------------- | --------------------- | --------------------- | --------------------- | ------------------- | ---------------- |
+    | **Death Knight** | **250** Blood         | **251** Frost         | **252** Unholy        |                     | **1455** Initial |
+    | **Demon Hunter** | **577** Havoc         | **581** Vengeance     |                       |                     | **1456** Initial |
+    | **Druid**        | **102** Balance       | **103** Feral         | **104** Guardian      | **105** Restoration | **1447** Initial |
+    | **Evoker**       | **1467** Devastation  | **1468** Preservation | **1473** Augmentation |                     | **1465** Initial |
+    | **Hunter**       | **253** Beast Mastery | **254** Marksmanship  | **255** Survival      |                     | **1448** Initial |
+    | **Mage**         | **62** Arcane         | **63** Fire           | **64** Frost          |                     | **1449** Initial |
+    | **Monk**         | **268** Brewmaster    | **270** Mistweaver    | **269** Windwalker    |                     | **1450** Initial |
+    | **Paladin**      | **65** Holy           | **66** Protection     | **70** Retribution    |                     | **1451** Initial |
+    | **Priest**       | **256** Discipline    | **257** Holy          | **258** Shadow        |                     | **1452** Initial |
+    | **Rogue**        | **259** Assassination | **260** Outlaw        | **261** Subtlety      |                     | **1453** Initial |
+    | **Shaman**       | **262** Elemental     | **263** Enhancement   | **264** Restoration   |                     | **1444** Initial |
+    | **Warlock**      | **265** Affliction    | **266** Demonology    | **267** Destruction   |                     | **1454** Initial |
+    | **Warrior**      | **71** Arms           | **72** Fury           | **73** Protection     |                     | **1446** Initial |
+
 #### _Example:_
 
 === "DSL"

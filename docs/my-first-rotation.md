@@ -30,6 +30,7 @@ First let create the file in the `ApepFolder/rotations/Hunter/Survival.lua` Make
     ```
 
     1. Change to your spec, you can find number in rotation folder
+        ![Class Spec Table](../../assets/images/framework/Class_Spec_Table.png)
     2. Change to your wow client version
 
 === "Lua Code"
@@ -67,6 +68,7 @@ First let create the file in the `ApepFolder/rotations/Hunter/Survival.lua` Make
     ```
 
     1. Change to your spec, you can find number in rotation folder
+        ![Class Spec Table](../../assets/images/framework/Class_Spec_Table.png)
     2. Change to your wow client version
 
 ### Key Components
