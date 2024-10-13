@@ -1755,7 +1755,7 @@ local subgroup = _A.subgroup("player")
 
 -   The specialization ID of the unit.
 
-### _Example:_
+#### _Example:_
 
 ```lua
 local specID = _A.UnitSpec("player")
@@ -2245,4 +2245,484 @@ local isDead = _A.IsDead("player")
 
 ```lua
 local isTappedByAllThreatList = _A.IsTappedByAllThreatList("player")
+```
+
+---
+
+> ## IsSitting
+
+-   This function checks if the specified unit is sitting.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for sitting.
+
+#### Returns `bool`
+
+-   `true` if the unit is sitting, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isSitting = _A.IsSitting("player")
+```
+
+---
+
+> ## IsInfluenced
+
+-   This function checks if the specified unit is influenced.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for influence.
+
+#### Returns `bool`
+
+-   `true` if the unit is influenced, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isInfluenced = _A.IsInfluenced("player")
+```
+
+---
+
+> ## IsPlayerControlled
+
+-   This function checks if the specified unit is controlled by the player.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for player control.
+
+#### Returns `bool`
+
+-   `true` if the unit is controlled by the player, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isPlayerControlled = _A.IsPlayerControlled("player")
+```
+
+---
+
+> ## IsTotem
+
+-   This function checks if the specified unit is a totem.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for totem status.
+
+#### Returns `bool`
+
+-   `true` if the unit is a totem, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isTotem = _A.IsTotem("player")
+```
+
+---
+
+> ## IsPreparation
+
+-   This function checks if the specified unit is preparing.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for preparation.
+
+#### Returns `bool`
+
+-   `true` if the unit is preparing, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isPreparation = _A.IsPreparation("player")
+```
+
+---
+
+> ## IsNotAttackable
+
+-   This function checks if the specified unit is not attackable.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for attackability.
+
+#### Returns `bool`
+
+-   `true` if the unit is not attackable, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isNotAttackable = _A.IsNotAttackable("player")
+```
+
+---
+
+> ## IsLooting
+
+-   This function checks if the specified unit is looting.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for looting.
+
+#### Returns `bool`
+
+-   `true` if the unit is looting, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isLooting = _A.IsLooting("player")
+```
+
+---
+
+> ## IsPetInCombat
+
+-   This function checks if the specified unit's pet is in combat.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for pet combat.
+
+#### Returns `bool`
+
+-   `true` if the unit's pet is in combat, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isPetInCombat = _A.IsPetInCombat("player")
+```
+
+---
+
+> ## IsPvPFlagged
+
+-   This function checks if the specified unit is flagged for PvP.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for PvP flag.
+
+#### Returns `bool`
+
+-   `true` if the unit is flagged for PvP, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isPvPFlagged = _A.IsPvPFlagged("player")
+```
+
+---
+
+> ## IsChoked
+
+-   This function checks if the specified unit is choked.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for choke.
+
+#### Returns `bool`
+
+-   `true` if the unit is choked, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isChoked = _A.IsChoked("player")
+```
+
+---
+
+> ## IsPacified
+
+-   This function checks if the specified unit is pacified.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for pacification.
+
+#### Returns `bool`
+
+-   `true` if the unit is pacified, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isPacified = _A.IsPacified("player")
+```
+
+---
+
+> ## IsStunned
+
+-   This function checks if the specified unit is stunned.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for stun.
+
+#### Returns `bool`
+
+-   `true` if the unit is stunned, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isStunned = _A.IsStunned("player")
+```
+
+---
+
+> ## IsInCombat
+
+-   This function checks if the specified unit is in combat.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for combat.
+
+#### Returns `bool`
+
+-   `true` if the unit is in combat, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isInCombat = _A.IsInCombat("player")
+```
+
+---
+
+> ## IsTaxiFlight
+
+-   This function checks if the specified unit is on a taxi flight.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for taxi flight.
+
+#### Returns `bool`
+
+-   `true` if the unit is on a taxi flight, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isTaxiFlight = _A.IsTaxiFlight("player")
+```
+
+---
+
+> ## IsDisarmed
+
+-   This function checks if the specified unit is disarmed.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for disarm.
+
+#### Returns `bool`
+
+-   `true` if the unit is disarmed, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isDisarmed = _A.IsDisarmed("player")
+```
+
+---
+
+> ## IsConfused
+
+-   This function checks if the specified unit is confused.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for confusion.
+
+#### Returns `bool`
+
+-   `true` if the unit is confused, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isConfused = _A.IsConfused("player")
+```
+
+---
+
+> ## IsFleeing
+
+-   This function checks if the specified unit is fleeing.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for fleeing.
+
+#### Returns `bool`
+
+-   `true` if the unit is fleeing, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isFleeing = _A.IsFleeing("player")
+```
+
+---
+
+> ## IsPossessed
+
+-   This function checks if the specified unit is possessed.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for possession.
+
+#### Returns `bool`
+
+-   `true` if the unit is possessed, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isPossessed = _A.IsPossessed("player")
+```
+
+---
+
+> ## IsNotSelectable
+
+-   This function checks if the specified unit is not selectable.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for selectability.
+
+#### Returns `bool`
+
+-   `true` if the unit is not selectable, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isNotSelectable = _A.IsNotSelectable("player")
+```
+
+---
+
+> ## IsSkinnable
+
+-   This function checks if the specified unit is skinnable.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for skinnable status.
+
+#### Returns `bool`
+
+-   `true` if the unit is skinnable, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isSkinnable = _A.IsSkinnable("player")
+```
+
+---
+
+> ## IsInMount
+
+-   This function checks if the specified unit is in the mount.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for mount status.
+
+#### Returns `bool`
+
+-   `true` if the unit is in the mount, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isInMount = _A.IsInMount("player")
+```
+
+---
+
+> ## IsDazed
+
+-   This function checks if the specified unit is dazed.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for daze.
+
+#### Returns `bool`
+
+-   `true` if the unit is dazed, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isDazed = _A.IsDazed("player")
+```
+
+---
+
+> ## IsSheathed
+
+-   This function checks if the specified unit is sheathed.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for sheath.
+
+#### Returns `bool`
+
+-   `true` if the unit is sheathed, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isSheathed = _A.IsSheathed("player")
+```
+
+---
+
+> ## IsFeignDeath
+
+-   This function checks if the specified unit is feigning death.
+
+#### Parameters
+
+-   `unit`(string): The unit to check for feign death.
+
+#### Returns `bool`
+
+-   `true` if the unit is feigning death, otherwise `false`.
+
+#### _Example:_
+
+```lua
+local isFeignDeath = _A.IsFeignDeath("player")
 ```
