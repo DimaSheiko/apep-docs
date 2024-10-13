@@ -2877,3 +2877,43 @@ print(LuaObject) -- (1)!
 ```
 
 1. table: 000005D740CC4AF1
+
+---
+
+> ## base64.encode
+
+-   This function encodes a normal bytestring into a Base64-encoded string.
+
+#### Parameters
+
+-   `text`(string): The bytestring to encode.
+-   `maxLineLength`(number, optional): The maximum line length for the output. Default is 76.
+-   `lineEnding`(string, optional): The line ending to use. Default is "\r\n".
+
+#### _Example:_
+
+```lua
+local encoded = _A.base64:encode("Hello, how are you doing today?")
+print(encoded) -- (1)!
+```
+
+1. Returns "SGVsbG8sIGhvdyBhcmUgeW91IGRvaW5nIHRvZGF5Pw=="
+
+---
+
+> ## base64.decode
+
+-   This function decodes a Base64-encoded string into a bytestring.
+
+#### Parameters
+
+-   `text`(string): The Base64-encoded string to decode.
+
+#### _Example:_
+
+```lua
+local decoded = _A.base64:decode("SGVsbG8sIGhvdyBhcmUgeW91IGRvaW5nIHRvZGF5Pw==")
+print(decoded) -- (1)!
+```
+
+1. Returns "Hello, how are you doing today?"
