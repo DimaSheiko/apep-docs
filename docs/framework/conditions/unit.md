@@ -2169,6 +2169,74 @@
 
 ---
 
+> ## tagged.byme
+
+-   This condition checks if the specified unit is tagged by the player.
+
+#### Parameters
+
+-   `UNIT`: The unit to check for tagging.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is tagged by the player, otherwise `false`.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.tagged.byme", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("tagged.byme")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsTaggedByMe()
+    ```
+
+---
+
+> ## tagged.byother
+
+-   This condition checks if the specified unit is tagged by other players.
+
+#### Parameters
+
+-   `UNIT`: The unit to check for tagging.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is tagged by other players, otherwise `false`.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.tagged.byother", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("tagged.byother")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsTaggedByOther()
+    ```
+
+---
+
 > ## spec
 
 #### Parameters
