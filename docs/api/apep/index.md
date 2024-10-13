@@ -2788,7 +2788,11 @@ local isFeignDeath = _A.IsFeignDeath("player")
     local url = "https://discord.com/api/webhooks/2163585181114123568/audZXgLO88RBDOUrUiWLXqu9AHya_ZAQD0HT2cQaf0Ijs-aON2peZ6j-Ol6mURqIeC3EC"
 
     _A.http:request("POST", url, json, function() end)
+
     ```
+
+    Then you can see the message in the Discord channel like this:
+    ![Discord message](../../assets/images/api/Discord_d3KGYi5hXv.png)
 
 ---
 
