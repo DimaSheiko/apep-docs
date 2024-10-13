@@ -756,6 +756,40 @@
 
 ---
 
+> ## targetme
+
+-   This condition checks if the specified unit is targeting the player.
+
+#### Parameters
+
+-   `UNIT`: The unit to check for targeting.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is targeting the player, otherwise `false`.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.targetme", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("targetme")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsTargetMe()
+    ```
+
+---
+
 > ## isplayer
 >
 > _`isplayer || player`_
