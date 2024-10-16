@@ -5,126 +5,129 @@ site_description: Documentation for the Apep project
 repo_url: https://github.com/DimaSheiko/apep-docs
 edit_uri: edit/main/docs/
 theme:
-  name: material
-  # custom_dir: material/overrides
+    name: material
+    # custom_dir: material/overrides
 
-  features:
-    - navigation.footer
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.top
-    - navigation.tracking
-    # - navigation.expand
-    - navigation.indexes
-    - navigation.path
-    - search.highlight
-    - search.share
-    - search.suggest
-    - toc.follow
-    - content.code.copy
-    - content.code.annotate
-    - content.tabs.link
-    - content.action.edit
-    - content.action.view
-    - content.tooltips
+    features:
+        - navigation.footer
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.top
+        - navigation.tracking
+        # - navigation.expand
+        - navigation.indexes
+        - navigation.path
+        - search.highlight
+        - search.share
+        - search.suggest
+        - toc.follow
+        - content.code.copy
+        - content.code.annotate
+        - content.tabs.link
+        - content.action.edit
+        - content.action.view
+        - content.tooltips
 
-  palette:
-    # Palette toggle for dark mode
-    - scheme: slate
-      primary: black
-      accent: indigo
-      toggle:
-        icon: material/weather-night
-        name: Switch to light mode
+    palette:
+        # Palette toggle for dark mode
+        - scheme: slate
+          primary: black
+          accent: indigo
+          toggle:
+              icon: material/weather-night
+              name: Switch to light mode
 
-    # Palette toggle for light mode
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to system preference
-  font:
-    text: Roboto
-    code: Roboto Mono
-  logo: assets/logo.png
-  favicon: assets/logo.png
+        # Palette toggle for light mode
+        - scheme: default
+          primary: indigo
+          accent: indigo
+          toggle:
+              icon: material/weather-sunny
+              name: Switch to system preference
+    font:
+        text: Roboto
+        code: Roboto Mono
+    logo: assets/logo.png
+    favicon: assets/logo.png
 
 # Extensions
 markdown_extensions:
-  - toc:
-      title: On this page
-      permalink: true
-      toc_depth: 3
-  - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
-  - admonition
-  - pymdownx.details
-  - pymdownx.tabbed:
-      alternate_style: true
+    - toc:
+          title: On this page
+          permalink: true
+          toc_depth: 3
+    - attr_list
+    - md_in_html
+    - footnotes
+    - pymdownx.emoji:
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - pymdownx.highlight:
+          anchor_linenums: true
+          line_spans: __span
+          pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
+    - admonition
+    - pymdownx.details
+    - pymdownx.tabbed:
+          alternate_style: true
 
 hooks:
-  - material/overrides/hooks/shortcodes.py
+    - material/overrides/hooks/shortcodes.py
 
 extra:
-  social:
-    - icon: simple/discord
-      link: https://discord.gg/EwJzA5S3
+    social:
+        - icon: simple/discord
+          link: https://discord.gg/EwJzA5S3
 
 copyright: Copyright &copy; 2024 UwU
 
 nav:
-  - Getting Started:
-    - index.md
-    - Installation: installation.md
-    - My First Rotation: my-first-rotation.md
-    - Conventions: conventions.md
-    - Changelog:
-      - changelog/index.md
-  - Framework:
-    - Actions:
-      - framework/actions/index.md
-    - Conditions:
-      - framework/conditions/index.md
-      - Area: framework/conditions/area.md
-      - Artifacts: framework/conditions/artifacts.md
-      - Azerites: framework/conditions/azerites.md
-      - Buffs: framework/conditions/buffs.md
-      - Class: framework/conditions/class.md
-      - Conduits: framework/conditions/conduits.md
-      - DBM: framework/conditions/dbm.md
-      - Debuff: framework/conditions/debuff.md
-      - Diminished Returns: framework/conditions/diminished-returns.md
-      - Essences: framework/conditions/essences.md
-      - General: framework/conditions/general.md
-      - Heal: framework/conditions/heal.md
-      - Items: framework/conditions/items.md
-      - Keybinds: framework/conditions/keybinds.md
-      - Player: framework/conditions/player.md
-      - Spell: framework/conditions/spell.md
-      - States: framework/conditions/states.md
-      - Talents: framework/conditions/talents.md
-      - Unit: framework/conditions/unit.md
-    - Units:
-      - framework/units/index.md
-      - FakeUnits:
-        - framework/units/fakeunits/index.md
-        - Create own fakeunit: framework/units/fakeunits/own-fakeunit.md
-        - Enemy: framework/units/fakeunits/enemy.md
-        - Friendly: framework/units/fakeunits/friendly.md
-        - Enemy Combat: framework/units/fakeunits/enemy-combat.md
-        - Roster: framework/units/fakeunits/roster.md
-    - Object Manager:
-      - framework/object-manager/index.md
-  - API:
-    - Apep: api/apep/index.md
-    - Lildraw: api/lildraw/index.md
+    - Getting Started:
+          - index.md
+          - Installation: installation.md
+          - My First Rotation: my-first-rotation.md
+          - Conventions: conventions.md
+          - Changelog:
+                - changelog/index.md
+    - Framework:
+          - Actions:
+                - framework/actions/index.md
+          - Conditions:
+                - framework/conditions/index.md
+                - Area: framework/conditions/area.md
+                - Artifacts: framework/conditions/artifacts.md
+                - Azerites: framework/conditions/azerites.md
+                - Buffs: framework/conditions/buffs.md
+                - Class: framework/conditions/class.md
+                - Conduits: framework/conditions/conduits.md
+                - DBM: framework/conditions/dbm.md
+                - Debuff: framework/conditions/debuff.md
+                - Diminished Returns: framework/conditions/diminished-returns.md
+                - Essences: framework/conditions/essences.md
+                - General: framework/conditions/general.md
+                - Heal: framework/conditions/heal.md
+                - Items: framework/conditions/items.md
+                - Keybinds: framework/conditions/keybinds.md
+                - Player: framework/conditions/player.md
+                - Spell: framework/conditions/spell.md
+                - States: framework/conditions/states.md
+                - Talents: framework/conditions/talents.md
+                - Unit: framework/conditions/unit.md
+          - Units:
+                - framework/units/index.md
+                - FakeUnits:
+                      - framework/units/fakeunits/index.md
+                      - Create own fakeunit: framework/units/fakeunits/own-fakeunit.md
+                      - Enemy: framework/units/fakeunits/enemy.md
+                      - Friendly: framework/units/fakeunits/friendly.md
+                      - Enemy Combat: framework/units/fakeunits/enemy-combat.md
+                      - Roster: framework/units/fakeunits/roster.md
+          - Object Manager:
+                - framework/object-manager/index.md
+    - API:
+          - Apep: api/apep/index.md
+          - Lildraw: api/lildraw/index.md
+    - Contributing: contributing/index.md
