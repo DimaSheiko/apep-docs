@@ -89,6 +89,7 @@ nav:
           - index.md
           - Installation: installation.md
           - My First Rotation: my-first-rotation.md
+          - Config: config.md
           - Conventions: conventions.md
           - Changelog:
                 - changelog/index.md
