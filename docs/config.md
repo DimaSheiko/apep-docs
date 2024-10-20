@@ -31,11 +31,11 @@ The name of the rotation, it's used to identify the rotation in the UI.
 
 > ### ic
 
-The in combat rotations, it's a function that returns the rotations to be executed in combat.
+The in combat rotations, it's a table or function that contains the rotations to be executed in combat.
 
 > ### ooc
 
-The out of combat rotations, it's a function that returns the rotations to be executed out of combat.
+The out of combat rotations, it's a table or function that contains the rotations to be executed out of combat.
 
 > ### use_lua_engine
 
