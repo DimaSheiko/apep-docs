@@ -61,7 +61,7 @@
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("area.area_range")("UNIT", "20") >= 3
+    _A.DSL:Get("area_range.enemies")("UNIT", "20") >= 3
     ```
 
 === "Lua Mode"
@@ -113,7 +113,7 @@
 >
 > _`area_range.combatenemies || area_range.cbenemies`_
 
--   This condition counts the number of enemy combat units within a specified range of a target unit.
+-   This condition counts the number of enemy combat units within a specified range of a target unit. The check is for units with a range less than the specified value.
 
 #### Parameters
 
@@ -220,7 +220,7 @@
 >
 > _`area.combatenemies.infront || area.cbenemies.infront`_
 
--   This condition counts the number of enemy units within a specified distance that are also in front of a target unit.
+-   This condition counts the number of enemy combat units within a specified distance that are also in front of a target unit.
 
 #### Parameters
 
@@ -229,7 +229,7 @@
 
 #### Returns `NUMBER`
 
--   The total number of combat enemy units within the specified distance of the target unit.
+-   The total number of combat enemy units within the specified distance of the target unit and in front of it.
 
 #### _Example:_
 
@@ -257,7 +257,7 @@
 >
 > _`area_range.combatenemies.infront || area_range.cbenemies.infront`_
 
--   This condition counts the number of enemy units within a specified combat range that are also in front of a target unit.
+-   This condition counts the number of enemy combat units within a specified combat range that are also in front of a target unit. The check is for units with a range less than the specified value.
 
 #### Parameters
 
@@ -266,7 +266,7 @@
 
 #### Returns `NUMBER`
 
--   The total number of combat enemy units within the specified combat range of the target unit.
+-   The total number of combat enemy units within the specified combat range of the target unit and in front of it.
 
 #### _Example:_
 
@@ -292,7 +292,7 @@
 
 > ## area.friendly
 
--   This condition counts the number of friendly units within a specified distance of a target unit.
+-   This condition counts the number of friendly units within a specified distance of a target unit, using interaction range (type 2).
 
 #### Parameters
 
@@ -327,7 +327,7 @@
 
 > ## area.roster
 
--   This condition counts the number of roster units within a specified distance of a target unit.
+-   This condition counts the number of player units in the raid or party roster within a specified distance of a target unit.
 
 #### Parameters
 
@@ -362,7 +362,7 @@
 
 > ## area.friendly.infront
 
--   This condition counts the number of friendly units within a specified distance from the target unit, considering only units that are in front of the target.
+-   This condition counts the number of friendly units within a specified distance from the target unit, considering only units that are in front of the target. Uses interaction range (type 2) for distance check.
 
 #### Parameters
 
@@ -391,6 +391,76 @@
 
     ```lua
     UNIT:AreaFriendlyInfront(20) >= 3
+    ```
+
+---
+
+> ## area.incdmg
+
+-   This condition calculates the total incoming damage for all units in the raid or party roster within a specified distance from the target unit.
+
+#### Parameters
+
+-   `UNIT`: The target unit around which to calculate the incoming damage from roster units.
+-   `DISTANCE`: The maximum distance within which to consider roster units (default is 40).
+
+#### Returns `NUMBER`
+
+-   The total incoming damage from roster units within the specified distance from the target unit.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.area(20).incdmg >= 400000", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.incdmg")("UNIT", "20") >= 400000
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaIncdmg(20) >= 400000
+    ```
+
+---
+
+> ## area.dead
+
+-   This condition counts the number of dead units within a specified distance of a target unit. The specific type of "dead" units depends on the Object Manager's "Dead" list.
+
+#### Parameters
+
+-   `UNIT`: The target unit around which to count dead units.
+-   `DISTANCE`: The maximum distance within which to count dead units (default is 40).
+
+#### Returns `NUMBER`
+
+-   The total number of dead units within the specified distance of the target unit.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.area(20).dead >= 1", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.dead")("UNIT", "20") >= 1
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:AreaDead(20) >= 1
     ```
 
 ---
@@ -496,4 +566,3 @@
 
     ```lua
     UNIT:AreaDeadRoster(20) >= 3
-    ```
