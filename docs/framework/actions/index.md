@@ -30,21 +30,98 @@ Here's a breakdown of each component:
 {"Charge", CONDITIONS, UNIT}
 ```
 
-This example represents a spell casting action. Replace `Charge` with the name of the desired spell. Define your specific conditions and target unit accordingly.
+Executes a spell cast. Replace `Charge` with the desired spell name. The spell will be cast on the specified UNIT when CONDITIONS are met.
 
-### Macro
+### Items
+
+#### Equipment Slots
+
+```lua
+{"#trinket1", CONDITIONS, UNIT}
+{"#trinket2", CONDITIONS, UNIT}
+{"#neck", CONDITIONS, UNIT}
+{"#waist", CONDITIONS, UNIT}
+{"#hands", CONDITIONS, UNIT}
+```
+
+Uses equipped items from specific slots. The `#` prefix indicates an equipment slot. Available slots include: `trinket1`, `trinket2`, `neck`, `waist`, `hands`, and other valid equipment slots.
+
+#### Ground Targeting
+
+```lua
+{"#waist", CONDITIONS, "target.ground"}
+```
+
+For items that require ground targeting (like engineering belt), use `.ground` suffix on the UNIT parameter.
+
+### Library Calls
+
+```lua
+{"@LibraryName.FunctionName(arguments)", CONDITIONS, UNIT}
+```
+
+Calls registered library functions using the `@` prefix. Libraries must be registered using `_A.Library:Add()` before use.
+
+**Example:**
+
+```lua
+{"@Prot.Use(Health Stones)", CONDITIONS, "player"}
+{"@Prot.PickupHS(unit)", CONDITIONS, "objectID(193169)"}
+```
+
+### Macros
+
+#### Basic Macros
 
 ```lua
 {"/cast xxxxxxx", CONDITIONS, UNIT}
 ```
 
-This example represents a spell casting action. Replace "xxxxxxx" with the name of the desired spell. Define your specific conditions and target unit accordingly.
+Casts a spell using macro syntax. Replace "xxxxxxx" with the spell name.
 
 ```lua
 {"/use xxxxxxx", CONDITIONS, UNIT}
 ```
 
-Here, the action involves using an item with the specified item number. Customize the item number, conditions, and target unit based on your requirements.
+Uses an item by name or item ID.
+
+#### Combat Control
+
+```lua
+{"/startattack", CONDITIONS, UNIT}
+{"/stopattack", CONDITIONS, UNIT}
+```
+
+Controls auto-attack behavior. Use `/startattack` to begin auto-attacking and `/stopattack` to halt it.
+
+### Special Commands
+
+Commands using the `%` prefix provide special functionality:
+
+#### Target Management
+
+```lua
+{"%target", CONDITIONS, UNIT}
+```
+
+Changes the current target to the specified UNIT.
+
+#### Pause Rotation
+
+```lua
+{"%pause", nil}
+```
+
+Temporarily pauses the rotation execution. Useful when specific conditions require stopping all actions.
+
+#### Cancel Buffs
+
+```lua
+{"%cancelbuff(Buff Name)", CONDITIONS, "player"}
+{"%cancelbuff(Power Word: Shield)", CONDITIONS, "player"}
+```
+
+Removes a specific buff from the target. Commonly used to cancel absorb shields or other buffs that may interfere with mechanics.
 
 ### Function Call
 
@@ -54,8 +131,44 @@ Here, the action involves using an item with the specified item number. Customiz
 end, CONDITIONS, UNIT}
 ```
 
-For more complex actions, you can use a Lua function. This example demonstrates a function that casts the spell "Mangle" on the target. Customize the function, conditions, and target unit to suit your scripting requirements.
+For complex actions, use Lua functions. This allows custom logic and multiple operations within a single action.
+
+**Example:**
+
+```lua
+{function()
+  if UnitHealth("player") < 50 then
+    _A.CastSpellByName("Shield Wall", "player")
+  end
+end, "spell.ready", "player"}
+```
+
+## Advanced Patterns
+
+### Nested Actions
+
+Actions can be nested to create complex conditional structures:
+
+```lua
+{{
+  {"Execute", "health<=20", "target"},
+  {"Mortal Strike", "spell.ready", "target"}
+}, "player.incombat && target.WarriorMelee"}
+```
+
+The outer condition must be met, then each inner action is evaluated with its own conditions.
+
+### Multiple Actions with Shared Conditions
+
+```lua
+{{
+  {"Battle Shout", "!buff(Battle Shout).any", "player"},
+  {"Commanding Shout", "!buff(Commanding Shout).any", "player"}
+}, "ui(shoutslist)>0"}
+```
+
+All actions in the group share the outer condition, reducing redundancy.
 
 ## Conclusion
 
-The `ACTION` component is the backbone of your scripts, allowing you to perform a wide range of actions, from simple spell casting to intricate function calls. Use this documentation as your guide to crafting powerful and efficient scripts for your projects.
+The `ACTION` component is the backbone of your scripts, providing diverse execution methods from simple spell casting to complex library calls and special commands. Use this documentation as your guide to crafting powerful and efficient scripts for your projects.
