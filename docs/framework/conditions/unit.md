@@ -35,6 +35,141 @@
 
 ---
 
+> ## groupSize
+>
+> _`groupSize || group.members || num.members`_
+
+#### Parameters
+
+-   None
+
+#### Returns `NUMBER`
+
+-   The total number of group members (including the player). Returns `0` if not in a group.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "groupSize > 1"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("groupSize")()
+    ```
+
+---
+
+> ## IsSolo
+
+#### Parameters
+
+-   None
+
+#### Returns `BOOL`
+
+-   `true` if the player is not in a group, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "IsSolo"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsSolo")()
+    ```
+
+---
+
+> ## IsParty
+
+#### Parameters
+
+-   None
+
+#### Returns `BOOL`
+
+-   `true` if the player is in a party (1-5 members), `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "IsParty"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsParty")()
+    ```
+
+---
+
+> ## IsRaid
+
+#### Parameters
+
+-   None
+
+#### Returns `BOOL`
+
+-   `true` if the player is in a raid (more than 5 members), `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "IsRaid"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsRaid")()
+    ```
+
+---
+
+> ## groupType
+
+#### Parameters
+
+-   None
+
+#### Returns `NUMBER`
+
+-   Returns a numeric value representing the group type:
+    -   `3` = RAID
+    -   `2` = Party
+    -   `1` = SOLO
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "group.type==3"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("groupType")() == 3
+    ```
+
+---
+
 > ## ingroup
 
 #### Parameters
@@ -167,6 +302,8 @@
 ---
 
 > ## boss
+>
+> _`boss || isBoss`_
 
 #### Parameters
 
@@ -235,7 +372,7 @@
 #### Parameters
 
 -   `UNIT`: The unit to check for classification.
--   `classif`: The classification string to compare with.
+-   `classif`: The classification string to compare with. Multiple classifications can be separated by spaces or commas.
 
     | **`classif`** |
     | ------------- |
@@ -249,7 +386,7 @@
 
 #### Returns `BOOL`
 
--   `true` if the unit's classification matches the given classif, `false` otherwise.
+-   `true` if the unit's classification matches any of the given classifications, `false` otherwise.
 
 #### _Example:_
 
@@ -269,6 +406,38 @@
 
     ```lua
     UNIT:Classification("rare")
+    ```
+
+---
+
+> ## worldboss
+
+#### Parameters
+
+-   `UNIT`: The unit to check for world boss classification.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is classified as a world boss, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.worldboss", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("worldboss")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Worldboss()
     ```
 
 ---
@@ -302,6 +471,83 @@
 
     ```lua
     UNIT:Id(1589)
+    ```
+
+---
+
+> ## reaction
+
+#### Parameters
+
+-   `UNIT`: The unit to check for reaction level.
+
+#### Returns `NUMBER`
+
+-   The reaction level of the unit towards the player:
+    -   `1` = Hated
+    -   `2` = Hostile
+    -   `3` = Unfriendly
+    -   `4` = Neutral
+    -   `5` = Friendly
+    -   `6` = Honored
+    -   `7` = Revered
+    -   `8` = Exalted
+    -   `0` = Unknown or unit doesn't exist
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.reaction >= 4", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("reaction")("UNIT") >= 4
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Reaction() >= 4
+    ```
+
+---
+
+> ## hasReaction
+
+#### Parameters
+
+-   `UNIT`: The unit to check for the reaction.
+-   `reaction`: The expected reaction level (can be a number or string name: "hated", "hostile", "unfriendly", "neutral", "friendly", "honored", "revered", "exalted").
+
+#### Returns `BOOL`
+
+-   `true` if the unit has the expected reaction level, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.hasReaction(hostile)", UNIT},
+    {ACTION, "UNIT.hasReaction(2)", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("hasReaction")("UNIT", "hostile")
+    _A.DSL:Get("hasReaction")("UNIT", "2")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:HasReaction("hostile")
+    UNIT:HasReaction(2)
     ```
 
 ---
@@ -366,6 +612,75 @@
 
     ```lua
     UNIT:Aggro()
+    ```
+
+---
+
+> ## UnitThreatSituation
+
+#### Parameters
+
+-   `UNIT1`: The first unit to check threat situation.
+-   `UNIT2`: The second unit to check threat situation against.
+
+#### Returns `NUMBER | NIL`
+
+-   Returns the threat situation status between two units, or `nil` if either unit doesn't exist.
+    -   `0` = Unit does not have threat
+    -   `1` = Unit has threat but is not tanking (another unit has higher threat)
+    -   `2` = Unit has highest threat (is tanking)
+    -   `3` = Unit has threat and is tanking, but another unit is about to gain threat
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT1.UnitThreatSituation(UNIT2) >= 2", UNIT1},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("UnitThreatSituation")("UNIT1", "UNIT2")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT1:UnitThreatSituation(UNIT2)
+    ```
+
+---
+
+> ## speed
+
+#### Parameters
+
+-   `UNIT`: The unit whose speed to retrieve.
+
+#### Returns `NUMBER`
+
+-   The speed of the unit in yards per second. Returns `0` if the unit doesn't exist.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.speed > 0", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("speed")("UNIT") > 0
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Speed() > 0
     ```
 
 ---
@@ -1239,6 +1554,72 @@
 
 ---
 
+> ## movingToward
+
+#### Parameters
+
+-   `UNIT1`: The unit to check if it is moving toward another unit.
+-   `UNIT2_ANGLE_SEC`: A string containing the target unit, optional angle (default 30 degrees), and optional time threshold (default 0 seconds) separated by commas (e.g., "unit2, 45, 0.5").
+
+#### Returns `BOOL`
+
+-   `true` if unit1 is moving toward unit2 within the specified angle and has been moving for at least the specified seconds, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT1.movingToward(UNIT2, 30, 0.5)", UNIT1},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("movingToward")("UNIT1", "UNIT2, 30, 0.5")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT1:MovingToward("UNIT2", 30, 0.5)
+    ```
+
+---
+
+> ## movingAwayFrom
+
+#### Parameters
+
+-   `UNIT1`: The unit to check if another unit is moving away from it.
+-   `UNIT2_ANGLE_SEC`: A string containing the moving unit, optional angle (default 220 degrees), and optional time threshold (default 0 seconds) separated by commas (e.g., "unit2, 220, 0.5").
+
+#### Returns `BOOL`
+
+-   `true` if unit2 is moving away from unit1 within the specified angle and has been moving for at least the specified seconds, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT1.movingAwayFrom(UNIT2, 220, 0.5)", UNIT1},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("movingAwayFrom")("UNIT1", "UNIT2, 220, 0.5")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT1:MovingAwayFrom("UNIT2", 220, 0.5)
+    ```
+
+---
+
 > ## pvp
 
 #### Parameters
@@ -1337,7 +1718,7 @@
 
 > ## enemy
 >
-> _`enemy || canattack`_
+> _`enemy || isenemy || canattack`_
 
 #### Parameters
 
@@ -1499,6 +1880,70 @@
 
 ---
 
+> ## petrange
+
+#### Parameters
+
+-   `UNIT`: The unit to measure pet's combat range against.
+
+#### Returns `NUMBER`
+
+-   The combat range between the player's pet and the unit, or `999` if the range cannot be determined.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.petrange < 5", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("petrange")("UNIT") < 5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Petrange() < 5
+    ```
+
+---
+
+> ## petdistance
+
+#### Parameters
+
+-   `UNIT`: The unit to measure pet's distance against.
+
+#### Returns `NUMBER`
+
+-   The distance between the player's pet and the unit, or `999` if the distance cannot be determined.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.petdistance < 10", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("petdistance")("UNIT") < 10
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Petdistance() < 10
+    ```
+
+---
+
 > ## level
 
 #### Parameters
@@ -1600,7 +2045,7 @@
 #### Parameters
 
 -   `UNIT`: The unit to check for the role.
--   `expectedRole` The expected role to search for within the unit's role.
+-   `expectedRole` The expected role to search for within the unit's role. Multiple roles can be separated by "||".
 
     `"TANK", "HEALER", "DAMAGER", or "UNKNOWN"`
 
@@ -1663,7 +2108,7 @@
 #### Parameters
 
 -   `UNIT`: The unit to check for the name.
--   `expectedName` The expected name to search for within the unit's name.
+-   `expectedName` The expected name to search for within the unit's name. Multiple names can be separated by "||".
 
 #### Returns `BOOL`
 
@@ -1692,6 +2137,8 @@
 ---
 
 > ## creature.type
+>
+> _`creature.type || creatureType`_
 
 #### Parameters
 
@@ -1722,11 +2169,13 @@
 ---
 
 > ## hascreature.type
+>
+> _`hascreature.type || hascreatureType`_
 
 #### Parameters
 
 -   `UNIT`: The unit to check for the creature type.
--   `expectedType` The _`localized`_ expected creature type to compare with.
+-   `expectedType` The _`localized`_ expected creature type to compare with. Multiple types can be separated by "||".
 
 #### Returns `BOOL`
 
@@ -1754,38 +2203,14 @@
 
 ---
 
-> ## class
-
-#### Parameters
-
--   `UNIT`: The unit whose class to retrieve.
-
-#### Returns `STRING`
-
--   The class of the unit, or `Unknown` if the name cannot be determined.
-
-#### _Example:_
-
-=== "Lua Code"
-
-    ```lua
-    _A.DSL:Get("class")("UNIT") == "DEATHKNIGHT"
-    ```
-
-=== "Lua Mode"
-
-    ```lua
-    UNIT:Class() == "DEATHKNIGHT"
-    ```
-
----
-
 > ## hasclass
+>
+> _`hasclass || class`_
 
 #### Parameters
 
 -   `UNIT`: The unit to check for the class.
--   `expectedClass` The expected class name to compare with.
+-   `expectedClass` The expected class name or ID to compare with. Multiple classes can be separated by "||".
 
 #### Returns `BOOL`
 
@@ -1809,6 +2234,104 @@
 
     ```lua
     UNIT:Hasclass("WARRIOR")
+    ```
+
+---
+
+> ## hasRace
+
+#### Parameters
+
+-   `UNIT`: The unit to check for the race.
+-   `expectedRace`: The expected race name to compare with. Multiple races can be separated by "||". Note: "undead" is internally converted to "scourge".
+
+#### Returns `BOOL`
+
+-   `true` if the unit belongs to the expected race, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.hasRace(Human||Orc)", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("hasRace")("UNIT", "Human||Orc")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:HasRace("Human||Orc")
+    ```
+
+---
+
+> ## hasFaction
+
+#### Parameters
+
+-   `UNIT`: The unit to check for faction.
+-   `expectedFaction`: The expected faction name ("Alliance" or "Horde").
+
+#### Returns `BOOL`
+
+-   `true` if the unit belongs to the expected faction, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.hasFaction(Alliance)", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("hasFaction")("UNIT", "Alliance")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:HasFaction("Alliance")
+    ```
+
+---
+
+> ## combatReach
+
+#### Parameters
+
+-   `UNIT`: The unit whose combat reach to retrieve.
+
+#### Returns `NUMBER`
+
+-   The combat reach of the unit in yards. Returns `1.5` if the combat reach cannot be determined.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.combatReach > 2", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("combatReach")("UNIT") > 2
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:CombatReach() > 2
     ```
 
 ---
@@ -2010,6 +2533,84 @@
 
 ---
 
+> ## swimming
+
+#### Parameters
+
+-   None
+
+#### Returns `BOOL`
+
+-   `true` if the player is swimming, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "swimming"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("swimming")()
+    ```
+
+---
+
+> ## falling
+
+#### Parameters
+
+-   None
+
+#### Returns `BOOL`
+
+-   `true` if the player is falling, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "falling"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("falling")()
+    ```
+
+---
+
+> ## indoors
+
+#### Parameters
+
+-   None
+
+#### Returns `BOOL`
+
+-   `true` if the player is indoors, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "indoors"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("indoors")()
+    ```
+
+---
+
 > ## haste
 
 #### Parameters
@@ -2074,7 +2675,9 @@
 
 ---
 
-> ## combat.time
+> ## combattime
+>
+> _`combattime || combat.time`_
 
 #### Parameters
 
@@ -2171,7 +2774,148 @@
 
 ---
 
+> ## position
+>
+> _`position || pos || location`_
+
+#### Parameters
+
+-   `UNIT`: The unit whose position to retrieve.
+
+#### Returns `NUMBER, NUMBER, NUMBER, NUMBER`
+
+-   Returns the `x, y, z` coordinates and facing angle (in radians) of the unit.
+
+#### _Example:_
+
+=== "Lua Code"
+
+    ```lua
+    local x, y, z, facing = _A.DSL:Get("position")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    local x, y, z, facing = UNIT:Position()
+    ```
+
+---
+
+> ## facing
+
+#### Parameters
+
+-   `UNIT`: The unit whose facing angle to retrieve.
+
+#### Returns `NUMBER`
+
+-   The facing angle of the unit in radians.
+
+#### _Example:_
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("facing")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Facing()
+    ```
+
+---
+
+> ## createdBy
+
+#### Parameters
+
+-   `UNIT1`: The unit to check who created it.
+-   `UNIT2`: The unit to compare against as the creator.
+
+#### Returns `BOOL`
+
+-   `true` if unit1 was created by unit2, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT1.createdBy(UNIT2)", UNIT1},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("createdBy")("UNIT1", "UNIT2")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT1:CreatedBy(UNIT2)
+    ```
+
+---
+
+> ## TimeInCombat
+
+#### Parameters
+
+-   None
+
+#### Returns `NUMBER`
+
+-   The time in seconds that the player has been in combat. Returns `0` if not in combat.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "TimeInCombat > 5"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("TimeInCombat")() > 5
+    ```
+
+---
+
+> ## TimeOutCombat
+
+#### Parameters
+
+-   None
+
+#### Returns `NUMBER`
+
+-   The time in seconds that the player has been out of combat. Returns `0` if in combat.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "TimeOutCombat > 3"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("TimeOutCombat")() > 3
+    ```
+
+---
+
 > ## hasloot
+>
+> _`hasloot || IsLootable`_
 
 #### Parameters
 
@@ -2199,6 +2943,280 @@
 
     ```lua
     UNIT:Hasloot()
+    ```
+
+---
+
+> ## mapid
+
+#### Parameters
+
+-   None
+
+#### Returns `NUMBER`
+
+-   The current map ID of the player's location.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "mapid==#1530"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("mapid")() == 1530
+    ```
+
+---
+
+> ## IsNearID
+
+#### Parameters
+
+-   `ID`: The NPC ID to search for.
+-   `distance`: The maximum distance in yards to check (default: 60).
+
+#### Returns `BOOL`
+
+-   `true` if an NPC with the specified ID is within the given distance, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "IsNearID(12345, 40)"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsNearID")(nil, "12345, 40")
+    ```
+
+---
+
+> ## IsNearName
+
+#### Parameters
+
+-   `name`: The NPC name to search for.
+-   `distance`: The maximum distance in yards to check (default: 60).
+
+#### Returns `BOOL`
+
+-   `true` if an NPC with the specified name is within the given distance, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "IsNearName(Gul'dan, 50)"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsNearName")(nil, "Gul'dan, 50")
+    ```
+
+---
+
+> ## InstanceName
+
+#### Parameters
+
+-   `name` (optional): The instance name to compare against.
+
+#### Returns `STRING | BOOL`
+
+-   If `name` is not provided, returns the current instance name as a string.
+-   If `name` is provided, returns `true` if it matches the current instance name, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "InstanceName(Hellfire Citadel)"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("InstanceName")(nil, "Hellfire Citadel")
+    local instanceName = _A.DSL:Get("InstanceName")()
+    ```
+
+---
+
+> ## InstanceType
+
+#### Parameters
+
+-   `type` (optional): The instance type to compare against ("party", "raid", "arena", "pvp", "scenario", "none").
+
+#### Returns `STRING | BOOL`
+
+-   If `type` is not provided, returns the current instance type as a string.
+-   If `type` is provided, returns `true` if it matches the current instance type, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "InstanceType(raid)"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("InstanceType")(nil, "raid")
+    local instanceType = _A.DSL:Get("InstanceType")()
+    ```
+
+---
+
+> ## ZoneText
+
+#### Parameters
+
+-   `name` (optional): The zone text to compare against.
+
+#### Returns `STRING | BOOL`
+
+-   If `name` is not provided, returns the current zone text as a string.
+-   If `name` is provided, returns `true` if it matches the current zone text, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "ZoneText(Tanaan Jungle)"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("ZoneText")(nil, "Tanaan Jungle")
+    local zoneText = _A.DSL:Get("ZoneText")()
+    ```
+
+---
+
+> ## pvpzone
+
+#### Parameters
+
+-   None
+
+#### Returns `BOOL`
+
+-   `true` if the player is in a PvP zone (arena or battleground), `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "pvpzone"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("pvpzone")()
+    ```
+
+---
+
+> ## indungeon
+
+#### Parameters
+
+-   None
+
+#### Returns `BOOL`
+
+-   `true` if the player is in a dungeon (party or raid instance), `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "indungeon"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("indungeon")()
+    ```
+
+---
+
+> ## OnTaxi
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is on a taxi.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is on a taxi flight, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.OnTaxi", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("OnTaxi")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:OnTaxi()
+    ```
+
+---
+
+> ## lowestRoster.health
+
+#### Parameters
+
+-   None
+
+#### Returns `NUMBER | NIL`
+
+-   The health value of the roster member with the lowest health, or `nil` if no roster member is found.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "lowestRoster.health < 50000"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("lowestRoster.health")()
     ```
 
 ---
@@ -2237,7 +3255,7 @@
 
 ---
 
-> ## tagged.byother
+> ## tagged.by.other
 
 -   This condition checks if the specified unit is tagged by other players.
 
@@ -2254,19 +3272,340 @@
 === "DSL"
 
     ```lua
-    {ACTION, "UNIT.tagged.byother", UNIT},
+    {ACTION, "UNIT.tagged.by.other", UNIT},
     ```
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("tagged.byother")("UNIT")
+    _A.DSL:Get("tagged.by.other")("UNIT")
     ```
 
 === "Lua Mode"
 
     ```lua
     UNIT:IsTaggedByOther()
+    ```
+
+---
+
+> ## IsTrackUnit
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is being tracked.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is being tracked (appears on minimap), `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.IsTrackUnit", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsTrackUnit")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsTrackUnit()
+    ```
+
+---
+
+> ## IsSpecialInfo
+
+#### Parameters
+
+-   `UNIT`: The unit to check for special info flag.
+
+#### Returns `BOOL`
+
+-   `true` if the unit has special info flag, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.IsSpecialInfo", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsSpecialInfo")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsSpecialInfo()
+    ```
+
+---
+
+> ## IsDead
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is dead.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is dead, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.IsDead", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsDead")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsDead()
+    ```
+
+---
+
+> ## IsTappedByAllThreatList
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is tapped by all threat list members.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is tapped by all threat list members, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.IsTappedByAllThreatList", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsTappedByAllThreatList")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsTappedByAllThreatList()
+    ```
+
+---
+
+> ## IsPreparation
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is in preparation state.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is in preparation state, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.IsPreparation", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsPreparation")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsPreparation()
+    ```
+
+---
+
+> ## IsPlusMob
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is a plus mob (elite mob indicator).
+
+#### Returns `BOOL`
+
+-   `true` if the unit is a plus mob, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.IsPlusMob", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsPlusMob")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsPlusMob()
+    ```
+
+---
+
+> ## CanPerformAction
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it can perform actions.
+
+#### Returns `BOOL`
+
+-   `true` if the unit can perform actions, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.CanPerformAction", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("CanPerformAction")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsCanPerformAction()
+    ```
+
+---
+
+> ## IsInCombat
+
+#### Parameters
+
+-   `UNIT`: The unit to check if it is in combat.
+
+#### Returns `BOOL`
+
+-   `true` if the unit is in combat, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.IsInCombat", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsInCombat")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IsInCombat()
+    ```
+
+---
+
+> ## dispellableWith
+
+#### Parameters
+
+-   `UNIT`: The unit to check for dispellable auras.
+-   `spell`: The spell ID or name of the dispel ability.
+
+#### Returns `BOOL`
+
+-   `true` if the unit has at least one aura that can be dispelled with the specified spell, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.dispellableWith(527)", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("dispellableWith")("UNIT", "527")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DispellableWith(527)
+    ```
+
+---
+
+> ## subgroup
+
+#### Parameters
+
+-   `UNIT`: The unit to check for raid subgroup.
+
+#### Returns `NUMBER`
+
+-   The raid subgroup number (1-8) of the unit, or `-1` if the unit is not in a raid or not found.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.subgroup==#1", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("subgroup")("UNIT") == 1
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:Subgroup() == 1
     ```
 
 ---
@@ -2330,7 +3669,7 @@
 #### Parameters
 
 -   `UNIT`: The unit for which to check the specialization.
--   `expectedSpecId`: The expected specialization ID.
+-   `expectedSpecId`: The expected specialization ID. Multiple IDs can be separated by "||".
 
 #### Returns `BOOL`
 
