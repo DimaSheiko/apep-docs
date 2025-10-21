@@ -146,7 +146,7 @@
 
 > ## auto.attack
 >
-> _`auto.attack || auto.shoot`_
+> _`auto.attack || isattacking || auto.shoot`_
 
 -   This condition checks if the player's character is performing an auto-attack or auto-shoot (for hunters).
 
@@ -297,6 +297,8 @@
 ---
 
 > ## mounted
+>
+> _`mounted || ImMounted`_
 
 -   This condition checks if the player character is currently mounted.
 
@@ -356,15 +358,47 @@
 
 ---
 
-> ## lost.control
+> ## incombat.time
 
--   This condition checks if the player is currently under the effect of any of the control states:
-    `stunned`, `sapped`, `disoriented`, `polymorphed`, `incapacitated`, `feared`, `horrified`,
-    `fleeing`, `intimidated`, `asleep`, `charmed`, `banished`, `silenced`, `paralyzed`.
+-   This condition provides the time duration for which the player character has been in combat.
+
+#### Returns `NUMBER`
+
+-   The time duration in `seconds` for which the player character has been in combat. Returns `0` if not in combat or time is not available.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "incombat.time > 5"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("incombat.time")() > 5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:IncombatTime() > 5
+    ```
+
+---
+
+> ## lost.control
+>
+> _`lost.control || player_lost_control`_
+
+-   This condition checks if the player is currently under the effect of any loss of control.
+    -   For WoW version 510 (MoP) and later, it checks against a predefined list of crowd control states: `stunned`, `sapped`, `disoriented`, `polymorphed`, `incapacitated`, `feared`, `horrified`, `fleeing`, `intimidated`, `asleep`, `charmed`, `banished`, `silenced`, `paralyzed`.
+    -   For older WoW versions, it uses the native `HasFullControl()` function.
 
 #### Returns `BOOL`
 
--   `true` if the player is in any control states, otherwise `false`.
+-   `true` if the player is in any loss of control state, otherwise `false`.
 
 #### _Examples:_
 
@@ -390,13 +424,12 @@
 
 > ## out.of.control
 
--   This condition checks if the player is currently in any of the specified loss of control states:
-    `stunned`, `sapped`, `disoriented`, `polymorphed`, `incapacitated`, `feared`, `horrified`,
-    `fleeing`, `intimidated`, `asleep`, `charmed`, `banished`, `silenced`, `paralyzed`.
+-   This condition checks if the player is currently in any of the specified loss of control states.
+    -   **Note:** Only available for WoW version 510 (MoP) and later. This function relies on `C_LossOfControl` events.
 
 #### Parameters
 
--   `STATE(s)`: A string containing one or more loss of control states separated by '||'.
+-   `STATE(s)`: A string containing one or more loss of control states (e.g., `stunned`, `feared`) separated by '||'.
 
 #### Returns `BOOL`
 
@@ -407,19 +440,54 @@
 === "DSL"
 
     ```lua
-    {ACTION, "out.of.control(feared || incapacitate)"},
+    {ACTION, "out.of.control(feared || incapacitated)"},
     ```
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("out.of.control")(_, "feared || incapacitate")
+    _A.DSL:Get("out.of.control")(_, "feared || incapacitated")
     ```
 
 === "Lua Mode"
 
     ```lua
-    PLAYER:OutOfControl("feared || incapacitate")
+    PLAYER:OutOfControl("feared || incapacitated")
+    ```
+
+---
+
+> ## out.of.control.delayed
+
+-   This condition checks if the player was in any of the specified loss of control states after a short delay (0.7 to 1.7 seconds).
+    -   **Note:** Only available for WoW version 510 (MoP) and later. This function relies on `C_LossOfControl` events and a timer.
+
+#### Parameters
+
+-   `STATE(s)`: A string containing one or more loss of control states (e.g., `stunned`, `feared`) separated by '||'.
+
+#### Returns `BOOL`
+
+-   `true` if the player was in any of the specified loss of control states when checked after the delay, otherwise `false`.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "out.of.control.delayed(stunned || silenced)"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("out.of.control.delayed")(_, "stunned || silenced")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:OutOfControlDelayed("stunned || silenced")
     ```
 
 ---
@@ -492,6 +560,36 @@
 
 ---
 
+> ## lastfakeunit
+
+-   This condition returns the last fake unit that was targeted or used by the player.
+
+#### Returns `STRING`
+
+-   The identifier of the last fake unit (e.g., "arena1", "party2"). May return an empty string or nil if no fake unit was recently used.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "lastfakeunit == 'arena1'"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("lastfakeunit")() == 'arena1'
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Lastfakeunit() == 'arena1'
+    ```
+
+---
+
 > ## lastcast.succeed
 
 -   This condition checks if the last casted spell by the player succeeded and matches the specified spell.
@@ -530,23 +628,23 @@
 >
 > _`prev.gcd || lastcast.gcd`_
 
--   These conditions check if the provided spell at a given index matches the last spell cast by the player.
-    The index parameter allows checking previous casts within a stored spell history.
+-   These conditions check if the provided spell at a given index matches a previous spell cast by the player.
+    The index parameter allows checking previous casts within a stored spell history (1 is the most recent, 2 is the one before, etc.).
 
 #### Parameters
 
--   `SPELL_INDEX`: A combination of spell identifier or name and an index (optional) to specify a previous cast.
+-   `SPELL_INDEX`: A string containing the spell identifier or name, followed by a comma and an index (e.g., `"Regrowth, 2"`).
 
 #### Returns `BOOL`
 
--   `true` if the provided spell at the specified index matches the last spell cast by the player, otherwise `false`.
+-   `true` if the provided spell at the specified index matches a previous cast, otherwise `false`.
 
 #### _Examples:_
 
 === "DSL"
 
     ```lua
-    {ACTION, "prev(Regrowth, 2).gcd"},
+    {ACTION, "prev.gcd(Regrowth, 2)"},
     ```
 
 === "Lua Code"
@@ -582,19 +680,19 @@
 === "DSL"
 
     ```lua
-    {ACTION, "lastcast(Aimed Shot).seen"},
+    {ACTION, "lastcast(Aimed Shot).seen < 3"},
     ```
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("lastcast.seen")(_, "Aimed Shot")
+    _A.DSL:Get("lastcast.seen")(_, "Aimed Shot") < 3
     ```
 
 === "Lua Mode"
 
     ```lua
-    PLAYER:LastcastSeen("Aimed Shot")
+    PLAYER:LastcastSeen("Aimed Shot") < 3
     ```
 
 ---
@@ -652,19 +750,19 @@
 === "DSL"
 
     ```lua
-    {ACTION, "lastcast(Rejuvenation).count"},
+    {ACTION, "lastcast(Rejuvenation).count >= 2"},
     ```
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("lastcast.count")(_, "Rejuvenation")
+    _A.DSL:Get("lastcast.count")(_, "Rejuvenation") >= 2
     ```
 
 === "Lua Mode"
 
     ```lua
-    PLAYER:LastcastCount("Rejuvenation")
+    PLAYER:LastcastCount("Rejuvenation") >= 2
     ```
 
 ---
@@ -709,13 +807,13 @@
 
 > ## has.form
 >
-> _`has.form || has.ShapeshiftForm`_
+> _`has.form || has.ShapeshiftForm || hasForm || hasShapeshiftForm`_
 
 -   This condition checks if the player has a specific shapeshift form active.
 
 #### Parameters
 
--   `STRING`: The name of the shapeshift form to check.
+-   `STRING`: The name of the shapeshift form to check (e.g., "Cat Form", "Bear Form", "Ghost Wolf"). Use "Humanoid Form" to check for no active shapeshift.
 
 #### Returns `BOOL`
 
@@ -726,7 +824,7 @@
 === "DSL"
 
     ```lua
-    {ACTION, "has(Swift Flight Form).form"},
+    {ACTION, "has.form(Swift Flight Form)"},
     ```
 
 === "Lua Code"
@@ -805,7 +903,7 @@
 
 > ## isHavingLunch
 
--   This condition checks if the player has a lunch-related buff active.
+-   This condition checks if the player has a lunch-related buff active (e.g., Food, Drink, Refreshment).
 
 #### Returns `BOOL`
 
@@ -829,6 +927,40 @@
 
     ```lua
     PLAYER:IsHavingLunch()
+    ```
+
+---
+
+> ## glyph
+
+-   This condition checks if the player has a specific glyph active.
+
+#### Parameters
+
+-   `SPELL`: The spell ID or name of the glyph to check.
+
+#### Returns `BOOL`
+
+-   `true` if the player has the specified glyph, otherwise `false`.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "glyph(Shadow Word: Death)"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("glyph")(_, "Shadow Word: Death")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:Glyph("Shadow Word: Death")
     ```
 
 ---
@@ -860,11 +992,15 @@
     _A.DSL:Get("createdBy")("player", "Mocking Banner")
     ```
 
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:CreatedBy("player", "Mocking Banner")
+    ```
+
 ---
 
 > ## bagSpace
-
-<!-- _A.DSL:Register('bagSpace', function() -- returns number -->
 
 -   This condition checks the available space in the player's bags.
 
@@ -893,9 +1029,6 @@
     ```
 
 ---
-
-<!-- _A.DSL:Register("aura", function(target, spell)
-_A.DSL:Register("aura.any", function(target, spell) -->
 
 > ## aura
 
