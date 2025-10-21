@@ -67,7 +67,7 @@
 
     | immune       | types                                                                                                                                                 |
     | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | all          | {'dematerialize', 'deterrence', 'divine shield', 'ice block'}                                                                                         |
+    | all          | {'dematerialize', 'deterrence', 'divine shield', 'ice block', 'desoriented and invulnerable', 'cyclone'} |
     | charm        | {'bladestorm', 'desecrated ground', 'grounding totem effect', 'lichborne'}                                                                            |
     | disorient    | {'bladestorm', 'desecrated ground'}                                                                                                                   |
     | fear         | {'berserker rage', 'bladestorm', 'desecrated ground', 'grounding totem','lichborne', 'nimble brew'}                                                   |
@@ -105,33 +105,33 @@
 
 > ## state.purge
 
--   This condition checks if the specified target's debuff can be dispelled using the specified spell.
+-   This condition checks if a debuff on the specified target can be dispelled by the specified spell.
 
 #### Parameters
 
--   `UNIT`: The unit to check for dispellable debuffs.
--   `spell`: The spell id or name used to determine if the debuff can be dispelled.
+-   `UNIT`: The target unit to check for dispellable debuffs.
+-   `SPELL`: The name or ID of the dispelling spell (e.g., Purify, Cleanse Spirit).
 
 #### Returns `BOOL`
 
--   `true` if the unit's debuff can be dispelled using the specified spell, `false` otherwise.
+-   `true` if a debuff on the target unit can be dispelled by the specified spell, `false` otherwise.
 
 #### _Example:_
 
 === "DSL"
 
     ```lua
-    {ACTION, "UNIT.state(Fear).purge", UNIT},
+    {ACTION, "UNIT.state.purge(Purify)", UNIT},
     ```
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("state.purge")("UNIT", "Fear")
+    _A.DSL:Get("state.purge")("UNIT", "Purify")
     ```
 
 === "Lua Mode"
 
     ```lua
-    UNIT:StatePurge("Fear")
+    UNIT:StatePurge("Purify")
     ```
