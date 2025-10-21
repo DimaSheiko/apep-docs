@@ -3,6 +3,7 @@
 ---
 
 > ## spell.cooldown
+> _`spell.cooldown || spell.cd`_
 
 #### Parameters
 
@@ -10,7 +11,7 @@
 
 #### Returns `NUMBER`
 
--   The remaining cooldown time in `seconds` for the specified spell.
+-   The remaining cooldown time in `seconds` for the specified spell. Returns 0 if the spell is not on cooldown.
 
 #### _Examples:_
 
@@ -18,18 +19,21 @@
 
     ```lua
     {ACTION, "spell(Nature's Cure).cooldown < 1"},
+    {ACTION, "spell(Nature's Cure).cd < 1"},
     ```
 
 === "Lua Code"
 
     ```lua
     _A.DSL:Get("spell.cooldown")(_, "Nature's Cure") < 1
+    _A.DSL:Get("spell.cd")(_, "Nature's Cure") < 1
     ```
 
 === "Lua Mode"
 
     ```lua
     PLAYER:SpellCooldown("Nature's Cure") < 1
+    PLAYER:SpellCD("Nature's Cure") < 1
     ```
 
 ---
@@ -104,30 +108,30 @@
 
 #### Parameters
 
--   `SPELL`: The name or ID of the spell to count.
+-   `SPELL`: The name or ID of the spell.
 
 #### Returns `NUMBER`
 
--   The number of times a spell can be casted.
+-   The number of charges or stacks available for the spell (e.g., Arcane Missiles, Maelstrom Weapon). Returns 0 if the spell does not use this mechanic.
 
 #### _Examples:_
 
 === "DSL"
 
     ```lua
-    {ACTION, "spell(Starfire).count == 2"},
+    {ACTION, "spell(Arcane Missiles).count > 0"},
     ```
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("spell.count")(_, "Starfire") == 1
+    _A.DSL:Get("spell.count")(_, "Arcane Missiles") > 0
     ```
 
 === "Lua Mode"
 
     ```lua
-    PLAYER:SpellCount("Starfire") == 1
+    PLAYER:SpellCount("Arcane Missiles") > 0
     ```
 
 ---
@@ -196,15 +200,51 @@
 
 ---
 
+> ## IsCurrent.Spell
+> _`IsCurrent.Spell || Current.Spell`_
+
+#### Parameters
+
+-   `SPELL`: The name or ID of the spell to check.
+
+#### Returns `BOOL`
+
+-   `true` if the specified spell is currently being cast, `false` otherwise.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "IsCurrent.Spell(Arcane Missiles)"},
+    {ACTION, "Current.Spell(Arcane Missiles)"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("IsCurrent.Spell")(_, "Arcane Missiles")
+    _A.DSL:Get("Current.Spell")(_, "Arcane Missiles")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:IsCurrentSpell("Arcane Missiles")
+    PLAYER:CurrentSpell("Arcane Missiles")
+    ```
+
+---
+
 > ## spell.ready
 
 #### Parameters
 
--   `SPELL`: The name or ID of the spell to check for readiness. It considers the spell's cooldown, global cooldown, and network latency.
+-   `SPELL`: The name or ID of the spell to check for readiness.
 
 #### Returns `BOOL`
 
--   `true` if the specified spell is ready for use, `false` otherwise.
+-   `true` if the spell is not currently being cast, its cooldown is finished (or less than GCD), and it is usable (has resources, etc.), `false` otherwise.
 
 #### _Examples:_
 
@@ -237,7 +277,7 @@
 
 #### Returns `BOOL`
 
--   `true` if the unit is within range of the spell, `false` otherwise.
+-   `true` if the unit is within range of the spell, `false` otherwise. For spells with a melee range (0-0 yards), this condition will check if the unit is in melee range.
 
 #### _Examples:_
 
@@ -267,9 +307,10 @@
 
 -   `SPELL`: The name or ID of the spell to retrieve costs for.
 
-#### Returns `NUMBER`
+#### Returns `NUMBER, NUMBER`
 
--   The amount of `"MANA", "RAGE", "FOCUS", "ENERGY", "HAPPINESS", "RUNES", "RUNIC_POWER", "SOUL_SHARDS", "HOLY_POWER", "STAGGER", "CHI", "FURY", "PAIN", "LUNAR_POWER", "INSANITY"` required to cast the spell.
+-   `powerCost`: The amount of resource required to cast the spell.
+-   `powerType`: The type of resource required (e.g., 0 for Mana, 1 for Rage, 3 for Energy).
 
 #### _Examples:_
 
@@ -282,13 +323,19 @@
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("spell.cost")(_, "Ignore Pain") >= 50
+    local cost, powerType = _A.DSL:Get("spell.cost")(_, "Ignore Pain")
+    if cost >= 50 then
+      -- do something
+    end
     ```
 
 === "Lua Mode"
 
     ```lua
-    PLAYER:SpellCost("Ignore Pain") >= 50
+    local cost, powerType = PLAYER:SpellCost("Ignore Pain")
+    if cost >= 50 then
+      -- do something
+    end
     ```
 
 ---
@@ -321,6 +368,70 @@
 
     ```lua
     PLAYER:SpellCasttime("Aimed Shot") < 0.9
+    ```
+
+---
+
+> ## spell.maxrange
+
+#### Parameters
+
+-   `SPELL`: The name or ID of the spell to retrieve the maximum range for.
+
+#### Returns `NUMBER`
+
+-   The maximum range of the spell in yards.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "spell(Fireball).maxrange > 30"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.maxrange")(_, "Fireball") > 30
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellMaxrange("Fireball") > 30
+    ```
+
+---
+
+> ## spell.minrange
+
+#### Parameters
+
+-   `SPELL`: The name or ID of the spell to retrieve the minimum range for.
+
+#### Returns `NUMBER`
+
+-   The minimum range of the spell in yards.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "spell(Fireball).minrange < 5"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("spell.minrange")(_, "Fireball") < 5
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:SpellMinrange("Fireball") < 5
     ```
 
 ---
