@@ -446,12 +446,12 @@
 
 #### Parameters
 
--   `UNIT`: The unit to check for the expected ID.
--   `id`: The expected ID to compare against.
+-   `UNIT`: The unit whose ID will be checked.
+-   `ID_STRING`: The expected numeric ID, passed as a string.
 
 #### Returns `BOOL`
 
--   `true` if the unit's ID matches the expected ID, `false` otherwise.
+-   `true` if the unit's actual numeric ID matches the numeric ID parsed from the `ID_STRING`, `false` otherwise.
 
 #### _Example:_
 
@@ -1755,6 +1755,7 @@
 #### Parameters
 
 -   `UNIT`: The unit to measure combat range against.
+-   `TIPO` (optional): The type of range to check. `1` for default/melee range, `2` for caster range. Defaults to `1`.
 
 #### Returns `NUMBER`
 
@@ -1766,18 +1767,21 @@
 
     ```lua
     {ACTION, "UNIT.range < 20", UNIT},
+    {ACTION, "UNIT.range(2) < 30", UNIT},
     ```
 
 === "Lua Code"
 
     ```lua
     _A.DSL:Get("range")("UNIT") < 20
+    _A.DSL:Get("range")("UNIT", "2") < 30
     ```
 
 === "Lua Mode"
 
     ```lua
     UNIT:Range() < 20
+    UNIT:Range(2) < 30
     ```
 
 ---
@@ -1787,7 +1791,7 @@
 #### Parameters
 
 -   `UNIT1`: The first unit to measure combat range from.
--   `UNIT2`: The second unit to measure combat range to.
+-   `UNIT2_TIPO`: The second unit to measure combat range to, and an optional type. Provide as a string in the format "unit2, tipo". `tipo` can be `1` for default/melee range, or `2` for caster range. Defaults to `1`.
 
 #### Returns `NUMBER`
 
@@ -1799,18 +1803,21 @@
 
     ```lua
     {ACTION, "UNIT1.rangefrom(UNIT2) < 20", UNIT},
+    {ACTION, "UNIT1.rangefrom(UNIT2, 2) < 30", UNIT},
     ```
 
 === "Lua Code"
 
     ```lua
     _A.DSL:Get("rangefrom")("UNIT1", "UNIT2") < 20
+    _A.DSL:Get("rangefrom")("UNIT1", "UNIT2, 2") < 30
     ```
 
 === "Lua Mode"
 
     ```lua
     UNIT1:Rangefrom(UNIT2) < 20
+    UNIT1:Rangefrom("UNIT2, 2") < 30
     ```
 
 ---
@@ -2647,11 +2654,11 @@
 
 #### Parameters
 
--   `UNIT`: The unit to check for being connected to the game world.
+-   `UNIT`: The unit to check for being online and not loading.
 
 #### Returns `BOOL`
 
--   `true` if the specified unit is connected to the game world, `false` otherwise.
+-   `true` if the specified unit is a player character who is currently online (not disconnected or loading), `false` otherwise.
 
 #### _Example:_
 
@@ -3203,7 +3210,7 @@
 
 #### Returns `NUMBER | NIL`
 
--   The health value of the roster member with the lowest health, or `nil` if no roster member is found.
+-   The current health of the player or the group/raid member with the lowest health. Returns `nil` if the player is not in a group or if no members are found.
 
 #### _Example:_
 
