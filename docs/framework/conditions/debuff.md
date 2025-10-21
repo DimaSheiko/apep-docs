@@ -341,7 +341,7 @@
 
 #### Returns `NUMBER`
 
--   The number of instances of the debuff applied by the player on the target unit.
+-   The number of instances of the debuff on the target unit, from any source.
 
 #### _Example:_
 
@@ -398,4 +398,78 @@
 
     ```lua
     UNIT:DebuffType("Curse")
+    ```
+
+---
+
+> ## debuff.count.type
+
+-   This condition counts the total number of stacks of all debuffs of a specified type on the target unit.
+-   Multiple debuff types can be checked by separating them with `||`.
+
+#### Parameters
+
+-   `UNIT`: The unit to count the debuff stacks on.
+-   `debuff_type`: The type of debuff to count stacks for.
+
+    `"Magic", "Disease", "Poison", "Curse", "Enrage"`
+
+#### Returns `NUMBER`
+
+-   The total number of stacks of all debuffs of the specified type(s) on the unit.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.debuff(Magic || Curse).count.type > 0", UNIT},
+    -- Counts stacks of all Magic and Curse debuffs.
+    ```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("debuff.count.type")("UNIT", "Magic || Curse") > 0
+    ```
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DebuffCountType("Magic || Curse") > 0
+    ```
+
+---
+
+> ## dispelType.atRndTime
+
+-   This condition checks if a debuff of a specified dispel type on the target unit is within a random time frame (1 to 3 seconds before its expiration) of its duration, making it a candidate for dispelling.
+-   It iterates through all debuffs on the target.
+
+#### Parameters
+
+-   `UNIT`: The unit to check for dispellable debuffs.
+-   `dtype`: The dispel type of the debuff to check for.
+
+    `"Magic", "Disease", "Poison", "Curse"`
+
+#### Returns `BOOL`
+
+-   `true` if a debuff of the specified dispel type is found and its remaining time is less than `(total duration - random(1, 3))`, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.dispelType.atRndTime(Magic)", UNIT},
+    -- Checks if any Magic debuff is dispellable at a random time.
+    ```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("dispelType.atRndTime")("UNIT", "Magic")
+    ```
+=== "Lua Mode"
+
+    ```lua
+    UNIT:DispelTypeAtRndTime("Magic")
     ```

@@ -36,9 +36,11 @@
 >
 > _`hero.duration || heroDuration`_
 
+-   Checks for the following heroism-related buffs: Heroism, Bloodlust, Time Warp, Ancient Hysteria, Drums of Rage.
+
 #### Returns `NUMBER`
 
--   The remaining duration in `seconds` of the heroism-related buff with the longest duration, or 0 if no such buff is active.
+-   The remaining duration in `seconds` of the active heroism-related buff with the longest duration, or 0 if no such buff is active.
 
 #### _Example:_
 
@@ -401,7 +403,7 @@
 
 #### Returns `NUMBER`
 
--   The number of instances of the buff applied by the player on the target unit.
+-   The number of instances of the buff on the target unit, from any source.
 
 #### _Example:_
 
@@ -458,4 +460,200 @@
 
     ```lua
     UNIT:BuffType("Magic")
+    ```
+
+---
+
+# COUNT FUNCTIONS
+
+---
+
+> ## count.enemies.buffs
+
+-   This condition counts how many enemy units in combat have a specific buff applied by the player.
+
+#### Parameters
+
+-   `BUFF_NAME`: The name or ID of the buff to count.
+
+#### Returns `NUMBER`
+
+-   The number of enemy units in combat that have the specified buff.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "count(Power Word: Shield).enemies.buffs >= 2"},
+    ```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("count.enemies.buffs")("Power Word: Shield") >= 2
+    ```
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:CountEnemiesBuffs("Power Word: Shield") >= 2
+    ```
+
+---
+
+> ## count.friendly.buffs
+
+-   This condition counts how many friendly units in the roster have a specific buff applied by the player.
+
+#### Parameters
+
+-   `BUFF_NAME`: The name or ID of the buff to count.
+
+#### Returns `NUMBER`
+
+-   The number of friendly units that have the specified buff.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "count(Rejuvenation).friendly.buffs >= 3"},
+    ```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("count.friendly.buffs")("Rejuvenation") >= 3
+    ```
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:CountFriendlyBuffs("Rejuvenation") >= 3
+    ```
+
+---
+
+> ## count.friendly.buffsAny
+
+-   This condition counts how many friendly units in the roster have a specific buff, regardless of the source.
+
+#### Parameters
+
+-   `BUFF_NAME`: The name or ID of the buff to count.
+
+#### Returns `NUMBER`
+
+-   The number of friendly units that have the specified buff from any source.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "count(Power Word: Fortitude).friendly.buffsAny == 5"},
+    ```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("count.friendly.buffsAny")("Power Word: Fortitude") == 5
+    ```
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:CountFriendlyBuffsAny("Power Word: Fortitude") == 5
+    ```
+
+---
+
+> ## count.enemies.debuffs
+
+-   This condition counts how many enemy units in combat have a specific debuff applied by the player.
+
+#### Parameters
+
+-   `DEBUFF_NAME`: The name or ID of the debuff to count.
+
+#### Returns `NUMBER`
+
+-   The number of enemy units in combat that have the specified debuff.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "count(Corruption).enemies.debuffs >= 4"},
+    ```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("count.enemies.debuffs")("Corruption") >= 4
+    ```
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:CountEnemiesDebuffs("Corruption") >= 4
+    ```
+
+---
+
+> ## count.enemies.debuffs.any
+
+-   This condition counts how many enemy units in combat have a specific debuff, regardless of the source.
+
+#### Parameters
+
+-   `DEBUFF_NAME`: The name or ID of the debuff to count.
+
+#### Returns `NUMBER`
+
+-   The number of enemy units in combat that have the specified debuff from any source.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "count(Shadow Word: Pain).enemies.debuffs.any >= 1"},
+    ```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("count.enemies.debuffs.any")("Shadow Word: Pain") >= 1
+    ```
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:CountEnemiesDebuffsAny("Shadow Word: Pain") >= 1
+    ```
+
+---
+
+> ## count.friendly.debuffs
+
+-   This condition counts how many friendly units in the roster have a specific debuff applied by the player.
+
+#### Parameters
+
+-   `DEBUFF_NAME`: The name or ID of the debuff to count.
+
+#### Returns `NUMBER`
+
+-   The number of friendly units that have the specified debuff.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "count(Weakened Soul).friendly.debuffs > 0"},
+    ```
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("count.friendly.debuffs")("Weakened Soul") > 0
+    ```
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:CountFriendlyDebuffs("Weakened Soul") > 0
     ```
