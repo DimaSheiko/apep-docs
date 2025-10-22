@@ -301,6 +301,108 @@
 
 ---
 
+> ## incdmg.reset
+
+-   This condition resets the incoming damage counter for the specified unit.
+
+#### Parameters
+
+-   `UNIT`: The unit to reset the incoming damage counter for.
+
+#### Returns `NIL`
+
+-   This condition does not return a value.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.incdmg.reset", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("incdmg.reset")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IncdmgReset()
+    ```
+
+---
+
+> ## incdmg.phys.reset
+
+-   This condition resets the incoming physical damage counter for the specified unit.
+
+#### Parameters
+
+-   `UNIT`: The unit to reset the incoming physical damage counter for.
+
+#### Returns `NIL`
+
+-   This condition does not return a value.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.incdmg.phys.reset", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("incdmg.phys.reset")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IncdmgPhysReset()
+    ```
+
+---
+
+> ## incdmg.magic.reset
+
+-   This condition resets the incoming magic damage counter for the specified unit.
+
+#### Parameters
+
+-   `UNIT`: The unit to reset the incoming magic damage counter for.
+
+#### Returns `NIL`
+
+-   This condition does not return a value.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "UNIT.incdmg.magic.reset", UNIT},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("incdmg.magic.reset")("UNIT")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    UNIT:IncdmgMagicReset()
+    ```
+
+---
+
 > ## boss
 >
 > _`boss || isBoss`_

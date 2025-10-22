@@ -697,6 +697,78 @@
 
 ---
 
+> ## lastcast.succeed.on
+
+-   This condition checks if a specific spell was the last successfully casted spell on a target.
+
+#### Parameters
+
+-   `TARGET`: The target unit identifier (e.g., any UnitId like `"player"`, `"target"`, etc., or a unit GUID).
+-   `SPELL`: The spell name or spell ID.
+
+#### Returns `BOOL`
+
+-   `true` if the spell was the last successfully casted spell on the target, `false` otherwise.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "lastcast(Moonfire).succeed.on(target)"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("lastcast.succeed.on")("target", "Moonfire")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:LastcastSucceedOn("target", "Moonfire")
+    ```
+
+---
+
+> ## lastcast.seen.on
+>
+> _`lastcast.seen.on || lastcast.viewed.on`_
+
+-   This condition checks how much time has passed since a specific spell was last cast on a target.
+
+#### Parameters
+
+-   `TARGET`: The target unit identifier (e.g., any UnitId like `"player"`, `"target"`, etc., or a unit GUID).
+-   `SPELL`: The spell name or spell ID.
+
+#### Returns `NUMBER`
+
+-   The time difference in seconds since the spell was last seen on the target, or `9999` if the spell was not found.
+
+#### _Examples:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "lastcast(Polymorph).seen.on(target) < 3"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("lastcast.seen.on")("target", "Polymorph") < 3
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:LastcastSeenOn("target", "Polymorph") < 3
+    ```
+
+---
+
 > ## unitLastCast.succeed
 
 -   This condition checks if the provided unit's last cast matches the specified spell.

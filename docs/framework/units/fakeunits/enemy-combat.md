@@ -266,3 +266,79 @@
         print(bestCand.name)
     end
     ```
+
+---
+
+> ## melee
+
+-   This fake unit retrieves enemy units within melee combat range.
+
+#### Parameters
+
+-   `NUM`: The index of the enemy to retrieve (e.g., `1` for first, `2` for second, etc.).
+
+#### Returns `guid/key`
+
+-   Returns the enemy unit within melee range at the specified index.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, ACTION, "melee"}, -- (1)!
+    {ACTION, ACTION, "melee1"}, -- (2)!
+    {ACTION, ACTION, "melee2"}, -- (3)!
+    ```
+
+    1. First melee enemy
+    2. First melee enemy (same as melee)
+    3. Second melee enemy
+
+=== "Lua Code"
+
+    ```lua
+    local melee1 = Object("melee")
+    local melee2 = Object("melee2")
+    if melee1 then
+        print(melee1.name)
+    end
+    ```
+
+---
+
+> ## caster
+
+-   This fake unit retrieves enemy caster units (ranged enemies).
+
+#### Parameters
+
+-   `NUM`: The index of the caster to retrieve (e.g., `1` for first, `2` for second, etc.).
+
+#### Returns `guid/key`
+
+-   Returns the enemy caster unit at the specified index.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, ACTION, "caster"}, -- (1)!
+    {ACTION, ACTION, "caster1"}, -- (2)!
+    {ACTION, ACTION, "caster2"}, -- (3)!
+    ```
+
+    1. First caster enemy
+    2. First caster enemy (same as caster)
+    3. Second caster enemy
+
+=== "Lua Code"
+
+    ```lua
+    local caster1 = Object("caster")
+    local caster2 = Object("caster2")
+    if caster1 then
+        print(caster1.name)
+    end
+    ```

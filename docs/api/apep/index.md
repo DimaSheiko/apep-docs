@@ -2876,3 +2876,446 @@ print(decoded) -- (1)!
 ```
 
 1. Returns "Hello, how are you doing today?"
+
+---
+
+> ## UnitCombatRange
+
+-   This function calculates the combat range between two units, taking into account their combat reaches.
+
+#### Parameters
+
+-   `unit1`(string): The unitId or pointer of the first unit.
+-   `unit2`(string): The unitId or pointer of the second unit.
+
+#### Returns `number`
+
+-   The combat range between the two units.
+
+#### _Example:_
+
+```lua
+local combatRange = _A.UnitCombatRange("player", "target")
+print("Combat range:", combatRange)
+```
+
+---
+
+> ## md5
+
+-   This function computes the MD5 hash of the given string.
+
+#### Parameters
+
+-   `str`(string): The input string for which to calculate the MD5 hash.
+
+#### Returns `string`
+
+-   The MD5 hash of the input string.
+
+#### _Example:_
+
+```lua
+local md5Hash = _A.md5("Hello Apep")
+print("MD5 hash:", md5Hash)
+```
+
+---
+
+> ## AutoLogin
+
+-   This function enables or disables automatic AutoLogin for the next session.
+
+#### Parameters
+
+-   `state`(boolean): `true` to enable auto-login, `false` to disable it.
+
+!>**Note:** For this to work, you must configure your credentials in `Apep.ini` with:
+```ini
+AccountName=your_wow_account_name
+AccountPassword=your_wow_password
+RealmName=your_realm_name
+CharName=your_character_name
+```
+
+#### _Example:_
+
+```lua
+_A.AutoLogin(true)  -- Enables auto-login
+_A.AutoLogin(false) -- Disables auto-login
+```
+
+---
+
+> ## toboolean
+
+-   This function converts any input to boolean if possible.
+
+#### Parameters
+
+-   `value`(any): The value to convert to boolean.
+
+#### Returns `boolean`
+
+-   The boolean representation of the value, or `nil` if conversion is not possible.
+
+#### _Example:_
+
+```lua
+print(_A.toboolean(1))        -- true
+print(_A.toboolean(0))        -- false
+print(_A.toboolean("true"))   -- true
+print(_A.toboolean("false"))  -- false
+print(_A.toboolean(nil))      -- false
+```
+
+---
+
+> ## UnitCastDest
+
+-   This API queries the destination of a spell casted by a unit.
+
+#### Parameters
+
+-   `unit`(string): The unit identifier (e.g., `"player"`, `"target"`, `"mouseover"`, or a GUID).
+-   `spellOrId`(number or string): The spell ID or spell name.
+
+#### Returns `Type`, `guid_or_X`, `Y`, `Z`
+
+-   `Type`(string): The type of destination:
+    -   `"guid"`: The destination is a unit (returned as a GUID).
+    -   `"pos"`: The destination is a position (X, Y, Z coordinates).
+-   `guid_or_X`(string or number): The unit GUID (if `Type == "guid"`) or the X coordinate.
+-   `Y`(number): The Y coordinate (if `Type == "pos"`).
+-   `Z`(number): The Z coordinate (if `Type == "pos"`).
+
+!!! warning
+
+    This API is only available in WotLK (Wrath of the Lich King).
+
+#### _Example:_
+
+```lua
+local Type, x, y, z = _A.UnitCastDest("target", "Blizzard")
+if Type == "pos" then
+    print("Target is casting at position:", x, y, z)
+elseif Type == "guid" then
+    print("Target is casting on unit GUID:", x)
+end
+```
+
+---
+
+> ## ObjectLockPointer
+
+-   This API takes a WoW object as input and returns the memory pointer of its Lock record.
+
+#### Parameters
+
+-   `ptr`(string): The WoW object to retrieve the lock pointer for (e.g., `"0x12345678"`).
+
+#### Returns `string`
+
+-   The lock pointer of the specified object, or `"0x0"` if invalid.
+
+#### _Example:_
+
+```lua
+local lockPtr = _A.ObjectLockPointer("0x12345678")
+if lockPtr then
+    print("Lock pointer:", lockPtr)
+end
+```
+
+---
+
+> ## ObjectLockSlots
+
+-   This API takes a WoW object as input and returns its lock record ID along with detailed slot information.
+
+#### Parameters
+
+-   `ptr`(string): The WoW object to retrieve lock slots for (e.g., `"0x12345678"`).
+
+#### Returns `ID`, `slots`
+
+-   `ID`(number): The lock record ID of the object, or `nil` if invalid.
+-   `slots`(table): A table of lock slots, where each slot has the following fields:
+    -   `type`(number): The type of the lock slot.
+    -   `index`(number): The index of the slot.
+    -   `skill`(number): The required skill value.
+    -   `action`(number): The action associated with the slot.
+
+#### _Example:_
+
+```lua
+local ID, slots = _A.ObjectLockSlots("0x12345678")
+if ID and slots then
+    print("Lock ID:", ID)
+    for i, slot in ipairs(slots) do
+        print("Slot", i, "type:", slot.type, "index:", slot.index, "skill:", slot.skill, "action:", slot.action)
+    end
+end
+```
+
+---
+
+# Auras Subscription API
+
+The auras subscription API provides efficient access to unit auras (buffs and debuffs).
+
+---
+
+> ## auras:all
+
+-   Retrieve all auras on a unit.
+
+#### Parameters
+
+-   `obj`(string): The unit to check for auras (e.g., `"player"`, `"target"`).
+-   `filter`(string): Optional. The caster token (e.g., `"player"`, `"target"`) or GUID in hex format (`"0x..."`).
+
+#### Returns `table`
+
+-   A list of aura tables with fields: `[1]` SpellID, `[2]` Stack, `[3]` Duration, `[4]` EndTime, `[5]` Remaining, `[6]` CasterGUID, `[7]` AuraType.
+
+#### _Example:_
+
+```lua
+local all = _A.auras:all("target")
+for _, aura in ipairs(all) do
+    local spellID, stacks, duration, endTime, remaining, casterGUID, auraType = unpack(aura)
+    print("Spell:", spellID, "Stacks:", stacks, "Remaining:", remaining)
+end
+```
+
+---
+
+> ## auras:id
+
+-   Retrieve specific aura(s) by Spell ID or name.
+
+#### Parameters
+
+-   `obj`(string): The unit to check (e.g., `"player"`, `"target"`).
+-   `IdOrName`(string or number): The spell ID or name to search for.
+-   `filter`(string): Optional. The caster token or GUID.
+
+#### Returns `table`
+
+-   A list of matching aura entries.
+
+#### _Example:_
+
+```lua
+local result = _A.auras:id("player", 12345)
+if result and #result > 0 then
+    local spellID, stacks, duration, endTime, remaining, casterGUID, auraType = unpack(result[1])
+    print("Aura found:", spellID, "Remaining:", remaining)
+end
+```
+
+---
+
+> ## auras:exists
+
+-   Check if a unit has a specific aura by Spell ID or name.
+
+#### Parameters
+
+-   `obj`(string): The unit to check (e.g., `"player"`, `"target"`).
+-   `IdOrName`(string or number): The spell ID or name to check for.
+
+#### Returns `boolean`
+
+-   `true` if the aura is present, `false` otherwise.
+
+#### _Example:_
+
+```lua
+if _A.auras:exists("target", "Polymorph") then
+    print("Target is polymorphed!")
+end
+```
+
+---
+
+> ## auras:buffs
+
+-   Retrieve all buffs on a unit.
+
+#### Parameters
+
+-   `obj`(string): The unit to check (e.g., `"player"`, `"target"`).
+-   `filter`(string): Optional. Caster token or GUID.
+
+#### Returns `table`
+
+-   List of buff entries.
+
+#### _Example:_
+
+```lua
+local buffs = _A.auras:buffs("player", "player")
+for _, buff in ipairs(buffs) do
+    local spellID, stacks = unpack(buff)
+    print("Buff:", spellID, "Stacks:", stacks)
+end
+```
+
+---
+
+> ## auras:debuffs
+
+-   Retrieve all debuffs on a unit.
+
+#### Parameters
+
+-   `obj`(string): The unit to check (e.g., `"player"`, `"target"`).
+-   `filter`(string): Optional. Caster token or GUID.
+
+#### Returns `table`
+
+-   List of debuff entries.
+
+#### _Example:_
+
+```lua
+local debuffs = _A.auras:debuffs("target")
+for _, debuff in ipairs(debuffs) do
+    local spellID, stacks = unpack(debuff)
+    print("Debuff:", spellID, "Stacks:", stacks)
+end
+```
+
+---
+
+> ## auras:buff
+
+-   Retrieve specific buff(s) by Spell ID or name.
+
+#### Parameters
+
+-   `obj`(string): The unit to check (e.g., `"player"`, `"target"`).
+-   `IdOrName`(string or number): The spell ID or name to search for.
+-   `filter`(string): Optional. Caster token or GUID.
+
+#### Returns `table`
+
+-   A list of matching buff entries, or an empty table if not found.
+
+#### _Example:_
+
+```lua
+local buff = _A.auras:buff("player", "Power Word: Fortitude")
+if buff and #buff > 0 then
+    print("Found buff:", buff[1][1])
+end
+```
+
+---
+
+> ## auras:debuff
+
+-   Retrieve specific debuff(s) by Spell ID or name.
+
+#### Parameters
+
+-   `obj`(string): The unit to check (e.g., `"target"`).
+-   `IdOrName`(string or number): The spell ID or name to search for.
+-   `filter`(string): Optional. Caster token or GUID.
+
+#### Returns `table`
+
+-   A list of matching debuff entries, or an empty table if not found.
+
+#### _Example:_
+
+```lua
+local debuff = _A.auras:debuff("target", "Moonfire")
+if debuff and #debuff > 0 then
+    print("Found debuff:", debuff[1][1])
+end
+```
+
+---
+
+> ## auras:specific
+
+-   Retrieve a specific aura from a unit that matches the spell ID or name, with optional filtering by caster or type.
+
+#### Parameters
+
+-   `obj`(string): The unit object (e.g., `"player"`, `"target"`, or unit GUID).
+-   `IdOrName`(number or string): The spell ID or spell name of the aura to search for.
+-   `filter`(string): Optional. The caster filter. Can be a unit token like `"player"`, `"target"`, or a full GUID string.
+-   `type`(string): Optional. The aura type. Accepts `"BUFF"`, `"DEBUFF"`, `"HELPFUL"`, or `"HARMFUL"`.
+
+#### Returns `auraId`, `stackCount`, `duration`, `endTime`, `remaining`, `casterGuid`, `auraType`
+
+-   `auraId`(number): The spell ID of the matched aura.
+-   `stackCount`(number): The number of stacks.
+-   `duration`(number): The duration of the aura in seconds.
+-   `endTime`(number): The server timestamp when the aura will expire.
+-   `remaining`(number): Time remaining in seconds.
+-   `casterGuid`(string): The GUID of the aura's caster.
+-   `auraType`(string): `"BUFF"` or `"DEBUFF"`.
+
+!>**Note:** The most relevant aura is determined as the one with the latest EndTime.
+
+#### _Example:_
+
+```lua
+local id, stacks, duration, endTime, remaining, caster, type = _A.auras:specific("target", "Moonfire", "player", "DEBUFF")
+if id then
+    print("Moonfire on target:", id, "Remaining:", remaining)
+end
+```
+
+---
+
+# Global Variables and Options
+
+---
+
+> ## _A.FaceAlways
+
+-   This global variable controls whether Apep automatically faces the target when casting spells.
+
+#### Type
+
+-   `boolean`
+
+#### Usage
+
+-   Set to `true` to enable automatic facing for all casts from Apep.
+-   Set to `false` to disable automatic facing (default behavior).
+
+#### _Example:_
+
+```lua
+local exeOnLoad = function()
+    _A.FaceAlways = true
+end
+
+local exeOnUnload = function()
+    _A.FaceAlways = false
+end
+```
+
+---
+
+> ## FaceCast (Lua Mode)
+
+-   In Lua mode, you can use the `FaceCast` method to selectively cast spells with automatic facing.
+
+!>**Note:** This method is only available in Lua Mode and requires `_A.FaceAlways` to be set to `false` for selective control.
+
+#### _Example:_
+
+```lua
+local target = Object("target")
+if target then
+    target:FaceCast("Pyroblast") -- Cast with automatic facing
+end
+```

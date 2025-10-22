@@ -113,6 +113,7 @@ nav:
                 - Items: framework/conditions/items.md
                 - Keybinds: framework/conditions/keybinds.md
                 - Player: framework/conditions/player.md
+                - Professions: framework/conditions/professions.md
                 - Spell: framework/conditions/spell.md
                 - States: framework/conditions/states.md
                 - Talents: framework/conditions/talents.md
@@ -130,5 +131,6 @@ nav:
                 - framework/object-manager/index.md
     - API:
           - Apep: api/apep/index.md
+          - Draw: api/draw/index.md
           - Lildraw: api/lildraw/index.md
     - Contributing: contributing/index.md

@@ -74,34 +74,87 @@
 
 > ## item.usable
 
--   Checks if a specific item is usable by the player.
+-   Checks if a specific item is usable by the player. This method accepts item name, item ID, slot name, or slot number.
 
 #### Parameters
 
--   `NameOrID`: The item name or ID to check for usability.
+-   `NameOrID`: The item name, item ID, slot name (e.g., `"trinket1"`, `"mainhand"`), or slot number to check for usability.
 
 #### Returns `BOOL`
 
 -   `true` if the item is usable, `false` otherwise.
+
+!>**Note:** You can use slot names like `"trinket1"`, `"trinket2"`, `"mainhand"`, etc., or slot numbers (see [SlotAlias table](../../api/apep/index.md#slotalias)).
 
 #### _Example:_
 
 === "DSL"
 
     ```lua
-    {ACTION, "item(Draught of Souls).usable >= 20"},
+    {ACTION, "item(Draught of Souls).usable"},
+    {ACTION, "item(trinket1).usable"}, -- (1)!
+    {ACTION, "item(13).usable"}, -- (2)!
     ```
+
+    1. Using slot name
+    2. Using slot number (13 = Trinket0Slot)
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("item.usable")(_, "Draught of Souls") >= 20
+    _A.DSL:Get("item.usable")(_, "Draught of Souls")
+    _A.DSL:Get("item.usable")(_, "trinket1")
+    _A.DSL:Get("item.usable")(_, 13)
     ```
 
 === "Lua Mode"
 
     ```lua
-    PLAYER:ItemUsable("Draught of Souls") >= 20
+    PLAYER:ItemUsable("Draught of Souls")
+    PLAYER:ItemUsable("trinket1")
+    PLAYER:ItemUsable(13)
+    ```
+
+---
+
+> ## item.IdBySlot
+
+-   Returns the item ID equipped in a given inventory slot.
+
+#### Parameters
+
+-   `SLOT`: The inventory slot to check, by number or name (e.g., `"head"`, `"mainhand"`, `"trinket1"`).
+
+#### Returns `NUMBER`
+
+-   The item ID of the equipped item in that slot, or `-1` if none is found.
+
+!>**Note:** See [SlotAlias table](../../api/apep/index.md#slotalias) for slot names and numbers.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "item.IdBySlot(trinket1) = 79329"}, -- (1)!
+    {ACTION, "item.IdBySlot(13) = 79329"}, -- (2)!
+    ```
+
+    1. Using slot name
+    2. Using slot number (13 = Trinket0Slot)
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("item.IdBySlot")(_, "trinket1") == 79329
+    _A.DSL:Get("item.IdBySlot")(_, 13) == 79329
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ItemIdBySlot("trinket1") == 79329
+    PLAYER:ItemIdBySlot(13) == 79329
     ```
 
 ---

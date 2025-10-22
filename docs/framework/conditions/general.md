@@ -1027,6 +1027,41 @@ This condition checks if a unit is currently channeling a specific spell.
 
 ---
 
+> ## timeout.reset
+
+-   This condition resets a specific timeout, allowing it to start fresh the next time it is called.
+
+#### Parameters
+
+-   `UNIT`: The unit this timeout is associated with. Can be a unit ID or GUID.
+-   `NAME`: The unique identifier for the timeout to reset.
+
+#### Returns `NIL`
+
+-   This condition does not return a value.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "target.timeout.reset(bloodlust_window)", target},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("timeout.reset")("target", "bloodlust_window")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    target:TimeoutReset("bloodlust_window")
+    ```
+
+---
+
 > ## frame.visible
 
 #### Parameters

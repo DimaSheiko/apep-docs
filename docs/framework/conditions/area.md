@@ -566,3 +566,64 @@
 
     ```lua
     UNIT:AreaDeadRoster(20) >= 3
+    ```
+
+---
+
+> ## area.combatEnemies.infrontplayer
+>
+> _`area.combatEnemies.infrontplayer || area.cbEnemies.infrontplayer`_
+
+-   This condition counts the number of enemy combat units within a specified distance that are in front of the player.
+
+#### Parameters
+
+-   `DISTANCE`: The maximum distance within which to count combat enemies (default is 40).
+
+#### Returns `NUMBER`
+
+-   The total number of combat enemy units within the specified distance of the player and in front of the player.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "area(20).combatEnemies.infrontplayer >= 3"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area.combatEnemies.infrontplayer")(_, "20") >= 3
+    ```
+
+---
+
+> ## area_range.combatEnemies.infrontplayer
+>
+> _`area_range.combatEnemies.infrontplayer || area_range.cbEnemies.infrontplayer`_
+
+-   This condition counts the number of enemy combat units within a specified combat range that are in front of the player.
+
+#### Parameters
+
+-   `RANGE`: The maximum range within which to count combat enemies (default is 40).
+
+#### Returns `NUMBER`
+
+-   The total number of combat enemy units within the specified range of the player and in front of the player.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "area_range(20).combatEnemies.infrontplayer >= 3"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("area_range.combatEnemies.infrontplayer")(_, "20") >= 3
+    ```
