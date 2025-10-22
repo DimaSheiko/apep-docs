@@ -2970,6 +2970,40 @@
 
 ---
 
+> ## createdByServer
+
+Checks whether the given object was created directly by the server.
+
+#### Parameters
+
+-   `obj`: The object to check.
+
+#### Returns `BOOL`
+
+-   `true` if the object was created by the server, `false` otherwise.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "createdByServer", "target"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("createdByServer")("target")
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    target:createdByServer()
+    ```
+
+---
+
 > ## TimeInCombat
 
 #### Parameters
@@ -4604,6 +4638,28 @@
 
     ```lua
     UNIT:IsFeignDeath()
+    ```
+
+---
+
+> ## petAttack
+
+Commands the player's pet to attack a specified target.
+
+#### Parameters
+
+-   `unit`: The target unit for the pet to attack (e.g., "target", "mouseover", "fakeunit", etc...).
+
+#### Returns `BOOL`
+
+-   Returns `true` after issuing the attack command.
+
+#### _Example:_
+
+=== "Lua Mode"
+
+    ```lua
+    target:petAttack()
     ```
 
 ---
