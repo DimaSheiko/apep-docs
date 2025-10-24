@@ -317,6 +317,52 @@
 
 ---
 
+> ## item.enchant
+
+-   Retrieves the enchant ID applied to an equipped item.
+
+#### Parameters
+
+-   `slotname_or_slotid` (string|number): The inventory slot to check. Accepts either:
+    -   The numeric slot ID
+    -   The slot name
+
+#### Returns `STRING`
+
+-   Returns the enchant ID as a string if found.
+-   Returns `"0"` if the item has no enchant or `"-1"` if the slot is empty.
+
+#### _Example:_
+
+=== "DSL"
+
+    ```lua
+    {ACTION, "item.enchant(gloves) = 3603"},
+    {ACTION, "item.enchant(10) = 3603"},
+    {ACTION, "item.enchant(feet) = 0"},
+    {ACTION, "item.enchant(head) = -1"},
+    ```
+
+=== "Lua Code"
+
+    ```lua
+    _A.DSL:Get("item.enchant")(_, "gloves")   --> "3603"
+    _A.DSL:Get("item.enchant")(_, 10)         --> "3603"
+    _A.DSL:Get("item.enchant")(_, "feet")     --> "0"
+    _A.DSL:Get("item.enchant")(_, "head")     --> "-1"
+    ```
+
+=== "Lua Mode"
+
+    ```lua
+    PLAYER:ItemEnchant("gloves")   --> "3603"
+    PLAYER:ItemEnchant(10)         --> "3603"
+    PLAYER:ItemEnchant("feet")     --> "0"
+    PLAYER:ItemEnchant("head")     --> "-1"
+    ```
+
+---
+
 > ## tier
 
 -   Returns the number of equipped items from a specific tier set for the player's class.
