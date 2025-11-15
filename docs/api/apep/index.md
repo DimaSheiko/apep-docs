@@ -2971,6 +2971,19 @@ print(_A.toboolean(nil))      -- false
 
 ---
 
+> ## RestoreAndBringToFront
+
+-   Restores and brings the World of Warcraft window to the front.
+-   This function restores the game window if it is minimized and brings it to the foreground, making it visible and focused.
+
+#### _Example:_
+
+```lua
+_A.RestoreAndBringToFront()
+```
+
+---
+
 > ## UnitCastDest
 
 -   This API queries the destination of a spell casted by a unit.

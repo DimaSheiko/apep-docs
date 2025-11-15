@@ -303,7 +303,9 @@
 
 > ## incdmg.reset
 
--   This condition resets the incoming damage counter for the specified unit.
+!> **DEPRECATED**
+
+-   This condition is no longer necessary as damage tracking now automatically resets. Calling this function has no effect.
 
 #### Parameters
 
@@ -318,26 +320,28 @@
 === "DSL"
 
     ```lua
-    {ACTION, "UNIT.incdmg.reset", UNIT},
+    {ACTION, "UNIT.incdmg.reset", UNIT}, -- No longer needed
     ```
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("incdmg.reset")("UNIT")
+    _A.DSL:Get("incdmg.reset")("UNIT") -- No longer needed
     ```
 
 === "Lua Mode"
 
     ```lua
-    UNIT:IncdmgReset()
+    UNIT:IncdmgReset() -- No longer needed
     ```
 
 ---
 
 > ## incdmg.phys.reset
 
--   This condition resets the incoming physical damage counter for the specified unit.
+!> **DEPRECATED**
+
+-   This condition is no longer necessary as physical damage tracking now automatically resets. Calling this function has no effect.
 
 #### Parameters
 
@@ -352,26 +356,28 @@
 === "DSL"
 
     ```lua
-    {ACTION, "UNIT.incdmg.phys.reset", UNIT},
+    {ACTION, "UNIT.incdmg.phys.reset", UNIT}, -- No longer needed
     ```
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("incdmg.phys.reset")("UNIT")
+    _A.DSL:Get("incdmg.phys.reset")("UNIT") -- No longer needed
     ```
 
 === "Lua Mode"
 
     ```lua
-    UNIT:IncdmgPhysReset()
+    UNIT:IncdmgPhysReset() -- No longer needed
     ```
 
 ---
 
 > ## incdmg.magic.reset
 
--   This condition resets the incoming magic damage counter for the specified unit.
+!> **DEPRECATED**
+
+-   This condition is no longer necessary as magic damage tracking now automatically resets. Calling this function has no effect.
 
 #### Parameters
 
@@ -386,19 +392,19 @@
 === "DSL"
 
     ```lua
-    {ACTION, "UNIT.incdmg.magic.reset", UNIT},
+    {ACTION, "UNIT.incdmg.magic.reset", UNIT}, -- No longer needed
     ```
 
 === "Lua Code"
 
     ```lua
-    _A.DSL:Get("incdmg.magic.reset")("UNIT")
+    _A.DSL:Get("incdmg.magic.reset")("UNIT") -- No longer needed
     ```
 
 === "Lua Mode"
 
     ```lua
-    UNIT:IncdmgMagicReset()
+    UNIT:IncdmgMagicReset() -- No longer needed
     ```
 
 ---
