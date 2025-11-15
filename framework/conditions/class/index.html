@@ -1,0 +1,4827 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Apep project">
+      
+      
+        <meta name="author" content="DimaSheiko">
+      
+      
+        <link rel="canonical" href="https://apep.localhost/framework/conditions/class/">
+      
+      
+        <link rel="prev" href="../buffs/">
+      
+      
+        <link rel="next" href="../conduits/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Class - Apep Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#class" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Apep Docs" class="md-header__button md-logo" aria-label="Apep Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apep Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Class
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DimaSheiko/apep-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../actions/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.6 5.29c-1.1-.1-2.07.71-2.17 1.82L13.18 10H16v2h-3l-.44 5.07a3.986 3.986 0 0 1-4.33 3.63 4 4 0 0 1-3.06-1.87l1.5-1.5c.24.74.9 1.31 1.73 1.38 1.1.1 2.07-.71 2.17-1.82L11 12H8v-2h3.17l.27-3.07c.19-2.2 2.13-3.83 4.33-3.63 1.31.11 2.41.84 3.06 1.87l-1.5 1.5c-.24-.74-.9-1.31-1.73-1.38"/></svg>
+    
+  
+  Framework
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../api/apep/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contributing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Apep Docs" class="md-nav__button md-logo" aria-label="Apep Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Apep Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DimaSheiko/apep-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../my-first-rotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My First Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../changelog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Changelog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framework
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Framework
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../actions/" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.6 5.29c-1.1-.1-2.07.71-2.17 1.82L13.18 10H16v2h-3l-.44 5.07a3.986 3.986 0 0 1-4.33 3.63 4 4 0 0 1-3.06-1.87l1.5-1.5c.24.74.9 1.31 1.73 1.38 1.1.1 2.07-.71 2.17-1.82L11 12H8v-2h3.17l.27-3.07c.19-2.2 2.13-3.83 4.33-3.63 1.31.11 2.41.84 3.06 1.87l-1.5 1.5c-.24-.74-.9-1.31-1.73-1.38"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Actions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Conditions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../area/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Area
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azerites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azerites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buffs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Buffs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powerregen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        power.regen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shadoworbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shadoworbs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        alternate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#darkforce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        darkforce
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burningembers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        burningembers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demonicfury" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        demonicfury
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        energy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energymax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        energy.max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energydiff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        energy.diff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timetomax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        time.to.max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manaraw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mana.raw
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mana
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insanity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        insanity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ispet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ispet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        focus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focusmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        focus.max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runicpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        runic.power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        runes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deathrunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        death.runes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totalactiverunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totalActiveRunes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runecount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rune.count
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maelstrom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        maelstrom
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totemduration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totem.duration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totemtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totem.time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soulshards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        soulshards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chimax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chi.max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chidiff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chi.diff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        form
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lunarpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lunar.power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mushrooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mushrooms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#holypower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        holy.power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ragediff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rage.diff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fury" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fury
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#furydiff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fury.diff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arcanecharges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        arcane.charges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        combo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combomax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        combo.max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combodiff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        combo.diff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warlockminions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        warlock.minions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warlockempower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        warlock.empower
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warlockempowermissing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        warlock.empower.missing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conduits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conduits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dbm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DBM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debuff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debuff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diminished-returns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diminished Returns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../essences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keybinds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keybinds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../professions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Professions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../states/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    States
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../talents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Talents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../units/" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2M6 7h3a2 2 0 0 1 2 2v5.5H9.5V22h-4v-7.5H4V9a2 2 0 0 1 2-2m10.5-5a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2M15 22v-6h-3l2.59-7.59C14.84 7.59 15.6 7 16.5 7s1.66.59 1.91 1.41L21 16h-3v6z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Units
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Units
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../units/fakeunits/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FakeUnits
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FakeUnits
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../units/fakeunits/own-fakeunit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create own fakeunit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../units/fakeunits/enemy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enemy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../units/fakeunits/friendly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Friendly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../units/fakeunits/enemy-combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enemy Combat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../units/fakeunits/roster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../object-manager/" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 1-5 5v11l5-4.5zm2 4v13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6c-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1M10 18.41C8.75 18.09 7.5 18 6.5 18c-1.06 0-2.32.19-3.5.5V7.13c.91-.4 2.14-.63 3.5-.63s2.59.23 3.5.63z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Manager
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object Manager
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../api/apep/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/draw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draw
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/lildraw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lildraw
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powerregen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        power.regen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shadoworbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shadoworbs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        alternate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#darkforce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        darkforce
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burningembers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        burningembers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demonicfury" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        demonicfury
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        energy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energymax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        energy.max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energydiff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        energy.diff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timetomax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        time.to.max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manaraw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mana.raw
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mana
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insanity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        insanity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ispet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ispet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        focus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focusmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        focus.max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runicpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        runic.power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        runes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deathrunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        death.runes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totalactiverunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totalActiveRunes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runecount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rune.count
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maelstrom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        maelstrom
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totemduration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totem.duration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totemtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        totem.time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soulshards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        soulshards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chimax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chi.max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chidiff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chi.diff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        form
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lunarpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lunar.power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mushrooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mushrooms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#holypower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        holy.power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ragediff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rage.diff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fury" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fury
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#furydiff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fury.diff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arcanecharges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        arcane.charges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        combo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combomax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        combo.max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combodiff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        combo.diff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warlockminions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        warlock.minions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warlockempower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        warlock.empower
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warlockempowermissing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        warlock.empower.missing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../actions/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Framework
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Conditions
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/DimaSheiko/apep-docs/edit/main/docs/framework/conditions/class.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/DimaSheiko/apep-docs/raw/main/docs/framework/conditions/class.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="class">CLASS<a class="headerlink" href="#class" title="Permanent link">&para;</a></h1>
+<hr />
+<blockquote>
+<h2 id="power">power<a class="headerlink" href="#power" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the current amount of a specified power type for the player.</li>
+<li>Power types are identified by their numeric ID (e.g., 0 for Mana, 1 for Rage, etc.).</li>
+</ul>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>pType</code> (NUMBER): The numeric ID of the power type.</li>
+</ul>
+<h4 id="returns-number">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current amount of the specified power type, or -1 if the power type is invalid.</li>
+</ul>
+<h4 id="example"><em>Example:</em><a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">DSL</label><label for="__tabbed_1_2">Lua Code</label><label for="__tabbed_1_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;power(1) &gt;= 50&quot;</span><span class="p">},</span><span class="w"> </span><span class="c1">-- Checks if Rage (ID 1) is &gt;= 50</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;power&quot;</span><span class="p">)(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Power</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="powerregen">power.regen<a class="headerlink" href="#powerregen" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition calculates and returns the power regeneration rate of the specified unit.</li>
+</ul>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player" if not specified in the DSL, though the function itself expects a target.</li>
+</ul>
+<h4 id="returns-number_1">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The power regeneration rate of the target.</li>
+</ul>
+<h4 id="example_1"><em>Example:</em><a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">DSL</label><label for="__tabbed_2_2">Lua Code</label><label for="__tabbed_2_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;power.regen &gt;= 5&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;power.regen&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">PowerRegen</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="shadoworbs">shadoworbs<a class="headerlink" href="#shadoworbs" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the current amount of Shadow Orbs the target has.</li>
+</ul>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_2">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current amount of Shadow Orbs.</li>
+</ul>
+<h4 id="example_2"><em>Example:</em><a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">DSL</label><label for="__tabbed_3_2">Lua Code</label><label for="__tabbed_3_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;shadoworbs &gt;= 3&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;shadoworbs&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Shadoworbs</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="alternate">alternate<a class="headerlink" href="#alternate" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the current amount of Alternate power the target has.</li>
+</ul>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_3">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current amount of Alternate power.</li>
+</ul>
+<h4 id="example_3"><em>Example:</em><a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">DSL</label><label for="__tabbed_4_2">Lua Code</label><label for="__tabbed_4_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;alternate &gt;= 1&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;alternate&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Alternate</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="darkforce">darkforce<a class="headerlink" href="#darkforce" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the current amount of Dark Force power the target has.</li>
+</ul>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_4">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current amount of Dark Force power.</li>
+</ul>
+<h4 id="example_4"><em>Example:</em><a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">DSL</label><label for="__tabbed_5_2">Lua Code</label><label for="__tabbed_5_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;darkforce &gt; 0&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;darkforce&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Darkforce</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="burningembers">burningembers<a class="headerlink" href="#burningembers" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the current amount of Burning Embers the target has.</li>
+</ul>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_5">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current amount of Burning Embers.</li>
+</ul>
+<h4 id="example_5"><em>Example:</em><a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">DSL</label><label for="__tabbed_6_2">Lua Code</label><label for="__tabbed_6_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;burningembers &gt;= 4&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;burningembers&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Burningembers</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="demonicfury">demonicfury<a class="headerlink" href="#demonicfury" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the current amount of Demonic Fury the target has.</li>
+</ul>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_6">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current amount of Demonic Fury.</li>
+</ul>
+<h4 id="example_6"><em>Example:</em><a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">DSL</label><label for="__tabbed_7_2">Lua Code</label><label for="__tabbed_7_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;demonicfury &gt;= 200&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;demonicfury&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">200</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Demonicfury</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">200</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="energy">energy<a class="headerlink" href="#energy" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the current energy amount of the target.</li>
+</ul>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_7">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current energy amount of the target.</li>
+</ul>
+<h4 id="example_7"><em>Example:</em><a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">DSL</label><label for="__tabbed_8_2">Lua Code</label><label for="__tabbed_8_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;energy &gt;= 60&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;energy&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Energy</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="energymax">energy.max<a class="headerlink" href="#energymax" title="Permanent link">&para;</a></h2>
+<p><em><code>energy.max || energyMax</code></em></p>
+</blockquote>
+<ul>
+<li>This condition returns the maximum energy amount of the target.</li>
+</ul>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_8">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The maximum energy amount of the target.</li>
+</ul>
+<h4 id="example_8"><em>Example:</em><a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:3"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">DSL</label><label for="__tabbed_9_2">Lua Code</label><label for="__tabbed_9_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;energy.max &gt;= 100&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;energy.max&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">100</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">EnergyMax</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">100</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="energydiff">energy.diff<a class="headerlink" href="#energydiff" title="Permanent link">&para;</a></h2>
+<p><em><code>energy.diff || energy.deficit || energydiff</code></em></p>
+</blockquote>
+<ul>
+<li>This condition returns the difference between the maximum energy and the current energy of the target.</li>
+</ul>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_9">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The energy deficit (difference) of the target.</li>
+</ul>
+<h4 id="example_9"><em>Example:</em><a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">DSL</label><label for="__tabbed_10_2">Lua Code</label><label for="__tabbed_10_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;energy.diff &gt;= 20&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;energy.diff&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">20</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">EnergyDiff</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">20</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="timetomax">time.to.max<a class="headerlink" href="#timetomax" title="Permanent link">&para;</a></h2>
+<p><em><code>time.to.max || timetomax</code></em></p>
+</blockquote>
+<ul>
+<li>This condition calculates the estimated time in seconds for the target's primary resource to reach its maximum value, based on current regeneration rate.</li>
+</ul>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_10">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The estimated time in seconds to reach maximum resource.</li>
+</ul>
+<h4 id="example_10"><em>Example:</em><a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">DSL</label><label for="__tabbed_11_2">Lua Code</label><label for="__tabbed_11_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;time.to.max &lt; 1&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;time.to.max&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">TimeToMax</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="manaraw">mana.raw<a class="headerlink" href="#manaraw" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the current mana of the target.</li>
+</ul>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_11">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The raw mana value of the target.</li>
+</ul>
+<h4 id="example_11"><em>Example:</em><a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:3"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">DSL</label><label for="__tabbed_12_2">Lua Code</label><label for="__tabbed_12_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mana.raw &gt;= 400&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;mana.raw&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">400</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">ManaRaw</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">400</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="mana">mana<a class="headerlink" href="#mana" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the mana percentage of the target.</li>
+</ul>
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_12">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The percentage of mana (0-100) of the target. Returns 0 if the unit has no mana pool.</li>
+</ul>
+<h4 id="example_12"><em>Example:</em><a class="headerlink" href="#example_12" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">DSL</label><label for="__tabbed_13_2">Lua Code</label><label for="__tabbed_13_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mana &gt;= 80&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;mana&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">80</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Mana</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">80</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="insanity">insanity<a class="headerlink" href="#insanity" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition retrieves the current amount of Insanity power of the target.</li>
+</ul>
+<h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_13">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current amount of Insanity power.</li>
+</ul>
+<h4 id="example_13"><em>Example:</em><a class="headerlink" href="#example_13" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:3"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">DSL</label><label for="__tabbed_14_2">Lua Code</label><label for="__tabbed_14_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;insanity &gt;= 80&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;insanity&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">80</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Insanity</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">80</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="ispet">ispet<a class="headerlink" href="#ispet" title="Permanent link">&para;</a></h2>
+<p><em><code>ispet || isPet</code></em></p>
+</blockquote>
+<ul>
+<li>This condition checks if the specified unit is a pet. This includes the player's pet, other players' pets, or specific creature types like non-combat pets, wild pets, critters, or totems.</li>
+</ul>
+<h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>UNIT</code>: The unit to check.</li>
+</ul>
+<h4 id="returns-bool">Returns <code>BOOL</code><a class="headerlink" href="#returns-bool" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>true</code> if the unit is considered a pet, <code>false</code> otherwise.</li>
+</ul>
+<h4 id="example_14"><em>Example:</em><a class="headerlink" href="#example_14" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:3"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><input id="__tabbed_15_3" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">DSL</label><label for="__tabbed_15_2">Lua Code</label><label for="__tabbed_15_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;target.ispet&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;ispet&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nv">TARGET</span><span class="p">:</span><span class="nf">Ispet</span><span class="p">()</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="focus">focus<a class="headerlink" href="#focus" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the current focus amount of the target.</li>
+</ul>
+<h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_14">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The focus resource of the specified target.</li>
+</ul>
+<h4 id="example_15"><em>Example:</em><a class="headerlink" href="#example_15" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:3"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><input id="__tabbed_16_3" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">DSL</label><label for="__tabbed_16_2">Lua Code</label><label for="__tabbed_16_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;focus &gt;= 40&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;focus&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">40</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Focus</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">40</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="focusmax">focus.max<a class="headerlink" href="#focusmax" title="Permanent link">&para;</a></h2>
+<p><em><code>focus.max || focusMax</code></em></p>
+</blockquote>
+<ul>
+<li>This condition retrieves the maximum focus resource of the target.</li>
+</ul>
+<h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_15">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The maximum focus resource of the target.</li>
+</ul>
+<h4 id="example_16"><em>Example:</em><a class="headerlink" href="#example_16" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:3"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><input id="__tabbed_17_3" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">DSL</label><label for="__tabbed_17_2">Lua Code</label><label for="__tabbed_17_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;focus.max &gt; 100&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;focus.max&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">FocusMax</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="runicpower">runic.power<a class="headerlink" href="#runicpower" title="Permanent link">&para;</a></h2>
+<p><em><code>runic.power || runicpower</code></em></p>
+</blockquote>
+<ul>
+<li>This condition calculates the Runic Power resource of the target.</li>
+</ul>
+<h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_16">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The Runic Power resource of the target.</li>
+</ul>
+<h4 id="example_17"><em>Example:</em><a class="headerlink" href="#example_17" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:3"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><input id="__tabbed_18_3" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">DSL</label><label for="__tabbed_18_2">Lua Code</label><label for="__tabbed_18_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;runic.power &gt; 20&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;runic.power&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">RunicPower</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="runes">runes<a class="headerlink" href="#runes" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition calculates the number of available runes for the player. It returns a fractional value if a rune is on cooldown (e.g., 5.5 means 5 runes are ready, and the next will be ready in 0.5 * 10 = 5 seconds).</li>
+</ul>
+<h4 id="returns-number_17">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_17" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The number of available runes, including a fractional part for the next cooldown.</li>
+</ul>
+<h4 id="example_18"><em>Example:</em><a class="headerlink" href="#example_18" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:3"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><input id="__tabbed_19_3" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">DSL</label><label for="__tabbed_19_2">Lua Code</label><label for="__tabbed_19_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;runes &gt; 4.5&quot;</span><span class="p">},</span><span class="w"> </span><span class="c1">-- True if 5 runes are ready, or 4 ready and the next one soon.</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;runes&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">4.5</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Runes</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">4.5</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="deathrunes">death.runes<a class="headerlink" href="#deathrunes" title="Permanent link">&para;</a></h2>
+<p><em><code>death.runes || deathrunes</code></em></p>
+</blockquote>
+<ul>
+<li>This condition calculates the number of Death Runes currently available to the player.</li>
+</ul>
+<h4 id="returns-number_18">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The count of available Death Runes.</li>
+</ul>
+<h4 id="example_19"><em>Example:</em><a class="headerlink" href="#example_19" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:3"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><input id="__tabbed_20_3" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">DSL</label><label for="__tabbed_20_2">Lua Code</label><label for="__tabbed_20_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;death.runes &gt;= 2&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;death.runes&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">DeathRunes</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="totalactiverunes">totalActiveRunes<a class="headerlink" href="#totalactiverunes" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition calculates the total number of runes currently active (not on cooldown) for the player.</li>
+</ul>
+<h4 id="returns-number_19">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_19" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The total count of active runes.</li>
+</ul>
+<h4 id="example_20"><em>Example:</em><a class="headerlink" href="#example_20" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:3"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><input id="__tabbed_21_3" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">DSL</label><label for="__tabbed_21_2">Lua Code</label><label for="__tabbed_21_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;totalActiveRunes == 6&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;totalActiveRunes&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">6</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">TotalActiveRunes</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">6</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="runecount">rune.count<a class="headerlink" href="#runecount" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the number of active runes of a specific type and the total number of active runes.</li>
+<li>Rune types can be specified by name ("blood", "unholy", "frost", "death") or numeric ID (1-4).</li>
+</ul>
+<h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>rune</code> (STRING or NUMBER): The name or ID of the rune type.</li>
+</ul>
+<h4 id="returns-number-number">Returns <code>NUMBER, NUMBER</code><a class="headerlink" href="#returns-number-number" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The count of active runes of the specified type.</li>
+<li>The total number of active runes.</li>
+</ul>
+<h4 id="example_21"><em>Example:</em><a class="headerlink" href="#example_21" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:3"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><input id="__tabbed_22_3" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">DSL</label><label for="__tabbed_22_2">Lua Code</label><label for="__tabbed_22_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rune.count(blood) &gt;= 2&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">bloodRunes</span><span class="p">,</span><span class="w"> </span><span class="nv">totalRunes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;rune.count&quot;</span><span class="p">)(</span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blood&quot;</span><span class="p">)</span>
+</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a><span class="nv">bloodRunes</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">bloodRunes</span><span class="p">,</span><span class="w"> </span><span class="nv">totalRunes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">RuneCount</span><span class="p">(</span><span class="s2">&quot;blood&quot;</span><span class="p">)</span>
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="nv">bloodRunes</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="maelstrom">maelstrom<a class="headerlink" href="#maelstrom" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the amount of Maelstrom power on the target.</li>
+</ul>
+<h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_20">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_20" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The amount of Maelstrom power.</li>
+</ul>
+<h4 id="example_22"><em>Example:</em><a class="headerlink" href="#example_22" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="23:3"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><input id="__tabbed_23_3" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">DSL</label><label for="__tabbed_23_2">Lua Code</label><label for="__tabbed_23_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;maelstrom &gt; 20&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;maelstrom&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Maelstrom</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="totem">totem<a class="headerlink" href="#totem" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition checks if a specific totem is currently active for the player.</li>
+</ul>
+<h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>totem</code> (STRING or NUMBER): The spell ID or name of the totem to check for.</li>
+</ul>
+<h4 id="returns-bool_1">Returns <code>BOOL</code><a class="headerlink" href="#returns-bool_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>true</code> if the specified totem is currently active, <code>false</code> otherwise.</li>
+</ul>
+<h4 id="example_23"><em>Example:</em><a class="headerlink" href="#example_23" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="24:3"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><input id="__tabbed_24_3" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">DSL</label><label for="__tabbed_24_2">Lua Code</label><label for="__tabbed_24_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;totem(Flametongue Totem)&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;totem&quot;</span><span class="p">)(</span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Flametongue Totem&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Totem</span><span class="p">(</span><span class="s2">&quot;Flametongue Totem&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="totemduration">totem.duration<a class="headerlink" href="#totemduration" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition calculates the remaining duration (in seconds) of a specific totem.</li>
+</ul>
+<h4 id="parameters_21">Parameters<a class="headerlink" href="#parameters_21" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>totem</code> (STRING or NUMBER): The spell ID or name of the totem to check the duration for.</li>
+</ul>
+<h4 id="returns-number_21">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_21" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The remaining duration of the specified totem in seconds, or 0 if the totem is not active.</li>
+</ul>
+<h4 id="example_24"><em>Example:</em><a class="headerlink" href="#example_24" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="25:3"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><input id="__tabbed_25_3" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="__tabbed_25_1">DSL</label><label for="__tabbed_25_2">Lua Code</label><label for="__tabbed_25_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;totem(Mana Spring Totem).duration &lt; 0.5&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;totem.duration&quot;</span><span class="p">)(</span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mana Spring Totem&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.5</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">TotemDuration</span><span class="p">(</span><span class="s2">&quot;Mana Spring Totem&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.5</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="totemtime">totem.time<a class="headerlink" href="#totemtime" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the maximum duration (in seconds) of a specific totem.</li>
+</ul>
+<h4 id="parameters_22">Parameters<a class="headerlink" href="#parameters_22" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>totem</code> (STRING or NUMBER): The spell ID or name of the totem to retrieve the maximum duration for.</li>
+</ul>
+<h4 id="returns-number_22">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_22" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The maximum duration of the specified totem in seconds, or 0 if the totem is not found.</li>
+</ul>
+<h4 id="example_25"><em>Example:</em><a class="headerlink" href="#example_25" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="26:3"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><input id="__tabbed_26_2" name="__tabbed_26" type="radio" /><input id="__tabbed_26_3" name="__tabbed_26" type="radio" /><div class="tabbed-labels"><label for="__tabbed_26_1">DSL</label><label for="__tabbed_26_2">Lua Code</label><label for="__tabbed_26_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;totem(Mana Spring Totem).time == 60&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;totem.time&quot;</span><span class="p">)(</span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mana Spring Totem&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">60</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">TotemTime</span><span class="p">(</span><span class="s2">&quot;Mana Spring Totem&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">60</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="soulshards">soulshards<a class="headerlink" href="#soulshards" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the current number of Soul Shards the target has.</li>
+</ul>
+<h4 id="parameters_23">Parameters<a class="headerlink" href="#parameters_23" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_23">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_23" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current number of Soul Shards.</li>
+</ul>
+<h4 id="example_26"><em>Example:</em><a class="headerlink" href="#example_26" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="27:3"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><input id="__tabbed_27_3" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="__tabbed_27_1">DSL</label><label for="__tabbed_27_2">Lua Code</label><label for="__tabbed_27_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;soulshards &gt;= 3&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;soulshards&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Soulshards</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="chi">chi<a class="headerlink" href="#chi" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the current Chi the target has.</li>
+</ul>
+<h4 id="parameters_24">Parameters<a class="headerlink" href="#parameters_24" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_24">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_24" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current number of Chi.</li>
+</ul>
+<h4 id="example_27"><em>Example:</em><a class="headerlink" href="#example_27" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="28:3"><input checked="checked" id="__tabbed_28_1" name="__tabbed_28" type="radio" /><input id="__tabbed_28_2" name="__tabbed_28" type="radio" /><input id="__tabbed_28_3" name="__tabbed_28" type="radio" /><div class="tabbed-labels"><label for="__tabbed_28_1">DSL</label><label for="__tabbed_28_2">Lua Code</label><label for="__tabbed_28_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;chi &gt;= 3&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;chi&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Chi</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="chimax">chi.max<a class="headerlink" href="#chimax" title="Permanent link">&para;</a></h2>
+<p><em><code>chi.max || chiMax</code></em></p>
+</blockquote>
+<ul>
+<li>This condition returns the maximum number of Chi the target can have.</li>
+</ul>
+<h4 id="parameters_25">Parameters<a class="headerlink" href="#parameters_25" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_25">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_25" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The maximum number of Chi.</li>
+</ul>
+<h4 id="example_28"><em>Example:</em><a class="headerlink" href="#example_28" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="29:3"><input checked="checked" id="__tabbed_29_1" name="__tabbed_29" type="radio" /><input id="__tabbed_29_2" name="__tabbed_29" type="radio" /><input id="__tabbed_29_3" name="__tabbed_29" type="radio" /><div class="tabbed-labels"><label for="__tabbed_29_1">DSL</label><label for="__tabbed_29_2">Lua Code</label><label for="__tabbed_29_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;chi.max == 5&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;chi.max&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-86-1"><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">ChiMax</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="chidiff">chi.diff<a class="headerlink" href="#chidiff" title="Permanent link">&para;</a></h2>
+<p><em><code>chi.diff || chi.deficit || chidiff</code></em></p>
+</blockquote>
+<ul>
+<li>This condition calculates the deficit of Chi (maximum Chi - current Chi) for the target.</li>
+</ul>
+<h4 id="parameters_26">Parameters<a class="headerlink" href="#parameters_26" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_26">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_26" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The deficit of Chi.</li>
+</ul>
+<h4 id="example_29"><em>Example:</em><a class="headerlink" href="#example_29" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="30:3"><input checked="checked" id="__tabbed_30_1" name="__tabbed_30" type="radio" /><input id="__tabbed_30_2" name="__tabbed_30" type="radio" /><input id="__tabbed_30_3" name="__tabbed_30" type="radio" /><div class="tabbed-labels"><label for="__tabbed_30_1">DSL</label><label for="__tabbed_30_2">Lua Code</label><label for="__tabbed_30_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-87-1"><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;chi.diff &gt; 2&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-88-1"><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;chi.diff&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">ChiDiff</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="form">form<a class="headerlink" href="#form" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition retrieves the current shapeshift form index that the player is in.</li>
+</ul>
+<h4 id="returns-number_27">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_27" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The shapeshift form index, or 0 if the player is not in any form.</li>
+</ul>
+<h4 id="example_30"><em>Example:</em><a class="headerlink" href="#example_30" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="31:3"><input checked="checked" id="__tabbed_31_1" name="__tabbed_31" type="radio" /><input id="__tabbed_31_2" name="__tabbed_31" type="radio" /><input id="__tabbed_31_3" name="__tabbed_31" type="radio" /><div class="tabbed-labels"><label for="__tabbed_31_1">DSL</label><label for="__tabbed_31_2">Lua Code</label><label for="__tabbed_31_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;form == 3&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;form&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Form</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="stance">stance<a class="headerlink" href="#stance" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition retrieves the index of the stance that the player is in. This is functionally similar to <code>form</code>.</li>
+</ul>
+<h4 id="returns-number_28">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_28" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The index of the current stance, or 0 if not in a stance.</li>
+</ul>
+<h4 id="example_31"><em>Example:</em><a class="headerlink" href="#example_31" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="32:3"><input checked="checked" id="__tabbed_32_1" name="__tabbed_32" type="radio" /><input id="__tabbed_32_2" name="__tabbed_32" type="radio" /><input id="__tabbed_32_3" name="__tabbed_32" type="radio" /><div class="tabbed-labels"><label for="__tabbed_32_1">DSL</label><label for="__tabbed_32_2">Lua Code</label><label for="__tabbed_32_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-93-1"><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;stance == 2&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-94-1"><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;stance&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-95-1"><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Stance</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="lunarpower">lunar.power<a class="headerlink" href="#lunarpower" title="Permanent link">&para;</a></h2>
+<p><em><code>lunar.power || lunarpower || astralpower</code></em></p>
+</blockquote>
+<ul>
+<li>This condition retrieves the current amount of Lunar Power (Astral Power) that the target has.</li>
+</ul>
+<h4 id="parameters_27">Parameters<a class="headerlink" href="#parameters_27" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_29">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_29" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The amount of Lunar Power.</li>
+</ul>
+<h4 id="example_32"><em>Example:</em><a class="headerlink" href="#example_32" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="33:3"><input checked="checked" id="__tabbed_33_1" name="__tabbed_33" type="radio" /><input id="__tabbed_33_2" name="__tabbed_33" type="radio" /><input id="__tabbed_33_3" name="__tabbed_33" type="radio" /><div class="tabbed-labels"><label for="__tabbed_33_1">DSL</label><label for="__tabbed_33_2">Lua Code</label><label for="__tabbed_33_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-96-1"><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lunar.power &gt;= 60&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-97-1"><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;lunar.power&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-98-1"><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">LunarPower</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="mushrooms">mushrooms<a class="headerlink" href="#mushrooms" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition counts the number of Wild Mushroom totems currently active for the player.</li>
+</ul>
+<h4 id="returns-number_30">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_30" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The number of active Wild Mushroom totems (typically 0 to 3).</li>
+</ul>
+<h4 id="example_33"><em>Example:</em><a class="headerlink" href="#example_33" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="34:3"><input checked="checked" id="__tabbed_34_1" name="__tabbed_34" type="radio" /><input id="__tabbed_34_2" name="__tabbed_34" type="radio" /><input id="__tabbed_34_3" name="__tabbed_34" type="radio" /><div class="tabbed-labels"><label for="__tabbed_34_1">DSL</label><label for="__tabbed_34_2">Lua Code</label><label for="__tabbed_34_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-99-1"><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mushrooms &gt; 0&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-100-1"><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;mushrooms&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-101-1"><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Mushrooms</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="holypower">holy.power<a class="headerlink" href="#holypower" title="Permanent link">&para;</a></h2>
+<p><em><code>holy.power || holypower</code></em></p>
+</blockquote>
+<ul>
+<li>This condition retrieves the current amount of Holy Power that the target has.</li>
+</ul>
+<h4 id="parameters_28">Parameters<a class="headerlink" href="#parameters_28" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_31">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_31" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The amount of Holy Power.</li>
+</ul>
+<h4 id="example_34"><em>Example:</em><a class="headerlink" href="#example_34" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="35:3"><input checked="checked" id="__tabbed_35_1" name="__tabbed_35" type="radio" /><input id="__tabbed_35_2" name="__tabbed_35" type="radio" /><input id="__tabbed_35_3" name="__tabbed_35" type="radio" /><div class="tabbed-labels"><label for="__tabbed_35_1">DSL</label><label for="__tabbed_35_2">Lua Code</label><label for="__tabbed_35_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-102-1"><a id="__codelineno-102-1" name="__codelineno-102-1" href="#__codelineno-102-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;holy.power &gt;= 3&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-103-1"><a id="__codelineno-103-1" name="__codelineno-103-1" href="#__codelineno-103-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;holy.power&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-104-1"><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">HolyPower</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="rage">rage<a class="headerlink" href="#rage" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition retrieves the current amount of Rage that the target has.</li>
+</ul>
+<h4 id="parameters_29">Parameters<a class="headerlink" href="#parameters_29" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_32">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_32" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The amount of Rage.</li>
+</ul>
+<h4 id="example_35"><em>Example:</em><a class="headerlink" href="#example_35" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="36:3"><input checked="checked" id="__tabbed_36_1" name="__tabbed_36" type="radio" /><input id="__tabbed_36_2" name="__tabbed_36" type="radio" /><input id="__tabbed_36_3" name="__tabbed_36" type="radio" /><div class="tabbed-labels"><label for="__tabbed_36_1">DSL</label><label for="__tabbed_36_2">Lua Code</label><label for="__tabbed_36_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-105-1"><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rage &gt;= 50&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-106-1"><a id="__codelineno-106-1" name="__codelineno-106-1" href="#__codelineno-106-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;rage&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-107-1"><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Rage</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="ragediff">rage.diff<a class="headerlink" href="#ragediff" title="Permanent link">&para;</a></h2>
+<p><em><code>rage.diff || rage.deficit || ragediff</code></em></p>
+</blockquote>
+<ul>
+<li>This condition calculates the deficit of Rage (maximum Rage - current Rage) for the target.</li>
+</ul>
+<h4 id="parameters_30">Parameters<a class="headerlink" href="#parameters_30" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_33">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_33" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The deficit of Rage.</li>
+</ul>
+<h4 id="example_36"><em>Example:</em><a class="headerlink" href="#example_36" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="37:3"><input checked="checked" id="__tabbed_37_1" name="__tabbed_37" type="radio" /><input id="__tabbed_37_2" name="__tabbed_37" type="radio" /><input id="__tabbed_37_3" name="__tabbed_37" type="radio" /><div class="tabbed-labels"><label for="__tabbed_37_1">DSL</label><label for="__tabbed_37_2">Lua Code</label><label for="__tabbed_37_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-108-1"><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rage.diff &gt;= 15&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-109-1"><a id="__codelineno-109-1" name="__codelineno-109-1" href="#__codelineno-109-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;rage.diff&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">15</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-110-1"><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">RageDiff</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">15</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="fury">fury<a class="headerlink" href="#fury" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition retrieves the current amount of Fury that the target has.</li>
+</ul>
+<h4 id="parameters_31">Parameters<a class="headerlink" href="#parameters_31" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_34">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_34" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The amount of Fury.</li>
+</ul>
+<h4 id="example_37"><em>Example:</em><a class="headerlink" href="#example_37" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="38:3"><input checked="checked" id="__tabbed_38_1" name="__tabbed_38" type="radio" /><input id="__tabbed_38_2" name="__tabbed_38" type="radio" /><input id="__tabbed_38_3" name="__tabbed_38" type="radio" /><div class="tabbed-labels"><label for="__tabbed_38_1">DSL</label><label for="__tabbed_38_2">Lua Code</label><label for="__tabbed_38_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-111-1"><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fury &gt;= 50&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-112-1"><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;fury&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-113-1"><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Fury</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="furydiff">fury.diff<a class="headerlink" href="#furydiff" title="Permanent link">&para;</a></h2>
+<p><em><code>fury.diff || fury.deficit || furydiff</code></em></p>
+</blockquote>
+<ul>
+<li>This condition calculates the deficit of Fury (maximum Fury - current Fury) for the target.</li>
+</ul>
+<h4 id="parameters_32">Parameters<a class="headerlink" href="#parameters_32" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_35">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_35" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The deficit of Fury.</li>
+</ul>
+<h4 id="example_38"><em>Example:</em><a class="headerlink" href="#example_38" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="39:3"><input checked="checked" id="__tabbed_39_1" name="__tabbed_39" type="radio" /><input id="__tabbed_39_2" name="__tabbed_39" type="radio" /><input id="__tabbed_39_3" name="__tabbed_39" type="radio" /><div class="tabbed-labels"><label for="__tabbed_39_1">DSL</label><label for="__tabbed_39_2">Lua Code</label><label for="__tabbed_39_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-114-1"><a id="__codelineno-114-1" name="__codelineno-114-1" href="#__codelineno-114-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fury.diff &gt;= 15&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-115-1"><a id="__codelineno-115-1" name="__codelineno-115-1" href="#__codelineno-115-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;fury.diff&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">15</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-116-1"><a id="__codelineno-116-1" name="__codelineno-116-1" href="#__codelineno-116-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">FuryDiff</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">15</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="pain">pain<a class="headerlink" href="#pain" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition retrieves the current amount of Pain that the target has.</li>
+</ul>
+<h4 id="parameters_33">Parameters<a class="headerlink" href="#parameters_33" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_36">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_36" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The amount of Pain.</li>
+</ul>
+<h4 id="example_39"><em>Example:</em><a class="headerlink" href="#example_39" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="40:3"><input checked="checked" id="__tabbed_40_1" name="__tabbed_40" type="radio" /><input id="__tabbed_40_2" name="__tabbed_40" type="radio" /><input id="__tabbed_40_3" name="__tabbed_40" type="radio" /><div class="tabbed-labels"><label for="__tabbed_40_1">DSL</label><label for="__tabbed_40_2">Lua Code</label><label for="__tabbed_40_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-117-1"><a id="__codelineno-117-1" name="__codelineno-117-1" href="#__codelineno-117-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pain &gt;= 30&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-118-1"><a id="__codelineno-118-1" name="__codelineno-118-1" href="#__codelineno-118-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;pain&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">30</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-119-1"><a id="__codelineno-119-1" name="__codelineno-119-1" href="#__codelineno-119-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">Pain</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">30</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="arcanecharges">arcane.charges<a class="headerlink" href="#arcanecharges" title="Permanent link">&para;</a></h2>
+<p><em><code>arcane.charges || arcanecharges</code></em></p>
+</blockquote>
+<ul>
+<li>This condition retrieves the current number of Arcane Charges that the target has.</li>
+</ul>
+<h4 id="parameters_34">Parameters<a class="headerlink" href="#parameters_34" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT, optional): The unit to check. Defaults to "player".</li>
+</ul>
+<h4 id="returns-number_37">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_37" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current number of Arcane Charges.</li>
+</ul>
+<h4 id="example_40"><em>Example:</em><a class="headerlink" href="#example_40" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="41:3"><input checked="checked" id="__tabbed_41_1" name="__tabbed_41" type="radio" /><input id="__tabbed_41_2" name="__tabbed_41" type="radio" /><input id="__tabbed_41_3" name="__tabbed_41" type="radio" /><div class="tabbed-labels"><label for="__tabbed_41_1">DSL</label><label for="__tabbed_41_2">Lua Code</label><label for="__tabbed_41_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-120-1"><a id="__codelineno-120-1" name="__codelineno-120-1" href="#__codelineno-120-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;arcane.charges &gt;= 4&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-121-1"><a id="__codelineno-121-1" name="__codelineno-121-1" href="#__codelineno-121-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;arcane.charges&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-122-1"><a id="__codelineno-122-1" name="__codelineno-122-1" href="#__codelineno-122-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">ArcaneCharges</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="combo">combo<a class="headerlink" href="#combo" title="Permanent link">&para;</a></h2>
+<p><em><code>combo || combo.points || combopoints</code></em></p>
+</blockquote>
+<ul>
+<li>This condition retrieves the current number of Combo Points the player has on the specified target.</li>
+</ul>
+<h4 id="parameters_35">Parameters<a class="headerlink" href="#parameters_35" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT): The target unit to check combo points against (e.g., "target").</li>
+</ul>
+<h4 id="returns-number_38">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_38" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The current number of Combo Points.</li>
+</ul>
+<h4 id="example_41"><em>Example:</em><a class="headerlink" href="#example_41" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="42:3"><input checked="checked" id="__tabbed_42_1" name="__tabbed_42" type="radio" /><input id="__tabbed_42_2" name="__tabbed_42" type="radio" /><input id="__tabbed_42_3" name="__tabbed_42" type="radio" /><div class="tabbed-labels"><label for="__tabbed_42_1">DSL</label><label for="__tabbed_42_2">Lua Code</label><label for="__tabbed_42_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-123-1"><a id="__codelineno-123-1" name="__codelineno-123-1" href="#__codelineno-123-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;target.combo &gt;= 4&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-124-1"><a id="__codelineno-124-1" name="__codelineno-124-1" href="#__codelineno-124-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;combo&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-125-1"><a id="__codelineno-125-1" name="__codelineno-125-1" href="#__codelineno-125-1"></a><span class="nv">TARGET</span><span class="p">:</span><span class="nf">Combo</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="combomax">combo.max<a class="headerlink" href="#combomax" title="Permanent link">&para;</a></h2>
+<p><em><code>combo.max || combomax</code></em></p>
+</blockquote>
+<ul>
+<li>This condition returns the maximum number of Combo Points the player can have.</li>
+</ul>
+<h4 id="returns-number_39">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_39" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The maximum number of Combo Points.</li>
+</ul>
+<h4 id="example_42"><em>Example:</em><a class="headerlink" href="#example_42" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="43:3"><input checked="checked" id="__tabbed_43_1" name="__tabbed_43" type="radio" /><input id="__tabbed_43_2" name="__tabbed_43" type="radio" /><input id="__tabbed_43_3" name="__tabbed_43" type="radio" /><div class="tabbed-labels"><label for="__tabbed_43_1">DSL</label><label for="__tabbed_43_2">Lua Code</label><label for="__tabbed_43_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-126-1"><a id="__codelineno-126-1" name="__codelineno-126-1" href="#__codelineno-126-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;combo.max == 5&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-127-1"><a id="__codelineno-127-1" name="__codelineno-127-1" href="#__codelineno-127-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;combo.max&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-128-1"><a id="__codelineno-128-1" name="__codelineno-128-1" href="#__codelineno-128-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">ComboMax</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="combodiff">combo.diff<a class="headerlink" href="#combodiff" title="Permanent link">&para;</a></h2>
+<p><em><code>combo.diff || combo.deficit || combodiff || combopoints.diff || combopoints.deficit || combopointsdiff</code></em></p>
+</blockquote>
+<ul>
+<li>This condition calculates the deficit of Combo Points (maximum Combo Points - current Combo Points) the player has on the specified target.</li>
+</ul>
+<h4 id="parameters_36">Parameters<a class="headerlink" href="#parameters_36" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>target</code> (UNIT): The target unit to check combo points against.</li>
+</ul>
+<h4 id="returns-number_40">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_40" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The deficit of Combo Points.</li>
+</ul>
+<h4 id="example_43"><em>Example:</em><a class="headerlink" href="#example_43" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="44:3"><input checked="checked" id="__tabbed_44_1" name="__tabbed_44" type="radio" /><input id="__tabbed_44_2" name="__tabbed_44" type="radio" /><input id="__tabbed_44_3" name="__tabbed_44" type="radio" /><div class="tabbed-labels"><label for="__tabbed_44_1">DSL</label><label for="__tabbed_44_2">Lua Code</label><label for="__tabbed_44_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-129-1"><a id="__codelineno-129-1" name="__codelineno-129-1" href="#__codelineno-129-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;target.combo.diff &gt; 2&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-130-1"><a id="__codelineno-130-1" name="__codelineno-130-1" href="#__codelineno-130-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;combo.diff&quot;</span><span class="p">)(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-131-1"><a id="__codelineno-131-1" name="__codelineno-131-1" href="#__codelineno-131-1"></a><span class="nv">TARGET</span><span class="p">:</span><span class="nf">ComboDiff</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="warlockminions">warlock.minions<a class="headerlink" href="#warlockminions" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the total number of active Warlock minions tracked by the system.</li>
+</ul>
+<h4 id="returns-number_41">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_41" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The total number of active Warlock minions.</li>
+</ul>
+<h4 id="example_44"><em>Example:</em><a class="headerlink" href="#example_44" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="45:3"><input checked="checked" id="__tabbed_45_1" name="__tabbed_45" type="radio" /><input id="__tabbed_45_2" name="__tabbed_45" type="radio" /><input id="__tabbed_45_3" name="__tabbed_45" type="radio" /><div class="tabbed-labels"><label for="__tabbed_45_1">DSL</label><label for="__tabbed_45_2">Lua Code</label><label for="__tabbed_45_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-132-1"><a id="__codelineno-132-1" name="__codelineno-132-1" href="#__codelineno-132-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;warlock.minions &gt; 2&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-133-1"><a id="__codelineno-133-1" name="__codelineno-133-1" href="#__codelineno-133-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;warlock.minions&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-134-1"><a id="__codelineno-134-1" name="__codelineno-134-1" href="#__codelineno-134-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">WarlockMinions</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="warlockempower">warlock.empower<a class="headerlink" href="#warlockempower" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the number of Warlock's minions that are currently empowered (e.g., by the Demonic Empowerment spell).</li>
+</ul>
+<h4 id="returns-number_42">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_42" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The number of empowered Warlock minions.</li>
+</ul>
+<h4 id="example_45"><em>Example:</em><a class="headerlink" href="#example_45" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="46:3"><input checked="checked" id="__tabbed_46_1" name="__tabbed_46" type="radio" /><input id="__tabbed_46_2" name="__tabbed_46" type="radio" /><input id="__tabbed_46_3" name="__tabbed_46" type="radio" /><div class="tabbed-labels"><label for="__tabbed_46_1">DSL</label><label for="__tabbed_46_2">Lua Code</label><label for="__tabbed_46_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-135-1"><a id="__codelineno-135-1" name="__codelineno-135-1" href="#__codelineno-135-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;warlock.empower &gt; 3&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-136-1"><a id="__codelineno-136-1" name="__codelineno-136-1" href="#__codelineno-136-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;warlock.empower&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-137-1"><a id="__codelineno-137-1" name="__codelineno-137-1" href="#__codelineno-137-1"></a><span class="nv">PLAYER</span><span class="p">:</span><span class="nf">WarlockEmpower</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<blockquote>
+<h2 id="warlockempowermissing">warlock.empower.missing<a class="headerlink" href="#warlockempowermissing" title="Permanent link">&para;</a></h2>
+</blockquote>
+<ul>
+<li>This condition returns the number of Warlock's minions that are not currently empowered.</li>
+</ul>
+<h4 id="returns-number_43">Returns <code>NUMBER</code><a class="headerlink" href="#returns-number_43" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The number of unempowered Warlock minions.</li>
+</ul>
+<h4 id="example_46"><em>Example:</em><a class="headerlink" href="#example_46" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="47:3"><input checked="checked" id="__tabbed_47_1" name="__tabbed_47" type="radio" /><input id="__tabbed_47_2" name="__tabbed_47" type="radio" /><input id="__tabbed_47_3" name="__tabbed_47" type="radio" /><div class="tabbed-labels"><label for="__tabbed_47_1">DSL</label><label for="__tabbed_47_2">Lua Code</label><label for="__tabbed_47_3">Lua Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-138-1"><a id="__codelineno-138-1" name="__codelineno-138-1" href="#__codelineno-138-1"></a><span class="p">{</span><span class="nv">ACTION</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;warlock.empower.missing &gt; 2&quot;</span><span class="p">},</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-139-1"><a id="__codelineno-139-1" name="__codelineno-139-1" href="#__codelineno-139-1"></a><span class="nv">_A</span><span class="p">.</span><span class="py">DSL</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="s2">&quot;warlock.empower.missing&quot;</span><span class="p">)()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>```lua
+PLAYER:WarlockEmpowerMissing() &gt; 2</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../buffs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Buffs">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Buffs
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../conduits/" class="md-footer__link md-footer__link--next" aria-label="Next: Conduits">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Conduits
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 UwU
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/EwJzA5S3" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.317 4.37a19.8 19.8 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.3 18.3 0 0 0-5.487 0 13 13 0 0 0-.617-1.25.08.08 0 0 0-.079-.037A19.7 19.7 0 0 0 3.677 4.37a.1.1 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.08.08 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.08.08 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13 13 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10 10 0 0 0 .372-.292.07.07 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.08.08 0 0 0 .084.028 19.8 19.8 0 0 0 6.002-3.03.08.08 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03M8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418m7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.path", "search.highlight", "search.share", "search.suggest", "toc.follow", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.action.edit", "content.action.view", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
