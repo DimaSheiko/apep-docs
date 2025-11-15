@@ -133,4 +133,5 @@ nav:
           - Apep: api/apep/index.md
           - Draw: api/draw/index.md
           - Lildraw: api/lildraw/index.md
+          - Vector: api/vector/index.md
     - Contributing: contributing/index.md
