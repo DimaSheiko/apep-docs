@@ -2,7 +2,7 @@
 
 ---
 
-> ## lTrim
+> ### lTrim
 
 -   This function removes leading whitespace characters (spaces, tabs, etc.) from a string.
 
@@ -24,7 +24,7 @@ local trimmedString = _A.lTrim("    Hello, world!") -- (1)!
 
 ---
 
-> ## rTrim
+> ### rTrim
 
 -   This function removes trailing whitespace characters (spaces, tabs, etc.) from a string.
 
@@ -46,7 +46,7 @@ local trimmedString = _A.rTrim("Hello, world!    ") -- (1)!
 
 ---
 
-> ## Trim
+> ### Trim
 
 -   This function removes both leading and trailing whitespace characters (spaces, tabs, etc.) from a string.
 
@@ -68,7 +68,7 @@ local trimmedString = _A.Trim("    Hello, world!    ") -- (1)!
 
 ---
 
-> ## print
+> ### print
 
 -   This function prints the specified arguments to the console with colorful output.
 
@@ -86,7 +86,7 @@ local mergedTable = _A.print("Hello", "world", "!") -- (1)!
 
 ---
 
-> ## RandomNumber
+> ### RandomNumber
 
 -   This function generates a random number within the specified range.
 
@@ -109,7 +109,7 @@ local randomValue = _A.RandomNumber(1, 100) -- (1)!
 
 ---
 
-> ## RandomString
+> ### RandomString
 
 -   This function generates a random string of the specified length, containing both lowercase letters and digits.
 
@@ -131,7 +131,7 @@ local randomStr = _A.RandomString(10) -- (1)!
 
 ---
 
-> ## ApepMod
+> ### ApepMod
 
 -   This function calculates the remainder of the division of two numbers using the Mod algorithm. The algorithm ensures that the result is always positive and between 0 and b. It calculates the remainder by subtracting the floor division of a by b multiplied by b from a.
 
@@ -152,7 +152,7 @@ local result = _A.ApepMod(25, 7)
 
 ---
 
-> ## TableMerge
+> ### TableMerge
 
 -   This function merges the contents of two tables.
     If a key in both tables corresponds to a table value, the function recursively merges those nested tables.
@@ -178,7 +178,7 @@ local mergedTable = _A.TableMerge(table1, table2) -- (1)!
 
 ---
 
-> ## StrExplode
+> ### StrExplode
 
 -   This function takes a string and a delimiter character, and returns a table of substrings
     obtained by splitting the input string at occurrences of the delimiter.
@@ -201,7 +201,7 @@ local first, second, third = _A.StrExplode("apple,banana,orange", ",") -- (1)!
 
 ---
 
-> ## BagSpace
+> ### BagSpace
 
 -   This function calculates the total number of free slots available across all bags.
 
@@ -219,7 +219,7 @@ print("Total free slots:", freeSlots)
 
 ---
 
-> ## SlotAlias
+> ### SlotAlias
 
 | SlotAlias                           | InventorySlotName | SlotNumber |
 | ----------------------------------- | ----------------- | ---------- |
@@ -245,7 +245,7 @@ print("Total free slots:", freeSlots)
 
 ---
 
-> ## ItemEquip
+> ### ItemEquip
 
 -   This function equips an item in the specified slot.
 
@@ -267,7 +267,7 @@ _A.ItemEquip(1602, 16)
 
 ---
 
-> ## ItemUnequip
+> ### ItemUnequip
 
 -   This function unequips an item from a specified slot and places it in the backpack.
 
@@ -290,7 +290,7 @@ _A.ItemUnequip(16)
 
 ---
 
-> ## GetObjectCount
+> ### GetObjectCount
 
 -   This function returns the total number of objects currently present in the object manager.
 
@@ -310,7 +310,7 @@ local objectCount = _A.GetObjectCount() -- (1)!
 
 ---
 
-> ## GetObjectWithIndex
+> ### GetObjectWithIndex
 
 -   This function takes an index as input and returns the pointer of the object with that index in the object manager.
 
@@ -339,7 +339,7 @@ end
 
 ---
 
-> ## ObjectPointer
+> ### ObjectPointer
 
 #### Parameters
 
@@ -359,7 +359,7 @@ _A.ObjectPointer("raid1")
 
 ---
 
-> ## ObjectExists
+> ### ObjectExists
 
 -   Get whether an object exists in the object manager with O(n) performance.
 
@@ -379,7 +379,7 @@ _A.ObjectExists("part1target")
 
 ---
 
-> ## ObjectIsVisible
+> ### ObjectIsVisible
 
 -   Get whether an object is visible in the object manager with O(1) performance.
 
@@ -399,7 +399,7 @@ _A.ObjectIsVisible("0x10AE05BD")
 
 ---
 
-> ## ObjectPosition
+> ### ObjectPosition
 
 -   Get an object's position.
 
@@ -421,7 +421,7 @@ _A.ObjectPosition("mouseover")
 
 ---
 
-> ## ObjectFacing
+> ### ObjectFacing
 
 -   Get an object's facing.
 
@@ -443,7 +443,7 @@ _A.ObjectFacing("player")
 
 ---
 
-> ## ObjectCreator
+> ### ObjectCreator
 
 -   This function retrieves the GUID of the creator who created the specified fishing bobber object.
 
@@ -466,7 +466,7 @@ local unitPointer = _A.ObjectCreator(objectPointer) -- (1)!
 
 ---
 
-> ## BobberCreator
+> ### BobberCreator
 
 -   This function retrieves the GUID of the creator of the fishing bobber object.
 
@@ -489,7 +489,7 @@ local creatorGUID = _A.BobberCreator(bobberPointer) -- (1)!
 
 ---
 
-> ## BobberIsAnimating
+> ### BobberIsAnimating
 
 -   This function checks whether the specified fishing bobber object is currently animating,
     indicating that it has caught a fish.
@@ -513,7 +513,7 @@ local isAnimating = _A.BobberIsAnimating(bobberPointer) -- (1)!
 
 ---
 
-> ## UnitTarget
+> ### UnitTarget
 
 -   This function takes a unit object and returns the target of that unit as its pointer and GUID.
 
@@ -536,7 +536,7 @@ local pointer, GUID = _A.UnitTarget("mouseover") -- (1)!
 
 ---
 
-> ## UnitCastID
+> ### UnitCastID
 
 -   This function takes a unit object as a parameter and returns information about the unit's current cast, including its cast ID, pointer, and GUID.
 
@@ -564,7 +564,7 @@ end
 
 ---
 
-> ## UnitIsFacing
+> ### UnitIsFacing
 
 -   This function checks whether the first unit is facing the second unit within the specified angle range.
 
@@ -589,7 +589,7 @@ local isFacingTarget = _A.UnitIsFacing("player", "target", angleThreshold) -- (1
 
 ---
 
-> ## PositionIsFacingPosition
+> ### PositionIsFacingPosition
 
 -   This function checks whether a position (defined by coordinates and facing angle) is facing another position within the specified angle range.
 
@@ -618,7 +618,7 @@ local isFacingTarget = _A.PositionIsFacingPosition(playerX, playerY, targetX, ta
 
 ---
 
-> ## ObjectID
+> ### ObjectID
 >
 > _`ObjectID || ObjectEntry`_
 
@@ -640,7 +640,7 @@ local targetEntryID = _A.ObjectID("target")
 
 ---
 
-> ## ObjectID_GUID
+> ### ObjectID_GUID
 
 -   This function retrieves the entry ID and GUID of an object identified by its pointer or object identifier.
 
@@ -661,7 +661,7 @@ local targetEntryID, targetGUID = _A.ObjectID_GUID("target")
 
 ---
 
-> ## ObjectRawType
+> ### ObjectRawType
 
 -   This function retrieves the raw type of an object identified by its pointer or object identifier. The raw type provides information about the object's category, such as player, unit, item, game object, etc.
 
@@ -681,7 +681,7 @@ local targetType = _A.ObjectRawType("target")
 
 ---
 
-> ## ObjectIsUnit
+> ### ObjectIsUnit
 
 -   This function checks whether the specified object is of the type "Unit", or any related subtypes such as "Player" or "ActivePlayer".
 
@@ -701,7 +701,7 @@ local isUnit = _A.ObjectIsUnit("target")
 
 ---
 
-> ## ObjectIsPlayer
+> ### ObjectIsPlayer
 
 -   This function checks whether the specified object is of the type "Player" or "ActivePlayer".
 
@@ -721,7 +721,7 @@ local isPlayer = _A.ObjectIsPlayer("target")
 
 ---
 
-> ## ObjectIsGameObject
+> ### ObjectIsGameObject
 
 -   This function checks whether the specified object is of the type "GameObject".
 
@@ -741,7 +741,7 @@ local isGameObject = _A.ObjectIsGameObject("0x12345678")
 
 ---
 
-> ## ObjectIsAreaTrigger
+> ### ObjectIsAreaTrigger
 
 -   This function checks whether the specified object is of the type "AreaTrigger".
 
@@ -761,7 +761,7 @@ local isAreaTrigger = _A.ObjectIsAreaTrigger("0x12345678")
 
 ---
 
-> ## UnitCombatReach
+> ### UnitCombatReach
 
 -   This function retrieves the combat reach (melee attack range) of the specified unit.
 
@@ -781,7 +781,7 @@ local targetCombatReach = _A.UnitCombatReach("target")
 
 ---
 
-> ## UnitHeight
+> ### UnitHeight
 
 -   This function retrieves the height of the specified unit.
 
@@ -801,7 +801,7 @@ local playerHeight = _A.UnitHeight("player")
 
 ---
 
-> ## UnitBoundingRadius
+> ### UnitBoundingRadius
 
 -   This function retrieves the bounding radius of the specified unit.
 
@@ -821,7 +821,7 @@ local playerBoundingRadius = _A.UnitBoundingRadius("player")
 
 ---
 
-> ## GetObjectWithGUID
+> ### GetObjectWithGUID
 
 -   This function retrieves the object's pointer using its globally unique identifier (GUID).
 
@@ -842,7 +842,7 @@ local targetPointer = _A.GetObjectWithGUID(guid)
 
 ---
 
-> ## GetDistanceBetweenPositions
+> ### GetDistanceBetweenPositions
 
 -   This function calculates the Euclidean distance between two 3D positions in the game world.
 
@@ -868,7 +868,7 @@ print("Distance:", distance)
 
 ---
 
-> ## GetDistanceBetweenObjects
+> ### GetDistanceBetweenObjects
 
 -   This function calculates the distance between two objects.
 
@@ -890,7 +890,7 @@ print("Distance:", distance)
 
 ---
 
-> ## GetRangeBetweenObjects
+> ### GetRangeBetweenObjects
 
 -   This function calculates the range between two objects while taking into account their combat reach.
 
@@ -912,7 +912,7 @@ print("Range:", range)
 
 ---
 
-> ## GetPositionFromPosition
+> ### GetPositionFromPosition
 
 -   This function calculates a new position in three-dimensional space based on a starting position (X, Y, Z), a specified distance, and two angles (Angle1 and Angle2). It uses trigonometric functions to calculate the new coordinates and returns the calculated X, Y, and Z values.
 
@@ -940,7 +940,7 @@ print("Distance:", distance)
 
 ---
 
-> ## GetAnglesBetweenPositions
+> ### GetAnglesBetweenPositions
 
 -   This function calculates the yaw and pitch angles between two 3D positions.
 
@@ -971,7 +971,7 @@ print("Pitch angle:", pitch) -- (2)!
 
 ---
 
-> ## GetAnglesBetweenObjects
+> ### GetAnglesBetweenObjects
 
 -   This function calculates the yaw and pitch angles between two objects.
 
@@ -998,7 +998,7 @@ print("Pitch angle:", pitch) -- (2)!
 
 ---
 
-> ## GetPositionBetweenPositions
+> ### GetPositionBetweenPositions
 
 -   This function calculates a new position between two given positions based on a specified distance.
 
@@ -1027,7 +1027,7 @@ print("New position:", newX, newY, newZ)
 
 ---
 
-> ## GetPositionBetweenObjects
+> ### GetPositionBetweenObjects
 
 -   This function calculates a new position between the positions of two given objects based on a specified distance from the first object.
 
@@ -1052,7 +1052,7 @@ print("New position:", newX, newY, newZ)
 
 ---
 
-> ## ObjectIsFacing
+> ### ObjectIsFacing
 
 -   This function checks if the first object is facing the second object.
 
@@ -1077,7 +1077,7 @@ end
 
 ---
 
-> ## ObjectIsBehind
+> ### ObjectIsBehind
 
 -   This function checks if the first object is behind the second object.
 
@@ -1102,7 +1102,7 @@ end
 
 ---
 
-> ## TraceLine
+> ### TraceLine
 
 -   This function traces a line between two points in the game world to determine if there is line of sight between those points. It uses the provided flags to control the behavior of the trace.
 
@@ -1159,7 +1159,7 @@ print("Collision point:", cx, cy, cz)
 
 ---
 
-> ## MapId
+> ### MapId
 
 -   This function retrieves the current map ID and additional information about the player's location on the map.
 
@@ -1188,7 +1188,7 @@ print("Subzone String:", subZoneStr)
 
 ---
 
-> ## WorldToScreen
+> ### WorldToScreen
 
 -   This function takes 3D world coordinates and converts them to screen coordinates. It returns the X and Y screen coordinates along with a flag indicating whether the coordinates are on the screen or not.
 
@@ -1218,7 +1218,7 @@ end
 
 ---
 
-> ## ScreenToWorld
+> ### ScreenToWorld
 
 -   This function converts screen coordinates to 3D world coordinates. It returns (X, Y, Z) along with a flag indicating whether the coordinates collided with any object in the game world based on the hit flags.
 
@@ -1280,7 +1280,7 @@ end
 
 ---
 
-> ## ClickPosition
+> ### ClickPosition
 
 -   This function simulates a mouse click at the specified 3D world position.
 
@@ -1300,7 +1300,7 @@ _A.ClickPosition(_A.ObjectPosition("target")) -- (1)!
 
 ---
 
-> ## ClickToMove
+> ### ClickToMove
 
 -   This function initiates a click-to-move action, causing the player or controlled entity to move to the specified 3D world position.
 
@@ -1319,7 +1319,7 @@ _A.ClickToMove(_A.ObjectPosition("target"))
 
 ---
 
-> ## IsForeground
+> ### IsForeground
 
 -   This function determines whether the game window is currently in the foreground (active) state, meaning it has focus and user interaction is being accepted.
 
@@ -1340,7 +1340,7 @@ end
 
 ---
 
-> ## IsMinimized
+> ### IsMinimized
 
 -   This function determines whether the game window is currently minimized (Only exists on the Wotlk, Cata, Mop Apep version).
 
@@ -1361,7 +1361,7 @@ end
 
 ---
 
-> ## GetKeyState
+> ### GetKeyState
 
 -   This function retrieves the state of a specific key, including whether it is currently pressed and whether it is toggled (such as caps lock).
 
@@ -1393,7 +1393,7 @@ end
 
 ---
 
-> ## IsKeyDown
+> ### IsKeyDown
 
 -   This function checks if a specific key is currently being held down (pressed) on the keyboard.
 
@@ -1415,7 +1415,7 @@ end
 
 ---
 
-> ## SendKey
+> ### SendKey
 
 -   This function simulates sending a key press event to the application using the provided DirectInput Key Code.
 
@@ -1436,7 +1436,7 @@ _A.SendKey(0x41) -- (1)!
 
 ---
 
-> ## SetFacing
+> ### SetFacing
 
 -   This function sets the facing angle of the player to the specified angle in radians.
 
@@ -1456,7 +1456,7 @@ _A.SetFacing(math.pi) -- (2)!
 
 ---
 
-> ## FaceDirection
+> ### FaceDirection
 
 -   This function set the player's facing direction to a specific angle or towards a specified object.
 
@@ -1477,7 +1477,7 @@ _A.FaceDirection("target", true) -- (2)!
 
 ---
 
-> ## FaceTarget
+> ### FaceTarget
 
 -   This function face the player towards the currently targeted object
 
@@ -1491,7 +1491,7 @@ _A.FaceTarget() -- (1)!
 
 ---
 
-> ## InvertFacing
+> ### InvertFacing
 
 -   This function invert the player's facing direction
 
@@ -1505,7 +1505,7 @@ _A.InvertFacing() -- (1)!
 
 ---
 
-> ## GetWoWDirectory
+> ### GetWoWDirectory
 
 -   This function retrieves the directory path where the World of Warcraft game is installed on your system.
 
@@ -1522,7 +1522,7 @@ print(wowDirectory)
 
 ---
 
-> ## GetDirectoryFiles
+> ### GetDirectoryFiles
 
 -   This function retrieves the names of the files in the specified directory path.
 
@@ -1547,7 +1547,7 @@ end
 
 ---
 
-> ## GetDirectoryFolders
+> ### GetDirectoryFolders
 
 -   This function retrieves the names of the folders in the specified directory path.
 
@@ -1572,7 +1572,7 @@ end
 
 ---
 
-> ## GetApepDirectory
+> ### GetApepDirectory
 
 -   This function retrieves the directory path where the Apep executable is on your system.
 
@@ -1589,7 +1589,7 @@ print(apepDirectory)
 
 ---
 
-> ## ReadFile
+> ### ReadFile
 
 -   This function reads and retrieves the contents of a text file specified by the given file path.
 
@@ -1611,7 +1611,7 @@ print(contents)
 
 ---
 
-> ## WriteFile
+> ### WriteFile
 
 -   This function appends the specified text to a file or overwrites the file's content, based on the given options.
 
@@ -1639,7 +1639,7 @@ end
 
 ---
 
-> ## LoadScript
+> ### LoadScript
 
 -   This function loads and executes a Lua script located at the specified file path.
 
@@ -1656,7 +1656,7 @@ _A.LoadScript(wowDirectory.."\\scripts\\start.lua")
 
 ---
 
-> ## BaseAddress
+> ### BaseAddress
 
 -   This function returns the base address of the World of Warcraft client, which can be used with other functions like ReadMemory to read specific offsets within the game's memory.
 
@@ -1673,7 +1673,7 @@ print(baseAddr)
 
 ---
 
-> ## ReadMemory
+> ### ReadMemory
 
 -   This function reads memory at the specified address and returns the requested type of data.
 
@@ -1711,7 +1711,7 @@ local result = _A.ReadMemory("int", "0x12345678", 0x10)
 
 ---
 
-> ## CancelPendingSpell
+> ### CancelPendingSpell
 
 -   This function cancels the pending queued spell cast, if there is any.
 
@@ -1725,7 +1725,7 @@ _A.CancelPendingSpell()
 
 ---
 
-> ## subgroup
+> ### subgroup
 
 -   This function retrieves the subgroup of a player within a raid.
 
@@ -1743,7 +1743,7 @@ _A.CancelPendingSpell()
 local subgroup = _A.subgroup("player")
 ```
 
-> ## UnitSpec
+> ### UnitSpec
 
 -   Returns the specialization ID of the specified unit.
 
@@ -1767,7 +1767,7 @@ local specID = _A.UnitSpec("player")
 
 ---
 
-> ## UnitIsMovingForward
+> ### UnitIsMovingForward
 
 -   This function checks whether the specified unit is currently moving forward.
 
@@ -1792,7 +1792,7 @@ end
 
 ---
 
-> ## UnitIsMovingBackward
+> ### UnitIsMovingBackward
 
 -   This function checks whether the specified unit is currently moving backward.
 
@@ -1817,7 +1817,7 @@ end
 
 ---
 
-> ## UnitIsStrafeLeft
+> ### UnitIsStrafeLeft
 
 -   This function checks whether the specified unit is currently strafing left.
 
@@ -1842,7 +1842,7 @@ end
 
 ---
 
-> ## UnitIsStrafeRight
+> ### UnitIsStrafeRight
 
 -   This function checks whether the specified unit is currently strafing right.
 
@@ -1867,7 +1867,7 @@ end
 
 ---
 
-> ## GetCurrentSpeed
+> ### GetCurrentSpeed
 
 -   This function retrieves the current speed of the specified unit.
 
@@ -1888,7 +1888,7 @@ print("Current speed:", currentSpeed)
 
 ---
 
-> ## GetWalkSpeed
+> ### GetWalkSpeed
 
 -   This function retrieves the walking speed of the specified unit.
 
@@ -1909,7 +1909,7 @@ print("Walking speed:", walkSpeed)
 
 ---
 
-> ## GetRunSpeed
+> ### GetRunSpeed
 
 -   This function retrieves the running speed of the specified unit.
 
@@ -1930,7 +1930,7 @@ print("Running speed:", runSpeed)
 
 ---
 
-> ## GetBackwardSpeed
+> ### GetBackwardSpeed
 
 -   This function retrieves the backward speed of the specified unit.
 
@@ -1951,7 +1951,7 @@ print("Backward speed:", backwardSpeed)
 
 ---
 
-> ## GetSwimimgSpeed
+> ### GetSwimimgSpeed
 
 -   This function retrieves the swimming speed of the specified unit.
 
@@ -1972,7 +1972,7 @@ print("Swimming speed:", swimmingSpeed)
 
 ---
 
-> ## CalculatePath
+> ### CalculatePath
 
 -   This API computes a path from the player coordinates to another point in the game world.
 
@@ -2009,7 +2009,7 @@ end
 
 ---
 
-> ## GetMissiles
+> ### GetMissiles
 
 -   This function retrieves information about active missiles in the game world.
 
@@ -2078,7 +2078,7 @@ end
 
 ---
 
-> ## GetItemIcon
+> ### GetItemIcon
 
 -   This function retrieves the icon of the specified item.
 
@@ -2100,7 +2100,7 @@ _A.Core:GetItemIcon(idOrName, width, height)
 
 ---
 
-> ## SetSpeed
+> ### SetSpeed
 
 -   This function sets the speed of the player to the specified value.
 
@@ -2116,7 +2116,7 @@ _A.SetSpeed(20)
 
 ---
 
-## ResetSpeed
+> ### ResetSpeed
 
 -   This function resets the speed of the player to the default value.
 
@@ -2128,7 +2128,7 @@ _A.ResetSpeed()
 
 ---
 
-> ## HasAura
+> ### HasAura
 
 -   This function checks if the specified unit has an aura with the specified aura ID.
 
@@ -2149,7 +2149,7 @@ local hasAura = _A.HasAura("player", 12345)
 
 ---
 
-> ## IsLootable
+> ### IsLootable
 
 -   This function checks if the specified unit is lootable.
 
@@ -2169,7 +2169,7 @@ local isLootable = _A.IsLootable("player")
 
 ---
 
-> ## IsTaggedByOther
+> ### IsTaggedByOther
 
 -   This function checks if the specified unit is tagged by other players.
 
@@ -2189,7 +2189,7 @@ local isTaggedByOther = _A.IsTaggedByOther("player")
 
 ---
 
-> ## IsTaggedByMe
+> ### IsTaggedByMe
 
 -   This function checks if the specified unit is tagged by the player.
 
@@ -2209,7 +2209,7 @@ local isTaggedByMe = _A.IsTaggedByMe("player")
 
 ---
 
-> ## IsDead
+> ### IsDead
 
 -   This function checks if the specified unit is dead.
 
@@ -2229,7 +2229,7 @@ local isDead = _A.IsDead("player")
 
 ---
 
-> ## IsTappedByAllThreatList
+> ### IsTappedByAllThreatList
 
 -   This function checks if the specified unit is tapped by all threat list.
 
@@ -2249,7 +2249,7 @@ local isTappedByAllThreatList = _A.IsTappedByAllThreatList("player")
 
 ---
 
-> ## IsSitting
+> ### IsSitting
 
 -   This function checks if the specified unit is sitting.
 
@@ -2269,7 +2269,7 @@ local isSitting = _A.IsSitting("player")
 
 ---
 
-> ## IsInfluenced
+> ### IsInfluenced
 
 -   This function checks if the specified unit is influenced.
 
@@ -2289,7 +2289,7 @@ local isInfluenced = _A.IsInfluenced("player")
 
 ---
 
-> ## IsPlayerControlled
+> ### IsPlayerControlled
 
 -   This function checks if the specified unit is controlled by the player.
 
@@ -2309,7 +2309,7 @@ local isPlayerControlled = _A.IsPlayerControlled("player")
 
 ---
 
-> ## IsTotem
+> ### IsTotem
 
 -   This function checks if the specified unit is a totem.
 
@@ -2329,7 +2329,7 @@ local isTotem = _A.IsTotem("player")
 
 ---
 
-> ## IsPreparation
+> ### IsPreparation
 
 -   This function checks if the specified unit is preparing.
 
@@ -2349,7 +2349,7 @@ local isPreparation = _A.IsPreparation("player")
 
 ---
 
-> ## IsNotAttackable
+> ### IsNotAttackable
 
 -   This function checks if the specified unit is not attackable.
 
@@ -2369,7 +2369,7 @@ local isNotAttackable = _A.IsNotAttackable("player")
 
 ---
 
-> ## IsLooting
+> ### IsLooting
 
 -   This function checks if the specified unit is looting.
 
@@ -2389,7 +2389,7 @@ local isLooting = _A.IsLooting("player")
 
 ---
 
-> ## IsPetInCombat
+> ### IsPetInCombat
 
 -   This function checks if the specified unit's pet is in combat.
 
@@ -2409,7 +2409,7 @@ local isPetInCombat = _A.IsPetInCombat("player")
 
 ---
 
-> ## IsPvPFlagged
+> ### IsPvPFlagged
 
 -   This function checks if the specified unit is flagged for PvP.
 
@@ -2429,7 +2429,7 @@ local isPvPFlagged = _A.IsPvPFlagged("player")
 
 ---
 
-> ## IsChoked
+> ### IsChoked
 
 -   This function checks if the specified unit is choked.
 
@@ -2449,7 +2449,7 @@ local isChoked = _A.IsChoked("player")
 
 ---
 
-> ## IsPacified
+> ### IsPacified
 
 -   This function checks if the specified unit is pacified.
 
@@ -2469,7 +2469,7 @@ local isPacified = _A.IsPacified("player")
 
 ---
 
-> ## IsStunned
+> ### IsStunned
 
 -   This function checks if the specified unit is stunned.
 
@@ -2489,7 +2489,7 @@ local isStunned = _A.IsStunned("player")
 
 ---
 
-> ## IsInCombat
+> ### IsInCombat
 
 -   This function checks if the specified unit is in combat.
 
@@ -2509,7 +2509,7 @@ local isInCombat = _A.IsInCombat("player")
 
 ---
 
-> ## IsTaxiFlight
+> ### IsTaxiFlight
 
 -   This function checks if the specified unit is on a taxi flight.
 
@@ -2529,7 +2529,7 @@ local isTaxiFlight = _A.IsTaxiFlight("player")
 
 ---
 
-> ## IsDisarmed
+> ### IsDisarmed
 
 -   This function checks if the specified unit is disarmed.
 
@@ -2549,7 +2549,7 @@ local isDisarmed = _A.IsDisarmed("player")
 
 ---
 
-> ## IsConfused
+> ### IsConfused
 
 -   This function checks if the specified unit is confused.
 
@@ -2569,7 +2569,7 @@ local isConfused = _A.IsConfused("player")
 
 ---
 
-> ## IsFleeing
+> ### IsFleeing
 
 -   This function checks if the specified unit is fleeing.
 
@@ -2589,7 +2589,7 @@ local isFleeing = _A.IsFleeing("player")
 
 ---
 
-> ## IsPossessed
+> ### IsPossessed
 
 -   This function checks if the specified unit is possessed.
 
@@ -2609,7 +2609,7 @@ local isPossessed = _A.IsPossessed("player")
 
 ---
 
-> ## IsNotSelectable
+> ### IsNotSelectable
 
 -   This function checks if the specified unit is not selectable.
 
@@ -2629,7 +2629,7 @@ local isNotSelectable = _A.IsNotSelectable("player")
 
 ---
 
-> ## IsSkinnable
+> ### IsSkinnable
 
 -   This function checks if the specified unit is skinnable.
 
@@ -2649,7 +2649,7 @@ local isSkinnable = _A.IsSkinnable("player")
 
 ---
 
-> ## IsInMount
+> ### IsInMount
 
 -   This function checks if the specified unit is in the mount.
 
@@ -2669,7 +2669,7 @@ local isInMount = _A.IsInMount("player")
 
 ---
 
-> ## IsDazed
+> ### IsDazed
 
 -   This function checks if the specified unit is dazed.
 
@@ -2689,7 +2689,7 @@ local isDazed = _A.IsDazed("player")
 
 ---
 
-> ## IsSheathed
+> ### IsSheathed
 
 -   This function checks if the specified unit is sheathed.
 
@@ -2709,7 +2709,7 @@ local isSheathed = _A.IsSheathed("player")
 
 ---
 
-> ## IsFeignDeath
+> ### IsFeignDeath
 
 -   This function checks if the specified unit is feigning death.
 
@@ -2729,7 +2729,7 @@ local isFeignDeath = _A.IsFeignDeath("player")
 
 ---
 
-> ## http.request
+> ### http.request
 
 -   This function sends an HTTP or HTTPS request.
 
@@ -2796,7 +2796,7 @@ local isFeignDeath = _A.IsFeignDeath("player")
 
 ---
 
-> ## json.encode
+> ### json.encode
 
 -   This function encodes an arbitrary Lua object / variable.
 
@@ -2819,7 +2819,7 @@ print(json) -- (1)!
 
 ---
 
-> ## json.decode
+> ### json.decode
 
 -   This function decodes a JSON string and returns the decoded value as a Lua data structure / value.
 
@@ -2839,7 +2839,7 @@ print(LuaObject) -- (1)!
 
 ---
 
-> ## base64.encode
+> ### base64.encode
 
 -   This function encodes a normal bytestring into a Base64-encoded string.
 
@@ -2860,7 +2860,7 @@ print(encoded) -- (1)!
 
 ---
 
-> ## base64.decode
+> ### base64.decode
 
 -   This function decodes a Base64-encoded string into a bytestring.
 
@@ -2879,7 +2879,7 @@ print(decoded) -- (1)!
 
 ---
 
-> ## UnitCombatRange
+> ### UnitCombatRange
 
 -   This function calculates the combat range between two units, taking into account their combat reaches.
 
@@ -2901,7 +2901,7 @@ print("Combat range:", combatRange)
 
 ---
 
-> ## md5
+> ### md5
 
 -   This function computes the MD5 hash of the given string.
 
@@ -2922,7 +2922,7 @@ print("MD5 hash:", md5Hash)
 
 ---
 
-> ## AutoLogin
+> ### AutoLogin
 
 -   This function enables or disables automatic AutoLogin for the next session.
 
@@ -2947,7 +2947,7 @@ _A.AutoLogin(false) -- Disables auto-login
 
 ---
 
-> ## toboolean
+> ### toboolean
 
 -   This function converts any input to boolean if possible.
 
@@ -2971,7 +2971,7 @@ print(_A.toboolean(nil))      -- false
 
 ---
 
-> ## RestoreAndBringToFront
+> ### RestoreAndBringToFront
 
 -   Restores and brings the World of Warcraft window to the front.
 -   This function restores the game window if it is minimized and brings it to the foreground, making it visible and focused.
@@ -2984,7 +2984,7 @@ _A.RestoreAndBringToFront()
 
 ---
 
-> ## UnitCastDest
+> ### UnitCastDest
 
 -   This API queries the destination of a spell casted by a unit.
 
@@ -3019,7 +3019,7 @@ end
 
 ---
 
-> ## ObjectLockPointer
+> ### ObjectLockPointer
 
 -   This API takes a WoW object as input and returns the memory pointer of its Lock record.
 
@@ -3042,7 +3042,7 @@ end
 
 ---
 
-> ## ObjectLockSlots
+> ### ObjectLockSlots
 
 -   This API takes a WoW object as input and returns its lock record ID along with detailed slot information.
 
@@ -3073,13 +3073,140 @@ end
 
 ---
 
-# Auras Subscription API
+## Combat Log Affiliation and Spell School Utilities
+
+The `_A.CLEU_AFFILIATION` table provides helper utilities to interpret combat log flags and spell school values from the `COMBAT_LOG_EVENT_UNFILTERED` event.
+
+It contains:
+
+-   `_A.CLEU_AFFILIATION.cast` → functions to check who cast or received an event.
+-   `_A.CLEU_AFFILIATION.schools` → a lookup table mapping numerical spell school masks to their textual names.
+
+These utilities simplify parsing and filtering combat log data in advanced scripts.
+
+---
+
+> ### _A.CLEU_AFFILIATION.cast
+
+Each function allows checking if a combat log entry originated *by* or was applied *on* a specific unit affiliation or type (e.g., player, pet, NPC, enemy, etc.).
+
+#### Usage
+
+```lua
+local sourceIsMe = _A.CLEU_AFFILIATION.cast.byME(sourceFlags)
+local targetIsEnemy = _A.CLEU_AFFILIATION.cast.onENEMY(destFlags)
+```
+
+#### Available Checks
+
+| Function Name                       | Description                                |
+|-------------------------------------|--------------------------------------------|
+| `byME` / `onME`                     | The player itself.                         |
+| `byPARTY` / `onPARTY`               | A member of the player's party.            |
+| `byRAID` / `onRAID`                 | A member of the player's raid group.       |
+| `byPLAYER` / `onPLAYER`             | Any player-type unit.                      |
+| `byPET` / `onPET`                   | A pet controlled by a player.              |
+| `byNPC` / `onNPC`                   | A non-player character (enemy or neutral). |
+| `byFRIEND` / `onFRIEND`             | A friendly unit.                           |
+| `byENEMY` / `onENEMY`               | A hostile unit.                            |
+| `byME_OR_PET` / `onME_OR_PET`       | The player or their pet.                   |
+| `byFRIENDLY_OR_ME` / `onFRIENDLY_OR_ME` | The player or any friendly unit.       |
+| `byENEMY_OR_NPC` / `onENEMY_OR_NPC` | Any enemy or NPC unit.                     |
+
+#### Returns
+
+-   `true` → if the flag matches the affiliation.
+-   `false` → otherwise.
+
+---
+
+> ### _A.CLEU_AFFILIATION.schools
+
+This table maps WoW spell school bitmask values (used in combat log events) to readable school names such as "Fire", "Frost", or "Shadowflame".
+
+Each combat log event that includes a spell school (e.g. `SPELL_DAMAGE`, `SPELL_MISSED`, etc.) provides a numeric mask, which can be resolved using this table.
+
+#### Usage
+
+```lua
+local schoolName = _A.CLEU_AFFILIATION.schools[schoolMask] or "Unknown"
+print("Spell:", spellName, "School:", schoolName)
+```
+
+#### Common School Values
+
+| Mask | Name         |
+|------|--------------|
+| 1    | Physical     |
+| 2    | Holy         |
+| 4    | Fire         |
+| 8    | Nature       |
+| 16   | Frost        |
+| 32   | Shadow       |
+| 64   | Arcane       |
+
+#### Mixed or Combined Schools (Hybrid)
+
+| Mask | Name         |
+|------|--------------|
+| 6    | Holyfire     |
+| 9    | Stormstrike  |
+| 20   | Frostfire    |
+| 36   | Shadowflame  |
+| 48   | Shadowfrost  |
+| 68   | Spellfire    |
+| 126  | Magic        |
+| 127  | Chaos        |
+
+These values follow Blizzard's internal bitmask system where each bit represents a separate elemental component. For example: Fire (4) + Frost (16) = Frostfire (20).
+
+---
+
+#### Example Usage
+
+```lua
+local cast = _A.CLEU_AFFILIATION.cast
+local schools = _A.CLEU_AFFILIATION.schools
+
+_A.Listener:Add("examples", 'COMBAT_LOG_EVENT_UNFILTERED', function(self, ...)
+    local _, subEvent, _, _, sourceFlags, _, destName, destFlags, _, spellName, schoolMask = ... -- 3.3.5
+    if subEvent == "SPELL_CAST_SUCCESS" then
+        -- Example 1: Check if the caster is the player
+        if cast.byME(sourceFlags) then
+            print("The spell was cast by me.")
+            print("Spell:", spellName, "School:", schools[schoolMask] or "Unknown")
+        end
+
+        -- Example 2: Check if the target is an enemy
+        if cast.onENEMY(destFlags) then
+            print("The target is an enemy unit.")
+            print("Spell:", spellName, "School:", schools[schoolMask] or "Unknown")
+        end
+
+        -- Example 3: Combined check for player or pet
+        if cast.byME_OR_PET(sourceFlags) then
+            print("The spell came from me or my pet.")
+            print("Spell:", spellName, "School:", schools[schoolMask] or "Unknown")
+        end
+
+        -- Example 4: Check if the caster is an enemy
+        if cast.byENEMY(sourceFlags) then
+            print("Enemy successfully cast a spell on", destName)
+            print("Spell:", spellName, "School:", schools[schoolMask] or "Unknown")
+        end
+    end
+end)
+```
+
+---
+
+## Auras Subscription API
 
 The auras subscription API provides efficient access to unit auras (buffs and debuffs).
 
 ---
 
-> ## auras:all
+> ### auras:all
 
 -   Retrieve all auras on a unit.
 
@@ -3104,7 +3231,7 @@ end
 
 ---
 
-> ## auras:id
+> ### auras:id
 
 -   Retrieve specific aura(s) by Spell ID or name.
 
@@ -3130,7 +3257,7 @@ end
 
 ---
 
-> ## auras:exists
+> ### auras:exists
 
 -   Check if a unit has a specific aura by Spell ID or name.
 
@@ -3153,7 +3280,7 @@ end
 
 ---
 
-> ## auras:buffs
+> ### auras:buffs
 
 -   Retrieve all buffs on a unit.
 
@@ -3178,7 +3305,7 @@ end
 
 ---
 
-> ## auras:debuffs
+> ### auras:debuffs
 
 -   Retrieve all debuffs on a unit.
 
@@ -3203,7 +3330,7 @@ end
 
 ---
 
-> ## auras:buff
+> ### auras:buff
 
 -   Retrieve specific buff(s) by Spell ID or name.
 
@@ -3228,7 +3355,7 @@ end
 
 ---
 
-> ## auras:debuff
+> ### auras:debuff
 
 -   Retrieve specific debuff(s) by Spell ID or name.
 
@@ -3253,7 +3380,7 @@ end
 
 ---
 
-> ## auras:specific
+> ### auras:specific
 
 -   Retrieve a specific aura from a unit that matches the spell ID or name, with optional filtering by caster or type.
 
@@ -3291,7 +3418,7 @@ end
 
 ---
 
-> ## _A.FaceAlways
+> ### _A.FaceAlways
 
 -   This global variable controls whether Apep automatically faces the target when casting spells.
 
@@ -3318,7 +3445,7 @@ end
 
 ---
 
-> ## FaceCast (Lua Mode)
+> ### FaceCast (Lua Mode)
 
 -   In Lua mode, you can use the `FaceCast` method to selectively cast spells with automatic facing.
 
